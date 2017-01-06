@@ -16,7 +16,7 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve a single product
         /// </summary>
-        /// <param name="productId"></param>
+        /// <param name="productId">Unique Identifier of the product</param>
         /// <returns>Product</returns>
         public Task<Entities.Product> RetrieveSingleProduct(int productId)
         {
