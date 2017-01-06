@@ -50,7 +50,7 @@
     <Compile Include="Entities\Shop\Shops.cs" />
     <Compile Include="Entities\SKUs\SKUs.cs" />
     <Compile Include="Entities\Category\Specifications.cs" />
-    <Compile Include="Entities\User\Users.cs" />
+    <Compile Include="Entities\User\UserProfile.cs" />
     <Compile Include="Entities\Shared\Meta.cs" />
     <Compile Include="Entities\Shared\Pagination.cs" />
     <Compile Include="Product.cs" />

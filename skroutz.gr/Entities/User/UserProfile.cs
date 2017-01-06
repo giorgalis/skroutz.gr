@@ -4,9 +4,25 @@
     {
         public int id { get; set; }
         public string username { get; set; }
-        public string sex { get; set; }
+        public sex sex { get; set; }
         public string avatar { get; set; }
-        public string type { get; set; }
+        public type type { get; set; }
+    }
+
+    public enum sex
+    {
+        male,
+        female,
+        @null
+    }
+
+    public enum type
+    {
+        skroutz,
+        open_id,
+        twitter,
+        facebook,
+        google
     }
 
     public class UserProfile
