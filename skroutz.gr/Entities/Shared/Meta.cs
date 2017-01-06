@@ -1,4 +1,4 @@
-﻿namespace skroutz.gr.Paging
+﻿namespace skroutz.gr.Entities.Shared
 {
     public class Meta
     {

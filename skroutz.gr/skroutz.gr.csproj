@@ -35,13 +35,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
-    <Compile Include="Entities\Categories.cs" />
-    <Compile Include="Entities\Favorites.cs" />
-    <Compile Include="Entities\Manufacturers.cs" />
+    <Compile Include="Entities\Category\Categories.cs" />
+    <Compile Include="Entities\Category\Groups.cs" />
+    <Compile Include="Entities\FavoriteLists.cs" />
+    <Compile Include="Entities\Category\Favorites.cs" />
+    <Compile Include="Entities\FilterGroups.cs" />
+    <Compile Include="Entities\Flags.cs" />
+    <Compile Include="Entities\Shop\Locations.cs" />
+    <Compile Include="Entities\Shop\Reviews.cs" />
+    <Compile Include="Entities\Shared\Images.cs" />
+    <Compile Include="Entities\Category\Manufacturers.cs" />
+    <Compile Include="Entities\Notifications.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\Specifications.cs" />
-    <Compile Include="Paging\Meta.cs" />
-    <Compile Include="Paging\Pagination.cs" />
+    <Compile Include="Entities\Shops.cs" />
+    <Compile Include="Entities\SKUs.cs" />
+    <Compile Include="Entities\Category\Specifications.cs" />
+    <Compile Include="Entities\Users.cs" />
+    <Compile Include="Entities\Shared\Meta.cs" />
+    <Compile Include="Entities\Shared\Pagination.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />

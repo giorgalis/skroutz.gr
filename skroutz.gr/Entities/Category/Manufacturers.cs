@@ -1,7 +1,7 @@
-﻿using skroutz.gr.Paging;
+﻿using skroutz.gr.Entities.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities
+namespace skroutz.gr.Entities.Category
 {
     public class Manufacturer
     {
