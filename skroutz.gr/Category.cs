@@ -128,7 +128,7 @@ namespace skroutz.gr
         /// <see cref="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <returns>IEnumerable of Manufacturer</returns>
-        public Task<IEnumerable<Entities.Category.Manufacturer>> ListCategorysManufactures(int categoryId)
+        public Task<IEnumerable<Entities.Manufacturers.Manufacturer>> ListCategorysManufactures(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -136,7 +136,7 @@ namespace skroutz.gr
             _builder.Append($"categories/{categoryId}/manufacturers");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<IEnumerable<Entities.Category.Manufacturer>>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<IEnumerable<Entities.Manufacturers.Manufacturer>>(t.Result.ToString()));
         }
 
         /// <summary>

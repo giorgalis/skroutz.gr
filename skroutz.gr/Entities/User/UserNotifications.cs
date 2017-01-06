@@ -1,7 +1,7 @@
 ﻿using skroutz.gr.Entities.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities
+namespace skroutz.gr.Entities.User
 {
     public class Snapshot
     {
@@ -57,7 +57,7 @@ namespace skroutz.gr.Entities
         public string category_name { get; set; }
     }
 
-    public class Notifications
+    public class UserNotifications
     {
         public List<Notification> notifications { get; set; }
         public Meta meta { get; set; }

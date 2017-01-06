@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace skroutz.gr.Entities
+namespace skroutz.gr.Entities.Product
 {
     public class Product
     {

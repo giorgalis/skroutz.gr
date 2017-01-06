@@ -1,7 +1,7 @@
 ﻿using skroutz.gr.Entities.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities
+namespace skroutz.gr.Entities.SKUs
 {
 
     public class Sku

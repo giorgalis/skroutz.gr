@@ -18,13 +18,13 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="productId">Unique Identifier of the product</param>
         /// <returns>Product</returns>
-        public Task<Entities.Product> RetrieveSingleProduct(int productId)
+        public Task<Entities.Product.Product> RetrieveSingleProduct(int productId)
         {
             _builder.Clear();
             _builder.Append($"products/{productId}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Product>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace skroutz.gr
         /// <param name="shopId">Unique identifier of the shop</param>
         /// <param name="shopUid">Search with the product identifier as assigned by the shop</param>
         /// <returns>Product</returns>
-        public Task<Entities.Product> SearchForProducts(int shopId, int shopUid)
+        public Task<Entities.Product.Product> SearchForProducts(int shopId, int shopUid)
         {
             _builder.Clear();
             _builder.Append($"shops/{shopId}/products/search?shop_uid={shopUid}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Product>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
         }
     }
 }

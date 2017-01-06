@@ -15,7 +15,7 @@ namespace skroutz.gr.Entities.Shop
         public List<string> reasons { get; set; }
     }
 
-    public class Reviews
+    public class ShopReviews
     {
         public List<Review> reviews { get; set; }
         public Meta meta { get; set; }

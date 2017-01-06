@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace skroutz.gr.Entities
+namespace skroutz.gr.Entities.Shop
 {
     public class PaymentMethods
     {

@@ -17,7 +17,7 @@ namespace skroutz.gr.Entities.Shop
         public string info { get; set; }
     }
 
-    public class Locations
+    public class ShopLocations
     {
         public List<Location> locations { get; set; }
         public Meta meta { get; set; }

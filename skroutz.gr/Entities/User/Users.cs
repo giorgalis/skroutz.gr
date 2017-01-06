@@ -1,4 +1,4 @@
-﻿namespace skroutz.gr.Entities
+﻿namespace skroutz.gr.Entities.User
 {
     public class User
     {
@@ -9,7 +9,7 @@
         public string type { get; set; }
     }
 
-    public class Users
+    public class UserProfile
     {
         public User user { get; set; }
     }
