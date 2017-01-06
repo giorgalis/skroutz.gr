@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Entities\Categories.cs" />
+    <Compile Include="Entities\Favorites.cs" />
     <Compile Include="Entities\Manufacturers.cs" />
     <Compile Include="Entities\Specifications.cs" />
     <Compile Include="Paging\Meta.cs" />
