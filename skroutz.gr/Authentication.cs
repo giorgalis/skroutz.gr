@@ -27,10 +27,10 @@ namespace skroutz.gr
 
             string request = $"oauth2/token?client_id={credentials.client_id}&client_secret={credentials.client_secret}&grant_type=client_credentials&scope=public";
 
-            //Response response = GetWebResultAsync(domain, request).ContinueWith((t) =>
-            //JsonConvert.DeserializeObject<Response>(t.Result.ToString())).Result;
+            //Response response = GetTokenResponce(domain, request).ContinueWith((t) =>
+            //    JsonConvert.DeserializeObject<Response>(t.Result.ToString())).Result;
 
-            //base.AccessToken = response.access_token;
+            //AccessToken = response.access_token;
             AccessToken = "token";
         }
 

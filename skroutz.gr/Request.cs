@@ -17,10 +17,10 @@ namespace skroutz.gr
             return client.GetStringAsync(value);
         }
 
-        //public Task<string> GetWebResultAsync(string domain, string value)
-        //{
-        //    HttpClient client = new HttpClient { BaseAddress = new Uri(domain) };
-        //    return client.GetStringAsync(value);
-        //}
+        public Task<string> GetTokenResponce(string domain, string value)
+        {
+            HttpClient client = new HttpClient { BaseAddress = new Uri(domain) };
+            return client.GetStringAsync(value);
+        }
     }
 }
