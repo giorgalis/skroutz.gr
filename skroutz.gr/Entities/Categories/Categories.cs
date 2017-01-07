@@ -1,7 +1,7 @@
 ﻿using skroutz.gr.Entities.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities.Category
+namespace skroutz.gr.Entities.Categories
 {
     public class Category
     {

@@ -1,5 +1,9 @@
 ﻿using skroutz.gr;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleSkroutz.gr
 {
@@ -10,15 +14,17 @@ namespace ConsoleSkroutz.gr
             StringBuilder sb = new StringBuilder();
             Authentication auth = new Authentication(new Authentication.AppCredentials { client_id = "1", client_secret = "2" });
 
-            //Categories
             Category cat = new Category(auth.ApplicationToken, sb);
-            dynamic result = cat.ListAllCategories();
-            result = cat.RetrieveSingleCategory(1).Result;
-
-            //Products
             Product pro = new Product(auth.ApplicationToken, sb);
-            result = pro.RetrieveSingleProduct(1);
 
+            try
+            {
+                IEnumerable<skroutz.gr.Entities.Categories.Category> result = cat.ListAllCategories().Result;
+            }
+            catch (Exception se)
+            {
+
+            }
         }
     }
 }
