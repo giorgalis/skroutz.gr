@@ -10,7 +10,7 @@ namespace ConsoleSkroutz.gr
         static void Main(string[] args)
         {
             StringBuilder sb = new StringBuilder();
-            Authentication auth = new Authentication(new Authentication.AppCredentials { client_id = "1", client_secret = "2" });
+            Authentication auth = new Authentication(new Authentication.AppCredentials { client_id = "client_id", client_secret = "client_secret" });
                        
             Category cat = new Category(auth.ApplicationToken, sb);
             Product pro = new Product(auth.ApplicationToken, sb);

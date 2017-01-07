@@ -6,8 +6,9 @@ namespace skroutz.gr
 {
     public class Request
     {
-        private const string ApiVersion = "3.0";
         private static readonly string Domain = $"http://api.skroutz.gr/";
+        private const string ApiVersion = "3.0";
+        
         public async Task<string> GetWebResultAsync(string value)
         {
 
