@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Authentication.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Entities\Category\Categories.cs" />
     <Compile Include="Entities\Category\Groups.cs" />

@@ -4,13 +4,15 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
-    public class Product : Request
+    public class Product : Authentication
     {
         private readonly StringBuilder _builder;
+        private readonly string _accessToken;
 
         public Product(StringBuilder builder)
         {
             _builder = builder;
+            _accessToken = AccessToken;
         }
 
         /// <summary>
@@ -23,7 +25,7 @@ namespace skroutz.gr
             _builder.Clear();
             _builder.Append($"products/{productId}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
         }
 
@@ -38,7 +40,7 @@ namespace skroutz.gr
             _builder.Clear();
             _builder.Append($"shops/{shopId}/products/search?shop_uid={shopUid}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
         }
     }
