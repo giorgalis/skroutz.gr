@@ -15,7 +15,7 @@ namespace skroutz.gr
             req.Method = "GET";
             req.Accept = $"application/vnd.skroutz+json; version={ApiVersion}";
 
-            string content = null;
+            string content = string.Empty;
             HttpStatusCode code = HttpStatusCode.OK;
 
             try
@@ -30,7 +30,6 @@ namespace skroutz.gr
             }
             catch (WebException ex)
             {
-
                 using (HttpWebResponse response = (HttpWebResponse)ex.Response)
                 {
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
@@ -40,8 +39,6 @@ namespace skroutz.gr
                     throw new SkroutzException(code, content);
                 }
             }
-
-            //Here you have now content and code.
 
             return content;
         }

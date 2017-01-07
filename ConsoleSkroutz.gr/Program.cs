@@ -1,9 +1,7 @@
 ﻿using skroutz.gr;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleSkroutz.gr
 {
@@ -13,9 +11,10 @@ namespace ConsoleSkroutz.gr
         {
             StringBuilder sb = new StringBuilder();
             Authentication auth = new Authentication(new Authentication.AppCredentials { client_id = "1", client_secret = "2" });
-
+                       
             Category cat = new Category(auth.ApplicationToken, sb);
             Product pro = new Product(auth.ApplicationToken, sb);
+            User use = new User(auth.UserToken, sb);
 
             try
             {

@@ -22,7 +22,6 @@ namespace skroutz.gr
             _builder = stringBuilder;
         }
 
-        
         #region "User Profile"
 
         /// <summary>
