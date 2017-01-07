@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
-    public class Category : Authentication
+    public class Category : Request
     {
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
 
-        public Category(StringBuilder builder)
+        public Category(string accessToken)
         {
-            _builder = builder;
-            _accessToken = AccessToken;
+            _accessToken = accessToken;
+            _builder = new StringBuilder();
+        }
+
+        public Category(string accessToken, StringBuilder stringBuilder)
+        {
+            _accessToken = accessToken;
+            _builder = stringBuilder;
         }
 
         /// <summary>
@@ -26,8 +32,9 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append("categories");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<IEnumerable<Entities.Category.Category>>(t.Result.ToString()));
         }
 
@@ -44,8 +51,9 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Category.Category>(t.Result.ToString()));
         }
 
@@ -62,8 +70,9 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/parent");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Category.Category>(t.Result.ToString()));
         }
 
@@ -76,8 +85,9 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append("categories/root");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Category.Category>(t.Result.ToString()));
         }
 
@@ -94,8 +104,9 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/children");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<IEnumerable<Entities.Category.Category>>(t.Result.ToString()));
         }
 
@@ -113,11 +124,12 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/specifications");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
             if (group)
-                _builder.Append("?include=group");
+                _builder.Append("&include=group");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<IEnumerable<Entities.Category.Specification>>(t.Result.ToString()));
         }
 
@@ -134,8 +146,9 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/manufacturers");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<IEnumerable<Entities.Manufacturers.Manufacturer>>(t.Result.ToString()));
         }
 
@@ -153,8 +166,9 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/favorites");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<IEnumerable<Entities.Category.Favorite>>(t.Result.ToString()));
         }
     }

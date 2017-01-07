@@ -4,15 +4,21 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
-    public class Product : Authentication
+    public class Product : Request
     {
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
 
-        public Product(StringBuilder builder)
+        public Product(string accessToken)
         {
-            _builder = builder;
-            _accessToken = AccessToken;
+            _accessToken = accessToken;
+            _builder = new StringBuilder();
+        }
+
+        public Product(string accessToken, StringBuilder stringBuilder)
+        {
+            _accessToken = accessToken;
+            _builder = stringBuilder;
         }
 
         /// <summary>
@@ -24,8 +30,9 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append($"products/{productId}");
+            _builder.Append($"?&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
         }
 
@@ -39,8 +46,9 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append($"shops/{shopId}/products/search?shop_uid={shopUid}");
+            _builder.Append($"&oauth_token={_accessToken}");
 
-            return GetWebResultAsync(_builder.ToString(), _accessToken).ContinueWith((t) =>
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
         }
     }
