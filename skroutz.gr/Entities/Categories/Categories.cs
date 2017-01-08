@@ -6,15 +6,14 @@ namespace skroutz.gr.Entities.Categories
     /// <summary>
     /// 
     /// </summary>
-    /// 
     public class Category
     {
         /// <summary>
-        /// 
+        /// Category ID
         /// </summary>
         public int id { get; set; }
         /// <summary>
-        /// 
+        /// Category Name
         /// </summary>
         public string name { get; set; }
         public int children_count { get; set; }

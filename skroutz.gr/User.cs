@@ -36,7 +36,7 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve the profile of the authenticated user
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
+        /// <see cref="Http://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
         public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
