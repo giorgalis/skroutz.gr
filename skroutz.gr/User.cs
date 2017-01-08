@@ -61,7 +61,7 @@ namespace skroutz.gr
         /// <summary>
         /// Create a favorite_list
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist"/>
+        /// <see cref="Http://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist"/>
         public void CreateFavoriteList()
         {
             throw new NotImplementedException();

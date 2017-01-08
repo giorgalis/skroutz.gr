@@ -3,9 +3,19 @@ using System.Collections.Generic;
 
 namespace skroutz.gr.Entities.Categories
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// 
     public class Category
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int id { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string name { get; set; }
         public int children_count { get; set; }
         public string image_url { get; set; }

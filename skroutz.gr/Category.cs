@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
+    /// <summary>
+    /// Categories are organized in a tree-like structure.
+    /// An SKU always belongs to a leaf(ending) category.
+    ///Leaf categories have children_count equal to 0.
+    /// </summary>
     public class Category : Request
     {
         private readonly StringBuilder _builder;
