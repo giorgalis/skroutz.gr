@@ -17,7 +17,7 @@ namespace ConsoleSkroutz.gr
             User use = new User(auth.UserToken, sb);
 
             SKU sku = new SKU(auth.ApplicationToken, sb);
-            sku.ListSKUsOfSpecificCategory(1, SKU.order_by.popularity, SKU.order_dir.asc, null, new int[] { 1, 2, 3 });
+            sku.ListSKUsOfSpecificCategory(1, SKU.OrderBy.popularity, SKU.OrderDir.asc, null, new int[] { 1, 2, 3 });
 
             try
             {

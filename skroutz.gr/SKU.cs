@@ -15,14 +15,29 @@ namespace skroutz.gr
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
 
-        public enum order_by
+        /// <summary>
+        /// Order by price, popularity or rating
+        /// </summary>
+        public enum OrderBy
         {
+            /// <summary>
+            /// Price including VAT
+            /// </summary>
             pricevat,
+            /// <summary>
+            /// Popularity
+            /// </summary>
             popularity,
+            /// <summary>
+            /// Rating
+            /// </summary>
             rating
         }
 
-        public enum order_dir
+        /// <summary>
+        /// Order by asceding or desceding
+        /// </summary>
+        public enum OrderDir
         {
             asc,
             desc
@@ -61,7 +76,7 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
-        public Task<Entities.SKUs.SKUs> ListSKUsOfSpecificCategory(int categoryId, order_by orderBy = order_by.pricevat, order_dir orderDir = order_dir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
+        public Task<Entities.SKUs.SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderBy orderBy = OrderBy.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
