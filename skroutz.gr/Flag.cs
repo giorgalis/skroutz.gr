@@ -37,7 +37,7 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve all flags
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags"/>
         public Task<Entities.Flags.Flags> RetrieveAllFlags()
         {
             _builder.Clear();

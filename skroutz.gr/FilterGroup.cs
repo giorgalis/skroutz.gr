@@ -38,7 +38,7 @@ namespace skroutz.gr
         /// List FilterGroups
         /// </summary>
         /// <param name="categoryId"></param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         public Task<Entities.Categories.FilterGroups> ListFilterGroups(int categoryId)
         {

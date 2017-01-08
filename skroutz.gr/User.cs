@@ -36,7 +36,7 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve the profile of the authenticated user
         /// </summary>
-        /// <see cref="Http://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
         public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
@@ -54,7 +54,7 @@ namespace skroutz.gr
         /// <summary>
         /// List favorite lists
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#list-favorite-lists"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorite-lists"/>
         public Task<Entities.User.UserFavorites> ListFavoriteLists()
         {
             _builder.Clear();
@@ -68,7 +68,7 @@ namespace skroutz.gr
         /// <summary>
         /// Create a favorite_list
         /// </summary>
-        /// <see cref="Http://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist"/>
+        /// <see href="Https://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist"/>
         public void CreateFavoriteList()
         {
             throw new NotImplementedException();
@@ -77,7 +77,7 @@ namespace skroutz.gr
         /// <summary>
         /// Destroy a favorite_list
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favoritelist"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favoritelist"/>
         public void DestroyFavoriteList()
         {
             throw new NotImplementedException();
@@ -86,7 +86,7 @@ namespace skroutz.gr
         /// <summary>
         /// List favorites
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#list-favorites"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites"/>
         public Task<Entities.User.Favorites> ListFavorites()
         {
             _builder.Clear();
@@ -101,7 +101,7 @@ namespace skroutz.gr
         /// List favorites belonging to list
         /// </summary>
         /// <param name="listId">Unique identifier of the list</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#list-favorites-belonging-to-list"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites-belonging-to-list"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when listId is less than or equal to 0</exception>
         public Task<Entities.User.Favorites> ListFavoritesBelongingToList(int listId)
         {
@@ -119,7 +119,7 @@ namespace skroutz.gr
         /// Retrieve a single favorite
         /// </summary>
         /// <param name="favoriteId">Unique identifier of the Favorite</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#retrieve-a-single-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#retrieve-a-single-favorite"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when favoriteId is less than or equal to 0</exception>
         public Task<Entities.User.Favorite> RetrieveSingleFavorite(int favoriteId)
         {
@@ -135,7 +135,7 @@ namespace skroutz.gr
 
         /// <summary>
         /// Create a new favorite
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#create-a-new-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#create-a-new-favorite"/>
         /// </summary>
         public void CreateNewFavorite()
         {
@@ -144,7 +144,7 @@ namespace skroutz.gr
 
         /// <summary>
         /// Destroy a favorite
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favorite"/>
         /// </summary>
         public void DestroyFavorite()
         {
@@ -153,7 +153,7 @@ namespace skroutz.gr
 
         /// <summary>
         /// Update a favorite
-        /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#update-a-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#update-a-favorite"/>
         /// </summary>
         public void UpdateFavorite()
         {
@@ -167,7 +167,7 @@ namespace skroutz.gr
         /// <summary>
         /// List notifications
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/notifications/#list-notifications"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#list-notifications"/>
         public Task<Entities.User.UserNotifications> ListNotifications()
         {
             _builder.Clear();
@@ -182,7 +182,7 @@ namespace skroutz.gr
         /// Retrieve a single notification
         /// </summary>
         /// <param name="notificationId"></param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/notifications/#retrieve-a-single-notification"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#retrieve-a-single-notification"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when notificationId is less than or equal to 0</exception>
         public Task<Entities.User.Notification> RetrieveSingleNotification(int notificationId)
         {
@@ -198,7 +198,7 @@ namespace skroutz.gr
 
         /// <summary>
         /// Mark notifications as viewed
-        /// <see cref="https://developer.skroutz.gr/api/v3/notifications/#mark-notifications-as-viewed"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#mark-notifications-as-viewed"/>
         /// </summary>
         public void MarkNotificationsAsViewed()
         {

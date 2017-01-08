@@ -58,7 +58,7 @@ namespace skroutz.gr
         /// <param name="searchKeyword">The keyword to search by</param>
         /// <param name="manufacturerIds">The ids of the manufacturers of the SKUs</param>
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
         public Task<Entities.SKUs.SKUs> ListSKUsOfSpecificCategory(int categoryId, order_by orderBy = order_by.pricevat, order_dir orderDir = order_dir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)

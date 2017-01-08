@@ -40,7 +40,7 @@ namespace skroutz.gr
         /// <summary>
         /// Lists all categories
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#list-all-categories"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories"/>
         public Task<IEnumerable<Entities.Categories.Category>> ListAllCategories()
         {
             _builder.Clear();
@@ -55,7 +55,7 @@ namespace skroutz.gr
         /// Retrieve a single category
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         public Task<Entities.Categories.Category> RetrieveSingleCategory(int categoryId)
         {
@@ -73,7 +73,7 @@ namespace skroutz.gr
         /// Retrieve the parent of a category
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         public Task<Entities.Categories.Category> RetrieveTheParentOfCategory(int categoryId)
         {
@@ -90,7 +90,7 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve the root category
         /// </summary>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category"/>
         public Task<Entities.Categories.Category> RetrieveTheRootCategory()
         {
             _builder.Clear();
@@ -105,7 +105,7 @@ namespace skroutz.gr
         /// List the children categories of a category
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         public Task<IEnumerable<Entities.Categories.Category>> ListChildrenCategoriesOfCategory(int categoryId)
         {
@@ -124,7 +124,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="group"></param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         public Task<IEnumerable<Entities.Categories.Specification>> ListCategorysSpecifications(int categoryId, bool group = false)
         {
@@ -145,7 +145,7 @@ namespace skroutz.gr
         /// List a category's manufacturers
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         public Task<IEnumerable<Entities.Manufacturers.Manufacturer>> ListCategorysManufactures(int categoryId)
         {
@@ -163,7 +163,7 @@ namespace skroutz.gr
         /// List a category's favorites
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see cref="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
         public Task<IEnumerable<Entities.User.Favorite>> ListCategorysFavorites(int categoryId)
