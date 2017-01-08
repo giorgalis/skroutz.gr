@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace skroutz.gr.Entities.Flags
+namespace skroutz.gr.Model.Flags
 {
     public class Flag
     {

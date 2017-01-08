@@ -1,7 +1,7 @@
-﻿using skroutz.gr.Entities.Shared;
+﻿using skroutz.gr.Model.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities.User
+namespace skroutz.gr.Model.User
 {
     public class Favorite
     {

@@ -1,7 +1,7 @@
-﻿using skroutz.gr.Entities.Shared;
+﻿using skroutz.gr.Model.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities.Categories
+namespace skroutz.gr.Model.Categories
 {
     public enum FilterTypes
     {

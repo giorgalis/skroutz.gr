@@ -1,4 +1,4 @@
-﻿namespace skroutz.gr.Entities.Shared
+﻿namespace skroutz.gr.Model.Shared
 {
     public class Meta
     {

@@ -51,14 +51,14 @@ namespace skroutz.gr
         /// Retrieve the profile of the authenticated user
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
-        public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
+        public Task<Model.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
             _builder.Append("user");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.User>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.User>(t.Result.ToString()));
         }
 
         #endregion
@@ -69,14 +69,14 @@ namespace skroutz.gr
         /// List favorite lists
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorite-lists"/>
-        public Task<Entities.User.UserFavorites> ListFavoriteLists()
+        public Task<Model.User.UserFavorites> ListFavoriteLists()
         {
             _builder.Clear();
             _builder.Append("favorite_lists");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.UserFavorites>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.UserFavorites>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -101,14 +101,14 @@ namespace skroutz.gr
         /// List favorites
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites"/>
-        public Task<Entities.User.Favorites> ListFavorites()
+        public Task<Model.User.Favorites> ListFavorites()
         {
             _builder.Clear();
             _builder.Append("favorites");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.Favorites>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.Favorites>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace skroutz.gr
         /// <param name="listId">Unique identifier of the list</param>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites-belonging-to-list"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when listId is less than or equal to 0</exception>
-        public Task<Entities.User.Favorites> ListFavoritesBelongingToList(int listId)
+        public Task<Model.User.Favorites> ListFavoritesBelongingToList(int listId)
         {
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
 
@@ -126,7 +126,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.Favorites>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.Favorites>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace skroutz.gr
         /// <param name="favoriteId">Unique identifier of the Favorite</param>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#retrieve-a-single-favorite"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when favoriteId is less than or equal to 0</exception>
-        public Task<Entities.User.Favorite> RetrieveSingleFavorite(int favoriteId)
+        public Task<Model.User.Favorite> RetrieveSingleFavorite(int favoriteId)
         {
             if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
 
@@ -144,7 +144,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.Favorite>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.Favorite>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -182,14 +182,14 @@ namespace skroutz.gr
         /// List notifications
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/notifications/#list-notifications"/>
-        public Task<Entities.User.UserNotifications> ListNotifications()
+        public Task<Model.User.UserNotifications> ListNotifications()
         {
             _builder.Clear();
             _builder.Append("notifications");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.UserNotifications>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.UserNotifications>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace skroutz.gr
         /// <param name="notificationId"></param>
         /// <see href="https://developer.skroutz.gr/api/v3/notifications/#retrieve-a-single-notification"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when notificationId is less than or equal to 0</exception>
-        public Task<Entities.User.Notification> RetrieveSingleNotification(int notificationId)
+        public Task<Model.User.Notification> RetrieveSingleNotification(int notificationId)
         {
             if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));
 
@@ -207,7 +207,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.Notification>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.Notification>(t.Result.ToString()));
         }
 
         /// <summary>

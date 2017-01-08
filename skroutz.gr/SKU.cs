@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Entities.SKUs;
+using skroutz.gr.Model.SKUs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +50,7 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
-        public Task<Entities.SKUs.SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderBy orderBy = OrderBy.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
+        public Task<Model.SKUs.SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderBy orderBy = OrderBy.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -71,7 +71,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.SKUs.SKUs>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.SKUs.SKUs>(t.Result.ToString()));
         }
     }
 }

@@ -40,14 +40,14 @@ namespace skroutz.gr
         /// Lists all categories
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories"/>
-        public Task<Entities.Categories.Categories> ListAllCategories()
+        public Task<Model.Categories.Categories> ListAllCategories()
         {
             _builder.Clear();
             _builder.Append("categories");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Categories>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Categories>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Entities.Categories.Category> RetrieveSingleCategory(int categoryId)
+        public Task<Model.Categories.Category> RetrieveSingleCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -65,7 +65,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Category>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Category>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Entities.Categories.Category> RetrieveTheParentOfCategory(int categoryId)
+        public Task<Model.Categories.Category> RetrieveTheParentOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -83,21 +83,21 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Category>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Category>(t.Result.ToString()));
         }
 
         /// <summary>
         /// Retrieve the root category
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category"/>
-        public Task<Entities.Categories.Category> RetrieveTheRootCategory()
+        public Task<Model.Categories.Category> RetrieveTheRootCategory()
         {
             _builder.Clear();
             _builder.Append("categories/root");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Category>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Category>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Entities.Categories.Categories> ListChildrenCategoriesOfCategory(int categoryId)
+        public Task<Model.Categories.Categories> ListChildrenCategoriesOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -115,7 +115,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Categories>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Categories>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Entities.Categories.Specifications> ListCategorysSpecifications(int categoryId)
+        public Task<Model.Categories.Specifications> ListCategorysSpecifications(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -133,7 +133,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Specifications>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Specifications>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Entities.Categories.Groups> ListCategorysSpecificationsGroup(int categoryId)
+        public Task<Model.Categories.Groups> ListCategorysSpecificationsGroup(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -152,7 +152,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Groups>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Groups>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Entities.Manufacturers.Manufacturers> ListCategorysManufactures(int categoryId)
+        public Task<Model.Manufacturers.Manufacturers> ListCategorysManufactures(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -170,7 +170,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Manufacturers.Manufacturers>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Manufacturers.Manufacturers>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
-        public Task<Entities.User.Favorites> ListCategorysFavorites(int categoryId)
+        public Task<Model.User.Favorites> ListCategorysFavorites(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -189,7 +189,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.Favorites>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.User.Favorites>(t.Result.ToString()));
         }
     }
 }

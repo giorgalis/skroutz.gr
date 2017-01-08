@@ -1,4 +1,4 @@
-﻿namespace skroutz.gr.Entities.User
+﻿namespace skroutz.gr.Model.User
 {
     public class User
     {

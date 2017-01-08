@@ -1,7 +1,7 @@
-﻿using skroutz.gr.Entities.Shared;
+﻿using skroutz.gr.Model.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities.SKUs
+namespace skroutz.gr.Model.SKUs
 {
     /// <summary>
     /// Order by price, popularity or rating

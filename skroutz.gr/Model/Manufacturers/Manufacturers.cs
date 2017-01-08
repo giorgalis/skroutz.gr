@@ -1,7 +1,7 @@
-﻿using skroutz.gr.Entities.Shared;
+﻿using skroutz.gr.Model.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Entities.Manufacturers
+namespace skroutz.gr.Model.Manufacturers
 {
 
     /// <summary>

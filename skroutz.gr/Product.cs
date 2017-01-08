@@ -40,7 +40,7 @@ namespace skroutz.gr
         /// <param name="productId">Unique Identifier of the product</param>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when productId is less than or equal to 0</exception>
-        public Task<Entities.Product.Product> RetrieveSingleProduct(int productId)
+        public Task<Model.Product.Product> RetrieveSingleProduct(int productId)
         {
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
 
@@ -49,7 +49,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Product.Product>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopId is less than or equal to 0</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopUid is less than or equal to 0</exception>
-        public Task<Entities.Product.Product> SearchForProducts(int shopId, int shopUid)
+        public Task<Model.Product.Product> SearchForProducts(int shopId, int shopUid)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
             if (shopUid <= 0) throw new ArgumentOutOfRangeException(nameof(shopUid));
@@ -70,7 +70,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Product.Product>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Product.Product>(t.Result.ToString()));
         }
     }
 }

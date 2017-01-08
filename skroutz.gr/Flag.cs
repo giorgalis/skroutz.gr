@@ -38,14 +38,14 @@ namespace skroutz.gr
         /// Retrieve all flags
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags"/>
-        public Task<Entities.Flags.Flags> RetrieveAllFlags()
+        public Task<Model.Flags.Flags> RetrieveAllFlags()
         {
             _builder.Clear();
             _builder.Append($"flags");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Flags.Flags>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Flags.Flags>(t.Result.ToString()));
         }
     }
 }

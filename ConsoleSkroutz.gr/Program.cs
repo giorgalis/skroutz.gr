@@ -1,5 +1,5 @@
 ﻿using skroutz.gr;
-using skroutz.gr.Entities.SKUs;
+using skroutz.gr.Model.SKUs;
 using System;
 using System.Text;
 using static skroutz.gr.Constants;
@@ -22,7 +22,7 @@ namespace ConsoleSkroutz.gr
 
             try
             {
-                skroutz.gr.Entities.Categories.Categories result = cat.ListAllCategories().Result;
+                skroutz.gr.Model.Categories.Categories result = cat.ListAllCategories().Result;
             }
             catch (Exception se)
             {

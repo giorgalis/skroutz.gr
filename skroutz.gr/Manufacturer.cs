@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Entities.Manufacturers;
+using skroutz.gr.Model.Manufacturers;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,14 +41,14 @@ namespace skroutz.gr
         /// List manufacturers
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#list-manufacturers"/>
-        public Task<Entities.Manufacturers.Manufacturers> ListManufacturers()
+        public Task<Model.Manufacturers.Manufacturers> ListManufacturers()
         {
             _builder.Clear();
             _builder.Append("manufacturers");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Manufacturers.Manufacturers>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Manufacturers.Manufacturers>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace skroutz.gr
         /// <param name="manufacturerId">Unique Identifier of the manufacturer</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-single-manufacturer"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Entities.Manufacturers.Manufacturer> RetrieveSingleManufacturer(int manufacturerId)
+        public Task<Model.Manufacturers.Manufacturer> RetrieveSingleManufacturer(int manufacturerId)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
@@ -66,7 +66,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Manufacturers.Manufacturer>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Manufacturers.Manufacturer>(t.Result.ToString()));
         }
 
 
@@ -78,7 +78,7 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Entities.Categories.Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
+        public Task<Model.Categories.Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
@@ -89,7 +89,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.Categories.Categories>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.Categories>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Entities.SKUs.SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
+        public Task<Model.SKUs.SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
@@ -111,7 +111,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.SKUs.SKUs>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.SKUs.SKUs>(t.Result.ToString()));
         }
     }
 }
