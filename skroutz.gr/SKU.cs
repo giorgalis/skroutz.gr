@@ -39,7 +39,13 @@ namespace skroutz.gr
         /// </summary>
         public enum OrderDir
         {
+            /// <summary>
+            /// Asceding
+            /// </summary>
             asc,
+            /// <summary>
+            /// Descending
+            /// </summary>
             desc
         }
 
