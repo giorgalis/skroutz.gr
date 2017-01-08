@@ -16,6 +16,9 @@ namespace ConsoleSkroutz.gr
             Product pro = new Product(auth.ApplicationToken, sb);
             User use = new User(auth.UserToken, sb);
 
+            SKU sku = new SKU(auth.ApplicationToken, sb);
+            sku.ListSKUsOfSpecificCategory(1, SKU.order_by.popularity, SKU.order_dir.asc, null, new int[] { 1, 2, 3 });
+
             try
             {
                 IEnumerable<skroutz.gr.Entities.Categories.Category> result = cat.ListAllCategories().Result;
