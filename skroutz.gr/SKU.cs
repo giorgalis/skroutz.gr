@@ -60,8 +60,7 @@ namespace skroutz.gr
             _builder.Append($"categories/{categoryId}/skus");
             _builder.Append($"?order_by={orderBy}");
             _builder.Append($"&order_dir={orderDir}");
-            _builder.Append($"&oauth_token={_accessToken}");
-
+       
             if(!string.IsNullOrEmpty(searchKeyword))
                 _builder.Append($"&q={searchKeyword}");
 
@@ -70,7 +69,9 @@ namespace skroutz.gr
 
             if (filterIds != null)
                 _builder.Append($"&filter_ids[]={string.Join("&filter_ids[]=", filterIds.Select(s => s.ToString()))}");
-            
+
+            _builder.Append($"&oauth_token={_accessToken}");
+
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.SKUs.SKUs>(t.Result.ToString()));
         }
