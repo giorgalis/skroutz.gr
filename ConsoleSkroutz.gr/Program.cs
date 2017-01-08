@@ -1,6 +1,6 @@
 ﻿using skroutz.gr;
+using skroutz.gr.Entities.SKUs;
 using System;
-using System.Collections.Generic;
 using System.Text;
 using static skroutz.gr.Constants;
 
@@ -18,11 +18,11 @@ namespace ConsoleSkroutz.gr
             User use = new User(auth.UserToken, sb);
 
             SKU sku = new SKU(auth.ApplicationToken, sb);
-            sku.ListSKUsOfSpecificCategory(1, skroutz.gr.Entities.SKUs.OrderBy.popularity,  OrderDir.asc, null, new int[] { 1, 2, 3 });
+            sku.ListSKUsOfSpecificCategory(1, OrderBy.popularity,  OrderDir.asc, null, new int[] { 1, 2, 3 });
 
             try
             {
-                IEnumerable<skroutz.gr.Entities.Categories.Category> result = cat.ListAllCategories().Result;
+                skroutz.gr.Entities.Categories.Categories result = cat.ListAllCategories().Result;
             }
             catch (Exception se)
             {
