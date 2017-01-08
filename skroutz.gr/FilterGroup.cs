@@ -5,20 +5,13 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
+    /// <summary>
+    /// A Filter Group is a collection of filters of the same kind.
+    /// </summary>
     public class FilterGroup : Request
     {
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
-
-        public enum FilterType
-        {
-            Price = 0,
-	        Keyword,
-	        Spec,
-	        SyncedSpec,
-	        CustomRange,
-	        Sizes
-        }
 
         public FilterGroup(string accessToken)
         {
@@ -39,7 +32,7 @@ namespace skroutz.gr
         /// <see cref="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <returns></returns>
-        public Task<Entities.FilterGroups.FilterGroups> ListFilterGroups(int categoryId)
+        public Task<Entities.Categories.FilterGroups> ListFilterGroups(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -48,7 +41,7 @@ namespace skroutz.gr
             _builder.Append($"?&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.FilterGroups.FilterGroups>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Entities.Categories.FilterGroups>(t.Result.ToString()));
         }
     }
 }
