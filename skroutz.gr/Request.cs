@@ -12,7 +12,7 @@ namespace skroutz.gr
         public async Task<string> GetWebResultAsync(string value)
         {
 
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Domain + value);
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(Domain, value));
             req.Method = "GET";
             req.Accept = $"application/vnd.skroutz+json; version={ApiVersion}";
 
