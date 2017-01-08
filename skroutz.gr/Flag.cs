@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Model.Flags;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,14 +39,14 @@ namespace skroutz.gr
         /// Retrieve all flags
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags"/>
-        public Task<Model.Flags.Flags> RetrieveAllFlags()
+        public Task<Flags> RetrieveAllFlags()
         {
             _builder.Clear();
             _builder.Append($"flags");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Flags.Flags>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Flags>(t.Result.ToString()));
         }
     }
 }

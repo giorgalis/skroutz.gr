@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Model.Categories;
 using skroutz.gr.Model.Manufacturers;
 using System;
 using System.Text;
@@ -41,14 +42,14 @@ namespace skroutz.gr
         /// List manufacturers
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#list-manufacturers"/>
-        public Task<Model.Manufacturers.Manufacturers> ListManufacturers()
+        public Task<Manufacturers> ListManufacturers()
         {
             _builder.Clear();
             _builder.Append("manufacturers");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Manufacturers.Manufacturers>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Model.Categories.Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
+        public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
@@ -89,7 +90,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Categories>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
 
         /// <summary>

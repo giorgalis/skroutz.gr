@@ -1,4 +1,7 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Model.Categories;
+using skroutz.gr.Model.Manufacturers;
+using skroutz.gr.Model.User;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,14 +43,14 @@ namespace skroutz.gr
         /// Lists all categories
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories"/>
-        public Task<Model.Categories.Categories> ListAllCategories()
+        public Task<Categories> ListAllCategories()
         {
             _builder.Clear();
             _builder.Append("categories");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Categories>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -106,7 +109,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Model.Categories.Categories> ListChildrenCategoriesOfCategory(int categoryId)
+        public Task<Categories> ListChildrenCategoriesOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -115,7 +118,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Categories>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -124,7 +127,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Model.Categories.Specifications> ListCategorysSpecifications(int categoryId)
+        public Task<Specifications> ListCategorysSpecifications(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -133,7 +136,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Specifications>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Specifications>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -142,7 +145,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Model.Categories.Groups> ListCategorysSpecificationsGroup(int categoryId)
+        public Task<Groups> ListCategorysSpecificationsGroup(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -152,7 +155,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Groups>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Groups>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -161,7 +164,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Model.Manufacturers.Manufacturers> ListCategorysManufactures(int categoryId)
+        public Task<Manufacturers> ListCategorysManufactures(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -170,7 +173,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Manufacturers.Manufacturers>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -180,7 +183,7 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
-        public Task<Model.User.Favorites> ListCategorysFavorites(int categoryId)
+        public Task<Favorites> ListCategorysFavorites(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -189,7 +192,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.User.Favorites>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
         }
     }
 }
