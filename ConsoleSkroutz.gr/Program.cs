@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static skroutz.gr.Constants;
 
 namespace ConsoleSkroutz.gr
 {
@@ -17,7 +18,7 @@ namespace ConsoleSkroutz.gr
             User use = new User(auth.UserToken, sb);
 
             SKU sku = new SKU(auth.ApplicationToken, sb);
-            sku.ListSKUsOfSpecificCategory(1, SKU.OrderBy.popularity, SKU.OrderDir.asc, null, new int[] { 1, 2, 3 });
+            sku.ListSKUsOfSpecificCategory(1, skroutz.gr.Entities.SKUs.OrderBy.popularity,  OrderDir.asc, null, new int[] { 1, 2, 3 });
 
             try
             {

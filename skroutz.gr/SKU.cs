@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Entities.SKUs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static skroutz.gr.Constants;
 
 namespace skroutz.gr
 {
@@ -14,40 +16,6 @@ namespace skroutz.gr
     {
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
-
-        /// <summary>
-        /// Order by price, popularity or rating
-        /// </summary>
-        public enum OrderBy
-        {
-            /// <summary>
-            /// Price including VAT
-            /// </summary>
-            pricevat,
-            /// <summary>
-            /// Popularity
-            /// </summary>
-            popularity,
-            /// <summary>
-            /// Rating
-            /// </summary>
-            rating
-        }
-
-        /// <summary>
-        /// Order by asceding or desceding
-        /// </summary>
-        public enum OrderDir
-        {
-            /// <summary>
-            /// Asceding
-            /// </summary>
-            asc,
-            /// <summary>
-            /// Descending
-            /// </summary>
-            desc
-        }
 
         /// <summary>
         /// Initializes a new instance of the SKU class

@@ -3,6 +3,22 @@ using System.Collections.Generic;
 
 namespace skroutz.gr.Entities.Manufacturers
 {
+
+    /// <summary>
+    /// Order by price, popularity or rating
+    /// </summary>
+    public enum OrderBy
+    {
+        /// <summary>
+        /// Name
+        /// </summary>
+        name,
+        /// <summary>
+        /// Popularity
+        /// </summary>
+        popularity,
+    }
+
     public class Manufacturer
     {
         public int id { get; set; }

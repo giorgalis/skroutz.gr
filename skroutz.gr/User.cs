@@ -5,6 +5,20 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
+    /// <summary>
+    /// Provides information about Users.
+    /// <list type="bullet">
+    /// <item>
+    /// <description>User Profile</description>
+    /// </item>
+    /// <item>
+    /// <description>User Favorites</description>
+    /// </item>
+    /// <item>
+    /// <description>User Notification</description>
+    /// </item>
+    /// </list>
+    /// </summary>
     public class User : Request
     {
         private readonly StringBuilder _builder;
