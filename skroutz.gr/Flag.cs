@@ -33,7 +33,7 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append($"flags");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Flags.Flags>(t.Result.ToString()));

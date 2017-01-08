@@ -37,7 +37,7 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/filter_groups");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.Categories.FilterGroups>(t.Result.ToString()));

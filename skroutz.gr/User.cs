@@ -32,7 +32,7 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append("user");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.User>(t.Result.ToString()));
@@ -50,7 +50,7 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append("favorite_lists");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.UserFavorites>(t.Result.ToString()));
@@ -82,7 +82,7 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append("favorites");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.Favorites>(t.Result.ToString()));
@@ -100,7 +100,7 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"favorite_lists/{listId}/favorites");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.Favorites>(t.Result.ToString()));
@@ -118,7 +118,7 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"favorites/{favoriteId}");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.Favorite>(t.Result.ToString()));
@@ -163,7 +163,7 @@ namespace skroutz.gr
         {
             _builder.Clear();
             _builder.Append("notifications");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.UserNotifications>(t.Result.ToString()));
@@ -181,7 +181,7 @@ namespace skroutz.gr
 
             _builder.Clear();
             _builder.Append($"notifications/{notificationId}");
-            _builder.Append($"?&oauth_token={_accessToken}");
+            _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.Notification>(t.Result.ToString()));
