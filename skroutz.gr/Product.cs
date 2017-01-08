@@ -31,7 +31,6 @@ namespace skroutz.gr
         /// <param name="productId">Unique Identifier of the product</param>
         /// <see cref="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when productId is less than or equal to 0</exception>
-        /// <returns>Product</returns>
         public Task<Entities.Product.Product> RetrieveSingleProduct(int productId)
         {
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
@@ -52,7 +51,6 @@ namespace skroutz.gr
         /// <see cref="https://developer.skroutz.gr/api/v3/product/#search-for-products"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopId is less than or equal to 0</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopUid is less than or equal to 0</exception>
-        /// <returns>Product</returns>
         public Task<Entities.Product.Product> SearchForProducts(int shopId, int shopUid)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));

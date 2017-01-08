@@ -28,7 +28,6 @@ namespace skroutz.gr
         /// Retrieve the profile of the authenticated user
         /// </summary>
         /// <see cref="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
-        /// <returns>User</returns>
         public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
@@ -47,7 +46,6 @@ namespace skroutz.gr
         /// List favorite lists
         /// </summary>
         /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#list-favorite-lists"/>
-        /// <returns>UserFavorites</returns>
         public Task<Entities.User.UserFavorites> ListFavoriteLists()
         {
             _builder.Clear();
@@ -80,7 +78,6 @@ namespace skroutz.gr
         /// List favorites
         /// </summary>
         /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#list-favorites"/>
-        /// <returns>Favorites</returns>
         public Task<Entities.User.Favorites> ListFavorites()
         {
             _builder.Clear();
@@ -97,7 +94,6 @@ namespace skroutz.gr
         /// <param name="listId">Unique identifier of the list</param>
         /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#list-favorites-belonging-to-list"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when listId is less than or equal to 0</exception>
-        /// <returns>Favorites</returns>
         public Task<Entities.User.Favorites> ListFavoritesBelongingToList(int listId)
         {
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
@@ -116,7 +112,6 @@ namespace skroutz.gr
         /// <param name="favoriteId">Unique identifier of the Favorite</param>
         /// <see cref="https://developer.skroutz.gr/api/v3/favorites/#retrieve-a-single-favorite"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when favoriteId is less than or equal to 0</exception>
-        /// <returns>Favorite</returns>
         public Task<Entities.User.Favorite> RetrieveSingleFavorite(int favoriteId)
         {
             if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
@@ -164,7 +159,6 @@ namespace skroutz.gr
         /// List notifications
         /// </summary>
         /// <see cref="https://developer.skroutz.gr/api/v3/notifications/#list-notifications"/>
-        /// <returns>UserNotifications</returns>
         public Task<Entities.User.UserNotifications> ListNotifications()
         {
             _builder.Clear();
@@ -181,7 +175,6 @@ namespace skroutz.gr
         /// <param name="notificationId"></param>
         /// <see cref="https://developer.skroutz.gr/api/v3/notifications/#retrieve-a-single-notification"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when notificationId is less than or equal to 0</exception>
-        /// <returns>Notification</returns>
         public Task<Entities.User.Notification> RetrieveSingleNotification(int notificationId)
         {
             if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));

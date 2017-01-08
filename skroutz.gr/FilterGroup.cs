@@ -31,7 +31,6 @@ namespace skroutz.gr
         /// <param name="categoryId"></param>
         /// <see cref="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        /// <returns></returns>
         public Task<Entities.Categories.FilterGroups> ListFilterGroups(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
