@@ -16,7 +16,7 @@ namespace skroutz.gr
         /// <summary>
         /// Initializes a new instance of the FilterGroup class
         /// </summary>
-        /// <param name="accessToken"></param>
+        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
         public FilterGroup(string accessToken)
         {
             _accessToken = accessToken;
@@ -26,8 +26,8 @@ namespace skroutz.gr
         /// <summary>
         /// Initializes a new instance of the FilterGroup class
         /// </summary>
-        /// <param name="accessToken"></param>
-        /// <param name="stringBuilder"></param>
+        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="stringBuilder">The string builder to write to.</param>
         public FilterGroup(string accessToken, StringBuilder stringBuilder)
         {
             _accessToken = accessToken;
