@@ -3,7 +3,7 @@ using System.Net;
 
 namespace skroutz.gr
 {
-    public class SkroutzException : Exception
+    internal class SkroutzException : Exception
     {
         public HttpStatusCode StatusCode { get; private set; } = HttpStatusCode.OK;
         public SkroutzException()

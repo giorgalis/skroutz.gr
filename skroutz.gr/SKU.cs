@@ -28,12 +28,21 @@ namespace skroutz.gr
             desc
         }
 
+        /// <summary>
+        /// Initializes a new instance of the SKU class
+        /// </summary>
+        /// <param name="accessToken"></param>
         public SKU(string accessToken)
         {
             _accessToken = accessToken;
             _builder = new StringBuilder();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the SKU class
+        /// </summary>
+        /// <param name="accessToken"></param>
+        /// <param name="stringBuilder"></param>
         public SKU(string accessToken, StringBuilder stringBuilder)
         {
             _accessToken = accessToken;
@@ -45,7 +54,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="orderBy">Order by price, popularity or rating</param>
-        /// <param name="orderDir">Order ascending or descending</param>
+        /// <param name="orderDir">Order by ascending or descending</param>
         /// <param name="searchKeyword">The keyword to search by</param>
         /// <param name="manufacturerIds">The ids of the manufacturers of the SKUs</param>
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>

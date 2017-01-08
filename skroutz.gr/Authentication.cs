@@ -23,7 +23,7 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// 
+        /// Initializes a new instance of the Authentication class
         /// </summary>
         /// <param name="credentials"></param>
         public Authentication(AppCredentials credentials)
@@ -41,7 +41,7 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// 
+        /// Initializes a new instance of the Authentication class
         /// </summary>
         /// <param name="credentials"></param>
         public Authentication(UserCredentials credentials)

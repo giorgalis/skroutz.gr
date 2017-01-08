@@ -13,12 +13,21 @@ namespace skroutz.gr
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
 
+        /// <summary>
+        /// Initializes a new instance of the Flag class
+        /// </summary>
+        /// <param name="accessToken"></param>
         public Flag(string accessToken)
         {
             _accessToken = accessToken;
             _builder = new StringBuilder();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the Flag class
+        /// </summary>
+        /// <param name="accessToken"></param>
+        /// <param name="stringBuilder"></param>
         public Flag(string accessToken, StringBuilder stringBuilder)
         {
             _accessToken = accessToken;
