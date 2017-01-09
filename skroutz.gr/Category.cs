@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Model.Categories;
-using skroutz.gr.Model.Manufacturers;
 using skroutz.gr.Model.User;
+using skroutz.gr.Models;
 using System;
 using System.Text;
 using System.Threading.Tasks;
 using static skroutz.gr.Constants;
+using static skroutz.gr.Models.Manufacturers;
 
 namespace skroutz.gr
 {
@@ -60,7 +61,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<CategoryRoot> RetrieveSingleCategory(int categoryId)
+        public Task<RootCategory> RetrieveSingleCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -69,7 +70,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<CategoryRoot>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<CategoryRoot> RetrieveTheParentOfCategory(int categoryId)
+        public Task<RootCategory> RetrieveTheParentOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -87,21 +88,21 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.CategoryRoot>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
 
         /// <summary>
         /// Retrieve the root category
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category"/>
-        public Task<CategoryRoot> RetrieveTheRootCategory()
+        public Task<RootCategory> RetrieveTheRootCategory()
         {
             _builder.Clear();
             _builder.Append("categories/root");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<CategoryRoot>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
 
         /// <summary>

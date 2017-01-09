@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Model.Categories;
-using skroutz.gr.Model.Manufacturers;
+using skroutz.gr.Models;
 using System;
 using System.Text;
 using System.Threading.Tasks;
 using static skroutz.gr.Constants;
+using static skroutz.gr.Models.Manufacturers;
 
 namespace skroutz.gr
 {
@@ -58,7 +58,7 @@ namespace skroutz.gr
         /// <param name="manufacturerId">Unique Identifier of the manufacturer</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-single-manufacturer"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Model.Manufacturers.Manufacturer> RetrieveSingleManufacturer(int manufacturerId)
+        public Task<RootManufacturer> RetrieveSingleManufacturer(int manufacturerId)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
@@ -67,7 +67,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Manufacturers.Manufacturer>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<RootManufacturer>(t.Result.ToString()));
         }
 
 
