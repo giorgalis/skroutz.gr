@@ -19,17 +19,11 @@ namespace ConsoleSkroutz.gr
                 Category cat = new Category(token, sb);
 
                 dynamic result = cat.ListAllCategories().Result;
-
                 result = cat.RetrieveSingleCategory(1442).Result;
-
                 result = cat.RetrieveTheParentOfCategory(1442).Result;
-
                 result = cat.RetrieveTheRootCategory().Result;
-
                 result = cat.ListChildrenCategoriesOfCategory(252).Result;
-
                 result = cat.ListCategorysSpecifications(40).Result;
-
                 result = cat.ListCategorysSpecificationsGroup(40).Result;
 
                 result = cat.ListCategorysManufactures(25).Result;
