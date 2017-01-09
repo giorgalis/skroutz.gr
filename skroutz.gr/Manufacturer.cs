@@ -79,14 +79,19 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
+        public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy? orderBy = OrderBy.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
             _builder.Clear();
-            _builder.Append($"manufacturers/{manufacturerId}/categories");
-            _builder.Append($"?order_by={orderBy}");
-            _builder.Append($"&order_dir={orderDir}");
+            _builder.Append($"manufacturers/{manufacturerId}/categories?");
+
+            if (orderBy.HasValue)
+                _builder.Append($"&order_by={orderBy}");
+
+            if (orderDir.HasValue)
+                _builder.Append($"&order_dir={orderDir}");
+
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -101,14 +106,19 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Model.SKUs.SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderBy orderBy = OrderBy.popularity, OrderDir orderDir = OrderDir.desc)
+        public Task<Model.SKUs.SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderBy? orderBy = OrderBy.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
             _builder.Clear();
-            _builder.Append($"manufacturers/{manufacturerId}/skus");
-            _builder.Append($"?order_by={orderBy}");
-            _builder.Append($"&order_dir={orderDir}");
+            _builder.Append($"manufacturers/{manufacturerId}/skus?");
+
+            if (orderBy.HasValue)
+                _builder.Append($"&order_by={orderBy}");
+
+            if (orderDir.HasValue)
+                _builder.Append($"&order_dir={orderDir}");
+
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>

@@ -5,6 +5,7 @@ using skroutz.gr.Model.User;
 using System;
 using System.Text;
 using System.Threading.Tasks;
+using static skroutz.gr.Constants;
 
 namespace skroutz.gr
 {
@@ -59,7 +60,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Model.Categories.Category> RetrieveSingleCategory(int categoryId)
+        public Task<CategoryRoot> RetrieveSingleCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -68,7 +69,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Category>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<CategoryRoot>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace skroutz.gr
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Model.Categories.Category> RetrieveTheParentOfCategory(int categoryId)
+        public Task<CategoryRoot> RetrieveTheParentOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
@@ -86,21 +87,21 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Category>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Model.Categories.CategoryRoot>(t.Result.ToString()));
         }
 
         /// <summary>
         /// Retrieve the root category
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category"/>
-        public Task<Model.Categories.Category> RetrieveTheRootCategory()
+        public Task<CategoryRoot> RetrieveTheRootCategory()
         {
             _builder.Clear();
             _builder.Append("categories/root");
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Categories.Category>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<CategoryRoot>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -162,15 +163,24 @@ namespace skroutz.gr
         /// List a category's manufacturers
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
+        /// <param name="orderBy">Order by name or popularity</param>
+        /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Manufacturers> ListCategorysManufactures(int categoryId)
+        public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderBy? orderBy = OrderBy.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/manufacturers");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}/manufacturers?");
+
+            if (orderBy.HasValue)
+                _builder.Append($"&order_by={orderBy}");
+
+            if (orderDir.HasValue)
+                _builder.Append($"&order_dir={orderDir}");
+
+            _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));

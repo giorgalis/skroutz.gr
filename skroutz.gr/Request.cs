@@ -8,7 +8,40 @@ namespace skroutz.gr
     {
         private static readonly string Domain = $"http://api.skroutz.gr/";
         private const string ApiVersion = "3.0";
-        
+
+        public async Task<string> GetWebResultAsync(string domain, string value)
+        {
+
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(domain, value));
+            req.Method = "POST";
+
+            string content = string.Empty;
+            HttpStatusCode code = HttpStatusCode.OK;
+
+            try
+            {
+                using (HttpWebResponse response = (HttpWebResponse)await req.GetResponseAsync())
+                {
+                    using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+                        content = await sr.ReadToEndAsync();
+
+                    code = response.StatusCode;
+                }
+            }
+            catch (WebException ex)
+            {
+                using (HttpWebResponse response = (HttpWebResponse)ex.Response)
+                {
+                    using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+                        content = sr.ReadToEnd();
+
+                    code = response.StatusCode;
+                    throw new SkroutzException(code, content);
+                }
+            }
+
+            return content;
+        }
         public async Task<string> GetWebResultAsync(string value)
         {
 

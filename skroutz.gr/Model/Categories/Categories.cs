@@ -12,11 +12,15 @@ namespace skroutz.gr.Model.Categories
         /// Category ID
         /// </summary>
         public int id { get; set; }
+
         /// <summary>
         /// Category Name
         /// </summary>
         public string name { get; set; }
+
         public int children_count { get; set; }
+
+
         public string image_url { get; set; }
         public int parent_id { get; set; }
         public bool fashion { get; set; }
@@ -28,10 +32,17 @@ namespace skroutz.gr.Model.Categories
         public string manufacturer_title { get; set; }
     }
 
+    public class CategoryRoot
+    {
+        public Category category { get; set; }
+    }
+
     public class Categories
     {
         public List<Category> categories { get; set; }
         public Meta meta { get; set; }
     }
+
+
 
 }
