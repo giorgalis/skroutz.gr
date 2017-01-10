@@ -2,6 +2,7 @@
 using skroutz.gr.Model.Categories;
 using skroutz.gr.Model.User;
 using skroutz.gr.Models;
+using skroutz.gr.Shared;
 using System;
 using System.Text;
 using System.Threading.Tasks;

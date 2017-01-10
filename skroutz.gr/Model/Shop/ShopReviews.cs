@@ -1,4 +1,4 @@
-﻿using skroutz.gr.Model.Shared;
+﻿using skroutz.gr.Shared;
 using System.Collections.Generic;
 
 namespace skroutz.gr.Model.Shop

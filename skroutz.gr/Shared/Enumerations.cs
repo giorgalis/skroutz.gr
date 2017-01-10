@@ -1,6 +1,5 @@
-﻿namespace skroutz.gr
+﻿namespace skroutz.gr.Shared
 {
-   
         /// <summary>
         /// Order by asceding or desceding
         /// </summary>
@@ -17,7 +16,7 @@
         }
 
         /// <summary>
-        /// Order by price, popularity or rating
+        /// Order by name or popularity
         /// </summary>
         public enum OrderByNamePop
         {
@@ -34,7 +33,7 @@
         public enum OrderByPrcPop
         {
             /// <summary>
-            /// Name
+            /// Price
             /// </summary>
             price,
             /// <summary>

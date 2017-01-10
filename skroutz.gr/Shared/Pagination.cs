@@ -1,4 +1,4 @@
-﻿namespace skroutz.gr.Model.Shared
+﻿namespace skroutz.gr.Shared
 {
     public class Pagination
     {

@@ -1,4 +1,5 @@
-﻿using skroutz.gr.Model.Shared;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Shared;
 using System.Collections.Generic;
 
 namespace skroutz.gr.Models
@@ -35,18 +36,43 @@ namespace Base
 {
     public class Product
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public int sku_id { get; set; }
-        public int shop_id { get; set; }
-        public int category_id { get; set; }
-        public string availability { get; set; }
-        public string click_url { get; set; }
-        public string shop_uid { get; set; }
-        public object expenses { get; set; }
-        public string web_uri { get; set; }
-        public List<object> sizes { get; set; }
-        public double price { get; set; }
-        public bool immediate_pickup { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("sku_id")]
+        public int SkuId { get; set; }
+
+        [JsonProperty("shop_id")]
+        public int ShopId { get; set; }
+
+        [JsonProperty("category_id")]
+        public int CategoryId { get; set; }
+
+        [JsonProperty("availability")]
+        public string Availability { get; set; }
+
+        [JsonProperty("click_url")]
+        public string ClickUrl { get; set; }
+
+        [JsonProperty("shop_uid")]
+        public string ShopUid { get; set; }
+
+        [JsonProperty("expenses")]
+        public object Expenses { get; set; }
+
+        [JsonProperty("web_uri")]
+        public string WebUri { get; set; }
+
+        [JsonProperty("sizes")]
+        public List<object> Sizes { get; set; }
+
+        [JsonProperty("price")]
+        public double Price { get; set; }
+
+        [JsonProperty("immediate_pickup")]
+        public bool ImmediatePickup { get; set; }
     }
 }

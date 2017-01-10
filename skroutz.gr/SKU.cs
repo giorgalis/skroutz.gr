@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Model.SKUs;
+using skroutz.gr.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;

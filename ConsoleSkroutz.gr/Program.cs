@@ -1,4 +1,5 @@
 ﻿using skroutz.gr;
+using skroutz.gr.Shared;
 using System;
 using System.Text;
 

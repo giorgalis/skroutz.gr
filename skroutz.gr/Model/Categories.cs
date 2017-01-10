@@ -1,4 +1,5 @@
-﻿using skroutz.gr.Model.Shared;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Shared;
 using System.Collections.Generic;
 
 namespace skroutz.gr.Models
@@ -22,12 +23,16 @@ namespace skroutz.gr.Models
         /// <summary>
         /// 
         /// </summary>
+
+        [JsonProperty("categories")]
         public List<Base.Category> categories { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Meta meta { get; set; }
+        /// 
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 }
 
@@ -40,61 +45,75 @@ namespace Base {
         /// <summary>
         /// Category ID
         /// </summary>
-        public int id { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         /// <summary>
         /// Category Name
         /// </summary>
-        public string name { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public int children_count { get; set; }
+        [JsonProperty("children_count")]
+        public int ChildrenCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string image_url { get; set; }
+        [JsonProperty("image_url")]
+        public string ImageUrl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public int parent_id { get; set; }
+        [JsonProperty("parent_id")]
+
+        public int ParentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public bool fashion { get; set; }
+        [JsonProperty("fashion")]
+        public bool Fashion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string layout_mode { get; set; }
+        [JsonProperty("layout_mode")]
+        public string LayoutMode { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string web_uri { get; set; }
+        [JsonProperty("web_uri")]
+        public string WebUri { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string code { get; set; }
+        [JsonProperty("code")]
+        public string Code { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string path { get; set; }
+        [JsonProperty("path")]
+        public string Path { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public bool show_specifications { get; set; }
+        [JsonProperty("show_specifications")]
+        public bool ShowSpecifications { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string manufacturer_title { get; set; }
+        [JsonProperty("manufacturer_title")]
+        public string ManufacturerTitle { get; set; }
     }
 }
