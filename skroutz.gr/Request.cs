@@ -6,49 +6,26 @@ namespace skroutz.gr
 {
     public class Request
     {
-        private static readonly string Domain = $"http://api.skroutz.gr/";
+        private const string Domain = "https://www.skroutz.gr/";
+        private const string ApiEndPoint = "http://api.skroutz.gr/";
         private const string ApiVersion = "3.0";
 
-        public async Task<string> GetWebResultAsync(string domain, string value)
+        internal async Task<string> PostWebResultAsync(string value)
         {
-
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(domain, value));
-            req.Method = "POST";
-
-            string content = string.Empty;
-            HttpStatusCode code = HttpStatusCode.OK;
-
-            try
-            {
-                using (HttpWebResponse response = (HttpWebResponse)await req.GetResponseAsync())
-                {
-                    using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-                        content = await sr.ReadToEndAsync();
-
-                    code = response.StatusCode;
-                }
-            }
-            catch (WebException ex)
-            {
-                using (HttpWebResponse response = (HttpWebResponse)ex.Response)
-                {
-                    using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-                        content = sr.ReadToEnd();
-
-                    code = response.StatusCode;
-                    throw new SkroutzException(code, content);
-                }
-            }
-
-            return content;
-        }
-        public async Task<string> GetWebResultAsync(string value)
-        {
-
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(Domain, value));
+            req.Method = "POST";
+            return await GetResponse(req);
+        }
+        internal async Task<string> GetWebResultAsync(string value)
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, value));
             req.Method = "GET";
             req.Accept = $"application/vnd.skroutz+json; version={ApiVersion}";
+            return await GetResponse(req);
+        }
 
+        internal async Task<string> GetResponse(HttpWebRequest req)
+        {
             string content = string.Empty;
             HttpStatusCode code = HttpStatusCode.OK;
 

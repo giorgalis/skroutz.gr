@@ -40,7 +40,7 @@ namespace skroutz.gr.Authorization
     /// </summary>
     public class Authorization : Request
     {
-        private static readonly string domain = "https://www.skroutz.gr/";
+       
 
         /// <summary>
         /// Application Token
@@ -63,7 +63,7 @@ namespace skroutz.gr.Authorization
 
             string request = $"oauth2/token?client_id={credentials.client_id}&client_secret={credentials.client_secret}&grant_type=client_credentials&scope=public";
 
-            AppResponse response = GetWebResultAsync(domain, request).ContinueWith((t) =>
+            AppResponse response = PostWebResultAsync(request).ContinueWith((t) =>
                 JsonConvert.DeserializeObject<AppResponse>(t.Result.ToString())).Result;
 
             this.ApplicationToken = response.access_token;
@@ -80,7 +80,7 @@ namespace skroutz.gr.Authorization
 
             string request = $"oauth2/authorizations/new?client_id={credentials.client_id}&redirect_uri={credentials.redirect_uri}&response_type=code&scope=public,favorites,notifications";
 
-            UserResponse response = GetWebResultAsync(domain, request).ContinueWith((t) =>
+            UserResponse response = PostWebResultAsync(request).ContinueWith((t) =>
                 JsonConvert.DeserializeObject<UserResponse>(t.Result.ToString())).Result;
 
             this.UserToken = response.access_token;
