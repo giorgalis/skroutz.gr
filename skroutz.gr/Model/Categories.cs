@@ -33,7 +33,8 @@ namespace skroutz.gr.Models
     }
 }
 
-namespace Base {
+namespace Base
+{
     /// <summary>
     /// 
     /// </summary>
