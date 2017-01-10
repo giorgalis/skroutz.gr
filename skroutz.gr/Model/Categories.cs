@@ -23,13 +23,12 @@ namespace skroutz.gr.Models
         /// <summary>
         /// Categories
         /// </summary>
-        [JsonProperty("categories")]
         public List<Base.Category> categories { get; set; }
 
         /// <summary>
         /// Meta
         /// </summary>
-        public Meta Meta { get; set; }
+        public Meta meta { get; set; }
     }
 }
 
