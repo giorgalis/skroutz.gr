@@ -1,8 +1,40 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace skroutz.gr
+namespace skroutz.gr.Authorization
 {
+    /// <summary>
+    /// Application Credentials
+    /// </summary>
+    public struct AppCredentials
+    {
+        /// <summary>
+        /// The client Id you received from skroutz api team
+        /// </summary>
+        public string client_id;
+
+        /// <summary>
+        /// The client secret you received from skroutz api team
+        /// </summary>
+        public string client_secret;
+    }
+
+    /// <summary>
+    /// User Credentials
+    /// </summary>
+    public struct UserCredentials
+    {
+        /// <summary>
+        /// The client Id you received from skroutz api team
+        /// </summary>
+        public string client_id;
+
+        /// <summary>
+        /// The URL in your application where users will be sent after authorization.
+        /// </summary>
+        public string redirect_uri;
+    }
+
     /// <summary>
     /// Authentication
     /// </summary>
@@ -19,38 +51,6 @@ namespace skroutz.gr
         /// User Token
         /// </summary>
         public string UserToken { get; private set; }
-
-        /// <summary>
-        /// Application Credentials
-        /// </summary>
-        public struct AppCredentials
-        {
-            /// <summary>
-            /// The client Id you received from skroutz api team
-            /// </summary>
-            public string client_id;
-
-            /// <summary>
-            /// The client secret you received from skroutz api team
-            /// </summary>
-            public string client_secret;
-        }
-
-        /// <summary>
-        /// User Credentials
-        /// </summary>
-        public struct UserCredentials
-        {
-            /// <summary>
-            /// The client Id you received from skroutz api team
-            /// </summary>
-            public string client_id;
-
-            /// <summary>
-            /// The URL in your application where users will be sent after authorization.
-            /// </summary>
-            public string redirect_uri;
-        }
 
         /// <summary>
         /// Initializes a new instance of the Authorization class

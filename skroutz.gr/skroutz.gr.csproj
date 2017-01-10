@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Authorization.cs" />
+    <Compile Include="Authorization\Authorization.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />

@@ -1,4 +1,5 @@
 ﻿using skroutz.gr;
+using skroutz.gr.Authorization;
 using skroutz.gr.Shared;
 using System;
 using System.Text;
@@ -9,7 +10,7 @@ namespace ConsoleSkroutz.gr
     {
         static void Main(string[] args)
         {
-            Authorization auth = new Authorization(new Authorization.AppCredentials { client_id = "", client_secret = "" });
+            Authorization auth = new Authorization(new AppCredentials { client_id = "", client_secret = "" });
             StringBuilder sb = new StringBuilder();
            
             try

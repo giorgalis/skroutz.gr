@@ -1,4 +1,5 @@
-﻿using skroutz.gr.Shared;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Shared;
 using System.Collections.Generic;
 
 namespace skroutz.gr.Entities
@@ -15,29 +16,46 @@ namespace skroutz.gr.Entities
 
 namespace skroutz.gr.Entities.Base
 {
-    public enum FilterTypes
-    {
-        Price = 0,
-        Keyword,
-        Spec,
-        SyncedSpec,
-        CustomRange,
-        Sizes
-    }
-
     /// <summary>
     /// Filter Group
     /// </summary>
     public class FilterGroup
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public bool active { get; set; }
-        public int category_id { get; set; }
-        public string created_at { get; set; }
-        public string updated_at { get; set; }
-        public string hint { get; set; }
-        public bool combined { get; set; }
-        public FilterTypes filter_type { get; set; }
+        public enum FilterTypes
+        {
+            Price = 0,
+            Keyword,
+            Spec,
+            SyncedSpec,
+            CustomRange,
+            Sizes
+        }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("active")]
+        public bool Active { get; set; }
+
+        [JsonProperty("category_id")]
+        public int CategoryId { get; set; }
+
+        [JsonProperty("created_at")]
+        public string CreatedAt { get; set; }
+
+        [JsonProperty("updated_at")]
+        public string UpdatedAt { get; set; }
+
+        [JsonProperty("hint")]
+        public string Hint { get; set; }
+
+        [JsonProperty("combined")]
+        public bool Combined { get; set; }
+
+        [JsonProperty("filter_type")]
+        public FilterTypes FilterType { get; set; }
     }
 }
