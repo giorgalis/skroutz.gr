@@ -2,14 +2,23 @@
 
 namespace skroutz.gr.Models
 {
+    /// <summary>
+    /// Flags
+    /// </summary>
     public class Flags
     {
+        /// <summary>
+        /// Flags
+        /// </summary>
         public List<Base.Flag> flags { get; set; }
     }
 }
 
 namespace Base
 {
+    /// <summary>
+    /// Flag
+    /// </summary>
     public class Flag
     {
         /// <summary>
