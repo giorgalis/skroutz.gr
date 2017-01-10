@@ -2,7 +2,7 @@
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Models
+namespace skroutz.gr.Entities
 {
     /// <summary>
     /// Root Category
@@ -32,10 +32,10 @@ namespace skroutz.gr.Models
     }
 }
 
-namespace Base
+namespace skroutz.gr.Base
 {
     /// <summary>
-    /// 
+    /// Category
     /// </summary>
     public class Category
     {

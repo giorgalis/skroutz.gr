@@ -11,8 +11,17 @@
 
     public enum sex
     {
+        /// <summary>
+        /// Male
+        /// </summary>
         male,
+        /// <summary>
+        /// Female
+        /// </summary>
         female,
+        /// <summary>
+        /// Not set
+        /// </summary>
         @null
     }
 

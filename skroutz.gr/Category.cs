@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Model.Categories;
 using skroutz.gr.Model.User;
-using skroutz.gr.Models;
+using skroutz.gr.Entities;
 using skroutz.gr.Shared;
 using System;
 using System.Text;
@@ -11,8 +11,8 @@ namespace skroutz.gr
 {
     /// <summary>
     /// Categories are organized in a tree-like structure.
-    /// An SKU always belongs to a leaf(ending) category.
-    ///Leaf categories have children_count equal to 0.
+    /// An SKU always belongs to a leaf (ending) category.
+    /// Leaf categories have <see cref="Base.Category.ChildrenCount"/> equal to 0.
     /// </summary>
     public class Category : Request
     {

@@ -3,11 +3,6 @@ using System.Collections.Generic;
 
 namespace skroutz.gr.Model.SKUs
 {
-    /// <summary>
-    /// Order by price, popularity or rating
-    /// </summary>
-
-
     public class Sku
     {
         public int id { get; set; }

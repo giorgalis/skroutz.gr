@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace skroutz.gr.Models
+namespace skroutz.gr.Entities
 {
     /// <summary>
     /// Flags
@@ -14,7 +14,7 @@ namespace skroutz.gr.Models
     }
 }
 
-namespace Base
+namespace skroutz.gr.Base
 {
     /// <summary>
     /// Flag

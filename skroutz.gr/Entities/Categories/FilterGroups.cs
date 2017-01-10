@@ -1,8 +1,11 @@
 ﻿using skroutz.gr.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Models
+namespace skroutz.gr.Entities
 {
+    /// <summary>
+    /// Filter Groups
+    /// </summary>
     public class FilterGroups
     {
         public List<Base.FilterGroup> filter_groups { get; set; }
@@ -10,7 +13,7 @@ namespace skroutz.gr.Models
     }
 }
 
-namespace Base
+namespace skroutz.gr.Base
 {
     public enum FilterTypes
     {
@@ -21,6 +24,10 @@ namespace Base
         CustomRange,
         Sizes
     }
+
+    /// <summary>
+    /// Filter Group
+    /// </summary>
     public class FilterGroup
     {
         public int id { get; set; }

@@ -3,30 +3,60 @@ using System;
 
 namespace skroutz.gr
 {
-    public class Authentication : Request
+    /// <summary>
+    /// Authentication
+    /// </summary>
+    public class Authorization : Request
     {
         private static readonly string domain = "https://www.skroutz.gr/";
+
+        /// <summary>
+        /// Application Token
+        /// </summary>
         public string ApplicationToken { get; private set; }
+
+        /// <summary>
+        /// User Token
+        /// </summary>
         public string UserToken { get; private set; }
 
-
+        /// <summary>
+        /// Application Credentials
+        /// </summary>
         public struct AppCredentials
         {
+            /// <summary>
+            /// The client Id you received from skroutz api team
+            /// </summary>
             public string client_id;
+
+            /// <summary>
+            /// The client secret you received from skroutz api team
+            /// </summary>
             public string client_secret;
         }
 
+        /// <summary>
+        /// User Credentials
+        /// </summary>
         public struct UserCredentials
         {
+            /// <summary>
+            /// The client Id you received from skroutz api team
+            /// </summary>
             public string client_id;
+
+            /// <summary>
+            /// The URL in your application where users will be sent after authorization.
+            /// </summary>
             public string redirect_uri;
         }
 
         /// <summary>
-        /// Initializes a new instance of the Authentication class
+        /// Initializes a new instance of the Authorization class
         /// </summary>
         /// <param name="credentials"></param>
-        public Authentication(AppCredentials credentials)
+        public Authorization(AppCredentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.client_id)) throw new ArgumentNullException(nameof(credentials.client_id));
             if (string.IsNullOrEmpty(credentials.client_secret)) throw new ArgumentNullException(nameof(credentials.client_secret));
@@ -40,21 +70,20 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Initializes a new instance of the Authentication class
+        /// Initializes a new instance of the Authorization class
         /// </summary>
         /// <param name="credentials"></param>
-        public Authentication(UserCredentials credentials)
+        public Authorization(UserCredentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.client_id)) throw new ArgumentNullException(nameof(credentials.client_id));
             if (string.IsNullOrEmpty(credentials.redirect_uri)) throw new ArgumentNullException(nameof(credentials.redirect_uri));
 
             string request = $"oauth2/authorizations/new?client_id={credentials.client_id}&redirect_uri={credentials.redirect_uri}&response_type=code&scope=public,favorites,notifications";
 
-            //Response response = GetTokenResponse(domain, request).ContinueWith((t) =>
-            //    JsonConvert.DeserializeObject<Response>(t.Result.ToString())).Result;
+            UserResponse response = GetWebResultAsync(domain, request).ContinueWith((t) =>
+                JsonConvert.DeserializeObject<UserResponse>(t.Result.ToString())).Result;
 
-            //AccessToken = response.access_token;
-            this.UserToken = "usertoken";
+            this.UserToken = response.access_token;
         }
 
         private class AppResponse

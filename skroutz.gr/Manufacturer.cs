@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Models;
+using skroutz.gr.Entities;
 using skroutz.gr.Shared;
 using System;
 using System.Text;

@@ -1,7 +1,7 @@
 ﻿namespace skroutz.gr.Shared
 {
         /// <summary>
-        /// Order by asceding or desceding
+        /// Order by Asceding or Desceding
         /// </summary>
         public enum OrderDir
         {
@@ -16,7 +16,7 @@
         }
 
         /// <summary>
-        /// Order by name or popularity
+        /// Order by Name or Popularity
         /// </summary>
         public enum OrderByNamePop
         {
@@ -30,6 +30,9 @@
             popularity,
         }
 
+    /// <summary>
+    /// Order by Price or Popularity
+    /// </summary>
         public enum OrderByPrcPop
         {
             /// <summary>
@@ -42,6 +45,9 @@
             popularity,
         }
 
+    /// <summary>
+    /// Order by Price or Popularity or Rating
+    /// </summary>
         public enum OrderByPrcPopRating
         {
             /// <summary>

@@ -2,7 +2,7 @@
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Models
+namespace skroutz.gr.Entities
 {
     /// <summary>
     /// Root Manufacturer
@@ -32,7 +32,7 @@ namespace skroutz.gr.Models
     }
 }
 
-namespace Base
+namespace skroutz.gr.Base
 {
     /// <summary>
     /// Manufacturer
