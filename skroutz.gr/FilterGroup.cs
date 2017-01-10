@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Model.Categories;
+using skroutz.gr.Models;
 using System;
 using System.Text;
 using System.Threading.Tasks;

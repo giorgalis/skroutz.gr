@@ -1,7 +1,16 @@
 ﻿using skroutz.gr.Model.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Model.Categories
+namespace skroutz.gr.Models
+{
+    public class FilterGroups
+    {
+        public List<Base.FilterGroup> filter_groups { get; set; }
+        public Meta meta { get; set; }
+    }
+}
+
+namespace Base
 {
     public enum FilterTypes
     {
@@ -24,11 +33,4 @@ namespace skroutz.gr.Model.Categories
         public bool combined { get; set; }
         public FilterTypes filter_type { get; set; }
     }
-
-    public class FilterGroups
-    {
-        public List<FilterGroup> filter_groups { get; set; }
-        public Meta meta { get; set; }
-    }
-
 }

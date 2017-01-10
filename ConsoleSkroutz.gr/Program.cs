@@ -29,7 +29,7 @@ namespace ConsoleSkroutz.gr
                 result = cat.ListCategorysManufactures(25, OrderByNamePop.name).Result;
                 result = cat.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result;
 
-                //User token is required
+                //User token is required or else exception is thrown
                 result = cat.ListCategorysFavorites(40).Result;
 
                 //PRODUCTS ################################################################################
@@ -53,6 +53,11 @@ namespace ConsoleSkroutz.gr
                 //FLAGS ###################################################################################
                 Flag fl = new Flag(token, sb);
                 result = fl.RetrieveAllFlags().Result;
+
+                //FILTER GROUPS ###########################################################################
+                FilterGroup filGroup = new FilterGroup(token, sb);
+                result = filGroup.ListFilterGroups(40).Result;
+
             }
             catch (Exception se)
             {
