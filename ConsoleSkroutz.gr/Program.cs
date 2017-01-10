@@ -1,8 +1,6 @@
 ﻿using skroutz.gr;
 using System;
 using System.Text;
-using static skroutz.gr.Constants;
-using skroutz.gr.Models;
 
 namespace ConsoleSkroutz.gr
 {
@@ -16,6 +14,7 @@ namespace ConsoleSkroutz.gr
 
             try
             {
+                //CATEGORIES ##############################################################################
                 Category cat = new Category(token, sb);
 
                 dynamic result = cat.ListAllCategories().Result;
@@ -27,11 +26,33 @@ namespace ConsoleSkroutz.gr
                 result = cat.ListCategorysSpecificationsGroup(40).Result;
 
                 result = cat.ListCategorysManufactures(25).Result;
-                result = cat.ListCategorysManufactures(25, Manufacturers.OrderBy.name).Result;
-                result = cat.ListCategorysManufactures(25, Manufacturers.OrderBy.popularity, OrderDir.asc).Result;
-                
+                result = cat.ListCategorysManufactures(25, OrderByNamePop.name).Result;
+                result = cat.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result;
+
                 //User token is required
                 result = cat.ListCategorysFavorites(40).Result;
+
+                //PRODUCTS ################################################################################
+                Product pro = new Product(token, sb);
+                result = pro.RetrieveSingleProduct(12176638).Result;
+                result = pro.SearchForProducts(670, "220004386").Result;
+
+                //MANUFACTURERS ###########################################################################
+                Manufacturer man = new Manufacturer(token, sb);
+                result = man.ListManufacturers().Result;
+                result = man.RetrieveSingleManufacturer(12907).Result;
+
+                result = man.RetrieveManufacturerCategories(356).Result;
+                result = man.RetrieveManufacturerCategories(356, OrderByNamePop.name).Result;
+                result = man.RetrieveManufacturerCategories(356, OrderByNamePop.popularity, OrderDir.asc).Result;
+
+                result = man.RetrieveManufacturerSKUs(356).Result;
+                result = man.RetrieveManufacturerSKUs(356, OrderByPrcPop.price).Result;
+                result = man.RetrieveManufacturerSKUs(356, OrderByPrcPop.popularity, OrderDir.asc).Result;
+
+                //FLAGS ###################################################################################
+                Flag fl = new Flag(token, sb);
+                result = fl.RetrieveAllFlags().Result;
             }
             catch (Exception se)
             {

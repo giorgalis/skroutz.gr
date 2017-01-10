@@ -1,6 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using skroutz.gr.Model.Shared;
+using System.Collections.Generic;
 
-namespace skroutz.gr.Model.Product
+namespace skroutz.gr.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class RootProduct
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public Base.Product product { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Products
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<Base.Product> products { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Meta meta { get; set; }
+    }
+}
+
+namespace Base
 {
     public class Product
     {

@@ -5,8 +5,6 @@ using skroutz.gr.Models;
 using System;
 using System.Text;
 using System.Threading.Tasks;
-using static skroutz.gr.Constants;
-using static skroutz.gr.Models.Manufacturers;
 
 namespace skroutz.gr
 {
@@ -168,7 +166,7 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
-        public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderBy? orderBy = OrderBy.popularity, OrderDir? orderDir = OrderDir.desc)
+        public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static skroutz.gr.Constants;
 
 namespace skroutz.gr
 {
@@ -50,7 +49,7 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
         /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
-        public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderBy orderBy = OrderBy.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
+        public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 

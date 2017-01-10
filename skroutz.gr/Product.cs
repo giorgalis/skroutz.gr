@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Models;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,7 @@ namespace skroutz.gr
         /// <param name="productId">Unique Identifier of the product</param>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when productId is less than or equal to 0</exception>
-        public Task<Model.Product.Product> RetrieveSingleProduct(int productId)
+        public Task<RootProduct> RetrieveSingleProduct(int productId)
         {
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
 
@@ -49,7 +50,7 @@ namespace skroutz.gr
             _builder.Append($"?oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Product.Product>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<RootProduct>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -60,17 +61,17 @@ namespace skroutz.gr
         /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopId is less than or equal to 0</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopUid is less than or equal to 0</exception>
-        public Task<Model.Product.Product> SearchForProducts(int shopId, int shopUid)
+        public Task<Products> SearchForProducts(int shopId, string shopUid)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
-            if (shopUid <= 0) throw new ArgumentOutOfRangeException(nameof(shopUid));
+            if (string.IsNullOrEmpty(shopUid)) throw new ArgumentNullException(nameof(shopUid));
 
             _builder.Clear();
             _builder.Append($"shops/{shopId}/products/search?shop_uid={shopUid}");
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.Product.Product>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Products>(t.Result.ToString()));
         }
     }
 }

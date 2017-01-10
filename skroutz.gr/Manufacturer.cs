@@ -3,8 +3,6 @@ using skroutz.gr.Models;
 using System;
 using System.Text;
 using System.Threading.Tasks;
-using static skroutz.gr.Constants;
-using static skroutz.gr.Models.Manufacturers;
 
 namespace skroutz.gr
 {
@@ -79,7 +77,7 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderBy? orderBy = OrderBy.popularity, OrderDir? orderDir = OrderDir.desc)
+        public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
@@ -106,7 +104,7 @@ namespace skroutz.gr
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
-        public Task<Model.SKUs.SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderBy? orderBy = OrderBy.popularity, OrderDir? orderDir = OrderDir.desc)
+        public Task<Model.SKUs.SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderByPrcPop? orderBy = OrderByPrcPop.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 

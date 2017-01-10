@@ -6,21 +6,7 @@ namespace skroutz.gr.Model.SKUs
     /// <summary>
     /// Order by price, popularity or rating
     /// </summary>
-    public enum OrderBy
-    {
-        /// <summary>
-        /// Price including VAT
-        /// </summary>
-        pricevat,
-        /// <summary>
-        /// Popularity
-        /// </summary>
-        popularity,
-        /// <summary>
-        /// Rating
-        /// </summary>
-        rating
-    }
+
 
     public class Sku
     {

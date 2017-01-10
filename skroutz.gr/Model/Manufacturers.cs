@@ -10,21 +10,6 @@ namespace skroutz.gr.Models
 
     public class Manufacturers
     {
-        /// <summary>
-        /// Order by price, popularity or rating
-        /// </summary>
-        public enum OrderBy
-        {
-            /// <summary>
-            /// Name
-            /// </summary>
-            name,
-            /// <summary>
-            /// Popularity
-            /// </summary>
-            popularity,
-        }
-
         public List<Base.Manufacturer> manufacturers { get; set; }
         public Meta meta { get; set; }
     }
