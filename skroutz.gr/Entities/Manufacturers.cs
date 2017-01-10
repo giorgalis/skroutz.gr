@@ -32,7 +32,7 @@ namespace skroutz.gr.Entities
     }
 }
 
-namespace skroutz.gr.Base
+namespace skroutz.gr.Entities.Base
 {
     /// <summary>
     /// Manufacturer
