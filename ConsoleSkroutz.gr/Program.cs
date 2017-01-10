@@ -9,14 +9,13 @@ namespace ConsoleSkroutz.gr
     {
         static void Main(string[] args)
         {
+            Authorization auth = new Authorization(new Authorization.AppCredentials { client_id = "", client_secret = "" });
             StringBuilder sb = new StringBuilder();
-            
-            string token = "";
-
+           
             try
             {
                 //CATEGORIES ##############################################################################
-                Category cat = new Category(token, sb);
+                Category cat = new Category(auth.ApplicationToken, sb);
 
                 dynamic result = cat.ListAllCategories().Result;
                 result = cat.RetrieveSingleCategory(1442).Result;
@@ -34,12 +33,12 @@ namespace ConsoleSkroutz.gr
                 result = cat.ListCategorysFavorites(40).Result;
 
                 //PRODUCTS ################################################################################
-                Product pro = new Product(token, sb);
+                Product pro = new Product(auth.ApplicationToken, sb);
                 result = pro.RetrieveSingleProduct(12176638).Result;
                 result = pro.SearchForProducts(670, "220004386").Result;
 
                 //MANUFACTURERS ###########################################################################
-                Manufacturer man = new Manufacturer(token, sb);
+                Manufacturer man = new Manufacturer(auth.ApplicationToken, sb);
                 result = man.ListManufacturers().Result;
                 result = man.RetrieveSingleManufacturer(12907).Result;
 
@@ -52,12 +51,14 @@ namespace ConsoleSkroutz.gr
                 result = man.RetrieveManufacturerSKUs(356, OrderByPrcPop.popularity, OrderDir.asc).Result;
 
                 //FLAGS ###################################################################################
-                Flag fl = new Flag(token, sb);
+                Flag fl = new Flag(auth.ApplicationToken, sb);
                 result = fl.RetrieveAllFlags().Result;
 
                 //FILTER GROUPS ###########################################################################
-                FilterGroup filGroup = new FilterGroup(token, sb);
+                FilterGroup filGroup = new FilterGroup(auth.ApplicationToken, sb);
                 result = filGroup.ListFilterGroups(40).Result;
+
+                Console.ReadLine();
 
             }
             catch (Exception se)
