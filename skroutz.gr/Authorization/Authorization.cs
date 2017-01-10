@@ -40,8 +40,6 @@ namespace skroutz.gr.Authorization
     /// </summary>
     public class Authorization : Request
     {
-       
-
         /// <summary>
         /// Application Token
         /// </summary>
