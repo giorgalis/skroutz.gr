@@ -39,10 +39,10 @@
     <Compile Include="Category.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />
-    <Compile Include="Entities\Categories\Groups.cs" />
+    <Compile Include="Entities\Groups.cs" />
     <Compile Include="Entities\User\UserFavorites.cs" />
     <Compile Include="Entities\User\Favorites.cs" />
-    <Compile Include="Entities\Categories\FilterGroups.cs" />
+    <Compile Include="Entities\FilterGroups.cs" />
     <Compile Include="Entities\Flags.cs" />
     <Compile Include="Entities\Shop\ShopLocations.cs" />
     <Compile Include="Entities\Shop\ShopReviews.cs" />
@@ -51,7 +51,7 @@
     <Compile Include="Entities\User\UserNotifications.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Shop\Shops.cs" />
-    <Compile Include="Entities\SKUs\SKUs.cs" />
+    <Compile Include="Entities\SKUs.cs" />
     <Compile Include="Entities\Specifications.cs" />
     <Compile Include="Entities\User\UserProfile.cs" />
     <Compile Include="Shared\Meta.cs" />

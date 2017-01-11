@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
+    /// <summary>
+    /// Request
+    /// </summary>
     public class Request
     {
         private const string Domain = "https://www.skroutz.gr/";
