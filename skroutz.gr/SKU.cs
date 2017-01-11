@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Model.SKUs;
+using skroutz.gr.Entities;
 using skroutz.gr.Shared;
 using System;
 using System.Collections.Generic;
@@ -71,7 +71,7 @@ namespace skroutz.gr
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.SKUs.SKUs>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
         }
     }
 }
