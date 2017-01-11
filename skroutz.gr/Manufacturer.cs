@@ -44,8 +44,8 @@ namespace skroutz.gr
         public Task<Manufacturers> ListManufacturers()
         {
             _builder.Clear();
-            _builder.Append("manufacturers");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("manufacturers?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
@@ -62,8 +62,8 @@ namespace skroutz.gr
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
             _builder.Clear();
-            _builder.Append($"manufacturers/{manufacturerId}");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"manufacturers/{manufacturerId}?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootManufacturer>(t.Result.ToString()));

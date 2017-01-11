@@ -55,8 +55,8 @@ namespace skroutz.gr
         public Task<Model.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
-            _builder.Append("user");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("user?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Model.User.User>(t.Result.ToString()));
@@ -73,8 +73,8 @@ namespace skroutz.gr
         public Task<UserFavorites> ListFavoriteLists()
         {
             _builder.Clear();
-            _builder.Append("favorite_lists");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("favorite_lists?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserFavorites>(t.Result.ToString()));
@@ -105,8 +105,8 @@ namespace skroutz.gr
         public Task<Favorites> ListFavorites()
         {
             _builder.Clear();
-            _builder.Append("favorites");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("favorites?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
@@ -123,8 +123,8 @@ namespace skroutz.gr
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
 
             _builder.Clear();
-            _builder.Append($"favorite_lists/{listId}/favorites");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"favorite_lists/{listId}/favorites?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Model.User.Favorites>(t.Result.ToString()));
@@ -141,8 +141,8 @@ namespace skroutz.gr
             if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
 
             _builder.Clear();
-            _builder.Append($"favorites/{favoriteId}");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"favorites/{favoriteId}?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorite>(t.Result.ToString()));
@@ -186,8 +186,8 @@ namespace skroutz.gr
         public Task<UserNotifications> ListNotifications()
         {
             _builder.Clear();
-            _builder.Append("notifications");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("notifications?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserNotifications>(t.Result.ToString()));
@@ -204,8 +204,8 @@ namespace skroutz.gr
             if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));
 
             _builder.Clear();
-            _builder.Append($"notifications/{notificationId}");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"notifications/{notificationId}?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Notification>(t.Result.ToString()));

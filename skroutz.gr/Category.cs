@@ -47,8 +47,8 @@ namespace skroutz.gr
         public Task<Categories> ListAllCategories()
         {
             _builder.Clear();
-            _builder.Append("categories");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("categories?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
@@ -65,8 +65,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
@@ -83,8 +83,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/parent");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}/parent?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
@@ -97,8 +97,8 @@ namespace skroutz.gr
         public Task<RootCategory> RetrieveTheRootCategory()
         {
             _builder.Clear();
-            _builder.Append("categories/root");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append("categories/root?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
@@ -115,8 +115,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/children");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}/children?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
@@ -133,8 +133,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/specifications");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}/specifications?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Specifications>(t.Result.ToString()));
@@ -151,8 +151,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/specifications");
-            _builder.Append("?include=group");
+            _builder.Append($"categories/{categoryId}/specifications?");
+            _builder.Append("include=group");
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -198,8 +198,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/favorites");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}/favorites?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));

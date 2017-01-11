@@ -41,8 +41,8 @@ namespace skroutz.gr
         public Task<Flags> RetrieveAllFlags()
         {
             _builder.Clear();
-            _builder.Append($"flags");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"flags?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Flags>(t.Result.ToString()));

@@ -46,8 +46,8 @@ namespace skroutz.gr
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
 
             _builder.Clear();
-            _builder.Append($"products/{productId}");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"products/{productId}?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootProduct>(t.Result.ToString()));
@@ -67,7 +67,8 @@ namespace skroutz.gr
             if (string.IsNullOrEmpty(shopUid)) throw new ArgumentNullException(nameof(shopUid));
 
             _builder.Clear();
-            _builder.Append($"shops/{shopId}/products/search?shop_uid={shopUid}");
+            _builder.Append($"shops/{shopId}/products/search?");
+            _builder.Append($"shop_uid={shopUid}");
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>

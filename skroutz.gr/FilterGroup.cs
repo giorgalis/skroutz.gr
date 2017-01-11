@@ -46,8 +46,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/filter_groups");
-            _builder.Append($"?oauth_token={_accessToken}");
+            _builder.Append($"categories/{categoryId}/filter_groups?");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<FilterGroups>(t.Result.ToString()));

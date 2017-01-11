@@ -138,7 +138,7 @@ namespace skroutz.gr.Entities.Base
         /// <summary>
         /// Virtual
         /// </summary>
-        [JsonProperty("virtual")]
+        [JsonProperty("@virtual")]
         public bool Virtual { get; set; }
 
         /// <summary>
@@ -153,10 +153,10 @@ namespace skroutz.gr.Entities.Base
         [JsonProperty("web_uri")]
         public string WebUri { get; set; }
 
-        /// <summary>
-        /// Favorited
-        /// </summary>
-        [JsonProperty("favorited")]
-        public bool Favorited { get; set; }
+        ///// <summary>
+        ///// Favorited
+        ///// </summary>
+        //[JsonProperty("favorited")]
+        //public bool Favorited { get; set; }
     }
 }

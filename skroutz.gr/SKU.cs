@@ -55,8 +55,8 @@ namespace skroutz.gr
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _builder.Clear();
-            _builder.Append($"categories/{categoryId}/skus");
-            _builder.Append($"?order_by={orderBy}");
+            _builder.Append($"categories/{categoryId}/skus?");
+            _builder.Append($"order_by={orderBy}");
             _builder.Append($"&order_dir={orderDir}");
 
             if (!string.IsNullOrEmpty(searchKeyword))
@@ -86,9 +86,9 @@ namespace skroutz.gr
             if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}");
+            _builder.Append($"skus/{SKUId}?");
 
-            _builder.Append($"&oauth_token={_accessToken}");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootSKU>(t.Result.ToString()));
@@ -106,9 +106,9 @@ namespace skroutz.gr
             if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}/similar");
+            _builder.Append($"skus/{SKUId}/similar?");
 
-            _builder.Append($"&oauth_token={_accessToken}");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
@@ -126,9 +126,9 @@ namespace skroutz.gr
             if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}/products");
+            _builder.Append($"skus/{SKUId}/products?");
 
-            _builder.Append($"&oauth_token={_accessToken}");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Products>(t.Result.ToString()));
@@ -146,9 +146,9 @@ namespace skroutz.gr
             if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}/reviews");
+            _builder.Append($"skus/{SKUId}/reviews?");
 
-            _builder.Append($"&oauth_token={_accessToken}");
+            _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Reviews>(t.Result.ToString()));
