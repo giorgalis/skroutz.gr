@@ -59,6 +59,11 @@ namespace ConsoleSkroutz.gr
                 FilterGroup filGroup = new FilterGroup(auth.ApplicationToken, sb);
                 result = filGroup.ListFilterGroups(40).Result;
 
+                //SKUs ####################################################################################
+                SKU sku = new SKU(auth.ApplicationToken, sb);
+                result = sku.ListSKUsOfSpecificCategory(40).Result;
+
+
                 Console.ReadLine();
 
             }

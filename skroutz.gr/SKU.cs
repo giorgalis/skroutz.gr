@@ -58,8 +58,8 @@ namespace skroutz.gr
             _builder.Append($"categories/{categoryId}/skus");
             _builder.Append($"?order_by={orderBy}");
             _builder.Append($"&order_dir={orderDir}");
-       
-            if(!string.IsNullOrEmpty(searchKeyword))
+
+            if (!string.IsNullOrEmpty(searchKeyword))
                 _builder.Append($"&q={searchKeyword}");
 
             if (manufacturerIds != null)
@@ -72,6 +72,86 @@ namespace skroutz.gr
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
+        }
+
+        /// <summary>
+        /// Retrieve a single SKU
+        /// </summary>
+        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-single-sku"/>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when SKUId is less than or equal to 0</exception>
+        /// <returns></returns>
+        public Task<RootSKU> RetrieveSingleSKU(int SKUId)
+        {
+            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+
+            _builder.Clear();
+            _builder.Append($"skus/{SKUId}");
+
+            _builder.Append($"&oauth_token={_accessToken}");
+
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<RootSKU>(t.Result.ToString()));
+        }
+
+        /// <summary>
+        /// Retrieve similar SKUs
+        /// </summary>
+        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-similar-skus"/>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when SKUId is less than or equal to 0</exception>
+        /// <returns></returns>
+        public Task<SKUs> RetrieveSimilarSKUs(int SKUId)
+        {
+            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+
+            _builder.Clear();
+            _builder.Append($"skus/{SKUId}/similar");
+
+            _builder.Append($"&oauth_token={_accessToken}");
+
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
+        }
+
+        /// <summary>
+        /// Retrieve an SKU's products
+        /// </summary>
+        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-products"/>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when SKUId is less than or equal to 0</exception>
+        /// <returns></returns>
+        public Task<Products> RetrieveSKUsProducts(int SKUId)
+        {
+            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+
+            _builder.Clear();
+            _builder.Append($"skus/{SKUId}/products");
+
+            _builder.Append($"&oauth_token={_accessToken}");
+
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<Products>(t.Result.ToString()));
+        }
+
+        /// <summary>
+        /// Retrieve an SKU's reviews
+        /// </summary>
+        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-reviews"/>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when SKUId is less than or equal to 0</exception>
+        /// <returns></returns>
+        public Task<Reviews> RetrieveSKUsReviews(int SKUId)
+        {
+            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+
+            _builder.Clear();
+            _builder.Append($"skus/{SKUId}/reviews");
+
+            _builder.Append($"&oauth_token={_accessToken}");
+
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<Reviews>(t.Result.ToString()));
         }
     }
 }

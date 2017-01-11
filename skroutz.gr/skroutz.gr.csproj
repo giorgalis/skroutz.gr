@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Authorization\Authorization.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Entities\Reviews.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Groups.cs" />

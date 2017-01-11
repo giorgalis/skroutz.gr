@@ -5,6 +5,17 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
+    /// RootSKU
+    /// </summary>
+    public class RootSKU
+    {
+        /// <summary>
+        /// Sku
+        /// </summary>
+        public Base.Sku sku { get; set; }
+    }
+
+    /// <summary>
     /// SKUs
     /// </summary>
     public class SKUs
