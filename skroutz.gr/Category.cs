@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Model.Categories;
 using skroutz.gr.Model.User;
 using skroutz.gr.Entities;
 using skroutz.gr.Shared;

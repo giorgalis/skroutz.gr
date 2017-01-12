@@ -63,4 +63,25 @@
             /// </summary>
             rating
         }
+
+    /// <summary>
+    /// You may choose to include extra meta information using the following parameters
+    /// </summary>
+    public enum MetaFilters
+    {
+        /// <summary>
+        /// Filters that can be applied
+        /// </summary>
+        AvailableFilters,
+
+        /// <summary>
+        /// Filters currently applied
+        /// </summary>
+        AppliedFilters,
+
+        /// <summary>
+        /// Whether the skus should be rendered in a tile view
+        /// </summary>
+        ShowInTiles
+    }
 }

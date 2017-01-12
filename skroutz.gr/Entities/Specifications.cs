@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace skroutz.gr.Model.Categories
+namespace skroutz.gr.Entities
 {
     public class Specification
     {

@@ -5,17 +5,17 @@ namespace ConsoleSkroutz.gr
 {
     public static class Extensions
     {
-        public static T printReflected<T>(this T list) where T : class
+        public static T printReflected<T>(this T item) where T : class
         {
-            foreach (var prop in list.GetType().GetProperties())
-                Console.WriteLine(string.Format("{0,-20} {1}", prop.Name, prop.GetValue(list, null)));
+            foreach (var prop in item.GetType().GetProperties())
+                Console.WriteLine(string.Format("{0,-20} {1}", prop.Name, prop.GetValue(item, null)));
 
             Console.WriteLine();
 
-            return list;
+            return item;
         }
 
-        public static dynamic printReflected<T>(this List<T> list)
+        public static List<T> printReflected<T>(this List<T> list) where T : class
         {
             foreach (var v in list)
             {
