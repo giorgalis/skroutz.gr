@@ -2,6 +2,14 @@
 
 namespace skroutz.gr.Entities
 {
+    public class PriceHistory
+    {
+        public Base.History history { get; set; }
+    }
+}
+
+namespace skroutz.gr.Entities.Base
+{
     public class Average
     {
         public string date { get; set; }
@@ -19,10 +27,5 @@ namespace skroutz.gr.Entities
     {
         public List<Average> average { get; set; }
         public List<Lowest> lowest { get; set; }
-    }
-
-    public class PriceHistory
-    {
-        public History history { get; set; }
     }
 }
