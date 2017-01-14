@@ -1,3 +1,3 @@
-## Welcome to the Portable Class Library for accessing the skroutz API
+## Welcome to the Portable Class Library for accessing the skroutz.gr API
 
-You can use the documantation found [here](http://dotnet.media/)
+Preliminary documantation may be found [here](http://dotnet.media/)
