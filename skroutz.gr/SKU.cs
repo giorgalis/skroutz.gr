@@ -50,7 +50,7 @@ namespace skroutz.gr
         /// <param name="manufacturerIds">The ids of the manufacturers of the SKUs</param>
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
         /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
         public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {
@@ -86,7 +86,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-single-sku"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
         /// <returns></returns>
         public Task<RootSKU> RetrieveSingleSKU(int skuId)
         {
@@ -106,7 +106,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-similar-skus"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
         /// <returns></returns>
         public Task<SKUs> RetrieveSimilarSKUs(int skuId)
         {
@@ -145,7 +145,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-reviews"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
         /// <returns></returns>
         public Task<Reviews> RetrieveSKUsReviews(int skuId)
         {
@@ -166,8 +166,8 @@ namespace skroutz.gr
         /// <param name="reviewId">Unique identifier of the Review</param>
         /// <param name="helpful">Helpful</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#vote-a-skus-review"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="reviewId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="reviewId"/> is less than or equal to 0.</exception>
         /// <remarks>Requires user token with the <code>'publish_sku_review_actions'</code>/ permission.</remarks>
         /// <returns></returns>
         public Task<RootSKUReviewVote> VoteSKUsReview(int skuId, int reviewId, bool helpful)
@@ -191,8 +191,8 @@ namespace skroutz.gr
         /// <param name="reviewId">Unique identifier of the Review</param>
         /// <param name="flagReason"></param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#flag-a-skus-review"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="reviewId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="reviewId"/> is less than or equal to 0.</exception>
         /// <remarks>Requires user token with the <code>'publish_sku_review_actions'</code> permission.</remarks>
         /// <remarks>To retrieve all available flags, see <see cref="Flag"/>.</remarks>
         /// <remarks>Returns empty body, unless an error occurs.</remarks>
@@ -217,7 +217,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
         /// <remarks>Pagination is not available for this endpoint.</remarks>
         /// <returns></returns>
         public Task<Specifications> RetrieveSKUsSpecifications(int skuId)
@@ -237,7 +237,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-skus-price-history"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
         /// <remarks>Currently this endpoint responds with any available data for the last 6 months</remarks>
         /// <returns></returns>
         public Task<PriceHistory> RetrieveSKUsPriceHistory(int skuId)

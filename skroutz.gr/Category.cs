@@ -14,8 +14,10 @@ namespace skroutz.gr
     /// <remarks>
     /// Categories are organized in a tree-like structure.
     /// An SKU always belongs to a leaf (ending) category.
-    /// Leaf categories have <see cref="Entities.Base.Category.ChildrenCount"/> equal to 0..
+    /// Leaf categories have <see cref="Entities.Base.Category.ChildrenCount"/> equal to 0.
     /// </remarks>
+    /// <seealso cref="RootCategory"/>
+    /// <seealso cref="Categories"/>
     public class Category : Request
     {
         private readonly StringBuilder _builder;
