@@ -17,6 +17,97 @@ using System.Collections.Generic;
 
 namespace skroutz.gr.Entities
 {
+
+    /// <summary>
+    /// Class RootShop.
+    /// </summary>
+    public class RootShop
+    {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>The identifier.</value>
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name.</value>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        /// <summary>
+        /// Gets or sets the link.
+        /// </summary>
+        /// <value>The link.</value>
+        [JsonProperty("link")]
+        public string Link { get; set; }
+        /// <summary>
+        /// Gets or sets the phone.
+        /// </summary>
+        /// <value>The phone.</value>
+        [JsonProperty("phone")]
+        public string Phone { get; set; }
+        /// <summary>
+        /// Gets or sets the image URL.
+        /// </summary>
+        /// <value>The image URL.</value>
+        [JsonProperty("image_url")]
+        public string ImageUrl { get; set; }
+        /// <summary>
+        /// Gets or sets the thumbshot URL.
+        /// </summary>
+        /// <value>The thumbshot URL.</value>
+        [JsonProperty("thumbshot_url")]
+        public string ThumbshotUrl { get; set; }
+        /// <summary>
+        /// Gets or sets the reviews count.
+        /// </summary>
+        /// <value>The reviews count.</value>
+        [JsonProperty("reviews_count")]
+        public int ReviewsCount { get; set; }
+        /// <summary>
+        /// Gets or sets the latest reviews count.
+        /// </summary>
+        /// <value>The latest reviews count.</value>
+        [JsonProperty("latest_reviews_count")]
+        public int LatestReviewsCount { get; set; }
+        /// <summary>
+        /// Gets or sets the review score.
+        /// </summary>
+        /// <value>The review score.</value>
+        [JsonProperty("review_score")]
+        public double ReviewScore { get; set; }
+        /// <summary>
+        /// Gets or sets the payment methods.
+        /// </summary>
+        /// <value>The payment methods.</value>
+        [JsonProperty("payment_methods")]
+        public Base.PaymentMethods PaymentMethods { get; set; }
+        /// <summary>
+        /// Gets or sets the shipping.
+        /// </summary>
+        /// <value>The shipping.</value>
+        [JsonProperty("shipping")]
+        public Base.Shipping Shipping { get; set; }
+        /// <summary>
+        /// Gets or sets the web URI.
+        /// </summary>
+        /// <value>The web URI.</value>
+        [JsonProperty("web_uri")]
+        public string WebUri { get; set; }
+        /// <summary>
+        /// Gets or sets the extra information.
+        /// </summary>
+        /// <value>The extra information.</value>
+        [JsonProperty("extra_info")]
+        public Base.ExtraInfo ExtraInfo { get; set; }
+        /// <summary>
+        /// Gets or sets the top positive reasons.
+        /// </summary>
+        /// <value>The top positive reasons.</value>
+        [JsonProperty("top_positive_reasons")]
+        public List<string> TopPositiveReasons { get; set; }
+    }
     /// <summary>
     /// Class Shops.
     /// </summary>
@@ -26,7 +117,7 @@ namespace skroutz.gr.Entities
         /// Gets or sets the shops.
         /// </summary>
         /// <value>The shops.</value>
-        public List<Shop> shops { get; set; }
+        public List<RootShop> shops { get; set; }
         /// <summary>
         /// Gets or sets the meta.
         /// </summary>
@@ -37,83 +128,6 @@ namespace skroutz.gr.Entities
 
 namespace skroutz.gr.Entities.Base
 {
-    /// <summary>
-    /// Class Shop.
-    /// </summary>
-    public class RootShop
-    {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        public int id { get; set; }
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>The name.</value>
-        public string name { get; set; }
-        /// <summary>
-        /// Gets or sets the link.
-        /// </summary>
-        /// <value>The link.</value>
-        public string link { get; set; }
-        /// <summary>
-        /// Gets or sets the phone.
-        /// </summary>
-        /// <value>The phone.</value>
-        public string phone { get; set; }
-        /// <summary>
-        /// Gets or sets the image URL.
-        /// </summary>
-        /// <value>The image URL.</value>
-        public string image_url { get; set; }
-        /// <summary>
-        /// Gets or sets the thumbshot URL.
-        /// </summary>
-        /// <value>The thumbshot URL.</value>
-        public string thumbshot_url { get; set; }
-        /// <summary>
-        /// Gets or sets the reviews count.
-        /// </summary>
-        /// <value>The reviews count.</value>
-        public int reviews_count { get; set; }
-        /// <summary>
-        /// Gets or sets the latest reviews count.
-        /// </summary>
-        /// <value>The latest reviews count.</value>
-        public int latest_reviews_count { get; set; }
-        /// <summary>
-        /// Gets or sets the review score.
-        /// </summary>
-        /// <value>The review score.</value>
-        public double review_score { get; set; }
-        /// <summary>
-        /// Gets or sets the payment methods.
-        /// </summary>
-        /// <value>The payment methods.</value>
-        public PaymentMethods payment_methods { get; set; }
-        /// <summary>
-        /// Gets or sets the shipping.
-        /// </summary>
-        /// <value>The shipping.</value>
-        public Shipping shipping { get; set; }
-        /// <summary>
-        /// Gets or sets the web URI.
-        /// </summary>
-        /// <value>The web URI.</value>
-        public string web_uri { get; set; }
-        /// <summary>
-        /// Gets or sets the extra information.
-        /// </summary>
-        /// <value>The extra information.</value>
-        public ExtraInfo extra_info { get; set; }
-        /// <summary>
-        /// Gets or sets the top positive reasons.
-        /// </summary>
-        /// <value>The top positive reasons.</value>
-        public List<string> top_positive_reasons { get; set; }
-    }
-
     /// <summary>
     /// Class ExtraInfo.
     /// </summary>
@@ -139,30 +153,35 @@ namespace skroutz.gr.Entities.Base
     public class PaymentMethods
     {
         /// <summary>
-        /// Gets or sets a value indicating whether [credit card].
+        /// Gets or sets a value indicating whether <see cref="PaymentMethods" /> is credit card.
         /// </summary>
         /// <value><c>true</c> if [credit card]; otherwise, <c>false</c>.</value>
-        public bool credit_card { get; set; }
+        [JsonProperty("credit_card")]
+        public bool CreditCard { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="PaymentMethods" /> is paypal.
         /// </summary>
         /// <value><c>true</c> if paypal; otherwise, <c>false</c>.</value>
-        public bool paypal { get; set; }
+        [JsonProperty("paypal")]
+        public bool Paypal { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="PaymentMethods" /> is bank.
         /// </summary>
         /// <value><c>true</c> if bank; otherwise, <c>false</c>.</value>
-        public bool bank { get; set; }
+        [JsonProperty("bank")]
+        public bool Bank { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether [spot cash].
+        /// Gets or sets a value indicating whether this <see cref="PaymentMethods" /> is spot cash.
         /// </summary>
         /// <value><c>true</c> if [spot cash]; otherwise, <c>false</c>.</value>
-        public bool spot_cash { get; set; }
+        [JsonProperty("spot_cash")]
+        public bool SpotCash { get; set; }
         /// <summary>
         /// Gets or sets the installments.
         /// </summary>
         /// <value>The installments.</value>
-        public string installments { get; set; }
+        [JsonProperty("installments")]
+        public string Installments { get; set; }
     }
 
     /// <summary>
