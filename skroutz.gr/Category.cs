@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
+    /// Provides methods for accesing Category's data including root category, children categories, category's specifications, reviews and other.
+    /// </summary>
+    /// <remarks>
     /// Categories are organized in a tree-like structure.
     /// An SKU always belongs to a leaf (ending) category.
     /// Leaf categories have <see cref="Entities.Base.Category.ChildrenCount"/> equal to 0.
-    /// </summary>
+    /// </remarks>
     public class Category : Request
     {
         private readonly StringBuilder _builder;

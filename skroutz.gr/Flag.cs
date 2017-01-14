@@ -19,8 +19,9 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// A Flag is used to mark user provided content as requiring attention/moderation.
+    /// Provides method for retrieving flags.
     /// </summary>
+    /// <remarks>A Flag is used to mark user provided content as requiring attention/moderation.</remarks>
     /// <seealso cref="skroutz.gr.Request" />
     public class Flag : Request
     {

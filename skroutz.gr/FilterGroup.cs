@@ -20,8 +20,29 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// A Filter Group is a collection of filters of the same kind.
+    /// Provides methods for grouping a collection of filters.
+    /// <list type="bullet">
+    /// <item>
+    /// <description>Price</description>
+    /// </item>
+    /// <item>
+    /// <description>Keyword</description>
+    /// </item>
+    /// <item>
+    /// <description>Spec</description>
+    /// </item>
+    /// <item>
+    /// <description>SyncedSpec</description>
+    /// </item>
+    /// <item>
+    /// <description>CustomRange</description>
+    /// </item>
+    /// <item>
+    /// <description>Sizes</description>
+    /// </item>
+    /// </list>
     /// </summary>
+    /// <remarks>A Filter Group is a collection of filters of the same kind.</remarks>
     /// <seealso cref="skroutz.gr.Request" />
     public class FilterGroup : Request
     {

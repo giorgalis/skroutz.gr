@@ -1,4 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : giorgalis
+// Created          : 01-13-2017
+//
+// Last Modified By : giorgalis
+// Last Modified On : 01-14-2017
+// ***********************************************************************
+// <copyright file="Shop.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Entities.Base;
 using skroutz.gr.Entities;
 using System;
@@ -9,12 +22,19 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// Class Shop.
+    /// Provides methods for accesing Shop's data including shop locations, shop reviews.
     /// </summary>
+    /// <seealso cref="skroutz.gr.Request" />
     /// <seealso cref="Request" />
     public class Shop : Request
     {
+        /// <summary>
+        /// The builder
+        /// </summary>
         private readonly StringBuilder _builder;
+        /// <summary>
+        /// The access token
+        /// </summary>
         private readonly string _accessToken;
 
         /// <summary>
@@ -100,11 +120,9 @@ namespace skroutz.gr
         /// <param name="shopId">The shop identifier.</param>
         /// <param name="locationId">The location identifier.</param>
         /// <returns>Task&lt;Location&gt;.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">
-        /// shopId
+        /// <exception cref="System.ArgumentOutOfRangeException">shopId
         /// or
-        /// locationId
-        /// </exception>
+        /// locationId</exception>
         public Task<Location> RetrieveSingleShopLocation(int shopId, int locationId)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));

@@ -10,13 +10,13 @@ namespace skroutz.gr
     /// Provides information about Users.
     /// <list type="bullet">
     /// <item>
-    /// <description>User Profile</description>
+    /// <description>Profile</description>
     /// </item>
     /// <item>
-    /// <description>User Favorites</description>
+    /// <description>Favorites</description>
     /// </item>
     /// <item>
-    /// <description>User Notification</description>
+    /// <description>Notification</description>
     /// </item>
     /// </list>
     /// </summary>

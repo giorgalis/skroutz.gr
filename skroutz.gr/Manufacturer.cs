@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// Manufacturer
+    /// Provides methods for accesing Manufacturer's data.
     /// </summary>
     /// <seealso cref="skroutz.gr.Request" />
     public class Manufacturer : Request

@@ -1,4 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : giorgalis
+// Created          : 01-06-2017
+//
+// Last Modified By : giorgalis
+// Last Modified On : 01-14-2017
+// ***********************************************************************
+// <copyright file="Product.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using System;
 using System.Text;
@@ -7,11 +20,18 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// Product
+    /// Provides methods for accesing Product's data.
     /// </summary>
+    /// <seealso cref="skroutz.gr.Request" />
     public class Product : Request
     {
+        /// <summary>
+        /// The builder
+        /// </summary>
         private readonly StringBuilder _builder;
+        /// <summary>
+        /// The access token
+        /// </summary>
         private readonly string _accessToken;
 
         /// <summary>
@@ -39,8 +59,10 @@ namespace skroutz.gr
         /// Retrieve a single product
         /// </summary>
         /// <param name="productId">Unique Identifier of the product</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product"/>
+        /// <returns>Task&lt;RootProduct&gt;.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">productId</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when productId is less than or equal to 0</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product" />
         public Task<RootProduct> RetrieveSingleProduct(int productId)
         {
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
@@ -58,9 +80,12 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="shopId">Unique identifier of the shop</param>
         /// <param name="shopUid">Search with the product identifier as assigned by the shop</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products"/>
+        /// <returns>Task&lt;Products&gt;.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">shopId</exception>
+        /// <exception cref="System.ArgumentNullException">shopUid</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopId is less than or equal to 0</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when shopUid is less than or equal to 0</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products" />
         public Task<Products> SearchForProducts(int shopId, string shopUid)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
