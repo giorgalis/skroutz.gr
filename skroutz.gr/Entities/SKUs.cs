@@ -12,7 +12,7 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Sku
         /// </summary>
-        public Base.Sku sku { get; set; }
+        public Base.SKU sku { get; set; }
     }
 
     /// <summary>
@@ -23,7 +23,7 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// SKUs
         /// </summary>
-        public List<Base.Sku> skus { get; set; }
+        public List<Base.SKU> skus { get; set; }
 
         /// <summary>
         /// Meta
@@ -37,7 +37,7 @@ namespace skroutz.gr.Entities.Base
     /// <summary>
     /// Sku
     /// </summary>
-    public class Sku
+    public class SKU
     {
         /// <summary>
         /// Id

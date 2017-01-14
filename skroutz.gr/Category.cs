@@ -45,7 +45,8 @@ namespace skroutz.gr
         /// <summary>
         /// Lists all categories
         /// </summary>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories"/>
+        /// <returns><see cref="Task{Categories}"></see></returns>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories" />
         public Task<Categories> ListAllCategories()
         {
             _builder.Clear();

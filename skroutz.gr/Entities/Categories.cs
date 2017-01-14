@@ -25,13 +25,14 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Category
         /// </summary>
-        /// <value>The category.</value>
         public Base.Category category { get; set; }
     }
 
     /// <summary>
     /// Categories
     /// </summary>
+    /// <seealso cref="Base.Category"/>
+    /// <seealso cref="Meta"/>
     public class Categories
     {
         /// <summary>

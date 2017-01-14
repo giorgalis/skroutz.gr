@@ -21,6 +21,9 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Class RootShop.
     /// </summary>
+    /// <seealso cref="Base.PaymentMethods"/>
+    /// <seealso cref="Base.Shipping"/>
+    /// <seealso cref="Base.ExtraInfo"/>
     public class RootShop
     {
         /// <summary>
@@ -111,6 +114,8 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Class Shops.
     /// </summary>
+    /// <seealso cref="RootShop"/>
+    /// <seealso cref="Meta"/>
     public class Shops
     {
         /// <summary>
@@ -131,6 +136,7 @@ namespace skroutz.gr.Entities.Base
     /// <summary>
     /// Class ExtraInfo.
     /// </summary>
+    /// <seealso cref="RootShop"/>
     public class ExtraInfo
     {
         /// <summary>
@@ -150,6 +156,7 @@ namespace skroutz.gr.Entities.Base
     /// <summary>
     /// Class PaymentMethods.
     /// </summary>
+    /// <seealso cref="RootShop"/>
     public class PaymentMethods
     {
         /// <summary>
@@ -187,6 +194,7 @@ namespace skroutz.gr.Entities.Base
     /// <summary>
     /// Class Shipping.
     /// </summary>
+    /// <seealso cref="RootShop"/>
     public class Shipping
     {
         /// <summary>
