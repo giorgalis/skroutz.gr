@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace skroutz.gr
 {
+
     /// <summary>
-    /// Request
+    /// Class Request.
     /// </summary>
     public class Request
     {

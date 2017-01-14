@@ -1,10 +1,24 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : giorgalis
+// Created          : 01-10-2017
+//
+// Last Modified By : giorgalis
+// Last Modified On : 01-13-2017
+// ***********************************************************************
+// <copyright file="Authorization.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using System;
 
 namespace skroutz.gr.Authorization
 {
+
     /// <summary>
-    /// Application Credentials
+    /// Struct AppCredentials
     /// </summary>
     public struct AppCredentials
     {
@@ -19,8 +33,9 @@ namespace skroutz.gr.Authorization
         public string client_secret;
     }
 
+
     /// <summary>
-    /// User Credentials
+    /// Struct UserCredentials
     /// </summary>
     public struct UserCredentials
     {
@@ -35,25 +50,33 @@ namespace skroutz.gr.Authorization
         public string redirect_uri;
     }
 
+
     /// <summary>
-    /// Authentication
+    /// Class Authorization.
     /// </summary>
+    /// <seealso cref="skroutz.gr.Request" />
     public class Authorization : Request
     {
         /// <summary>
         /// Application Token
         /// </summary>
+        /// <value>The application token.</value>
         public string ApplicationToken { get; private set; }
 
         /// <summary>
         /// User Token
         /// </summary>
+        /// <value>The user token.</value>
         public string UserToken { get; private set; }
 
+
         /// <summary>
-        /// Initializes a new instance of the Authorization class
+        /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
-        /// <param name="credentials"></param>
+        /// <param name="credentials">The credentials.</param>
+        /// <exception cref="System.ArgumentNullException">client_id
+        /// or
+        /// client_secret</exception>
         public Authorization(AppCredentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.client_id)) throw new ArgumentNullException(nameof(credentials.client_id));
@@ -67,10 +90,14 @@ namespace skroutz.gr.Authorization
             this.ApplicationToken = response.access_token;
         }
 
+
         /// <summary>
-        /// Initializes a new instance of the Authorization class
+        /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
-        /// <param name="credentials"></param>
+        /// <param name="credentials">The credentials.</param>
+        /// <exception cref="System.ArgumentNullException">client_id
+        /// or
+        /// redirect_uri</exception>
         public Authorization(UserCredentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.client_id)) throw new ArgumentNullException(nameof(credentials.client_id));
@@ -84,15 +111,38 @@ namespace skroutz.gr.Authorization
             this.UserToken = response.access_token;
         }
 
+        /// <summary>
+        /// Class AppResponse.
+        /// </summary>
         private class AppResponse
         {
+            /// <summary>
+            /// Gets or sets the access token.
+            /// </summary>
+            /// <value>The access token.</value>
             public string access_token { get; set; }
+            /// <summary>
+            /// Gets or sets the type of the token.
+            /// </summary>
+            /// <value>The type of the token.</value>
             public string token_type { get; set; }
+            /// <summary>
+            /// Gets or sets the expires in.
+            /// </summary>
+            /// <value>The expires in.</value>
             public int expires_in { get; set; }
         }
 
+        /// <summary>
+        /// Class UserResponse.
+        /// </summary>
+        /// <seealso cref="skroutz.gr.Authorization.Authorization.AppResponse" />
         private class UserResponse : AppResponse
         {
+            /// <summary>
+            /// Gets or sets the refresh token.
+            /// </summary>
+            /// <value>The refresh token.</value>
             public string refresh_token { get; set; }
         }
     }

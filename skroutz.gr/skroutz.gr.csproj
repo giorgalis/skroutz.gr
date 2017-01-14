@@ -48,13 +48,13 @@
     <Compile Include="Entities\User\Favorites.cs" />
     <Compile Include="Entities\FilterGroups.cs" />
     <Compile Include="Entities\Flags.cs" />
-    <Compile Include="Entities\Shop\ShopLocations.cs" />
-    <Compile Include="Entities\Shop\ShopReviews.cs" />
+    <Compile Include="Entities\ShopLocations.cs" />
+    <Compile Include="Entities\ShopReviews.cs" />
     <Compile Include="Shared\Images.cs" />
     <Compile Include="Entities\Manufacturers.cs" />
     <Compile Include="Entities\User\UserNotifications.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\Shop\Shops.cs" />
+    <Compile Include="Entities\Shops.cs" />
     <Compile Include="Entities\SKUs.cs" />
     <Compile Include="Entities\Specifications.cs" />
     <Compile Include="Entities\User\UserProfile.cs" />
@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Search.cs" />
+    <Compile Include="Shop.cs" />
     <Compile Include="SkroutzException.cs" />
     <Compile Include="SKU.cs" />
     <Compile Include="User.cs" />
@@ -81,6 +82,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

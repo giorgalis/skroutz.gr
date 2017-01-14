@@ -1,4 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : giorgalis
+// Created          : 01-08-2017
+//
+// Last Modified By : giorgalis
+// Last Modified On : 01-11-2017
+// ***********************************************************************
+// <copyright file="FilterGroup.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using System;
 using System.Text;
@@ -9,9 +22,16 @@ namespace skroutz.gr
     /// <summary>
     /// A Filter Group is a collection of filters of the same kind.
     /// </summary>
+    /// <seealso cref="skroutz.gr.Request" />
     public class FilterGroup : Request
     {
+        /// <summary>
+        /// The builder
+        /// </summary>
         private readonly StringBuilder _builder;
+        /// <summary>
+        /// The access token
+        /// </summary>
         private readonly string _accessToken;
 
         /// <summary>
@@ -38,9 +58,11 @@ namespace skroutz.gr
         /// <summary>
         /// List FilterGroups
         /// </summary>
-        /// <param name="categoryId"></param>
-        /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups"/>
+        /// <param name="categoryId">The category identifier.</param>
+        /// <returns>Task&lt;FilterGroups&gt;.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">categoryId</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups" />
         public Task<FilterGroups> ListFilterGroups(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));

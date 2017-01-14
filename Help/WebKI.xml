@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Active property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Active.htm" />
+  <HelpKINode Title="aggregated property" Url="html/P-skroutz.gr.Model.User.Notification.aggregated.htm" />
+  <HelpKINode Title="Alternatives property" Url="html/P-skroutz.gr.Shared.Images.Alternatives.htm" />
+  <HelpKINode Title="AppCredentials structure">
+    <HelpKINode Title="AppCredentials Members" Url="html/AllMembers.T-skroutz.gr.Authorization.AppCredentials.htm" />
+    <HelpKINode Title="AppCredentials Structure" Url="html/T-skroutz.gr.Authorization.AppCredentials.htm" />
+    <HelpKINode Title="about AppCredentials structure" Url="html/T-skroutz.gr.Authorization.AppCredentials.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Authorization.AppCredentials.htm" />
+    <HelpKINode Title="fields" Url="html/Fields.T-skroutz.gr.Authorization.AppCredentials.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Authorization.AppCredentials.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppCredentials.client_id field" Url="html/F-skroutz.gr.Authorization.AppCredentials.client_id.htm" />
+  <HelpKINode Title="AppCredentials.client_secret field" Url="html/F-skroutz.gr.Authorization.AppCredentials.client_secret.htm" />
+  <HelpKINode Title="ApplicationToken property" Url="html/P-skroutz.gr.Authorization.Authorization.ApplicationToken.htm" />
+  <HelpKINode Title="AppliedFilters enumeration member" Url="html/T-skroutz.gr.Shared.MetaFilters.htm" />
+  <HelpKINode Title="AppliedFilters field" Url="html/F-skroutz.gr.Shared.MetaFilters.AppliedFilters.htm" />
+  <HelpKINode Title="asc enumeration member" Url="html/T-skroutz.gr.Shared.OrderDir.htm" />
+  <HelpKINode Title="asc field" Url="html/F-skroutz.gr.Shared.OrderDir.asc.htm" />
+  <HelpKINode Title="Authorization class">
+    <HelpKINode Title="Authorization Class" Url="html/T-skroutz.gr.Authorization.Authorization.htm" />
+    <HelpKINode Title="Authorization Members" Url="html/AllMembers.T-skroutz.gr.Authorization.Authorization.htm" />
+    <HelpKINode Title="about Authorization class" Url="html/T-skroutz.gr.Authorization.Authorization.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Authorization.Authorization.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Authorization.Authorization.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Authorization.Authorization.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Authorization.Authorization.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Authorization.ApplicationToken property" Url="html/P-skroutz.gr.Authorization.Authorization.ApplicationToken.htm" />
+  <HelpKINode Title="Authorization.Authorization constructor" Url="html/Overload-skroutz.gr.Authorization.Authorization.-ctor.htm" />
+  <HelpKINode Title="Authorization.UserToken property" Url="html/P-skroutz.gr.Authorization.Authorization.UserToken.htm" />
+  <HelpKINode Title="Availability property" Url="html/P-skroutz.gr.Entities.Base.Product.Availability.htm" />
+  <HelpKINode Title="availability_true enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="availability_true field" Url="html/F-skroutz.gr.Model.User.NotificationType.availability_true.htm" />
+  <HelpKINode Title="AvailableFilters enumeration member" Url="html/T-skroutz.gr.Shared.MetaFilters.htm" />
+  <HelpKINode Title="AvailableFilters field" Url="html/F-skroutz.gr.Shared.MetaFilters.AvailableFilters.htm" />
+  <HelpKINode Title="avatar property" Url="html/P-skroutz.gr.Model.User.User.avatar.htm" />
+  <HelpKINode Title="Average class">
+    <HelpKINode Title="Average Class" Url="html/T-skroutz.gr.Entities.Base.Average.htm" />
+    <HelpKINode Title="Average Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Average.htm" />
+    <HelpKINode Title="about Average class" Url="html/T-skroutz.gr.Entities.Base.Average.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Average.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Average.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Average.htm" />
+  </HelpKINode>
+  <HelpKINode Title="average property" Url="html/P-skroutz.gr.Entities.Base.History.average.htm" />
+  <HelpKINode Title="Average.date property" Url="html/P-skroutz.gr.Entities.Base.Average.date.htm" />
+  <HelpKINode Title="Average.price property" Url="html/P-skroutz.gr.Entities.Base.Average.price.htm" />
+  <HelpKINode Title="bank property" Url="html/P-skroutz.gr.Entities.PaymentMethods.bank.htm" />
+  <HelpKINode Title="Categories class">
+    <HelpKINode Title="Categories Class" Url="html/T-skroutz.gr.Entities.Categories.htm" />
+    <HelpKINode Title="Categories Members" Url="html/AllMembers.T-skroutz.gr.Entities.Categories.htm" />
+    <HelpKINode Title="about Categories class" Url="html/T-skroutz.gr.Entities.Categories.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Categories.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Categories.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Categories.htm" />
+  </HelpKINode>
+  <HelpKINode Title="categories property" Url="html/P-skroutz.gr.Entities.Categories.categories.htm" />
+  <HelpKINode Title="Categories.categories property" Url="html/P-skroutz.gr.Entities.Categories.categories.htm" />
+  <HelpKINode Title="Categories.meta property" Url="html/P-skroutz.gr.Entities.Categories.meta.htm" />
+  <HelpKINode Title="Category class">
+    <HelpKINode Title="Category Class" Url="html/T-skroutz.gr.Category.htm" />
+    <HelpKINode Title="Category Class" Url="html/T-skroutz.gr.Entities.Base.Category.htm" />
+    <HelpKINode Title="Category Members" Url="html/AllMembers.T-skroutz.gr.Category.htm" />
+    <HelpKINode Title="Category Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Category.htm" />
+    <HelpKINode Title="about Category class" Url="html/T-skroutz.gr.Entities.Base.Category.htm" />
+    <HelpKINode Title="about Category class" Url="html/T-skroutz.gr.Category.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Category.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Category.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Category.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Category.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Category.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Category.htm" />
+  </HelpKINode>
+  <HelpKINode Title="category property" Url="html/P-skroutz.gr.Entities.RootCategory.category.htm" />
+  <HelpKINode Title="Category.Category constructor" Url="html/Overload-skroutz.gr.Category.-ctor.htm" />
+  <HelpKINode Title="Category.ChildrenCount property" Url="html/P-skroutz.gr.Entities.Base.Category.ChildrenCount.htm" />
+  <HelpKINode Title="Category.Code property" Url="html/P-skroutz.gr.Entities.Base.Category.Code.htm" />
+  <HelpKINode Title="Category.Fashion property" Url="html/P-skroutz.gr.Entities.Base.Category.Fashion.htm" />
+  <HelpKINode Title="Category.Id property" Url="html/P-skroutz.gr.Entities.Base.Category.Id.htm" />
+  <HelpKINode Title="Category.ImageUrl property" Url="html/P-skroutz.gr.Entities.Base.Category.ImageUrl.htm" />
+  <HelpKINode Title="Category.LayoutMode property" Url="html/P-skroutz.gr.Entities.Base.Category.LayoutMode.htm" />
+  <HelpKINode Title="Category.ListAllCategories method" Url="html/M-skroutz.gr.Category.ListAllCategories.htm" />
+  <HelpKINode Title="Category.ListCategorysFavorites method" Url="html/M-skroutz.gr.Category.ListCategorysFavorites.htm" />
+  <HelpKINode Title="Category.ListCategorysManufactures method" Url="html/M-skroutz.gr.Category.ListCategorysManufactures.htm" />
+  <HelpKINode Title="Category.ListCategorysSpecifications method" Url="html/M-skroutz.gr.Category.ListCategorysSpecifications.htm" />
+  <HelpKINode Title="Category.ListCategorysSpecificationsGroup method" Url="html/M-skroutz.gr.Category.ListCategorysSpecificationsGroup.htm" />
+  <HelpKINode Title="Category.ListChildrenCategoriesOfCategory method" Url="html/M-skroutz.gr.Category.ListChildrenCategoriesOfCategory.htm" />
+  <HelpKINode Title="Category.ManufacturerTitle property" Url="html/P-skroutz.gr.Entities.Base.Category.ManufacturerTitle.htm" />
+  <HelpKINode Title="Category.Name property" Url="html/P-skroutz.gr.Entities.Base.Category.Name.htm" />
+  <HelpKINode Title="Category.ParentId property" Url="html/P-skroutz.gr.Entities.Base.Category.ParentId.htm" />
+  <HelpKINode Title="Category.Path property" Url="html/P-skroutz.gr.Entities.Base.Category.Path.htm" />
+  <HelpKINode Title="Category.RetrieveSingleCategory method" Url="html/M-skroutz.gr.Category.RetrieveSingleCategory.htm" />
+  <HelpKINode Title="Category.RetrieveTheParentOfCategory method" Url="html/M-skroutz.gr.Category.RetrieveTheParentOfCategory.htm" />
+  <HelpKINode Title="Category.RetrieveTheRootCategory method" Url="html/M-skroutz.gr.Category.RetrieveTheRootCategory.htm" />
+  <HelpKINode Title="Category.ShowSpecifications property" Url="html/P-skroutz.gr.Entities.Base.Category.ShowSpecifications.htm" />
+  <HelpKINode Title="Category.WebUri property" Url="html/P-skroutz.gr.Entities.Base.Category.WebUri.htm" />
+  <HelpKINode Title="CategoryId property">
+    <HelpKINode Title="CategoryId Property " Url="html/P-skroutz.gr.Entities.Base.FilterGroup.CategoryId.htm" />
+    <HelpKINode Title="CategoryId Property " Url="html/P-skroutz.gr.Entities.Base.Sku.CategoryId.htm" />
+    <HelpKINode Title="CategoryId Property " Url="html/P-skroutz.gr.Entities.Base.Product.CategoryId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="category_id property">
+    <HelpKINode Title="category_id Property " Url="html/P-skroutz.gr.Model.User.FavoriteList.category_id.htm" />
+    <HelpKINode Title="category_id Property " Url="html/P-skroutz.gr.Model.User.Sku.category_id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="category_name property" Url="html/P-skroutz.gr.Model.User.Notification.category_name.htm" />
+  <HelpKINode Title="change_rate property" Url="html/P-skroutz.gr.Model.User.Snapshot.change_rate.htm" />
+  <HelpKINode Title="ChildrenCount property" Url="html/P-skroutz.gr.Entities.Base.Category.ChildrenCount.htm" />
+  <HelpKINode Title="ClickUrl property">
+    <HelpKINode Title="ClickUrl Property " Url="html/P-skroutz.gr.Entities.Base.Sku.ClickUrl.htm" />
+    <HelpKINode Title="ClickUrl Property " Url="html/P-skroutz.gr.Entities.Base.Product.ClickUrl.htm" />
+  </HelpKINode>
+  <HelpKINode Title="click_url property" Url="html/P-skroutz.gr.Model.User.Sku.click_url.htm" />
+  <HelpKINode Title="client_id field">
+    <HelpKINode Title="client_id Field" Url="html/F-skroutz.gr.Authorization.AppCredentials.client_id.htm" />
+    <HelpKINode Title="client_id Field" Url="html/F-skroutz.gr.Authorization.UserCredentials.client_id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="client_secret field" Url="html/F-skroutz.gr.Authorization.AppCredentials.client_secret.htm" />
+  <HelpKINode Title="code property" Url="html/P-skroutz.gr.Error.code.htm" />
+  <HelpKINode Title="Code property" Url="html/P-skroutz.gr.Entities.Base.Category.Code.htm" />
+  <HelpKINode Title="Combined property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Combined.htm" />
+  <HelpKINode Title="CreatedAt property">
+    <HelpKINode Title="CreatedAt Property " Url="html/P-skroutz.gr.Model.User.Favorite.CreatedAt.htm" />
+    <HelpKINode Title="CreatedAt Property " Url="html/P-skroutz.gr.Entities.Base.FilterGroup.CreatedAt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="created_at property">
+    <HelpKINode Title="created_at Property " Url="html/P-skroutz.gr.Entities.Base.ShopReview.created_at.htm" />
+    <HelpKINode Title="created_at Property " Url="html/P-skroutz.gr.Entities.SKUReview.created_at.htm" />
+    <HelpKINode Title="created_at Property " Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.created_at.htm" />
+    <HelpKINode Title="created_at Property " Url="html/P-skroutz.gr.Entities.SKUReviewFlag.created_at.htm" />
+    <HelpKINode Title="created_at Property " Url="html/P-skroutz.gr.Model.User.Notification.created_at.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateFavoriteList method" Url="html/M-skroutz.gr.User.CreateFavoriteList.htm" />
+  <HelpKINode Title="CreateNewFavorite method" Url="html/M-skroutz.gr.User.CreateNewFavorite.htm" />
+  <HelpKINode Title="credit_card property" Url="html/P-skroutz.gr.Entities.PaymentMethods.credit_card.htm" />
+  <HelpKINode Title="CustomRange enumeration member" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="CustomRange field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.CustomRange.htm" />
+  <HelpKINode Title="date property">
+    <HelpKINode Title="date Property " Url="html/P-skroutz.gr.Entities.Base.Lowest.date.htm" />
+    <HelpKINode Title="date Property " Url="html/P-skroutz.gr.Entities.Base.Average.date.htm" />
+  </HelpKINode>
+  <HelpKINode Title="demoted property" Url="html/P-skroutz.gr.Entities.SKUReview.demoted.htm" />
+  <HelpKINode Title="desc enumeration member" Url="html/T-skroutz.gr.Shared.OrderDir.htm" />
+  <HelpKINode Title="desc field" Url="html/F-skroutz.gr.Shared.OrderDir.desc.htm" />
+  <HelpKINode Title="description property" Url="html/P-skroutz.gr.Entities.Base.Flag.description.htm" />
+  <HelpKINode Title="DestroyFavorite method" Url="html/M-skroutz.gr.User.DestroyFavorite.htm" />
+  <HelpKINode Title="DestroyFavoriteList method" Url="html/M-skroutz.gr.User.DestroyFavoriteList.htm" />
+  <HelpKINode Title="DisplayName property" Url="html/P-skroutz.gr.Entities.Base.Sku.DisplayName.htm" />
+  <HelpKINode Title="display_name property" Url="html/P-skroutz.gr.Model.User.Sku.display_name.htm" />
+  <HelpKINode Title="Ean property" Url="html/P-skroutz.gr.Entities.Base.Sku.Ean.htm" />
+  <HelpKINode Title="Error class">
+    <HelpKINode Title="Error Class" Url="html/T-skroutz.gr.Error.htm" />
+    <HelpKINode Title="Error Members" Url="html/AllMembers.T-skroutz.gr.Error.htm" />
+    <HelpKINode Title="about Error class" Url="html/T-skroutz.gr.Error.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Error.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Error.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Error.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Error.code property" Url="html/P-skroutz.gr.Error.code.htm" />
+  <HelpKINode Title="Error.messages property" Url="html/P-skroutz.gr.Error.messages.htm" />
+  <HelpKINode Title="Errors class">
+    <HelpKINode Title="Errors Class" Url="html/T-skroutz.gr.Errors.htm" />
+    <HelpKINode Title="Errors Members" Url="html/AllMembers.T-skroutz.gr.Errors.htm" />
+    <HelpKINode Title="about Errors class" Url="html/T-skroutz.gr.Errors.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Errors.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Errors.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Errors.htm" />
+  </HelpKINode>
+  <HelpKINode Title="errors property" Url="html/P-skroutz.gr.Errors.errors.htm" />
+  <HelpKINode Title="Errors.errors property" Url="html/P-skroutz.gr.Errors.errors.htm" />
+  <HelpKINode Title="etype property" Url="html/P-skroutz.gr.Model.User.Notification.etype.htm" />
+  <HelpKINode Title="eventable_id property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_id.htm" />
+  <HelpKINode Title="eventable_name property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_name.htm" />
+  <HelpKINode Title="eventable_type property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_type.htm" />
+  <HelpKINode Title="eventable_url property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_url.htm" />
+  <HelpKINode Title="event_text property" Url="html/P-skroutz.gr.Model.User.Notification.event_text.htm" />
+  <HelpKINode Title="Expenses property" Url="html/P-skroutz.gr.Entities.Base.Product.Expenses.htm" />
+  <HelpKINode Title="expert_review enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="expert_review field" Url="html/F-skroutz.gr.Model.User.NotificationType.expert_review.htm" />
+  <HelpKINode Title="ExtraInfo class">
+    <HelpKINode Title="ExtraInfo Class" Url="html/T-skroutz.gr.Entities.ExtraInfo.htm" />
+    <HelpKINode Title="ExtraInfo Members" Url="html/AllMembers.T-skroutz.gr.Entities.ExtraInfo.htm" />
+    <HelpKINode Title="about ExtraInfo class" Url="html/T-skroutz.gr.Entities.ExtraInfo.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.ExtraInfo.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.ExtraInfo.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.ExtraInfo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtraInfo.orders_per_week property" Url="html/P-skroutz.gr.Entities.ExtraInfo.orders_per_week.htm" />
+  <HelpKINode Title="ExtraInfo.time_on_platform property" Url="html/P-skroutz.gr.Entities.ExtraInfo.time_on_platform.htm" />
+  <HelpKINode Title="extra_info property" Url="html/P-skroutz.gr.Entities.Shop.extra_info.htm" />
+  <HelpKINode Title="facebook enumeration member" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="facebook field" Url="html/F-skroutz.gr.Model.User.type.facebook.htm" />
+  <HelpKINode Title="Fashion property" Url="html/P-skroutz.gr.Entities.Base.Category.Fashion.htm" />
+  <HelpKINode Title="Favorite class">
+    <HelpKINode Title="Favorite Class" Url="html/T-skroutz.gr.Model.User.Favorite.htm" />
+    <HelpKINode Title="Favorite Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Favorite.htm" />
+    <HelpKINode Title="about Favorite class" Url="html/T-skroutz.gr.Model.User.Favorite.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.Favorite.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.Favorite.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.Favorite.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Favorite.CreatedAt property" Url="html/P-skroutz.gr.Model.User.Favorite.CreatedAt.htm" />
+  <HelpKINode Title="Favorite.GetAbsoluteThreshold property" Url="html/P-skroutz.gr.Model.User.Favorite.GetAbsoluteThreshold.htm" />
+  <HelpKINode Title="Favorite.HaveIt property" Url="html/P-skroutz.gr.Model.User.Favorite.HaveIt.htm" />
+  <HelpKINode Title="Favorite.Id property" Url="html/P-skroutz.gr.Model.User.Favorite.Id.htm" />
+  <HelpKINode Title="Favorite.SkuId property" Url="html/P-skroutz.gr.Model.User.Favorite.SkuId.htm" />
+  <HelpKINode Title="Favorite.UpdatedAt property" Url="html/P-skroutz.gr.Model.User.Favorite.UpdatedAt.htm" />
+  <HelpKINode Title="Favorite.UserId property" Url="html/P-skroutz.gr.Model.User.Favorite.UserId.htm" />
+  <HelpKINode Title="Favorite.UserNotes property" Url="html/P-skroutz.gr.Model.User.Favorite.UserNotes.htm" />
+  <HelpKINode Title="FavoriteList class">
+    <HelpKINode Title="FavoriteList Class" Url="html/T-skroutz.gr.Model.User.FavoriteList.htm" />
+    <HelpKINode Title="FavoriteList Members" Url="html/AllMembers.T-skroutz.gr.Model.User.FavoriteList.htm" />
+    <HelpKINode Title="about FavoriteList class" Url="html/T-skroutz.gr.Model.User.FavoriteList.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.FavoriteList.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.FavoriteList.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.FavoriteList.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FavoriteList.category_id property" Url="html/P-skroutz.gr.Model.User.FavoriteList.category_id.htm" />
+  <HelpKINode Title="FavoriteList.id property" Url="html/P-skroutz.gr.Model.User.FavoriteList.id.htm" />
+  <HelpKINode Title="FavoriteList.name property" Url="html/P-skroutz.gr.Model.User.FavoriteList.name.htm" />
+  <HelpKINode Title="Favorites class">
+    <HelpKINode Title="Favorites Class" Url="html/T-skroutz.gr.Model.User.Favorites.htm" />
+    <HelpKINode Title="Favorites Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Favorites.htm" />
+    <HelpKINode Title="about Favorites class" Url="html/T-skroutz.gr.Model.User.Favorites.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.Favorites.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.Favorites.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.Favorites.htm" />
+  </HelpKINode>
+  <HelpKINode Title="favorites property" Url="html/P-skroutz.gr.Model.User.Favorites.favorites.htm" />
+  <HelpKINode Title="Favorites.favorites property" Url="html/P-skroutz.gr.Model.User.Favorites.favorites.htm" />
+  <HelpKINode Title="Favorites.meta property" Url="html/P-skroutz.gr.Model.User.Favorites.meta.htm" />
+  <HelpKINode Title="favorite_lists property" Url="html/P-skroutz.gr.Model.User.UserFavorites.favorite_lists.htm" />
+  <HelpKINode Title="female enumeration member" Url="html/T-skroutz.gr.Model.User.sex.htm" />
+  <HelpKINode Title="female field" Url="html/F-skroutz.gr.Model.User.sex.female.htm" />
+  <HelpKINode Title="FilterGroup class">
+    <HelpKINode Title="FilterGroup Class" Url="html/T-skroutz.gr.FilterGroup.htm" />
+    <HelpKINode Title="FilterGroup Class" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <HelpKINode Title="FilterGroup Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <HelpKINode Title="FilterGroup Members" Url="html/AllMembers.T-skroutz.gr.FilterGroup.htm" />
+    <HelpKINode Title="about FilterGroup class" Url="html/T-skroutz.gr.FilterGroup.htm" />
+    <HelpKINode Title="about FilterGroup class" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.FilterGroup.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.FilterGroup.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.FilterGroup.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FilterGroup.Active property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Active.htm" />
+  <HelpKINode Title="FilterGroup.CategoryId property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.CategoryId.htm" />
+  <HelpKINode Title="FilterGroup.Combined property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Combined.htm" />
+  <HelpKINode Title="FilterGroup.CreatedAt property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.CreatedAt.htm" />
+  <HelpKINode Title="FilterGroup.FilterGroup constructor" Url="html/Overload-skroutz.gr.FilterGroup.-ctor.htm" />
+  <HelpKINode Title="FilterGroup.FilterType property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.FilterType.htm" />
+  <HelpKINode Title="FilterGroup.FilterTypes enumeration" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="FilterGroup.Hint property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Hint.htm" />
+  <HelpKINode Title="FilterGroup.Id property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Id.htm" />
+  <HelpKINode Title="FilterGroup.ListFilterGroups method" Url="html/M-skroutz.gr.FilterGroup.ListFilterGroups.htm" />
+  <HelpKINode Title="FilterGroup.Name property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Name.htm" />
+  <HelpKINode Title="FilterGroup.UpdatedAt property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.UpdatedAt.htm" />
+  <HelpKINode Title="FilterGroups class">
+    <HelpKINode Title="FilterGroups Class" Url="html/T-skroutz.gr.Entities.FilterGroups.htm" />
+    <HelpKINode Title="FilterGroups Members" Url="html/AllMembers.T-skroutz.gr.Entities.FilterGroups.htm" />
+    <HelpKINode Title="about FilterGroups class" Url="html/T-skroutz.gr.Entities.FilterGroups.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.FilterGroups.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.FilterGroups.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.FilterGroups.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FilterGroups.filter_groups property" Url="html/P-skroutz.gr.Entities.FilterGroups.filter_groups.htm" />
+  <HelpKINode Title="FilterGroups.meta property" Url="html/P-skroutz.gr.Entities.FilterGroups.meta.htm" />
+  <HelpKINode Title="FilterType property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.FilterType.htm" />
+  <HelpKINode Title="FilterTypes.CustomRange field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.CustomRange.htm" />
+  <HelpKINode Title="FilterTypes.Keyword field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Keyword.htm" />
+  <HelpKINode Title="FilterTypes.Price field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Price.htm" />
+  <HelpKINode Title="FilterTypes.Sizes field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Sizes.htm" />
+  <HelpKINode Title="FilterTypes.Spec field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Spec.htm" />
+  <HelpKINode Title="FilterTypes.SyncedSpec field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.SyncedSpec.htm" />
+  <HelpKINode Title="filter_groups property" Url="html/P-skroutz.gr.Entities.FilterGroups.filter_groups.htm" />
+  <HelpKINode Title="FirstProductShopInfo property" Url="html/P-skroutz.gr.Entities.Base.Sku.FirstProductShopInfo.htm" />
+  <HelpKINode Title="first_product_shop_info property" Url="html/P-skroutz.gr.Model.User.Sku.first_product_shop_info.htm" />
+  <HelpKINode Title="Flag class">
+    <HelpKINode Title="Flag Class" Url="html/T-skroutz.gr.Entities.Base.Flag.htm" />
+    <HelpKINode Title="Flag Class" Url="html/T-skroutz.gr.Flag.htm" />
+    <HelpKINode Title="Flag Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Flag.htm" />
+    <HelpKINode Title="Flag Members" Url="html/AllMembers.T-skroutz.gr.Flag.htm" />
+    <HelpKINode Title="about Flag class" Url="html/T-skroutz.gr.Flag.htm" />
+    <HelpKINode Title="about Flag class" Url="html/T-skroutz.gr.Entities.Base.Flag.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Flag.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Flag.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Flag.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Flag.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Flag.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Flag.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Flag.description property" Url="html/P-skroutz.gr.Entities.Base.Flag.description.htm" />
+  <HelpKINode Title="Flag.Flag constructor" Url="html/Overload-skroutz.gr.Flag.-ctor.htm" />
+  <HelpKINode Title="Flag.reason property" Url="html/P-skroutz.gr.Entities.Base.Flag.reason.htm" />
+  <HelpKINode Title="Flag.RetrieveAllFlags method" Url="html/M-skroutz.gr.Flag.RetrieveAllFlags.htm" />
+  <HelpKINode Title="flaggable_id property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.flaggable_id.htm" />
+  <HelpKINode Title="flaggable_type property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.flaggable_type.htm" />
+  <HelpKINode Title="flagged property" Url="html/P-skroutz.gr.Entities.SKUReview.flagged.htm" />
+  <HelpKINode Title="Flags class">
+    <HelpKINode Title="Flags Class" Url="html/T-skroutz.gr.Entities.Flags.htm" />
+    <HelpKINode Title="Flags Members" Url="html/AllMembers.T-skroutz.gr.Entities.Flags.htm" />
+    <HelpKINode Title="about Flags class" Url="html/T-skroutz.gr.Entities.Flags.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Flags.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Flags.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Flags.htm" />
+  </HelpKINode>
+  <HelpKINode Title="flags property" Url="html/P-skroutz.gr.Entities.Flags.flags.htm" />
+  <HelpKINode Title="Flags.flags property" Url="html/P-skroutz.gr.Entities.Flags.flags.htm" />
+  <HelpKINode Title="FlagSKUsReview method" Url="html/M-skroutz.gr.SKU.FlagSKUsReview.htm" />
+  <HelpKINode Title="format property" Url="html/P-skroutz.gr.Model.Shop.Location.format.htm" />
+  <HelpKINode Title="free property" Url="html/P-skroutz.gr.Entities.Shipping.free.htm" />
+  <HelpKINode Title="free_from property" Url="html/P-skroutz.gr.Entities.Shipping.free_from.htm" />
+  <HelpKINode Title="free_from_info property" Url="html/P-skroutz.gr.Entities.Shipping.free_from_info.htm" />
+  <HelpKINode Title="from_threshold property" Url="html/P-skroutz.gr.Model.User.Snapshot.from_threshold.htm" />
+  <HelpKINode Title="full_address property" Url="html/P-skroutz.gr.Model.Shop.Location.full_address.htm" />
+  <HelpKINode Title="future property" Url="html/P-skroutz.gr.Model.User.Sku.future.htm" />
+  <HelpKINode Title="Future property" Url="html/P-skroutz.gr.Entities.Base.Sku.Future.htm" />
+  <HelpKINode Title="generic enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="generic field" Url="html/F-skroutz.gr.Model.User.NotificationType.generic.htm" />
+  <HelpKINode Title="GetAbsoluteThreshold property" Url="html/P-skroutz.gr.Model.User.Favorite.GetAbsoluteThreshold.htm" />
+  <HelpKINode Title="google enumeration member" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="google field" Url="html/F-skroutz.gr.Model.User.type.google.htm" />
+  <HelpKINode Title="Group class">
+    <HelpKINode Title="Group Class" Url="html/T-skroutz.gr.Entities.Base.Group.htm" />
+    <HelpKINode Title="Group Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Group.htm" />
+    <HelpKINode Title="about Group class" Url="html/T-skroutz.gr.Entities.Base.Group.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Group.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Group.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Group.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Group.Id property" Url="html/P-skroutz.gr.Entities.Base.Group.Id.htm" />
+  <HelpKINode Title="Group.Name property" Url="html/P-skroutz.gr.Entities.Base.Group.Name.htm" />
+  <HelpKINode Title="Group.Order property" Url="html/P-skroutz.gr.Entities.Base.Group.Order.htm" />
+  <HelpKINode Title="GroupId property" Url="html/P-skroutz.gr.Entities.GroupSpecification.GroupId.htm" />
+  <HelpKINode Title="Groups class">
+    <HelpKINode Title="Groups Class" Url="html/T-skroutz.gr.Entities.Groups.htm" />
+    <HelpKINode Title="Groups Members" Url="html/AllMembers.T-skroutz.gr.Entities.Groups.htm" />
+    <HelpKINode Title="about Groups class" Url="html/T-skroutz.gr.Entities.Groups.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Groups.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Groups.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Groups.htm" />
+  </HelpKINode>
+  <HelpKINode Title="groups property" Url="html/P-skroutz.gr.Entities.Groups.groups.htm" />
+  <HelpKINode Title="Groups.groups property" Url="html/P-skroutz.gr.Entities.Groups.groups.htm" />
+  <HelpKINode Title="Groups.specifications property" Url="html/P-skroutz.gr.Entities.Groups.specifications.htm" />
+  <HelpKINode Title="GroupSpecification class">
+    <HelpKINode Title="GroupSpecification Class" Url="html/T-skroutz.gr.Entities.GroupSpecification.htm" />
+    <HelpKINode Title="GroupSpecification Members" Url="html/AllMembers.T-skroutz.gr.Entities.GroupSpecification.htm" />
+    <HelpKINode Title="about GroupSpecification class" Url="html/T-skroutz.gr.Entities.GroupSpecification.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.GroupSpecification.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.GroupSpecification.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.GroupSpecification.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GroupSpecification.GroupId property" Url="html/P-skroutz.gr.Entities.GroupSpecification.GroupId.htm" />
+  <HelpKINode Title="GroupSpecification.Id property" Url="html/P-skroutz.gr.Entities.GroupSpecification.Id.htm" />
+  <HelpKINode Title="GroupSpecification.Name property" Url="html/P-skroutz.gr.Entities.GroupSpecification.Name.htm" />
+  <HelpKINode Title="GroupSpecification.Order property" Url="html/P-skroutz.gr.Entities.GroupSpecification.Order.htm" />
+  <HelpKINode Title="GroupSpecification.Values property" Url="html/P-skroutz.gr.Entities.GroupSpecification.Values.htm" />
+  <HelpKINode Title="guide enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="guide field" Url="html/F-skroutz.gr.Model.User.NotificationType.guide.htm" />
+  <HelpKINode Title="HaveIt property" Url="html/P-skroutz.gr.Model.User.Favorite.HaveIt.htm" />
+  <HelpKINode Title="headquarter property" Url="html/P-skroutz.gr.Model.Shop.Location.headquarter.htm" />
+  <HelpKINode Title="helpful property">
+    <HelpKINode Title="helpful Property " Url="html/P-skroutz.gr.Entities.SKUReview.helpful.htm" />
+    <HelpKINode Title="helpful Property " Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.helpful.htm" />
+  </HelpKINode>
+  <HelpKINode Title="helpful_votes_count property" Url="html/P-skroutz.gr.Entities.SKUReview.helpful_votes_count.htm" />
+  <HelpKINode Title="Hint property" Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Hint.htm" />
+  <HelpKINode Title="History class">
+    <HelpKINode Title="History Class" Url="html/T-skroutz.gr.Entities.Base.History.htm" />
+    <HelpKINode Title="History Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.History.htm" />
+    <HelpKINode Title="about History class" Url="html/T-skroutz.gr.Entities.Base.History.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.History.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.History.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.History.htm" />
+  </HelpKINode>
+  <HelpKINode Title="history property" Url="html/P-skroutz.gr.Entities.PriceHistory.history.htm" />
+  <HelpKINode Title="History.average property" Url="html/P-skroutz.gr.Entities.Base.History.average.htm" />
+  <HelpKINode Title="History.lowest property" Url="html/P-skroutz.gr.Entities.Base.History.lowest.htm" />
+  <HelpKINode Title="id property">
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Entities.Base.ShopReview.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Entities.Shop.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Entities.Specification.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Model.User.FavoriteList.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Entities.SKUReviewFlag.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Entities.SKUReview.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Model.User.Notification.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Model.Shop.Location.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Model.User.User.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Model.User.Sku.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Id property">
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.GroupSpecification.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.Base.Category.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.Base.Sku.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.Base.Product.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.Base.Manufacturer.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Model.User.Favorite.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-skroutz.gr.Entities.Base.Group.Id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Images class">
+    <HelpKINode Title="Images Class" Url="html/T-skroutz.gr.Shared.Images.htm" />
+    <HelpKINode Title="Images Members" Url="html/AllMembers.T-skroutz.gr.Shared.Images.htm" />
+    <HelpKINode Title="about Images class" Url="html/T-skroutz.gr.Shared.Images.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Shared.Images.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Shared.Images.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Shared.Images.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Images property" Url="html/P-skroutz.gr.Entities.Base.Sku.Images.htm" />
+  <HelpKINode Title="images property" Url="html/P-skroutz.gr.Model.User.Sku.images.htm" />
+  <HelpKINode Title="Images.Alternatives property" Url="html/P-skroutz.gr.Shared.Images.Alternatives.htm" />
+  <HelpKINode Title="Images.Main property" Url="html/P-skroutz.gr.Shared.Images.Main.htm" />
+  <HelpKINode Title="ImageUrl property">
+    <HelpKINode Title="ImageUrl Property " Url="html/P-skroutz.gr.Entities.Base.Manufacturer.ImageUrl.htm" />
+    <HelpKINode Title="ImageUrl Property " Url="html/P-skroutz.gr.Entities.Base.Category.ImageUrl.htm" />
+  </HelpKINode>
+  <HelpKINode Title="image_url property" Url="html/P-skroutz.gr.Entities.Shop.image_url.htm" />
+  <HelpKINode Title="ImmediatePickup property" Url="html/P-skroutz.gr.Entities.Base.Product.ImmediatePickup.htm" />
+  <HelpKINode Title="info property" Url="html/P-skroutz.gr.Model.Shop.Location.info.htm" />
+  <HelpKINode Title="installments property" Url="html/P-skroutz.gr.Entities.PaymentMethods.installments.htm" />
+  <HelpKINode Title="is_viewed property" Url="html/P-skroutz.gr.Model.User.Notification.is_viewed.htm" />
+  <HelpKINode Title="Keyword enumeration member" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="Keyword field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Keyword.htm" />
+  <HelpKINode Title="lat property" Url="html/P-skroutz.gr.Model.Shop.Location.lat.htm" />
+  <HelpKINode Title="latest_price property" Url="html/P-skroutz.gr.Model.User.Snapshot.latest_price.htm" />
+  <HelpKINode Title="latest_reviews_count property" Url="html/P-skroutz.gr.Entities.Shop.latest_reviews_count.htm" />
+  <HelpKINode Title="LayoutMode property" Url="html/P-skroutz.gr.Entities.Base.Category.LayoutMode.htm" />
+  <HelpKINode Title="link property" Url="html/P-skroutz.gr.Entities.Shop.link.htm" />
+  <HelpKINode Title="ListAllCategories method" Url="html/M-skroutz.gr.Category.ListAllCategories.htm" />
+  <HelpKINode Title="ListCategorysFavorites method" Url="html/M-skroutz.gr.Category.ListCategorysFavorites.htm" />
+  <HelpKINode Title="ListCategorysManufactures method" Url="html/M-skroutz.gr.Category.ListCategorysManufactures.htm" />
+  <HelpKINode Title="ListCategorysSpecifications method" Url="html/M-skroutz.gr.Category.ListCategorysSpecifications.htm" />
+  <HelpKINode Title="ListCategorysSpecificationsGroup method" Url="html/M-skroutz.gr.Category.ListCategorysSpecificationsGroup.htm" />
+  <HelpKINode Title="ListChildrenCategoriesOfCategory method" Url="html/M-skroutz.gr.Category.ListChildrenCategoriesOfCategory.htm" />
+  <HelpKINode Title="ListFavoriteLists method" Url="html/M-skroutz.gr.User.ListFavoriteLists.htm" />
+  <HelpKINode Title="ListFavorites method" Url="html/M-skroutz.gr.User.ListFavorites.htm" />
+  <HelpKINode Title="ListFavoritesBelongingToList method" Url="html/M-skroutz.gr.User.ListFavoritesBelongingToList.htm" />
+  <HelpKINode Title="ListFilterGroups method" Url="html/M-skroutz.gr.FilterGroup.ListFilterGroups.htm" />
+  <HelpKINode Title="ListManufacturers method" Url="html/M-skroutz.gr.Manufacturer.ListManufacturers.htm" />
+  <HelpKINode Title="ListNotifications method" Url="html/M-skroutz.gr.User.ListNotifications.htm" />
+  <HelpKINode Title="ListSKUsOfSpecificCategory method" Url="html/M-skroutz.gr.SKU.ListSKUsOfSpecificCategory.htm" />
+  <HelpKINode Title="lng property" Url="html/P-skroutz.gr.Model.Shop.Location.lng.htm" />
+  <HelpKINode Title="Location class">
+    <HelpKINode Title="Location Class" Url="html/T-skroutz.gr.Model.Shop.Location.htm" />
+    <HelpKINode Title="Location Members" Url="html/AllMembers.T-skroutz.gr.Model.Shop.Location.htm" />
+    <HelpKINode Title="about Location class" Url="html/T-skroutz.gr.Model.Shop.Location.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.Shop.Location.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.Shop.Location.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.Shop.Location.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Location.format property" Url="html/P-skroutz.gr.Model.Shop.Location.format.htm" />
+  <HelpKINode Title="Location.full_address property" Url="html/P-skroutz.gr.Model.Shop.Location.full_address.htm" />
+  <HelpKINode Title="Location.headquarter property" Url="html/P-skroutz.gr.Model.Shop.Location.headquarter.htm" />
+  <HelpKINode Title="Location.id property" Url="html/P-skroutz.gr.Model.Shop.Location.id.htm" />
+  <HelpKINode Title="Location.info property" Url="html/P-skroutz.gr.Model.Shop.Location.info.htm" />
+  <HelpKINode Title="Location.lat property" Url="html/P-skroutz.gr.Model.Shop.Location.lat.htm" />
+  <HelpKINode Title="Location.lng property" Url="html/P-skroutz.gr.Model.Shop.Location.lng.htm" />
+  <HelpKINode Title="Location.phones property" Url="html/P-skroutz.gr.Model.Shop.Location.phones.htm" />
+  <HelpKINode Title="Location.pickup_point property" Url="html/P-skroutz.gr.Model.Shop.Location.pickup_point.htm" />
+  <HelpKINode Title="Location.store property" Url="html/P-skroutz.gr.Model.Shop.Location.store.htm" />
+  <HelpKINode Title="locations property" Url="html/P-skroutz.gr.Model.Shop.ShopLocations.locations.htm" />
+  <HelpKINode Title="Lowest class">
+    <HelpKINode Title="Lowest Class" Url="html/T-skroutz.gr.Entities.Base.Lowest.htm" />
+    <HelpKINode Title="Lowest Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Lowest.htm" />
+    <HelpKINode Title="about Lowest class" Url="html/T-skroutz.gr.Entities.Base.Lowest.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Lowest.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Lowest.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Lowest.htm" />
+  </HelpKINode>
+  <HelpKINode Title="lowest property" Url="html/P-skroutz.gr.Entities.Base.History.lowest.htm" />
+  <HelpKINode Title="Lowest.date property" Url="html/P-skroutz.gr.Entities.Base.Lowest.date.htm" />
+  <HelpKINode Title="Lowest.price property" Url="html/P-skroutz.gr.Entities.Base.Lowest.price.htm" />
+  <HelpKINode Title="Lowest.shop_name property" Url="html/P-skroutz.gr.Entities.Base.Lowest.shop_name.htm" />
+  <HelpKINode Title="Main property" Url="html/P-skroutz.gr.Shared.Images.Main.htm" />
+  <HelpKINode Title="male enumeration member" Url="html/T-skroutz.gr.Model.User.sex.htm" />
+  <HelpKINode Title="male field" Url="html/F-skroutz.gr.Model.User.sex.male.htm" />
+  <HelpKINode Title="Manufacturer class">
+    <HelpKINode Title="Manufacturer Class" Url="html/T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+    <HelpKINode Title="Manufacturer Class" Url="html/T-skroutz.gr.Manufacturer.htm" />
+    <HelpKINode Title="Manufacturer Members" Url="html/AllMembers.T-skroutz.gr.Manufacturer.htm" />
+    <HelpKINode Title="Manufacturer Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+    <HelpKINode Title="about Manufacturer class" Url="html/T-skroutz.gr.Manufacturer.htm" />
+    <HelpKINode Title="about Manufacturer class" Url="html/T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Manufacturer.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Manufacturer.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Manufacturer.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="manufacturer property" Url="html/P-skroutz.gr.Entities.RootManufacturer.manufacturer.htm" />
+  <HelpKINode Title="Manufacturer.Id property" Url="html/P-skroutz.gr.Entities.Base.Manufacturer.Id.htm" />
+  <HelpKINode Title="Manufacturer.ImageUrl property" Url="html/P-skroutz.gr.Entities.Base.Manufacturer.ImageUrl.htm" />
+  <HelpKINode Title="Manufacturer.ListManufacturers method" Url="html/M-skroutz.gr.Manufacturer.ListManufacturers.htm" />
+  <HelpKINode Title="Manufacturer.Manufacturer constructor" Url="html/Overload-skroutz.gr.Manufacturer.-ctor.htm" />
+  <HelpKINode Title="Manufacturer.Name property" Url="html/P-skroutz.gr.Entities.Base.Manufacturer.Name.htm" />
+  <HelpKINode Title="Manufacturer.RetrieveManufacturerCategories method" Url="html/M-skroutz.gr.Manufacturer.RetrieveManufacturerCategories.htm" />
+  <HelpKINode Title="Manufacturer.RetrieveManufacturerSKUs method" Url="html/M-skroutz.gr.Manufacturer.RetrieveManufacturerSKUs.htm" />
+  <HelpKINode Title="Manufacturer.RetrieveSingleManufacturer method" Url="html/M-skroutz.gr.Manufacturer.RetrieveSingleManufacturer.htm" />
+  <HelpKINode Title="ManufacturerId property" Url="html/P-skroutz.gr.Entities.Base.Sku.ManufacturerId.htm" />
+  <HelpKINode Title="Manufacturers class">
+    <HelpKINode Title="Manufacturers Class" Url="html/T-skroutz.gr.Entities.Manufacturers.htm" />
+    <HelpKINode Title="Manufacturers Members" Url="html/AllMembers.T-skroutz.gr.Entities.Manufacturers.htm" />
+    <HelpKINode Title="about Manufacturers class" Url="html/T-skroutz.gr.Entities.Manufacturers.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Manufacturers.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Manufacturers.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Manufacturers.htm" />
+  </HelpKINode>
+  <HelpKINode Title="manufacturers property" Url="html/P-skroutz.gr.Entities.Manufacturers.manufacturers.htm" />
+  <HelpKINode Title="Manufacturers.manufacturers property" Url="html/P-skroutz.gr.Entities.Manufacturers.manufacturers.htm" />
+  <HelpKINode Title="Manufacturers.meta property" Url="html/P-skroutz.gr.Entities.Manufacturers.meta.htm" />
+  <HelpKINode Title="ManufacturerTitle property" Url="html/P-skroutz.gr.Entities.Base.Category.ManufacturerTitle.htm" />
+  <HelpKINode Title="MarkNotificationsAsViewed method" Url="html/M-skroutz.gr.User.MarkNotificationsAsViewed.htm" />
+  <HelpKINode Title="messages property" Url="html/P-skroutz.gr.Error.messages.htm" />
+  <HelpKINode Title="Meta class">
+    <HelpKINode Title="Meta Class" Url="html/T-skroutz.gr.Shared.Meta.htm" />
+    <HelpKINode Title="Meta Members" Url="html/AllMembers.T-skroutz.gr.Shared.Meta.htm" />
+    <HelpKINode Title="about Meta class" Url="html/T-skroutz.gr.Shared.Meta.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Shared.Meta.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Shared.Meta.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Shared.Meta.htm" />
+  </HelpKINode>
+  <HelpKINode Title="meta property">
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.Categories.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Model.User.Favorites.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.ShopReviews.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.FilterGroups.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.Products.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.Reviews.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Model.Shop.ShopLocations.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.SKUs.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Model.User.UserFavorites.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Entities.Manufacturers.meta.htm" />
+    <HelpKINode Title="meta Property " Url="html/P-skroutz.gr.Model.User.UserNotifications.meta.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Meta.pagination property" Url="html/P-skroutz.gr.Shared.Meta.pagination.htm" />
+  <HelpKINode Title="MetaFilters enumeration" Url="html/T-skroutz.gr.Shared.MetaFilters.htm" />
+  <HelpKINode Title="MetaFilters.AppliedFilters field" Url="html/F-skroutz.gr.Shared.MetaFilters.AppliedFilters.htm" />
+  <HelpKINode Title="MetaFilters.AvailableFilters field" Url="html/F-skroutz.gr.Shared.MetaFilters.AvailableFilters.htm" />
+  <HelpKINode Title="MetaFilters.ShowInTiles field" Url="html/F-skroutz.gr.Shared.MetaFilters.ShowInTiles.htm" />
+  <HelpKINode Title="min_price property" Url="html/P-skroutz.gr.Entities.Shipping.min_price.htm" />
+  <HelpKINode Title="name enumeration member" Url="html/T-skroutz.gr.Shared.OrderByNamePop.htm" />
+  <HelpKINode Title="name field" Url="html/F-skroutz.gr.Shared.OrderByNamePop.name.htm" />
+  <HelpKINode Title="name property">
+    <HelpKINode Title="name Property " Url="html/P-skroutz.gr.Entities.Shop.name.htm" />
+    <HelpKINode Title="name Property " Url="html/P-skroutz.gr.Entities.Specification.name.htm" />
+    <HelpKINode Title="name Property " Url="html/P-skroutz.gr.Model.User.FavoriteList.name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.GroupSpecification.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.Base.Category.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.Base.Sku.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.Base.FilterGroup.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.Base.Product.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.Base.Manufacturer.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-skroutz.gr.Entities.Base.Group.Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="negative property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.negative.htm" />
+  <HelpKINode Title="Notification class">
+    <HelpKINode Title="Notification Class" Url="html/T-skroutz.gr.Model.User.Notification.htm" />
+    <HelpKINode Title="Notification Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Notification.htm" />
+    <HelpKINode Title="about Notification class" Url="html/T-skroutz.gr.Model.User.Notification.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.Notification.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.Notification.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.Notification.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Notification.aggregated property" Url="html/P-skroutz.gr.Model.User.Notification.aggregated.htm" />
+  <HelpKINode Title="Notification.category_name property" Url="html/P-skroutz.gr.Model.User.Notification.category_name.htm" />
+  <HelpKINode Title="Notification.created_at property" Url="html/P-skroutz.gr.Model.User.Notification.created_at.htm" />
+  <HelpKINode Title="Notification.etype property" Url="html/P-skroutz.gr.Model.User.Notification.etype.htm" />
+  <HelpKINode Title="Notification.eventable_id property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_id.htm" />
+  <HelpKINode Title="Notification.eventable_name property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_name.htm" />
+  <HelpKINode Title="Notification.eventable_type property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_type.htm" />
+  <HelpKINode Title="Notification.eventable_url property" Url="html/P-skroutz.gr.Model.User.Notification.eventable_url.htm" />
+  <HelpKINode Title="Notification.event_text property" Url="html/P-skroutz.gr.Model.User.Notification.event_text.htm" />
+  <HelpKINode Title="Notification.id property" Url="html/P-skroutz.gr.Model.User.Notification.id.htm" />
+  <HelpKINode Title="Notification.is_viewed property" Url="html/P-skroutz.gr.Model.User.Notification.is_viewed.htm" />
+  <HelpKINode Title="Notification.sku property" Url="html/P-skroutz.gr.Model.User.Notification.sku.htm" />
+  <HelpKINode Title="Notification.snapshot property" Url="html/P-skroutz.gr.Model.User.Notification.snapshot.htm" />
+  <HelpKINode Title="Notification.updated_at property" Url="html/P-skroutz.gr.Model.User.Notification.updated_at.htm" />
+  <HelpKINode Title="notifications property" Url="html/P-skroutz.gr.Model.User.UserNotifications.notifications.htm" />
+  <HelpKINode Title="NotificationType enumeration" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="NotificationType.availability_true field" Url="html/F-skroutz.gr.Model.User.NotificationType.availability_true.htm" />
+  <HelpKINode Title="NotificationType.expert_review field" Url="html/F-skroutz.gr.Model.User.NotificationType.expert_review.htm" />
+  <HelpKINode Title="NotificationType.generic field" Url="html/F-skroutz.gr.Model.User.NotificationType.generic.htm" />
+  <HelpKINode Title="NotificationType.guide field" Url="html/F-skroutz.gr.Model.User.NotificationType.guide.htm" />
+  <HelpKINode Title="NotificationType.price_drop field" Url="html/F-skroutz.gr.Model.User.NotificationType.price_drop.htm" />
+  <HelpKINode Title="NotificationType.price_up field" Url="html/F-skroutz.gr.Model.User.NotificationType.price_up.htm" />
+  <HelpKINode Title="NotificationType.sku_comment field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_comment.htm" />
+  <HelpKINode Title="NotificationType.sku_comment_mention field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_comment_mention.htm" />
+  <HelpKINode Title="NotificationType.sku_comment_reply field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_comment_reply.htm" />
+  <HelpKINode Title="NotificationType.sku_deletion field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_deletion.htm" />
+  <HelpKINode Title="NotificationType.sku_release field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_release.htm" />
+  <HelpKINode Title="NotificationType.sku_review field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_review.htm" />
+  <HelpKINode Title="null enumeration member" Url="html/T-skroutz.gr.Model.User.sex.htm" />
+  <HelpKINode Title="null field" Url="html/F-skroutz.gr.Model.User.sex.null.htm" />
+  <HelpKINode Title="open_id enumeration member" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="open_id field" Url="html/F-skroutz.gr.Model.User.type.open_id.htm" />
+  <HelpKINode Title="order property" Url="html/P-skroutz.gr.Entities.Specification.order.htm" />
+  <HelpKINode Title="Order property">
+    <HelpKINode Title="Order Property " Url="html/P-skroutz.gr.Entities.Base.Group.Order.htm" />
+    <HelpKINode Title="Order Property " Url="html/P-skroutz.gr.Entities.GroupSpecification.Order.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrderByNamePop enumeration" Url="html/T-skroutz.gr.Shared.OrderByNamePop.htm" />
+  <HelpKINode Title="OrderByNamePop.name field" Url="html/F-skroutz.gr.Shared.OrderByNamePop.name.htm" />
+  <HelpKINode Title="OrderByNamePop.popularity field" Url="html/F-skroutz.gr.Shared.OrderByNamePop.popularity.htm" />
+  <HelpKINode Title="OrderByPrcPop enumeration" Url="html/T-skroutz.gr.Shared.OrderByPrcPop.htm" />
+  <HelpKINode Title="OrderByPrcPop.popularity field" Url="html/F-skroutz.gr.Shared.OrderByPrcPop.popularity.htm" />
+  <HelpKINode Title="OrderByPrcPop.price field" Url="html/F-skroutz.gr.Shared.OrderByPrcPop.price.htm" />
+  <HelpKINode Title="OrderByPrcPopRating enumeration" Url="html/T-skroutz.gr.Shared.OrderByPrcPopRating.htm" />
+  <HelpKINode Title="OrderByPrcPopRating.popularity field" Url="html/F-skroutz.gr.Shared.OrderByPrcPopRating.popularity.htm" />
+  <HelpKINode Title="OrderByPrcPopRating.pricevat field" Url="html/F-skroutz.gr.Shared.OrderByPrcPopRating.pricevat.htm" />
+  <HelpKINode Title="OrderByPrcPopRating.rating field" Url="html/F-skroutz.gr.Shared.OrderByPrcPopRating.rating.htm" />
+  <HelpKINode Title="OrderDir enumeration" Url="html/T-skroutz.gr.Shared.OrderDir.htm" />
+  <HelpKINode Title="OrderDir.asc field" Url="html/F-skroutz.gr.Shared.OrderDir.asc.htm" />
+  <HelpKINode Title="OrderDir.desc field" Url="html/F-skroutz.gr.Shared.OrderDir.desc.htm" />
+  <HelpKINode Title="orders_per_week property" Url="html/P-skroutz.gr.Entities.ExtraInfo.orders_per_week.htm" />
+  <HelpKINode Title="page property" Url="html/P-skroutz.gr.Shared.Pagination.page.htm" />
+  <HelpKINode Title="Pagination class">
+    <HelpKINode Title="Pagination Class" Url="html/T-skroutz.gr.Shared.Pagination.htm" />
+    <HelpKINode Title="Pagination Members" Url="html/AllMembers.T-skroutz.gr.Shared.Pagination.htm" />
+    <HelpKINode Title="about Pagination class" Url="html/T-skroutz.gr.Shared.Pagination.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Shared.Pagination.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Shared.Pagination.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Shared.Pagination.htm" />
+  </HelpKINode>
+  <HelpKINode Title="pagination property" Url="html/P-skroutz.gr.Shared.Meta.pagination.htm" />
+  <HelpKINode Title="Pagination.page property" Url="html/P-skroutz.gr.Shared.Pagination.page.htm" />
+  <HelpKINode Title="Pagination.per property" Url="html/P-skroutz.gr.Shared.Pagination.per.htm" />
+  <HelpKINode Title="Pagination.total_pages property" Url="html/P-skroutz.gr.Shared.Pagination.total_pages.htm" />
+  <HelpKINode Title="Pagination.total_results property" Url="html/P-skroutz.gr.Shared.Pagination.total_results.htm" />
+  <HelpKINode Title="ParentId property" Url="html/P-skroutz.gr.Entities.Base.Category.ParentId.htm" />
+  <HelpKINode Title="Path property" Url="html/P-skroutz.gr.Entities.Base.Category.Path.htm" />
+  <HelpKINode Title="PaymentMethods class">
+    <HelpKINode Title="PaymentMethods Class" Url="html/T-skroutz.gr.Entities.PaymentMethods.htm" />
+    <HelpKINode Title="PaymentMethods Members" Url="html/AllMembers.T-skroutz.gr.Entities.PaymentMethods.htm" />
+    <HelpKINode Title="about PaymentMethods class" Url="html/T-skroutz.gr.Entities.PaymentMethods.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.PaymentMethods.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.PaymentMethods.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.PaymentMethods.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PaymentMethods.bank property" Url="html/P-skroutz.gr.Entities.PaymentMethods.bank.htm" />
+  <HelpKINode Title="PaymentMethods.credit_card property" Url="html/P-skroutz.gr.Entities.PaymentMethods.credit_card.htm" />
+  <HelpKINode Title="PaymentMethods.installments property" Url="html/P-skroutz.gr.Entities.PaymentMethods.installments.htm" />
+  <HelpKINode Title="PaymentMethods.paypal property" Url="html/P-skroutz.gr.Entities.PaymentMethods.paypal.htm" />
+  <HelpKINode Title="PaymentMethods.spot_cash property" Url="html/P-skroutz.gr.Entities.PaymentMethods.spot_cash.htm" />
+  <HelpKINode Title="payment_methods property" Url="html/P-skroutz.gr.Entities.Shop.payment_methods.htm" />
+  <HelpKINode Title="paypal property" Url="html/P-skroutz.gr.Entities.PaymentMethods.paypal.htm" />
+  <HelpKINode Title="per property" Url="html/P-skroutz.gr.Shared.Pagination.per.htm" />
+  <HelpKINode Title="phone property" Url="html/P-skroutz.gr.Entities.Shop.phone.htm" />
+  <HelpKINode Title="phones property" Url="html/P-skroutz.gr.Model.Shop.Location.phones.htm" />
+  <HelpKINode Title="pickup_point property" Url="html/P-skroutz.gr.Model.Shop.Location.pickup_point.htm" />
+  <HelpKINode Title="PlainSpecSummary property" Url="html/P-skroutz.gr.Entities.Base.Sku.PlainSpecSummary.htm" />
+  <HelpKINode Title="Pn property" Url="html/P-skroutz.gr.Entities.Base.Sku.Pn.htm" />
+  <HelpKINode Title="popularity enumeration member">
+    <HelpKINode Title="OrderByNamePop Enumeration" Url="html/T-skroutz.gr.Shared.OrderByNamePop.htm" />
+    <HelpKINode Title="OrderByPrcPop Enumeration" Url="html/T-skroutz.gr.Shared.OrderByPrcPop.htm" />
+    <HelpKINode Title="OrderByPrcPopRating Enumeration" Url="html/T-skroutz.gr.Shared.OrderByPrcPopRating.htm" />
+  </HelpKINode>
+  <HelpKINode Title="popularity field">
+    <HelpKINode Title="popularity Field" Url="html/F-skroutz.gr.Shared.OrderByPrcPop.popularity.htm" />
+    <HelpKINode Title="popularity Field" Url="html/F-skroutz.gr.Shared.OrderByNamePop.popularity.htm" />
+    <HelpKINode Title="popularity Field" Url="html/F-skroutz.gr.Shared.OrderByPrcPopRating.popularity.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Price enumeration member" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="price enumeration member" Url="html/T-skroutz.gr.Shared.OrderByPrcPop.htm" />
+  <HelpKINode Title="Price field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Price.htm" />
+  <HelpKINode Title="price field" Url="html/F-skroutz.gr.Shared.OrderByPrcPop.price.htm" />
+  <HelpKINode Title="price property">
+    <HelpKINode Title="price Property " Url="html/P-skroutz.gr.Entities.Base.Lowest.price.htm" />
+    <HelpKINode Title="price Property " Url="html/P-skroutz.gr.Entities.Base.Average.price.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Price property" Url="html/P-skroutz.gr.Entities.Base.Product.Price.htm" />
+  <HelpKINode Title="PriceHistory class">
+    <HelpKINode Title="PriceHistory Class" Url="html/T-skroutz.gr.Entities.PriceHistory.htm" />
+    <HelpKINode Title="PriceHistory Members" Url="html/AllMembers.T-skroutz.gr.Entities.PriceHistory.htm" />
+    <HelpKINode Title="about PriceHistory class" Url="html/T-skroutz.gr.Entities.PriceHistory.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.PriceHistory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.PriceHistory.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.PriceHistory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PriceHistory.history property" Url="html/P-skroutz.gr.Entities.PriceHistory.history.htm" />
+  <HelpKINode Title="PriceMax property" Url="html/P-skroutz.gr.Entities.Base.Sku.PriceMax.htm" />
+  <HelpKINode Title="PriceMin property" Url="html/P-skroutz.gr.Entities.Base.Sku.PriceMin.htm" />
+  <HelpKINode Title="pricevat enumeration member" Url="html/T-skroutz.gr.Shared.OrderByPrcPopRating.htm" />
+  <HelpKINode Title="pricevat field" Url="html/F-skroutz.gr.Shared.OrderByPrcPopRating.pricevat.htm" />
+  <HelpKINode Title="price_drop enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="price_drop field" Url="html/F-skroutz.gr.Model.User.NotificationType.price_drop.htm" />
+  <HelpKINode Title="price_min property" Url="html/P-skroutz.gr.Model.User.Snapshot.price_min.htm" />
+  <HelpKINode Title="price_up enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="price_up field" Url="html/F-skroutz.gr.Model.User.NotificationType.price_up.htm" />
+  <HelpKINode Title="Product class">
+    <HelpKINode Title="Product Class" Url="html/T-skroutz.gr.Entities.Base.Product.htm" />
+    <HelpKINode Title="Product Class" Url="html/T-skroutz.gr.Product.htm" />
+    <HelpKINode Title="Product Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Product.htm" />
+    <HelpKINode Title="Product Members" Url="html/AllMembers.T-skroutz.gr.Product.htm" />
+    <HelpKINode Title="about Product class" Url="html/T-skroutz.gr.Entities.Base.Product.htm" />
+    <HelpKINode Title="about Product class" Url="html/T-skroutz.gr.Product.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Product.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Product.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Product.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Product.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Product.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Product.htm" />
+  </HelpKINode>
+  <HelpKINode Title="product property" Url="html/P-skroutz.gr.Entities.RootProduct.product.htm" />
+  <HelpKINode Title="Product.Availability property" Url="html/P-skroutz.gr.Entities.Base.Product.Availability.htm" />
+  <HelpKINode Title="Product.CategoryId property" Url="html/P-skroutz.gr.Entities.Base.Product.CategoryId.htm" />
+  <HelpKINode Title="Product.ClickUrl property" Url="html/P-skroutz.gr.Entities.Base.Product.ClickUrl.htm" />
+  <HelpKINode Title="Product.Expenses property" Url="html/P-skroutz.gr.Entities.Base.Product.Expenses.htm" />
+  <HelpKINode Title="Product.Id property" Url="html/P-skroutz.gr.Entities.Base.Product.Id.htm" />
+  <HelpKINode Title="Product.ImmediatePickup property" Url="html/P-skroutz.gr.Entities.Base.Product.ImmediatePickup.htm" />
+  <HelpKINode Title="Product.Name property" Url="html/P-skroutz.gr.Entities.Base.Product.Name.htm" />
+  <HelpKINode Title="Product.Price property" Url="html/P-skroutz.gr.Entities.Base.Product.Price.htm" />
+  <HelpKINode Title="Product.Product constructor" Url="html/Overload-skroutz.gr.Product.-ctor.htm" />
+  <HelpKINode Title="Product.RetrieveSingleProduct method" Url="html/M-skroutz.gr.Product.RetrieveSingleProduct.htm" />
+  <HelpKINode Title="Product.SearchForProducts method" Url="html/M-skroutz.gr.Product.SearchForProducts.htm" />
+  <HelpKINode Title="Product.ShopId property" Url="html/P-skroutz.gr.Entities.Base.Product.ShopId.htm" />
+  <HelpKINode Title="Product.ShopUid property" Url="html/P-skroutz.gr.Entities.Base.Product.ShopUid.htm" />
+  <HelpKINode Title="Product.Sizes property" Url="html/P-skroutz.gr.Entities.Base.Product.Sizes.htm" />
+  <HelpKINode Title="Product.SkuId property" Url="html/P-skroutz.gr.Entities.Base.Product.SkuId.htm" />
+  <HelpKINode Title="Product.WebUri property" Url="html/P-skroutz.gr.Entities.Base.Product.WebUri.htm" />
+  <HelpKINode Title="Products class">
+    <HelpKINode Title="Products Class" Url="html/T-skroutz.gr.Entities.Products.htm" />
+    <HelpKINode Title="Products Members" Url="html/AllMembers.T-skroutz.gr.Entities.Products.htm" />
+    <HelpKINode Title="about Products class" Url="html/T-skroutz.gr.Entities.Products.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Products.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Products.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Products.htm" />
+  </HelpKINode>
+  <HelpKINode Title="products property" Url="html/P-skroutz.gr.Entities.Products.products.htm" />
+  <HelpKINode Title="Products.meta property" Url="html/P-skroutz.gr.Entities.Products.meta.htm" />
+  <HelpKINode Title="Products.products property" Url="html/P-skroutz.gr.Entities.Products.products.htm" />
+  <HelpKINode Title="rating enumeration member" Url="html/T-skroutz.gr.Shared.OrderByPrcPopRating.htm" />
+  <HelpKINode Title="rating field" Url="html/F-skroutz.gr.Shared.OrderByPrcPopRating.rating.htm" />
+  <HelpKINode Title="rating property">
+    <HelpKINode Title="rating Property " Url="html/P-skroutz.gr.Entities.Base.ShopReview.rating.htm" />
+    <HelpKINode Title="rating Property " Url="html/P-skroutz.gr.Entities.SKUReview.rating.htm" />
+  </HelpKINode>
+  <HelpKINode Title="reason property">
+    <HelpKINode Title="reason Property " Url="html/P-skroutz.gr.Entities.SKUReviewFlag.reason.htm" />
+    <HelpKINode Title="reason Property " Url="html/P-skroutz.gr.Entities.Base.Flag.reason.htm" />
+  </HelpKINode>
+  <HelpKINode Title="reasons property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.reasons.htm" />
+  <HelpKINode Title="redirect_uri field" Url="html/F-skroutz.gr.Authorization.UserCredentials.redirect_uri.htm" />
+  <HelpKINode Title="Request class">
+    <HelpKINode Title="Request Class" Url="html/T-skroutz.gr.Request.htm" />
+    <HelpKINode Title="Request Members" Url="html/AllMembers.T-skroutz.gr.Request.htm" />
+    <HelpKINode Title="about Request class" Url="html/T-skroutz.gr.Request.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Request.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Request.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RetrieveAllFlags method" Url="html/M-skroutz.gr.Flag.RetrieveAllFlags.htm" />
+  <HelpKINode Title="RetrieveManufacturerCategories method" Url="html/M-skroutz.gr.Manufacturer.RetrieveManufacturerCategories.htm" />
+  <HelpKINode Title="RetrieveManufacturerSKUs method" Url="html/M-skroutz.gr.Manufacturer.RetrieveManufacturerSKUs.htm" />
+  <HelpKINode Title="RetrieveProfileOfAuthenticatedUser method" Url="html/M-skroutz.gr.User.RetrieveProfileOfAuthenticatedUser.htm" />
+  <HelpKINode Title="RetrieveShopReview method" Url="html/M-skroutz.gr.Shop.RetrieveShopReview.htm" />
+  <HelpKINode Title="RetrieveSimilarSKUs method" Url="html/M-skroutz.gr.SKU.RetrieveSimilarSKUs.htm" />
+  <HelpKINode Title="RetrieveSingleCategory method" Url="html/M-skroutz.gr.Category.RetrieveSingleCategory.htm" />
+  <HelpKINode Title="RetrieveSingleFavorite method" Url="html/M-skroutz.gr.User.RetrieveSingleFavorite.htm" />
+  <HelpKINode Title="RetrieveSingleManufacturer method" Url="html/M-skroutz.gr.Manufacturer.RetrieveSingleManufacturer.htm" />
+  <HelpKINode Title="RetrieveSingleNotification method" Url="html/M-skroutz.gr.User.RetrieveSingleNotification.htm" />
+  <HelpKINode Title="RetrieveSingleProduct method" Url="html/M-skroutz.gr.Product.RetrieveSingleProduct.htm" />
+  <HelpKINode Title="RetrieveSingleShop method" Url="html/M-skroutz.gr.Shop.RetrieveSingleShop.htm" />
+  <HelpKINode Title="RetrieveSingleSKU method" Url="html/M-skroutz.gr.SKU.RetrieveSingleSKU.htm" />
+  <HelpKINode Title="RetrieveSKUsFavorite method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsFavorite.htm" />
+  <HelpKINode Title="RetrieveSKUsPriceHistory method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsPriceHistory.htm" />
+  <HelpKINode Title="RetrieveSKUsProducts method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsProducts.htm" />
+  <HelpKINode Title="RetrieveSKUsReviews method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsReviews.htm" />
+  <HelpKINode Title="RetrieveSKUsSpecifications method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsSpecifications.htm" />
+  <HelpKINode Title="RetrieveTheParentOfCategory method" Url="html/M-skroutz.gr.Category.RetrieveTheParentOfCategory.htm" />
+  <HelpKINode Title="RetrieveTheRootCategory method" Url="html/M-skroutz.gr.Category.RetrieveTheRootCategory.htm" />
+  <HelpKINode Title="review property">
+    <HelpKINode Title="review Property " Url="html/P-skroutz.gr.Entities.Base.ShopReview.review.htm" />
+    <HelpKINode Title="review Property " Url="html/P-skroutz.gr.Entities.SKUReview.review.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Reviews class">
+    <HelpKINode Title="Reviews Class" Url="html/T-skroutz.gr.Entities.Reviews.htm" />
+    <HelpKINode Title="Reviews Members" Url="html/AllMembers.T-skroutz.gr.Entities.Reviews.htm" />
+    <HelpKINode Title="about Reviews class" Url="html/T-skroutz.gr.Entities.Reviews.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Reviews.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Reviews.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Reviews.htm" />
+  </HelpKINode>
+  <HelpKINode Title="reviews property">
+    <HelpKINode Title="reviews Property " Url="html/P-skroutz.gr.Entities.ShopReviews.reviews.htm" />
+    <HelpKINode Title="reviews Property " Url="html/P-skroutz.gr.Entities.Reviews.reviews.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Reviews.meta property" Url="html/P-skroutz.gr.Entities.Reviews.meta.htm" />
+  <HelpKINode Title="Reviews.reviews property" Url="html/P-skroutz.gr.Entities.Reviews.reviews.htm" />
+  <HelpKINode Title="ReviewScore property" Url="html/P-skroutz.gr.Entities.Base.Sku.ReviewScore.htm" />
+  <HelpKINode Title="ReviewsCount property" Url="html/P-skroutz.gr.Entities.Base.Sku.ReviewsCount.htm" />
+  <HelpKINode Title="reviews_count property" Url="html/P-skroutz.gr.Entities.Shop.reviews_count.htm" />
+  <HelpKINode Title="review_score property" Url="html/P-skroutz.gr.Entities.Shop.review_score.htm" />
+  <HelpKINode Title="RootCategory class">
+    <HelpKINode Title="RootCategory Class" Url="html/T-skroutz.gr.Entities.RootCategory.htm" />
+    <HelpKINode Title="RootCategory Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootCategory.htm" />
+    <HelpKINode Title="about RootCategory class" Url="html/T-skroutz.gr.Entities.RootCategory.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.RootCategory.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.RootCategory.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.RootCategory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RootCategory.category property" Url="html/P-skroutz.gr.Entities.RootCategory.category.htm" />
+  <HelpKINode Title="RootManufacturer class">
+    <HelpKINode Title="RootManufacturer Class" Url="html/T-skroutz.gr.Entities.RootManufacturer.htm" />
+    <HelpKINode Title="RootManufacturer Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootManufacturer.htm" />
+    <HelpKINode Title="about RootManufacturer class" Url="html/T-skroutz.gr.Entities.RootManufacturer.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.RootManufacturer.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.RootManufacturer.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.RootManufacturer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RootManufacturer.manufacturer property" Url="html/P-skroutz.gr.Entities.RootManufacturer.manufacturer.htm" />
+  <HelpKINode Title="RootProduct class">
+    <HelpKINode Title="RootProduct Class" Url="html/T-skroutz.gr.Entities.RootProduct.htm" />
+    <HelpKINode Title="RootProduct Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootProduct.htm" />
+    <HelpKINode Title="about RootProduct class" Url="html/T-skroutz.gr.Entities.RootProduct.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.RootProduct.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.RootProduct.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.RootProduct.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RootProduct.product property" Url="html/P-skroutz.gr.Entities.RootProduct.product.htm" />
+  <HelpKINode Title="RootShop class">
+    <HelpKINode Title="RootShop Class" Url="html/T-skroutz.gr.Entities.RootShop.htm" />
+    <HelpKINode Title="RootShop Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootShop.htm" />
+    <HelpKINode Title="about RootShop class" Url="html/T-skroutz.gr.Entities.RootShop.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.RootShop.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.RootShop.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.RootShop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RootShop.shop property" Url="html/P-skroutz.gr.Entities.RootShop.shop.htm" />
+  <HelpKINode Title="RootSKU class">
+    <HelpKINode Title="RootSKU Class" Url="html/T-skroutz.gr.Entities.RootSKU.htm" />
+    <HelpKINode Title="RootSKU Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootSKU.htm" />
+    <HelpKINode Title="about RootSKU class" Url="html/T-skroutz.gr.Entities.RootSKU.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.RootSKU.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.RootSKU.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.RootSKU.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RootSKU.sku property" Url="html/P-skroutz.gr.Entities.RootSKU.sku.htm" />
+  <HelpKINode Title="RootSKUReviewVote class">
+    <HelpKINode Title="RootSKUReviewVote Class" Url="html/T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+    <HelpKINode Title="RootSKUReviewVote Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+    <HelpKINode Title="about RootSKUReviewVote class" Url="html/T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RootSKUReviewVote.sku_review_vote property" Url="html/P-skroutz.gr.Entities.RootSKUReviewVote.sku_review_vote.htm" />
+  <HelpKINode Title="Search class">
+    <HelpKINode Title="Search Class" Url="html/T-skroutz.gr.Search.htm" />
+    <HelpKINode Title="Search Members" Url="html/AllMembers.T-skroutz.gr.Search.htm" />
+    <HelpKINode Title="about Search class" Url="html/T-skroutz.gr.Search.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Search.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Search.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Search.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Search.Search constructor" Url="html/Overload-skroutz.gr.Search.-ctor.htm" />
+  <HelpKINode Title="SearchForProducts method" Url="html/M-skroutz.gr.Product.SearchForProducts.htm" />
+  <HelpKINode Title="sex enumeration" Url="html/T-skroutz.gr.Model.User.sex.htm" />
+  <HelpKINode Title="sex property" Url="html/P-skroutz.gr.Model.User.User.sex.htm" />
+  <HelpKINode Title="sex.female field" Url="html/F-skroutz.gr.Model.User.sex.female.htm" />
+  <HelpKINode Title="sex.male field" Url="html/F-skroutz.gr.Model.User.sex.male.htm" />
+  <HelpKINode Title="sex.null field" Url="html/F-skroutz.gr.Model.User.sex.null.htm" />
+  <HelpKINode Title="Shipping class">
+    <HelpKINode Title="Shipping Class" Url="html/T-skroutz.gr.Entities.Shipping.htm" />
+    <HelpKINode Title="Shipping Members" Url="html/AllMembers.T-skroutz.gr.Entities.Shipping.htm" />
+    <HelpKINode Title="about Shipping class" Url="html/T-skroutz.gr.Entities.Shipping.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Shipping.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Shipping.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Shipping.htm" />
+  </HelpKINode>
+  <HelpKINode Title="shipping property" Url="html/P-skroutz.gr.Entities.Shop.shipping.htm" />
+  <HelpKINode Title="Shipping.free property" Url="html/P-skroutz.gr.Entities.Shipping.free.htm" />
+  <HelpKINode Title="Shipping.free_from property" Url="html/P-skroutz.gr.Entities.Shipping.free_from.htm" />
+  <HelpKINode Title="Shipping.free_from_info property" Url="html/P-skroutz.gr.Entities.Shipping.free_from_info.htm" />
+  <HelpKINode Title="Shipping.min_price property" Url="html/P-skroutz.gr.Entities.Shipping.min_price.htm" />
+  <HelpKINode Title="Shop class">
+    <HelpKINode Title="Shop Class" Url="html/T-skroutz.gr.Entities.Shop.htm" />
+    <HelpKINode Title="Shop Class" Url="html/T-skroutz.gr.Shop.htm" />
+    <HelpKINode Title="Shop Members" Url="html/AllMembers.T-skroutz.gr.Shop.htm" />
+    <HelpKINode Title="Shop Members" Url="html/AllMembers.T-skroutz.gr.Entities.Shop.htm" />
+    <HelpKINode Title="about Shop class" Url="html/T-skroutz.gr.Entities.Shop.htm" />
+    <HelpKINode Title="about Shop class" Url="html/T-skroutz.gr.Shop.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Shop.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Shop.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.Shop.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Shop.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Shop.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Shop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="shop property" Url="html/P-skroutz.gr.Entities.RootShop.shop.htm" />
+  <HelpKINode Title="Shop.extra_info property" Url="html/P-skroutz.gr.Entities.Shop.extra_info.htm" />
+  <HelpKINode Title="Shop.id property" Url="html/P-skroutz.gr.Entities.Shop.id.htm" />
+  <HelpKINode Title="Shop.image_url property" Url="html/P-skroutz.gr.Entities.Shop.image_url.htm" />
+  <HelpKINode Title="Shop.latest_reviews_count property" Url="html/P-skroutz.gr.Entities.Shop.latest_reviews_count.htm" />
+  <HelpKINode Title="Shop.link property" Url="html/P-skroutz.gr.Entities.Shop.link.htm" />
+  <HelpKINode Title="Shop.name property" Url="html/P-skroutz.gr.Entities.Shop.name.htm" />
+  <HelpKINode Title="Shop.payment_methods property" Url="html/P-skroutz.gr.Entities.Shop.payment_methods.htm" />
+  <HelpKINode Title="Shop.phone property" Url="html/P-skroutz.gr.Entities.Shop.phone.htm" />
+  <HelpKINode Title="Shop.RetrieveShopReview method" Url="html/M-skroutz.gr.Shop.RetrieveShopReview.htm" />
+  <HelpKINode Title="Shop.RetrieveSingleShop method" Url="html/M-skroutz.gr.Shop.RetrieveSingleShop.htm" />
+  <HelpKINode Title="Shop.reviews_count property" Url="html/P-skroutz.gr.Entities.Shop.reviews_count.htm" />
+  <HelpKINode Title="Shop.review_score property" Url="html/P-skroutz.gr.Entities.Shop.review_score.htm" />
+  <HelpKINode Title="Shop.shipping property" Url="html/P-skroutz.gr.Entities.Shop.shipping.htm" />
+  <HelpKINode Title="Shop.Shop constructor" Url="html/Overload-skroutz.gr.Shop.-ctor.htm" />
+  <HelpKINode Title="Shop.thumbshot_url property" Url="html/P-skroutz.gr.Entities.Shop.thumbshot_url.htm" />
+  <HelpKINode Title="Shop.top_positive_reasons property" Url="html/P-skroutz.gr.Entities.Shop.top_positive_reasons.htm" />
+  <HelpKINode Title="Shop.web_uri property" Url="html/P-skroutz.gr.Entities.Shop.web_uri.htm" />
+  <HelpKINode Title="ShopCount property" Url="html/P-skroutz.gr.Entities.Base.Sku.ShopCount.htm" />
+  <HelpKINode Title="ShopId property" Url="html/P-skroutz.gr.Entities.Base.Product.ShopId.htm" />
+  <HelpKINode Title="ShopLocations class">
+    <HelpKINode Title="ShopLocations Class" Url="html/T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+    <HelpKINode Title="ShopLocations Members" Url="html/AllMembers.T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+    <HelpKINode Title="about ShopLocations class" Url="html/T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ShopLocations.locations property" Url="html/P-skroutz.gr.Model.Shop.ShopLocations.locations.htm" />
+  <HelpKINode Title="ShopLocations.meta property" Url="html/P-skroutz.gr.Model.Shop.ShopLocations.meta.htm" />
+  <HelpKINode Title="ShopReview class">
+    <HelpKINode Title="ShopReview Class" Url="html/T-skroutz.gr.Entities.Base.ShopReview.htm" />
+    <HelpKINode Title="ShopReview Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.ShopReview.htm" />
+    <HelpKINode Title="about ShopReview class" Url="html/T-skroutz.gr.Entities.Base.ShopReview.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.ShopReview.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.ShopReview.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.ShopReview.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ShopReview.created_at property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.created_at.htm" />
+  <HelpKINode Title="ShopReview.id property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.id.htm" />
+  <HelpKINode Title="ShopReview.negative property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.negative.htm" />
+  <HelpKINode Title="ShopReview.rating property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.rating.htm" />
+  <HelpKINode Title="ShopReview.reasons property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.reasons.htm" />
+  <HelpKINode Title="ShopReview.review property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.review.htm" />
+  <HelpKINode Title="ShopReview.shop_reply property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.shop_reply.htm" />
+  <HelpKINode Title="ShopReview.user_id property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.user_id.htm" />
+  <HelpKINode Title="ShopReviews class">
+    <HelpKINode Title="ShopReviews Class" Url="html/T-skroutz.gr.Entities.ShopReviews.htm" />
+    <HelpKINode Title="ShopReviews Members" Url="html/AllMembers.T-skroutz.gr.Entities.ShopReviews.htm" />
+    <HelpKINode Title="about ShopReviews class" Url="html/T-skroutz.gr.Entities.ShopReviews.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.ShopReviews.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.ShopReviews.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.ShopReviews.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ShopReviews.meta property" Url="html/P-skroutz.gr.Entities.ShopReviews.meta.htm" />
+  <HelpKINode Title="ShopReviews.reviews property" Url="html/P-skroutz.gr.Entities.ShopReviews.reviews.htm" />
+  <HelpKINode Title="ShopUid property" Url="html/P-skroutz.gr.Entities.Base.Product.ShopUid.htm" />
+  <HelpKINode Title="shop_name property" Url="html/P-skroutz.gr.Entities.Base.Lowest.shop_name.htm" />
+  <HelpKINode Title="shop_reply property" Url="html/P-skroutz.gr.Entities.Base.ShopReview.shop_reply.htm" />
+  <HelpKINode Title="ShowInTiles enumeration member" Url="html/T-skroutz.gr.Shared.MetaFilters.htm" />
+  <HelpKINode Title="ShowInTiles field" Url="html/F-skroutz.gr.Shared.MetaFilters.ShowInTiles.htm" />
+  <HelpKINode Title="ShowSpecifications property" Url="html/P-skroutz.gr.Entities.Base.Category.ShowSpecifications.htm" />
+  <HelpKINode Title="Sizes enumeration member" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="Sizes field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Sizes.htm" />
+  <HelpKINode Title="Sizes property" Url="html/P-skroutz.gr.Entities.Base.Product.Sizes.htm" />
+  <HelpKINode Title="skroutz enumeration member" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="skroutz field" Url="html/F-skroutz.gr.Model.User.type.skroutz.htm" />
+  <HelpKINode Title="skroutz.gr namespace" Url="html/N-skroutz.gr.htm" />
+  <HelpKINode Title="skroutz.gr.Authorization namespace" Url="html/N-skroutz.gr.Authorization.htm" />
+  <HelpKINode Title="skroutz.gr.Authorization.AppCredentials structure">
+    <HelpKINode Title="AppCredentials Members" Url="html/AllMembers.T-skroutz.gr.Authorization.AppCredentials.htm" />
+    <HelpKINode Title="AppCredentials Structure" Url="html/T-skroutz.gr.Authorization.AppCredentials.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Authorization.Authorization class">
+    <HelpKINode Title="Authorization Class" Url="html/T-skroutz.gr.Authorization.Authorization.htm" />
+    <HelpKINode Title="Authorization Members" Url="html/AllMembers.T-skroutz.gr.Authorization.Authorization.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Authorization.UserCredentials structure">
+    <HelpKINode Title="UserCredentials Members" Url="html/AllMembers.T-skroutz.gr.Authorization.UserCredentials.htm" />
+    <HelpKINode Title="UserCredentials Structure" Url="html/T-skroutz.gr.Authorization.UserCredentials.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Category class">
+    <HelpKINode Title="Category Class" Url="html/T-skroutz.gr.Category.htm" />
+    <HelpKINode Title="Category Members" Url="html/AllMembers.T-skroutz.gr.Category.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities namespace" Url="html/N-skroutz.gr.Entities.htm" />
+  <HelpKINode Title="skroutz.gr.Entities.Base namespace" Url="html/N-skroutz.gr.Entities.Base.htm" />
+  <HelpKINode Title="skroutz.gr.Entities.Base.Average class">
+    <HelpKINode Title="Average Class" Url="html/T-skroutz.gr.Entities.Base.Average.htm" />
+    <HelpKINode Title="Average Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Average.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.Category class">
+    <HelpKINode Title="Category Class" Url="html/T-skroutz.gr.Entities.Base.Category.htm" />
+    <HelpKINode Title="Category Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Category.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.FilterGroup class">
+    <HelpKINode Title="FilterGroup Class" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <HelpKINode Title="FilterGroup Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.FilterGroup.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.FilterGroup.FilterTypes enumeration" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="skroutz.gr.Entities.Base.Flag class">
+    <HelpKINode Title="Flag Class" Url="html/T-skroutz.gr.Entities.Base.Flag.htm" />
+    <HelpKINode Title="Flag Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Flag.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.Group class">
+    <HelpKINode Title="Group Class" Url="html/T-skroutz.gr.Entities.Base.Group.htm" />
+    <HelpKINode Title="Group Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Group.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.History class">
+    <HelpKINode Title="History Class" Url="html/T-skroutz.gr.Entities.Base.History.htm" />
+    <HelpKINode Title="History Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.History.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.Lowest class">
+    <HelpKINode Title="Lowest Class" Url="html/T-skroutz.gr.Entities.Base.Lowest.htm" />
+    <HelpKINode Title="Lowest Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Lowest.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.Manufacturer class">
+    <HelpKINode Title="Manufacturer Class" Url="html/T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+    <HelpKINode Title="Manufacturer Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Manufacturer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.Product class">
+    <HelpKINode Title="Product Class" Url="html/T-skroutz.gr.Entities.Base.Product.htm" />
+    <HelpKINode Title="Product Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Product.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.ShopReview class">
+    <HelpKINode Title="ShopReview Class" Url="html/T-skroutz.gr.Entities.Base.ShopReview.htm" />
+    <HelpKINode Title="ShopReview Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.ShopReview.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.Sku class">
+    <HelpKINode Title="Sku Class" Url="html/T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="Sku Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Sku.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Base.SkuReviewVote class">
+    <HelpKINode Title="SkuReviewVote Class" Url="html/T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+    <HelpKINode Title="SkuReviewVote Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Categories class">
+    <HelpKINode Title="Categories Class" Url="html/T-skroutz.gr.Entities.Categories.htm" />
+    <HelpKINode Title="Categories Members" Url="html/AllMembers.T-skroutz.gr.Entities.Categories.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.ExtraInfo class">
+    <HelpKINode Title="ExtraInfo Class" Url="html/T-skroutz.gr.Entities.ExtraInfo.htm" />
+    <HelpKINode Title="ExtraInfo Members" Url="html/AllMembers.T-skroutz.gr.Entities.ExtraInfo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.FilterGroups class">
+    <HelpKINode Title="FilterGroups Class" Url="html/T-skroutz.gr.Entities.FilterGroups.htm" />
+    <HelpKINode Title="FilterGroups Members" Url="html/AllMembers.T-skroutz.gr.Entities.FilterGroups.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Flags class">
+    <HelpKINode Title="Flags Class" Url="html/T-skroutz.gr.Entities.Flags.htm" />
+    <HelpKINode Title="Flags Members" Url="html/AllMembers.T-skroutz.gr.Entities.Flags.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Groups class">
+    <HelpKINode Title="Groups Class" Url="html/T-skroutz.gr.Entities.Groups.htm" />
+    <HelpKINode Title="Groups Members" Url="html/AllMembers.T-skroutz.gr.Entities.Groups.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.GroupSpecification class">
+    <HelpKINode Title="GroupSpecification Class" Url="html/T-skroutz.gr.Entities.GroupSpecification.htm" />
+    <HelpKINode Title="GroupSpecification Members" Url="html/AllMembers.T-skroutz.gr.Entities.GroupSpecification.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Manufacturers class">
+    <HelpKINode Title="Manufacturers Class" Url="html/T-skroutz.gr.Entities.Manufacturers.htm" />
+    <HelpKINode Title="Manufacturers Members" Url="html/AllMembers.T-skroutz.gr.Entities.Manufacturers.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.PaymentMethods class">
+    <HelpKINode Title="PaymentMethods Class" Url="html/T-skroutz.gr.Entities.PaymentMethods.htm" />
+    <HelpKINode Title="PaymentMethods Members" Url="html/AllMembers.T-skroutz.gr.Entities.PaymentMethods.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.PriceHistory class">
+    <HelpKINode Title="PriceHistory Class" Url="html/T-skroutz.gr.Entities.PriceHistory.htm" />
+    <HelpKINode Title="PriceHistory Members" Url="html/AllMembers.T-skroutz.gr.Entities.PriceHistory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Products class">
+    <HelpKINode Title="Products Class" Url="html/T-skroutz.gr.Entities.Products.htm" />
+    <HelpKINode Title="Products Members" Url="html/AllMembers.T-skroutz.gr.Entities.Products.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Reviews class">
+    <HelpKINode Title="Reviews Class" Url="html/T-skroutz.gr.Entities.Reviews.htm" />
+    <HelpKINode Title="Reviews Members" Url="html/AllMembers.T-skroutz.gr.Entities.Reviews.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.RootCategory class">
+    <HelpKINode Title="RootCategory Class" Url="html/T-skroutz.gr.Entities.RootCategory.htm" />
+    <HelpKINode Title="RootCategory Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootCategory.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.RootManufacturer class">
+    <HelpKINode Title="RootManufacturer Class" Url="html/T-skroutz.gr.Entities.RootManufacturer.htm" />
+    <HelpKINode Title="RootManufacturer Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootManufacturer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.RootProduct class">
+    <HelpKINode Title="RootProduct Class" Url="html/T-skroutz.gr.Entities.RootProduct.htm" />
+    <HelpKINode Title="RootProduct Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootProduct.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.RootShop class">
+    <HelpKINode Title="RootShop Class" Url="html/T-skroutz.gr.Entities.RootShop.htm" />
+    <HelpKINode Title="RootShop Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootShop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.RootSKU class">
+    <HelpKINode Title="RootSKU Class" Url="html/T-skroutz.gr.Entities.RootSKU.htm" />
+    <HelpKINode Title="RootSKU Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootSKU.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.RootSKUReviewVote class">
+    <HelpKINode Title="RootSKUReviewVote Class" Url="html/T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+    <HelpKINode Title="RootSKUReviewVote Members" Url="html/AllMembers.T-skroutz.gr.Entities.RootSKUReviewVote.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Shipping class">
+    <HelpKINode Title="Shipping Class" Url="html/T-skroutz.gr.Entities.Shipping.htm" />
+    <HelpKINode Title="Shipping Members" Url="html/AllMembers.T-skroutz.gr.Entities.Shipping.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Shop class">
+    <HelpKINode Title="Shop Class" Url="html/T-skroutz.gr.Entities.Shop.htm" />
+    <HelpKINode Title="Shop Members" Url="html/AllMembers.T-skroutz.gr.Entities.Shop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.ShopReviews class">
+    <HelpKINode Title="ShopReviews Class" Url="html/T-skroutz.gr.Entities.ShopReviews.htm" />
+    <HelpKINode Title="ShopReviews Members" Url="html/AllMembers.T-skroutz.gr.Entities.ShopReviews.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.SKUReview class">
+    <HelpKINode Title="SKUReview Class" Url="html/T-skroutz.gr.Entities.SKUReview.htm" />
+    <HelpKINode Title="SKUReview Members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUReview.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.SKUReviewFlag class">
+    <HelpKINode Title="SKUReviewFlag Class" Url="html/T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+    <HelpKINode Title="SKUReviewFlag Members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.SKUs class">
+    <HelpKINode Title="SKUs Class" Url="html/T-skroutz.gr.Entities.SKUs.htm" />
+    <HelpKINode Title="SKUs Members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUs.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Specification class">
+    <HelpKINode Title="Specification Class" Url="html/T-skroutz.gr.Entities.Specification.htm" />
+    <HelpKINode Title="Specification Members" Url="html/AllMembers.T-skroutz.gr.Entities.Specification.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Entities.Specifications class">
+    <HelpKINode Title="Specifications Class" Url="html/T-skroutz.gr.Entities.Specifications.htm" />
+    <HelpKINode Title="Specifications Members" Url="html/AllMembers.T-skroutz.gr.Entities.Specifications.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Error class">
+    <HelpKINode Title="Error Class" Url="html/T-skroutz.gr.Error.htm" />
+    <HelpKINode Title="Error Members" Url="html/AllMembers.T-skroutz.gr.Error.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Errors class">
+    <HelpKINode Title="Errors Class" Url="html/T-skroutz.gr.Errors.htm" />
+    <HelpKINode Title="Errors Members" Url="html/AllMembers.T-skroutz.gr.Errors.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.FilterGroup class">
+    <HelpKINode Title="FilterGroup Class" Url="html/T-skroutz.gr.FilterGroup.htm" />
+    <HelpKINode Title="FilterGroup Members" Url="html/AllMembers.T-skroutz.gr.FilterGroup.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Flag class">
+    <HelpKINode Title="Flag Class" Url="html/T-skroutz.gr.Flag.htm" />
+    <HelpKINode Title="Flag Members" Url="html/AllMembers.T-skroutz.gr.Flag.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Manufacturer class">
+    <HelpKINode Title="Manufacturer Class" Url="html/T-skroutz.gr.Manufacturer.htm" />
+    <HelpKINode Title="Manufacturer Members" Url="html/AllMembers.T-skroutz.gr.Manufacturer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.Shop namespace" Url="html/N-skroutz.gr.Model.Shop.htm" />
+  <HelpKINode Title="skroutz.gr.Model.Shop.Location class">
+    <HelpKINode Title="Location Class" Url="html/T-skroutz.gr.Model.Shop.Location.htm" />
+    <HelpKINode Title="Location Members" Url="html/AllMembers.T-skroutz.gr.Model.Shop.Location.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.Shop.ShopLocations class">
+    <HelpKINode Title="ShopLocations Class" Url="html/T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+    <HelpKINode Title="ShopLocations Members" Url="html/AllMembers.T-skroutz.gr.Model.Shop.ShopLocations.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User namespace" Url="html/N-skroutz.gr.Model.User.htm" />
+  <HelpKINode Title="skroutz.gr.Model.User.Favorite class">
+    <HelpKINode Title="Favorite Class" Url="html/T-skroutz.gr.Model.User.Favorite.htm" />
+    <HelpKINode Title="Favorite Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Favorite.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.FavoriteList class">
+    <HelpKINode Title="FavoriteList Class" Url="html/T-skroutz.gr.Model.User.FavoriteList.htm" />
+    <HelpKINode Title="FavoriteList Members" Url="html/AllMembers.T-skroutz.gr.Model.User.FavoriteList.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.Favorites class">
+    <HelpKINode Title="Favorites Class" Url="html/T-skroutz.gr.Model.User.Favorites.htm" />
+    <HelpKINode Title="Favorites Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Favorites.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.Notification class">
+    <HelpKINode Title="Notification Class" Url="html/T-skroutz.gr.Model.User.Notification.htm" />
+    <HelpKINode Title="Notification Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Notification.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.NotificationType enumeration" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="skroutz.gr.Model.User.sex enumeration" Url="html/T-skroutz.gr.Model.User.sex.htm" />
+  <HelpKINode Title="skroutz.gr.Model.User.Sku class">
+    <HelpKINode Title="Sku Class" Url="html/T-skroutz.gr.Model.User.Sku.htm" />
+    <HelpKINode Title="Sku Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Sku.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.Snapshot class">
+    <HelpKINode Title="Snapshot Class" Url="html/T-skroutz.gr.Model.User.Snapshot.htm" />
+    <HelpKINode Title="Snapshot Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Snapshot.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.type enumeration" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="skroutz.gr.Model.User.User class">
+    <HelpKINode Title="User Class" Url="html/T-skroutz.gr.Model.User.User.htm" />
+    <HelpKINode Title="User Members" Url="html/AllMembers.T-skroutz.gr.Model.User.User.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.UserFavorites class">
+    <HelpKINode Title="UserFavorites Class" Url="html/T-skroutz.gr.Model.User.UserFavorites.htm" />
+    <HelpKINode Title="UserFavorites Members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserFavorites.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.UserNotifications class">
+    <HelpKINode Title="UserNotifications Class" Url="html/T-skroutz.gr.Model.User.UserNotifications.htm" />
+    <HelpKINode Title="UserNotifications Members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserNotifications.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Model.User.UserProfile class">
+    <HelpKINode Title="UserProfile Class" Url="html/T-skroutz.gr.Model.User.UserProfile.htm" />
+    <HelpKINode Title="UserProfile Members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserProfile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Product class">
+    <HelpKINode Title="Product Class" Url="html/T-skroutz.gr.Product.htm" />
+    <HelpKINode Title="Product Members" Url="html/AllMembers.T-skroutz.gr.Product.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Request class">
+    <HelpKINode Title="Request Class" Url="html/T-skroutz.gr.Request.htm" />
+    <HelpKINode Title="Request Members" Url="html/AllMembers.T-skroutz.gr.Request.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Search class">
+    <HelpKINode Title="Search Class" Url="html/T-skroutz.gr.Search.htm" />
+    <HelpKINode Title="Search Members" Url="html/AllMembers.T-skroutz.gr.Search.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Shared namespace" Url="html/N-skroutz.gr.Shared.htm" />
+  <HelpKINode Title="skroutz.gr.Shared.Images class">
+    <HelpKINode Title="Images Class" Url="html/T-skroutz.gr.Shared.Images.htm" />
+    <HelpKINode Title="Images Members" Url="html/AllMembers.T-skroutz.gr.Shared.Images.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Shared.Meta class">
+    <HelpKINode Title="Meta Class" Url="html/T-skroutz.gr.Shared.Meta.htm" />
+    <HelpKINode Title="Meta Members" Url="html/AllMembers.T-skroutz.gr.Shared.Meta.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Shared.MetaFilters enumeration" Url="html/T-skroutz.gr.Shared.MetaFilters.htm" />
+  <HelpKINode Title="skroutz.gr.Shared.OrderByNamePop enumeration" Url="html/T-skroutz.gr.Shared.OrderByNamePop.htm" />
+  <HelpKINode Title="skroutz.gr.Shared.OrderByPrcPop enumeration" Url="html/T-skroutz.gr.Shared.OrderByPrcPop.htm" />
+  <HelpKINode Title="skroutz.gr.Shared.OrderByPrcPopRating enumeration" Url="html/T-skroutz.gr.Shared.OrderByPrcPopRating.htm" />
+  <HelpKINode Title="skroutz.gr.Shared.OrderDir enumeration" Url="html/T-skroutz.gr.Shared.OrderDir.htm" />
+  <HelpKINode Title="skroutz.gr.Shared.Pagination class">
+    <HelpKINode Title="Pagination Class" Url="html/T-skroutz.gr.Shared.Pagination.htm" />
+    <HelpKINode Title="Pagination Members" Url="html/AllMembers.T-skroutz.gr.Shared.Pagination.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.Shop class">
+    <HelpKINode Title="Shop Class" Url="html/T-skroutz.gr.Shop.htm" />
+    <HelpKINode Title="Shop Members" Url="html/AllMembers.T-skroutz.gr.Shop.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.SKU class">
+    <HelpKINode Title="SKU Class" Url="html/T-skroutz.gr.SKU.htm" />
+    <HelpKINode Title="SKU Members" Url="html/AllMembers.T-skroutz.gr.SKU.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skroutz.gr.User class">
+    <HelpKINode Title="User Class" Url="html/T-skroutz.gr.User.htm" />
+    <HelpKINode Title="User Members" Url="html/AllMembers.T-skroutz.gr.User.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SKU class">
+    <HelpKINode Title="SKU Members" Url="html/AllMembers.T-skroutz.gr.SKU.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.SKU.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.SKU.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.SKU.-ctor.htm" />
+    <HelpKINode Title="SKU Class" Url="html/T-skroutz.gr.SKU.htm" />
+    <HelpKINode Title="about SKU class" Url="html/T-skroutz.gr.SKU.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Sku class">
+    <HelpKINode Title="Sku Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Sku.htm" />
+    <HelpKINode Title="about Sku class" Url="html/T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="about Sku class" Url="html/T-skroutz.gr.Model.User.Sku.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.Sku.htm" />
+    <HelpKINode Title="Sku Class" Url="html/T-skroutz.gr.Model.User.Sku.htm" />
+    <HelpKINode Title="Sku Class" Url="html/T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="Sku Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.Sku.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.Sku.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.Sku.htm" />
+  </HelpKINode>
+  <HelpKINode Title="sku property">
+    <HelpKINode Title="sku Property " Url="html/P-skroutz.gr.Model.User.Notification.sku.htm" />
+    <HelpKINode Title="sku Property " Url="html/P-skroutz.gr.Entities.RootSKU.sku.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Sku.CategoryId property" Url="html/P-skroutz.gr.Entities.Base.Sku.CategoryId.htm" />
+  <HelpKINode Title="Sku.category_id property" Url="html/P-skroutz.gr.Model.User.Sku.category_id.htm" />
+  <HelpKINode Title="Sku.ClickUrl property" Url="html/P-skroutz.gr.Entities.Base.Sku.ClickUrl.htm" />
+  <HelpKINode Title="Sku.click_url property" Url="html/P-skroutz.gr.Model.User.Sku.click_url.htm" />
+  <HelpKINode Title="Sku.DisplayName property" Url="html/P-skroutz.gr.Entities.Base.Sku.DisplayName.htm" />
+  <HelpKINode Title="Sku.display_name property" Url="html/P-skroutz.gr.Model.User.Sku.display_name.htm" />
+  <HelpKINode Title="Sku.Ean property" Url="html/P-skroutz.gr.Entities.Base.Sku.Ean.htm" />
+  <HelpKINode Title="Sku.FirstProductShopInfo property" Url="html/P-skroutz.gr.Entities.Base.Sku.FirstProductShopInfo.htm" />
+  <HelpKINode Title="Sku.first_product_shop_info property" Url="html/P-skroutz.gr.Model.User.Sku.first_product_shop_info.htm" />
+  <HelpKINode Title="SKU.FlagSKUsReview method" Url="html/M-skroutz.gr.SKU.FlagSKUsReview.htm" />
+  <HelpKINode Title="Sku.future property" Url="html/P-skroutz.gr.Model.User.Sku.future.htm" />
+  <HelpKINode Title="Sku.Future property" Url="html/P-skroutz.gr.Entities.Base.Sku.Future.htm" />
+  <HelpKINode Title="Sku.id property" Url="html/P-skroutz.gr.Model.User.Sku.id.htm" />
+  <HelpKINode Title="Sku.Id property" Url="html/P-skroutz.gr.Entities.Base.Sku.Id.htm" />
+  <HelpKINode Title="Sku.images property" Url="html/P-skroutz.gr.Model.User.Sku.images.htm" />
+  <HelpKINode Title="Sku.Images property" Url="html/P-skroutz.gr.Entities.Base.Sku.Images.htm" />
+  <HelpKINode Title="SKU.ListSKUsOfSpecificCategory method" Url="html/M-skroutz.gr.SKU.ListSKUsOfSpecificCategory.htm" />
+  <HelpKINode Title="Sku.ManufacturerId property" Url="html/P-skroutz.gr.Entities.Base.Sku.ManufacturerId.htm" />
+  <HelpKINode Title="Sku.Name property" Url="html/P-skroutz.gr.Entities.Base.Sku.Name.htm" />
+  <HelpKINode Title="Sku.PlainSpecSummary property" Url="html/P-skroutz.gr.Entities.Base.Sku.PlainSpecSummary.htm" />
+  <HelpKINode Title="Sku.Pn property" Url="html/P-skroutz.gr.Entities.Base.Sku.Pn.htm" />
+  <HelpKINode Title="Sku.PriceMax property" Url="html/P-skroutz.gr.Entities.Base.Sku.PriceMax.htm" />
+  <HelpKINode Title="Sku.PriceMin property" Url="html/P-skroutz.gr.Entities.Base.Sku.PriceMin.htm" />
+  <HelpKINode Title="SKU.RetrieveSimilarSKUs method" Url="html/M-skroutz.gr.SKU.RetrieveSimilarSKUs.htm" />
+  <HelpKINode Title="SKU.RetrieveSingleSKU method" Url="html/M-skroutz.gr.SKU.RetrieveSingleSKU.htm" />
+  <HelpKINode Title="SKU.RetrieveSKUsFavorite method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsFavorite.htm" />
+  <HelpKINode Title="SKU.RetrieveSKUsPriceHistory method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsPriceHistory.htm" />
+  <HelpKINode Title="SKU.RetrieveSKUsProducts method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsProducts.htm" />
+  <HelpKINode Title="SKU.RetrieveSKUsReviews method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsReviews.htm" />
+  <HelpKINode Title="SKU.RetrieveSKUsSpecifications method" Url="html/M-skroutz.gr.SKU.RetrieveSKUsSpecifications.htm" />
+  <HelpKINode Title="Sku.ReviewScore property" Url="html/P-skroutz.gr.Entities.Base.Sku.ReviewScore.htm" />
+  <HelpKINode Title="Sku.ReviewsCount property" Url="html/P-skroutz.gr.Entities.Base.Sku.ReviewsCount.htm" />
+  <HelpKINode Title="Sku.ShopCount property" Url="html/P-skroutz.gr.Entities.Base.Sku.ShopCount.htm" />
+  <HelpKINode Title="SKU.SKU constructor" Url="html/Overload-skroutz.gr.SKU.-ctor.htm" />
+  <HelpKINode Title="Sku.Virtual property" Url="html/P-skroutz.gr.Entities.Base.Sku.Virtual.htm" />
+  <HelpKINode Title="Sku.virtual property" Url="html/P-skroutz.gr.Model.User.Sku.virtual.htm" />
+  <HelpKINode Title="SKU.VoteSKUsReview method" Url="html/M-skroutz.gr.SKU.VoteSKUsReview.htm" />
+  <HelpKINode Title="Sku.WebUri property" Url="html/P-skroutz.gr.Entities.Base.Sku.WebUri.htm" />
+  <HelpKINode Title="SkuId property">
+    <HelpKINode Title="SkuId Property " Url="html/P-skroutz.gr.Entities.Base.Product.SkuId.htm" />
+    <HelpKINode Title="SkuId Property " Url="html/P-skroutz.gr.Model.User.Favorite.SkuId.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SKUReview class">
+    <HelpKINode Title="SKUReview Class" Url="html/T-skroutz.gr.Entities.SKUReview.htm" />
+    <HelpKINode Title="SKUReview Members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUReview.htm" />
+    <HelpKINode Title="about SKUReview class" Url="html/T-skroutz.gr.Entities.SKUReview.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUReview.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.SKUReview.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.SKUReview.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SKUReview.created_at property" Url="html/P-skroutz.gr.Entities.SKUReview.created_at.htm" />
+  <HelpKINode Title="SKUReview.demoted property" Url="html/P-skroutz.gr.Entities.SKUReview.demoted.htm" />
+  <HelpKINode Title="SKUReview.flagged property" Url="html/P-skroutz.gr.Entities.SKUReview.flagged.htm" />
+  <HelpKINode Title="SKUReview.helpful property" Url="html/P-skroutz.gr.Entities.SKUReview.helpful.htm" />
+  <HelpKINode Title="SKUReview.helpful_votes_count property" Url="html/P-skroutz.gr.Entities.SKUReview.helpful_votes_count.htm" />
+  <HelpKINode Title="SKUReview.id property" Url="html/P-skroutz.gr.Entities.SKUReview.id.htm" />
+  <HelpKINode Title="SKUReview.rating property" Url="html/P-skroutz.gr.Entities.SKUReview.rating.htm" />
+  <HelpKINode Title="SKUReview.review property" Url="html/P-skroutz.gr.Entities.SKUReview.review.htm" />
+  <HelpKINode Title="SKUReview.user_id property" Url="html/P-skroutz.gr.Entities.SKUReview.user_id.htm" />
+  <HelpKINode Title="SKUReview.voted property" Url="html/P-skroutz.gr.Entities.SKUReview.voted.htm" />
+  <HelpKINode Title="SKUReview.votes_count property" Url="html/P-skroutz.gr.Entities.SKUReview.votes_count.htm" />
+  <HelpKINode Title="SKUReviewFlag class">
+    <HelpKINode Title="SKUReviewFlag Class" Url="html/T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+    <HelpKINode Title="SKUReviewFlag Members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+    <HelpKINode Title="about SKUReviewFlag class" Url="html/T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.SKUReviewFlag.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SKUReviewFlag.created_at property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.created_at.htm" />
+  <HelpKINode Title="SKUReviewFlag.flaggable_id property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.flaggable_id.htm" />
+  <HelpKINode Title="SKUReviewFlag.flaggable_type property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.flaggable_type.htm" />
+  <HelpKINode Title="SKUReviewFlag.id property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.id.htm" />
+  <HelpKINode Title="SKUReviewFlag.reason property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.reason.htm" />
+  <HelpKINode Title="SKUReviewFlag.updated_at property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.updated_at.htm" />
+  <HelpKINode Title="SKUReviewFlag.user_id property" Url="html/P-skroutz.gr.Entities.SKUReviewFlag.user_id.htm" />
+  <HelpKINode Title="SkuReviewVote class">
+    <HelpKINode Title="SkuReviewVote Class" Url="html/T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+    <HelpKINode Title="SkuReviewVote Members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+    <HelpKINode Title="about SkuReviewVote class" Url="html/T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Base.SkuReviewVote.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SkuReviewVote.created_at property" Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.created_at.htm" />
+  <HelpKINode Title="SkuReviewVote.helpful property" Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.helpful.htm" />
+  <HelpKINode Title="SkuReviewVote.id property" Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.id.htm" />
+  <HelpKINode Title="SkuReviewVote.sku_review_id property" Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.sku_review_id.htm" />
+  <HelpKINode Title="SkuReviewVote.user_id property" Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.user_id.htm" />
+  <HelpKINode Title="SKUs class">
+    <HelpKINode Title="SKUs Class" Url="html/T-skroutz.gr.Entities.SKUs.htm" />
+    <HelpKINode Title="SKUs Members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUs.htm" />
+    <HelpKINode Title="about SKUs class" Url="html/T-skroutz.gr.Entities.SKUs.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.SKUs.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.SKUs.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.SKUs.htm" />
+  </HelpKINode>
+  <HelpKINode Title="skus property" Url="html/P-skroutz.gr.Entities.SKUs.skus.htm" />
+  <HelpKINode Title="SKUs.meta property" Url="html/P-skroutz.gr.Entities.SKUs.meta.htm" />
+  <HelpKINode Title="SKUs.skus property" Url="html/P-skroutz.gr.Entities.SKUs.skus.htm" />
+  <HelpKINode Title="sku_comment enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="sku_comment field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_comment.htm" />
+  <HelpKINode Title="sku_comment_mention enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="sku_comment_mention field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_comment_mention.htm" />
+  <HelpKINode Title="sku_comment_reply enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="sku_comment_reply field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_comment_reply.htm" />
+  <HelpKINode Title="sku_deletion enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="sku_deletion field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_deletion.htm" />
+  <HelpKINode Title="sku_release enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="sku_release field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_release.htm" />
+  <HelpKINode Title="sku_review enumeration member" Url="html/T-skroutz.gr.Model.User.NotificationType.htm" />
+  <HelpKINode Title="sku_review field" Url="html/F-skroutz.gr.Model.User.NotificationType.sku_review.htm" />
+  <HelpKINode Title="sku_review_id property" Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.sku_review_id.htm" />
+  <HelpKINode Title="sku_review_vote property" Url="html/P-skroutz.gr.Entities.RootSKUReviewVote.sku_review_vote.htm" />
+  <HelpKINode Title="Snapshot class">
+    <HelpKINode Title="Snapshot Class" Url="html/T-skroutz.gr.Model.User.Snapshot.htm" />
+    <HelpKINode Title="Snapshot Members" Url="html/AllMembers.T-skroutz.gr.Model.User.Snapshot.htm" />
+    <HelpKINode Title="about Snapshot class" Url="html/T-skroutz.gr.Model.User.Snapshot.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.Snapshot.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.Snapshot.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.Snapshot.htm" />
+  </HelpKINode>
+  <HelpKINode Title="snapshot property" Url="html/P-skroutz.gr.Model.User.Notification.snapshot.htm" />
+  <HelpKINode Title="Snapshot.change_rate property" Url="html/P-skroutz.gr.Model.User.Snapshot.change_rate.htm" />
+  <HelpKINode Title="Snapshot.from_threshold property" Url="html/P-skroutz.gr.Model.User.Snapshot.from_threshold.htm" />
+  <HelpKINode Title="Snapshot.latest_price property" Url="html/P-skroutz.gr.Model.User.Snapshot.latest_price.htm" />
+  <HelpKINode Title="Snapshot.price_min property" Url="html/P-skroutz.gr.Model.User.Snapshot.price_min.htm" />
+  <HelpKINode Title="Spec enumeration member" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="Spec field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.Spec.htm" />
+  <HelpKINode Title="Specification class">
+    <HelpKINode Title="Specification Class" Url="html/T-skroutz.gr.Entities.Specification.htm" />
+    <HelpKINode Title="Specification Members" Url="html/AllMembers.T-skroutz.gr.Entities.Specification.htm" />
+    <HelpKINode Title="about Specification class" Url="html/T-skroutz.gr.Entities.Specification.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Specification.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Specification.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Specification.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Specification.id property" Url="html/P-skroutz.gr.Entities.Specification.id.htm" />
+  <HelpKINode Title="Specification.name property" Url="html/P-skroutz.gr.Entities.Specification.name.htm" />
+  <HelpKINode Title="Specification.order property" Url="html/P-skroutz.gr.Entities.Specification.order.htm" />
+  <HelpKINode Title="Specification.unit property" Url="html/P-skroutz.gr.Entities.Specification.unit.htm" />
+  <HelpKINode Title="Specification.values property" Url="html/P-skroutz.gr.Entities.Specification.values.htm" />
+  <HelpKINode Title="Specifications class">
+    <HelpKINode Title="Specifications Class" Url="html/T-skroutz.gr.Entities.Specifications.htm" />
+    <HelpKINode Title="Specifications Members" Url="html/AllMembers.T-skroutz.gr.Entities.Specifications.htm" />
+    <HelpKINode Title="about Specifications class" Url="html/T-skroutz.gr.Entities.Specifications.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Entities.Specifications.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Entities.Specifications.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Entities.Specifications.htm" />
+  </HelpKINode>
+  <HelpKINode Title="specifications property">
+    <HelpKINode Title="specifications Property " Url="html/P-skroutz.gr.Entities.Specifications.specifications.htm" />
+    <HelpKINode Title="specifications Property " Url="html/P-skroutz.gr.Entities.Groups.specifications.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Specifications.specifications property" Url="html/P-skroutz.gr.Entities.Specifications.specifications.htm" />
+  <HelpKINode Title="spot_cash property" Url="html/P-skroutz.gr.Entities.PaymentMethods.spot_cash.htm" />
+  <HelpKINode Title="store property" Url="html/P-skroutz.gr.Model.Shop.Location.store.htm" />
+  <HelpKINode Title="SyncedSpec enumeration member" Url="html/T-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.htm" />
+  <HelpKINode Title="SyncedSpec field" Url="html/F-skroutz.gr.Entities.Base.FilterGroup.FilterTypes.SyncedSpec.htm" />
+  <HelpKINode Title="thumbshot_url property" Url="html/P-skroutz.gr.Entities.Shop.thumbshot_url.htm" />
+  <HelpKINode Title="time_on_platform property" Url="html/P-skroutz.gr.Entities.ExtraInfo.time_on_platform.htm" />
+  <HelpKINode Title="top_positive_reasons property" Url="html/P-skroutz.gr.Entities.Shop.top_positive_reasons.htm" />
+  <HelpKINode Title="total_pages property" Url="html/P-skroutz.gr.Shared.Pagination.total_pages.htm" />
+  <HelpKINode Title="total_results property" Url="html/P-skroutz.gr.Shared.Pagination.total_results.htm" />
+  <HelpKINode Title="twitter enumeration member" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="twitter field" Url="html/F-skroutz.gr.Model.User.type.twitter.htm" />
+  <HelpKINode Title="type enumeration" Url="html/T-skroutz.gr.Model.User.type.htm" />
+  <HelpKINode Title="type property" Url="html/P-skroutz.gr.Model.User.User.type.htm" />
+  <HelpKINode Title="type.facebook field" Url="html/F-skroutz.gr.Model.User.type.facebook.htm" />
+  <HelpKINode Title="type.google field" Url="html/F-skroutz.gr.Model.User.type.google.htm" />
+  <HelpKINode Title="type.open_id field" Url="html/F-skroutz.gr.Model.User.type.open_id.htm" />
+  <HelpKINode Title="type.skroutz field" Url="html/F-skroutz.gr.Model.User.type.skroutz.htm" />
+  <HelpKINode Title="type.twitter field" Url="html/F-skroutz.gr.Model.User.type.twitter.htm" />
+  <HelpKINode Title="unit property" Url="html/P-skroutz.gr.Entities.Specification.unit.htm" />
+  <HelpKINode Title="UpdatedAt property">
+    <HelpKINode Title="UpdatedAt Property " Url="html/P-skroutz.gr.Model.User.Favorite.UpdatedAt.htm" />
+    <HelpKINode Title="UpdatedAt Property " Url="html/P-skroutz.gr.Entities.Base.FilterGroup.UpdatedAt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="updated_at property">
+    <HelpKINode Title="updated_at Property " Url="html/P-skroutz.gr.Model.User.Notification.updated_at.htm" />
+    <HelpKINode Title="updated_at Property " Url="html/P-skroutz.gr.Entities.SKUReviewFlag.updated_at.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UpdateFavorite method" Url="html/M-skroutz.gr.User.UpdateFavorite.htm" />
+  <HelpKINode Title="User class">
+    <HelpKINode Title="User Class" Url="html/T-skroutz.gr.User.htm" />
+    <HelpKINode Title="User Class" Url="html/T-skroutz.gr.Model.User.User.htm" />
+    <HelpKINode Title="User Members" Url="html/AllMembers.T-skroutz.gr.User.htm" />
+    <HelpKINode Title="User Members" Url="html/AllMembers.T-skroutz.gr.Model.User.User.htm" />
+    <HelpKINode Title="about User class" Url="html/T-skroutz.gr.Model.User.User.htm" />
+    <HelpKINode Title="about User class" Url="html/T-skroutz.gr.User.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.User.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.User.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-skroutz.gr.User.-ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.User.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.User.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.User.htm" />
+  </HelpKINode>
+  <HelpKINode Title="user property" Url="html/P-skroutz.gr.Model.User.UserProfile.user.htm" />
+  <HelpKINode Title="User.avatar property" Url="html/P-skroutz.gr.Model.User.User.avatar.htm" />
+  <HelpKINode Title="User.CreateFavoriteList method" Url="html/M-skroutz.gr.User.CreateFavoriteList.htm" />
+  <HelpKINode Title="User.CreateNewFavorite method" Url="html/M-skroutz.gr.User.CreateNewFavorite.htm" />
+  <HelpKINode Title="User.DestroyFavorite method" Url="html/M-skroutz.gr.User.DestroyFavorite.htm" />
+  <HelpKINode Title="User.DestroyFavoriteList method" Url="html/M-skroutz.gr.User.DestroyFavoriteList.htm" />
+  <HelpKINode Title="User.id property" Url="html/P-skroutz.gr.Model.User.User.id.htm" />
+  <HelpKINode Title="User.ListFavoriteLists method" Url="html/M-skroutz.gr.User.ListFavoriteLists.htm" />
+  <HelpKINode Title="User.ListFavorites method" Url="html/M-skroutz.gr.User.ListFavorites.htm" />
+  <HelpKINode Title="User.ListFavoritesBelongingToList method" Url="html/M-skroutz.gr.User.ListFavoritesBelongingToList.htm" />
+  <HelpKINode Title="User.ListNotifications method" Url="html/M-skroutz.gr.User.ListNotifications.htm" />
+  <HelpKINode Title="User.MarkNotificationsAsViewed method" Url="html/M-skroutz.gr.User.MarkNotificationsAsViewed.htm" />
+  <HelpKINode Title="User.RetrieveProfileOfAuthenticatedUser method" Url="html/M-skroutz.gr.User.RetrieveProfileOfAuthenticatedUser.htm" />
+  <HelpKINode Title="User.RetrieveSingleFavorite method" Url="html/M-skroutz.gr.User.RetrieveSingleFavorite.htm" />
+  <HelpKINode Title="User.RetrieveSingleNotification method" Url="html/M-skroutz.gr.User.RetrieveSingleNotification.htm" />
+  <HelpKINode Title="User.sex property" Url="html/P-skroutz.gr.Model.User.User.sex.htm" />
+  <HelpKINode Title="User.type property" Url="html/P-skroutz.gr.Model.User.User.type.htm" />
+  <HelpKINode Title="User.UpdateFavorite method" Url="html/M-skroutz.gr.User.UpdateFavorite.htm" />
+  <HelpKINode Title="User.User constructor" Url="html/Overload-skroutz.gr.User.-ctor.htm" />
+  <HelpKINode Title="User.username property" Url="html/P-skroutz.gr.Model.User.User.username.htm" />
+  <HelpKINode Title="UserCredentials structure">
+    <HelpKINode Title="UserCredentials Members" Url="html/AllMembers.T-skroutz.gr.Authorization.UserCredentials.htm" />
+    <HelpKINode Title="UserCredentials Structure" Url="html/T-skroutz.gr.Authorization.UserCredentials.htm" />
+    <HelpKINode Title="about UserCredentials structure" Url="html/T-skroutz.gr.Authorization.UserCredentials.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Authorization.UserCredentials.htm" />
+    <HelpKINode Title="fields" Url="html/Fields.T-skroutz.gr.Authorization.UserCredentials.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Authorization.UserCredentials.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserCredentials.client_id field" Url="html/F-skroutz.gr.Authorization.UserCredentials.client_id.htm" />
+  <HelpKINode Title="UserCredentials.redirect_uri field" Url="html/F-skroutz.gr.Authorization.UserCredentials.redirect_uri.htm" />
+  <HelpKINode Title="UserFavorites class">
+    <HelpKINode Title="UserFavorites Class" Url="html/T-skroutz.gr.Model.User.UserFavorites.htm" />
+    <HelpKINode Title="UserFavorites Members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserFavorites.htm" />
+    <HelpKINode Title="about UserFavorites class" Url="html/T-skroutz.gr.Model.User.UserFavorites.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserFavorites.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.UserFavorites.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.UserFavorites.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserFavorites.favorite_lists property" Url="html/P-skroutz.gr.Model.User.UserFavorites.favorite_lists.htm" />
+  <HelpKINode Title="UserFavorites.meta property" Url="html/P-skroutz.gr.Model.User.UserFavorites.meta.htm" />
+  <HelpKINode Title="UserId property" Url="html/P-skroutz.gr.Model.User.Favorite.UserId.htm" />
+  <HelpKINode Title="username property" Url="html/P-skroutz.gr.Model.User.User.username.htm" />
+  <HelpKINode Title="UserNotes property" Url="html/P-skroutz.gr.Model.User.Favorite.UserNotes.htm" />
+  <HelpKINode Title="UserNotifications class">
+    <HelpKINode Title="UserNotifications Class" Url="html/T-skroutz.gr.Model.User.UserNotifications.htm" />
+    <HelpKINode Title="UserNotifications Members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserNotifications.htm" />
+    <HelpKINode Title="about UserNotifications class" Url="html/T-skroutz.gr.Model.User.UserNotifications.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserNotifications.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.UserNotifications.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.UserNotifications.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserNotifications.meta property" Url="html/P-skroutz.gr.Model.User.UserNotifications.meta.htm" />
+  <HelpKINode Title="UserNotifications.notifications property" Url="html/P-skroutz.gr.Model.User.UserNotifications.notifications.htm" />
+  <HelpKINode Title="UserProfile class">
+    <HelpKINode Title="UserProfile Class" Url="html/T-skroutz.gr.Model.User.UserProfile.htm" />
+    <HelpKINode Title="UserProfile Members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserProfile.htm" />
+    <HelpKINode Title="about UserProfile class" Url="html/T-skroutz.gr.Model.User.UserProfile.htm" />
+    <HelpKINode Title="all members" Url="html/AllMembers.T-skroutz.gr.Model.User.UserProfile.htm" />
+    <HelpKINode Title="methods" Url="html/Methods.T-skroutz.gr.Model.User.UserProfile.htm" />
+    <HelpKINode Title="properties" Url="html/Properties.T-skroutz.gr.Model.User.UserProfile.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserProfile.user property" Url="html/P-skroutz.gr.Model.User.UserProfile.user.htm" />
+  <HelpKINode Title="UserToken property" Url="html/P-skroutz.gr.Authorization.Authorization.UserToken.htm" />
+  <HelpKINode Title="user_id property">
+    <HelpKINode Title="user_id Property " Url="html/P-skroutz.gr.Entities.SKUReviewFlag.user_id.htm" />
+    <HelpKINode Title="user_id Property " Url="html/P-skroutz.gr.Entities.Base.SkuReviewVote.user_id.htm" />
+    <HelpKINode Title="user_id Property " Url="html/P-skroutz.gr.Entities.SKUReview.user_id.htm" />
+    <HelpKINode Title="user_id Property " Url="html/P-skroutz.gr.Entities.Base.ShopReview.user_id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="values property" Url="html/P-skroutz.gr.Entities.Specification.values.htm" />
+  <HelpKINode Title="Values property" Url="html/P-skroutz.gr.Entities.GroupSpecification.Values.htm" />
+  <HelpKINode Title="Virtual property" Url="html/P-skroutz.gr.Entities.Base.Sku.Virtual.htm" />
+  <HelpKINode Title="virtual property" Url="html/P-skroutz.gr.Model.User.Sku.virtual.htm" />
+  <HelpKINode Title="voted property" Url="html/P-skroutz.gr.Entities.SKUReview.voted.htm" />
+  <HelpKINode Title="VoteSKUsReview method" Url="html/M-skroutz.gr.SKU.VoteSKUsReview.htm" />
+  <HelpKINode Title="votes_count property" Url="html/P-skroutz.gr.Entities.SKUReview.votes_count.htm" />
+  <HelpKINode Title="WebUri property">
+    <HelpKINode Title="WebUri Property " Url="html/P-skroutz.gr.Entities.Base.Sku.WebUri.htm" />
+    <HelpKINode Title="WebUri Property " Url="html/P-skroutz.gr.Entities.Base.Category.WebUri.htm" />
+    <HelpKINode Title="WebUri Property " Url="html/P-skroutz.gr.Entities.Base.Product.WebUri.htm" />
+  </HelpKINode>
+  <HelpKINode Title="web_uri property" Url="html/P-skroutz.gr.Entities.Shop.web_uri.htm" />
+</HelpKI>

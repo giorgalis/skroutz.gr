@@ -1,4 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : giorgalis
+// Created          : 01-08-2017
+//
+// Last Modified By : giorgalis
+// Last Modified On : 01-11-2017
+// ***********************************************************************
+// <copyright file="Flag.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +21,16 @@ namespace skroutz.gr
     /// <summary>
     /// A Flag is used to mark user provided content as requiring attention/moderation.
     /// </summary>
+    /// <seealso cref="skroutz.gr.Request" />
     public class Flag : Request
     {
+        /// <summary>
+        /// The builder
+        /// </summary>
         private readonly StringBuilder _builder;
+        /// <summary>
+        /// The access token
+        /// </summary>
         private readonly string _accessToken;
 
         /// <summary>
@@ -37,7 +57,8 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve all flags
         /// </summary>
-        /// <see href="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags"/>
+        /// <returns>Task&lt;Flags&gt;.</returns>
+        /// <see href="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags" />
         public Task<Flags> RetrieveAllFlags()
         {
             _builder.Clear();

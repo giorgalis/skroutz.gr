@@ -1,4 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : giorgalis
+// Created          : 01-08-2017
+//
+// Last Modified By : giorgalis
+// Last Modified On : 01-11-2017
+// ***********************************************************************
+// <copyright file="Manufacturer.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using skroutz.gr.Shared;
 using System;
@@ -10,9 +23,16 @@ namespace skroutz.gr
     /// <summary>
     /// Manufacturer
     /// </summary>
+    /// <seealso cref="skroutz.gr.Request" />
     public class Manufacturer : Request
     {
+        /// <summary>
+        /// The builder
+        /// </summary>
         private readonly StringBuilder _builder;
+        /// <summary>
+        /// The access token
+        /// </summary>
         private readonly string _accessToken;
 
         /// <summary>
@@ -40,7 +60,8 @@ namespace skroutz.gr
         /// <summary>
         /// List manufacturers
         /// </summary>
-        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#list-manufacturers"/>
+        /// <returns>Task&lt;Manufacturers&gt;.</returns>
+        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#list-manufacturers" />
         public Task<Manufacturers> ListManufacturers()
         {
             _builder.Clear();
@@ -55,8 +76,10 @@ namespace skroutz.gr
         /// Retrieve a single manufacturer
         /// </summary>
         /// <param name="manufacturerId">Unique Identifier of the manufacturer</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-single-manufacturer"/>
+        /// <returns>Task&lt;RootManufacturer&gt;.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">manufacturerId</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-single-manufacturer" />
         public Task<RootManufacturer> RetrieveSingleManufacturer(int manufacturerId)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
@@ -76,8 +99,10 @@ namespace skroutz.gr
         /// <param name="manufacturerId">Unique identifier of the manufacturer</param>
         /// <param name="orderBy">Order by name or popularity</param>
         /// <param name="orderDir">Order by ascending or descending</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories"/>
+        /// <returns>Task&lt;Categories&gt;.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">manufacturerId</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories" />
         public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
@@ -103,8 +128,10 @@ namespace skroutz.gr
         /// <param name="manufacturerId">Unique identifier of the manufacturer</param>
         /// <param name="orderBy">Order by name or popularity</param>
         /// <param name="orderDir">Order by ascending or descending</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus"/>
+        /// <returns>Task&lt;SKUs&gt;.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">manufacturerId</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when manufacturerId is less than or equal to 0</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus" />
         public Task<SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderByPrcPop? orderBy = OrderByPrcPop.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));

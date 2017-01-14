@@ -58,7 +58,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         public Task<RootCategory> RetrieveSingleCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
@@ -76,7 +76,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         public Task<RootCategory> RetrieveTheParentOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
@@ -108,7 +108,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         public Task<Categories> ListChildrenCategoriesOfCategory(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
@@ -126,7 +126,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         public Task<Specifications> ListCategorysSpecifications(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
@@ -144,7 +144,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         public Task<Groups> ListCategorysSpecificationsGroup(int categoryId)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
@@ -165,7 +165,7 @@ namespace skroutz.gr
         /// <param name="orderBy">Order by name or popularity</param>
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
@@ -190,7 +190,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0</exception>
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
         public Task<Favorites> ListCategorysFavorites(int categoryId)
         {
