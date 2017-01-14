@@ -13,7 +13,7 @@
 // ***********************************************************************
 using System.Collections.Generic;
 
-namespace skroutz.gr
+namespace skroutz.gr.Exceptions
 {
 
     /// <summary>

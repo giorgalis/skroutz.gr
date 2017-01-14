@@ -60,8 +60,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="productId">Unique Identifier of the product</param>
         /// <returns>Task&lt;RootProduct&gt;.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">productId</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when productId is less than or equal to 0</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="productId"/> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product" />
         public Task<RootProduct> RetrieveSingleProduct(int productId)
         {
@@ -81,10 +80,8 @@ namespace skroutz.gr
         /// <param name="shopId">Unique identifier of the shop</param>
         /// <param name="shopUid">Search with the product identifier as assigned by the shop</param>
         /// <returns>Task&lt;Products&gt;.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">shopId</exception>
-        /// <exception cref="System.ArgumentNullException">shopUid</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when shopId is less than or equal to 0</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when shopUid is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId"/> is less than or equal to 0.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopUid"/> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products" />
         public Task<Products> SearchForProducts(int shopId, string shopUid)
         {

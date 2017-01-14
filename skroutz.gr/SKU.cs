@@ -11,9 +11,10 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// A SKU (Stock Keeping Unit) is an aggregation of products.
+    /// Provides methods for accessing SKU's data, similar SKU's, SKU's of a specific catecory and other.
     /// </summary>
-    public class SKU : Request
+    /// <remarks>A SKU (Stock Keeping Unit) is an aggregation of products.</remarks>
+    public class Sku : Request
     {
         private readonly StringBuilder _builder;
         private readonly string _accessToken;
@@ -22,7 +23,7 @@ namespace skroutz.gr
         /// Initializes a new instance of the SKU class
         /// </summary>
         /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
-        public SKU(string accessToken)
+        public Sku(string accessToken)
         {
             _accessToken = accessToken;
             _builder = new StringBuilder();
@@ -33,14 +34,14 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>
-        public SKU(string accessToken, StringBuilder stringBuilder)
+        public Sku(string accessToken, StringBuilder stringBuilder)
         {
             _accessToken = accessToken;
             _builder = stringBuilder;
         }
 
         /// <summary>
-        /// List SKUs of specific category
+        /// List SKUs of specific category.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="orderBy">Order by price, popularity or rating</param>
@@ -49,7 +50,7 @@ namespace skroutz.gr
         /// <param name="manufacturerIds">The ids of the manufacturers of the SKUs</param>
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0..</exception>
         /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
         public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {
@@ -81,18 +82,18 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Retrieve a single SKU
+        /// Retrieve a single SKU.
         /// </summary>
-        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-single-sku"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
         /// <returns></returns>
-        public Task<RootSKU> RetrieveSingleSKU(int SKUId)
+        public Task<RootSKU> RetrieveSingleSKU(int skuId)
         {
-            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}?");
+            _builder.Append($"skus/{skuId}?");
 
             _builder.Append($"oauth_token={_accessToken}");
 
@@ -101,18 +102,18 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Retrieve similar SKUs
+        /// Retrieve similar SKUs.
         /// </summary>
-        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-similar-skus"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
         /// <returns></returns>
-        public Task<SKUs> RetrieveSimilarSKUs(int SKUId)
+        public Task<SKUs> RetrieveSimilarSKUs(int skuId)
         {
-            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}/similar?");
+            _builder.Append($"skus/{skuId}/similar?");
 
             _builder.Append($"oauth_token={_accessToken}");
 
@@ -121,18 +122,18 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Retrieve an SKU's products
+        /// Retrieve an SKU's products.
         /// </summary>
-        /// <param name="SKUId">Unique identifier of the SKU</param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-products"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
         /// <returns></returns>
-        public Task<Products> RetrieveSKUsProducts(int SKUId)
+        public Task<Products> RetrieveSKUsProducts(int skuId)
         {
-            if (SKUId <= 0) throw new ArgumentOutOfRangeException(nameof(SKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{SKUId}/products?");
+            _builder.Append($"skus/{skuId}/products?");
             _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -140,18 +141,18 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Retrieve an SKU's reviews
+        /// Retrieve an SKU's reviews.
         /// </summary>
-        /// <param name="sKUId">Unique identifier of the SKU</param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-reviews"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
         /// <returns></returns>
-        public Task<Reviews> RetrieveSKUsReviews(int sKUId)
+        public Task<Reviews> RetrieveSKUsReviews(int skuId)
         {
-            if (sKUId <= 0) throw new ArgumentOutOfRangeException(nameof(sKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{sKUId}/reviews?");
+            _builder.Append($"skus/{skuId}/reviews?");
             _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -159,24 +160,24 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Vote a SKU's review
+        /// Vote an SKU's review.
         /// </summary>
-        /// <param name="sKUId">Unique identifier of the SKU</param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <param name="reviewId">Unique identifier of the Review</param>
         /// <param name="helpful">Helpful</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#vote-a-skus-review"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when reviewId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="reviewId"/> is less than or equal to 0..</exception>
         /// <remarks>Requires user token with the <code>'publish_sku_review_actions'</code>/ permission.</remarks>
         /// <returns></returns>
-        public Task<RootSKUReviewVote> VoteSKUsReview(int sKUId, int reviewId, bool helpful)
+        public Task<RootSKUReviewVote> VoteSKUsReview(int skuId, int reviewId, bool helpful)
         {
             //TODO: POST
-            if (sKUId <= 0) throw new ArgumentOutOfRangeException(nameof(sKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
             if (reviewId <= 0) throw new ArgumentOutOfRangeException(nameof(reviewId));
 
             _builder.Clear();
-            _builder.Append($"skus/{sKUId}/reviews/{reviewId}votes?vote[helpful]={helpful}");
+            _builder.Append($"skus/{skuId}/reviews/{reviewId}votes?vote[helpful]={helpful}");
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -184,27 +185,27 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Flag a SKU's review
+        /// Flag a SKU's review.
         /// </summary>
-        /// <param name="sKUId">Unique identifier of the SKU</param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <param name="reviewId">Unique identifier of the Review</param>
         /// <param name="flagReason"></param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#flag-a-skus-review"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when reviewId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="reviewId"/> is less than or equal to 0..</exception>
         /// <remarks>Requires user token with the <code>'publish_sku_review_actions'</code> permission.</remarks>
         /// <remarks>To retrieve all available flags, see <see cref="Flag"/>.</remarks>
         /// <remarks>Returns empty body, unless an error occurs.</remarks>
         /// <returns></returns>
-        public Task<SKUReviewFlag> FlagSKUsReview(int sKUId, int reviewId, string flagReason)
+        public Task<SKUReviewFlag> FlagSKUsReview(int skuId, int reviewId, string flagReason)
         {
             //TODO: POST
             //TODO: Read flags
-            if (sKUId <= 0) throw new ArgumentOutOfRangeException(nameof(sKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
             if (reviewId <= 0) throw new ArgumentOutOfRangeException(nameof(reviewId));
 
             _builder.Clear();
-            _builder.Append($"skus/{sKUId}/reviews/{reviewId}flags?flag[reason]={flagReason}");
+            _builder.Append($"skus/{skuId}/reviews/{reviewId}flags?flag[reason]={flagReason}");
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -212,19 +213,19 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Retrieve SKUs Specifications
+        /// Retrieve SKUs Specifications.
         /// </summary>
-        /// <param name="sKUId"></param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
         /// <remarks>Pagination is not available for this endpoint.</remarks>
         /// <returns></returns>
-        public Task<Specifications> RetrieveSKUsSpecifications(int sKUId)
+        public Task<Specifications> RetrieveSKUsSpecifications(int skuId)
         {
-            if (sKUId <= 0) throw new ArgumentOutOfRangeException(nameof(sKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
             
             _builder.Clear();
-            _builder.Append($"skus/{sKUId}/specifications?");
+            _builder.Append($"skus/{skuId}/specifications?");
             _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -232,19 +233,19 @@ namespace skroutz.gr
         }
 
         /// <summary>
-        /// Retrieve SKUs Price History
+        /// Retrieve SKUs Price History.
         /// </summary>
-        /// <param name="sKUId"></param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-skus-price-history"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
         /// <remarks>Currently this endpoint responds with any available data for the last 6 months</remarks>
         /// <returns></returns>
-        public Task<PriceHistory> RetrieveSKUsPriceHistory(int sKUId)
+        public Task<PriceHistory> RetrieveSKUsPriceHistory(int skuId)
         {
-            if (sKUId <= 0) throw new ArgumentOutOfRangeException(nameof(sKUId));
+            if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{sKUId}/price_history?");
+            _builder.Append($"skus/{skuId}/price_history?");
             _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
@@ -254,12 +255,12 @@ namespace skroutz.gr
         /// <summary>
         /// Retrieve SKUs Favorite. If the SKU has been favorited by the currently associated user, you can fetch it.
         /// </summary>
-        /// <param name="sKUId"></param>
+        /// <param name="skuId">Unique identifier of the SKU</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-favorite"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <code>SKUId</code> is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
         /// <returns></returns>
-        public Task<PriceHistory> RetrieveSKUsFavorite(int sKUId)
+        public Task<PriceHistory> RetrieveSKUsFavorite(int skuId)
         {
             throw new NotImplementedException();
             //if (sKUId <= 0) throw new ArgumentOutOfRangeException(nameof(sKUId));

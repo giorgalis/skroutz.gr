@@ -81,8 +81,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="categoryId">The category identifier.</param>
         /// <returns>Task&lt;FilterGroups&gt;.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">categoryId</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when categoryId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups" />
         public Task<FilterGroups> ListFilterGroups(int categoryId)
         {

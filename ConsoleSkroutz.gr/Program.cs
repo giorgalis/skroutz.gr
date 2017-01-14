@@ -68,7 +68,7 @@ namespace ConsoleSkroutz.gr
                 result = filGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
 
                 ApplyTitle("SKUs");
-                SKU sku = new SKU(auth.ApplicationToken, sb);
+                Sku sku = new Sku(auth.ApplicationToken, sb);
 
                 result = sku.ListSKUsOfSpecificCategory(40).Result.skus.printReflected();
 

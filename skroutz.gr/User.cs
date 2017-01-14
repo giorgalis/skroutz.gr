@@ -7,18 +7,7 @@ using System.Threading.Tasks;
 namespace skroutz.gr
 {
     /// <summary>
-    /// Provides information about Users.
-    /// <list type="bullet">
-    /// <item>
-    /// <description>Profile</description>
-    /// </item>
-    /// <item>
-    /// <description>Favorites</description>
-    /// </item>
-    /// <item>
-    /// <description>Notification</description>
-    /// </item>
-    /// </list>
+    /// Provides methods for accessing Users profile, favorites, notifications and other.
     /// </summary>
     public class User : Request
     {
@@ -117,7 +106,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="listId">Unique identifier of the list</param>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites-belonging-to-list"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when listId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="listId"/> is less than or equal to 0.</exception>
         public Task<Model.User.Favorites> ListFavoritesBelongingToList(int listId)
         {
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
@@ -135,7 +124,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="favoriteId">Unique identifier of the Favorite</param>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#retrieve-a-single-favorite"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when favoriteId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="favoriteId"/> is less than or equal to 0.</exception>
         public Task<Favorite> RetrieveSingleFavorite(int favoriteId)
         {
             if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
@@ -198,7 +187,7 @@ namespace skroutz.gr
         /// </summary>
         /// <param name="notificationId"></param>
         /// <see href="https://developer.skroutz.gr/api/v3/notifications/#retrieve-a-single-notification"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when notificationId is less than or equal to 0</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="notificationId"/> is less than or equal to 0.</exception>
         public Task<Notification> RetrieveSingleNotification(int notificationId)
         {
             if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));
