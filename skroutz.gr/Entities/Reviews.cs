@@ -17,6 +17,26 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
+    /// Class Reviews.
+    /// </summary>
+    public class Reviews
+    {
+        /// <summary>
+        /// Gets or sets the reviews.
+        /// </summary>
+        /// <value>The reviews.</value>
+        public List<Base.SKUReview> reviews { get; set; }
+        /// <summary>
+        /// Gets or sets the meta.
+        /// </summary>
+        /// <value>The meta.</value>
+        public Meta meta { get; set; }
+    }
+}
+
+namespace skroutz.gr.Entities.Base
+{
+    /// <summary>
     /// Class SKUReview.
     /// </summary>
     public class SKUReview
@@ -77,22 +97,5 @@ namespace skroutz.gr.Entities
         /// </summary>
         /// <value><c>true</c> if helpful; otherwise, <c>false</c>.</value>
         public bool helpful { get; set; }
-    }
-
-    /// <summary>
-    /// Class Reviews.
-    /// </summary>
-    public class Reviews
-    {
-        /// <summary>
-        /// Gets or sets the reviews.
-        /// </summary>
-        /// <value>The reviews.</value>
-        public List<SKUReview> reviews { get; set; }
-        /// <summary>
-        /// Gets or sets the meta.
-        /// </summary>
-        /// <value>The meta.</value>
-        public Meta meta { get; set; }
     }
 }

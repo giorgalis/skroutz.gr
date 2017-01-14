@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
@@ -122,12 +123,14 @@ namespace skroutz.gr.Entities.Base
         /// Gets or sets the time on platform.
         /// </summary>
         /// <value>The time on platform.</value>
-        public string time_on_platform { get; set; }
+        [JsonProperty("time_on_platform")]
+        public string TimeOnPlatform { get; set; }
         /// <summary>
         /// Gets or sets the orders per week.
         /// </summary>
         /// <value>The orders per week.</value>
-        public string orders_per_week { get; set; }
+        [JsonProperty("orders_per_week")]
+        public string OrdersPerWeek { get; set; }
     }
 
     /// <summary>

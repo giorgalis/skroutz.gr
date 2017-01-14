@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace skroutz.gr.Entities
 {
@@ -24,10 +25,12 @@ namespace skroutz.gr.Entities.Base
         /// <summary>
         /// A codename for the flag. To be supplied as parameter upon flagging.
         /// </summary>
-        public string reason { get; set; }
+        [JsonProperty("reason")]
+        public string Reason { get; set; }
         /// <summary>
         /// A human readable extended reason description.
         /// </summary>
-        public string description { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
     }
 }

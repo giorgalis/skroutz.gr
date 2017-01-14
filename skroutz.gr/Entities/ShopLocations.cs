@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
@@ -46,51 +47,61 @@ namespace skroutz.gr.Entities.Base
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
-        public int id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Location" /> is headquarter.
         /// </summary>
         /// <value><c>true</c> if headquarter; otherwise, <c>false</c>.</value>
-        public bool headquarter { get; set; }
+        [JsonProperty("headquarter")]
+        public bool Headquarter { get; set; }
         /// <summary>
         /// Gets or sets the phones.
         /// </summary>
         /// <value>The phones.</value>
-        public List<string> phones { get; set; }
+        [JsonProperty("phones")]
+        public List<string> Phones { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether [pickup point].
         /// </summary>
         /// <value><c>true</c> if [pickup point]; otherwise, <c>false</c>.</value>
-        public bool pickup_point { get; set; }
+        [JsonProperty("pickup_point")]
+        public bool PickupPoint { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Location" /> is store.
         /// </summary>
         /// <value><c>true</c> if store; otherwise, <c>false</c>.</value>
-        public bool store { get; set; }
+        [JsonProperty("store")]
+        public bool Store { get; set; }
         /// <summary>
         /// Gets or sets the full address.
         /// </summary>
         /// <value>The full address.</value>
-        public string full_address { get; set; }
+        [JsonProperty("full_address")]
+        public string FullAddress { get; set; }
         /// <summary>
         /// Gets or sets the format.
         /// </summary>
         /// <value>The format.</value>
-        public string format { get; set; }
+        [JsonProperty("format")]
+        public string Format { get; set; }
         /// <summary>
-        /// Gets or sets the lat.
+        /// Gets or sets the latitude.
         /// </summary>
         /// <value>The lat.</value>
-        public string lat { get; set; }
+        [JsonProperty("lat")]
+        public string Latitude { get; set; }
         /// <summary>
-        /// Gets or sets the LNG.
+        /// Gets or sets the longitude.
         /// </summary>
         /// <value>The LNG.</value>
-        public string lng { get; set; }
+        [JsonProperty("lng")]
+        public string Longitude { get; set; }
         /// <summary>
         /// Gets or sets the information.
         /// </summary>
         /// <value>The information.</value>
-        public string info { get; set; }
+        [JsonProperty("info")]
+        public string Info { get; set; }
     }
 }

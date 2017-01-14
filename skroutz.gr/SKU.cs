@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Entities;
+using skroutz.gr.Entities.Base;
 using skroutz.gr.Shared;
 using System;
 using System.Collections.Generic;

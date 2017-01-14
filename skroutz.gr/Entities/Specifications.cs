@@ -16,6 +16,21 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
+    /// Class Specifications.
+    /// </summary>
+    public class Specifications
+    {
+        /// <summary>
+        /// Gets or sets the specifications.
+        /// </summary>
+        /// <value>The specifications.</value>
+        public List<Base.Specification> specifications { get; set; }
+    }
+}
+
+namespace skroutz.gr.Entities.Base
+{
+    /// <summary>
     /// Class Specification.
     /// </summary>
     public class Specification
@@ -45,17 +60,5 @@ namespace skroutz.gr.Entities
         /// </summary>
         /// <value>The unit.</value>
         public string unit { get; set; }
-    }
-
-    /// <summary>
-    /// Class Specifications.
-    /// </summary>
-    public class Specifications
-    {
-        /// <summary>
-        /// Gets or sets the specifications.
-        /// </summary>
-        /// <value>The specifications.</value>
-        public List<Specification> specifications { get; set; }
     }
 }
