@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Model.User;
+using skroutz.gr.Entities.User;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,14 +41,14 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve the profile of the authenticated user
         /// </summary>
         /// <see href="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
-        public Task<Model.User.User> RetrieveProfileOfAuthenticatedUser()
+        public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
             _builder.Append("user?");
             _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.User.User>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Entities.User.User>(t.Result.ToString()));
         }
 
         #endregion
@@ -107,7 +107,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="listId">Unique identifier of the list</param>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites-belonging-to-list"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="listId"/> is less than or equal to 0.</exception>
-        public Task<Model.User.Favorites> ListFavoritesBelongingToList(int listId)
+        public Task<Favorites> ListFavoritesBelongingToList(int listId)
         {
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
 
@@ -116,7 +116,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Append($"oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Model.User.Favorites>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
         }
 
         /// <summary>

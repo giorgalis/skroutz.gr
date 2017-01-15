@@ -1,7 +1,8 @@
-﻿using skroutz.gr.Shared;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Model.User
+namespace skroutz.gr.Entities.User
 {
     /// <summary>
     /// Class FavoriteList.
@@ -12,17 +13,20 @@ namespace skroutz.gr.Model.User
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
-        public int id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string name { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
         /// <summary>
         /// Gets or sets the category identifier.
         /// </summary>
         /// <value>The category identifier.</value>
-        public object category_id { get; set; }
+        [JsonProperty("category_id")]
+        public object CategoryId { get; set; }
     }
 
     /// <summary>

@@ -11,10 +11,11 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
-namespace skroutz.gr.Model.User
+namespace skroutz.gr.Entities.User
 {
     /// <summary>
     /// Class Snapshot.
@@ -25,22 +26,26 @@ namespace skroutz.gr.Model.User
         /// Gets or sets the price minimum.
         /// </summary>
         /// <value>The price minimum.</value>
-        public double price_min { get; set; }
+        [JsonProperty("price_min")]
+        public double PriceMin { get; set; }
         /// <summary>
         /// Gets or sets the latest price.
         /// </summary>
         /// <value>The latest price.</value>
-        public double latest_price { get; set; }
+        [JsonProperty("latest_price")]
+        public double LatestPrice { get; set; }
         /// <summary>
         /// Gets or sets the change rate.
         /// </summary>
         /// <value>The change rate.</value>
-        public double change_rate { get; set; }
+        [JsonProperty("change_rate")]
+        public double ChangeRate { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether [from threshold].
         /// </summary>
         /// <value><c>true</c> if [from threshold]; otherwise, <c>false</c>.</value>
-        public bool from_threshold { get; set; }
+        [JsonProperty("from_threshold")]
+        public bool FromThreshold { get; set; }
     }
 
     /// <summary>

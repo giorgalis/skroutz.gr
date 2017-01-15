@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Model.User;
 using skroutz.gr.Entities;
+using skroutz.gr.Entities.User;
 using skroutz.gr.Shared;
 using System;
 using System.Text;

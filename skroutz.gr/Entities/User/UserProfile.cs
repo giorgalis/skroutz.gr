@@ -11,7 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace skroutz.gr.Model.User
+namespace skroutz.gr.Entities.User
 {
     /// <summary>
     /// Class User.
@@ -32,9 +32,10 @@ namespace skroutz.gr.Model.User
         /// Gets or sets the sex.
         /// </summary>
         /// <value>The sex.</value>
-        public sex sex { get; set; }
+        /// <remarks>Possible values: "male" or "female" or null</remarks>
+        public string sex { get; set; }
         /// <summary>
-        /// Gets or sets the avatar.
+        /// URI of the avatar image of the user.
         /// </summary>
         /// <value>The avatar.</value>
         public string avatar { get; set; }
@@ -42,53 +43,8 @@ namespace skroutz.gr.Model.User
         /// Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        public type type { get; set; }
-    }
-
-    /// <summary>
-    /// Enum sex
-    /// </summary>
-    public enum sex
-    {
-        /// <summary>
-        /// Male
-        /// </summary>
-        male,
-        /// <summary>
-        /// Female
-        /// </summary>
-        female,
-        /// <summary>
-        /// Not set
-        /// </summary>
-        @null
-    }
-
-    /// <summary>
-    /// Enum type
-    /// </summary>
-    public enum type
-    {
-        /// <summary>
-        /// The skroutz
-        /// </summary>
-        skroutz,
-        /// <summary>
-        /// The open identifier
-        /// </summary>
-        open_id,
-        /// <summary>
-        /// The twitter
-        /// </summary>
-        twitter,
-        /// <summary>
-        /// The facebook
-        /// </summary>
-        facebook,
-        /// <summary>
-        /// The google
-        /// </summary>
-        google
+        /// <remarks>The type of the account. Possible values: "skroutz", "open_id", "twitter", "facebook", "google"</remarks>
+        public string type { get; set; }
     }
 
     /// <summary>
