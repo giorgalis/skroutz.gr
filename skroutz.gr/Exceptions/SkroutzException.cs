@@ -47,8 +47,8 @@ namespace skroutz.gr.Exceptions
         /// <summary>
         /// Initializes a new instance of the <see cref="SkroutzException"/> class.
         /// </summary>
-        /// <param name="message">The message.</param>
-        /// <param name="inner">The inner.</param>
+        /// <param name="message">The message that describes the error.</param>
+        /// <param name="inner">The inner Exception.</param>
         public SkroutzException(string message, Exception inner): base(message, inner)
         {
 
@@ -58,7 +58,7 @@ namespace skroutz.gr.Exceptions
         /// Initializes a new instance of the <see cref="SkroutzException"/> class.
         /// </summary>
         /// <param name="statusCode">The status code.</param>
-        /// <param name="message">The message.</param>
+        /// <param name="message">The message that describes the error.</param>
         public SkroutzException(HttpStatusCode statusCode, string message): base(message)
         {
             this.StatusCode = statusCode;
