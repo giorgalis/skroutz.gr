@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace skroutz.gr
+namespace skroutz.gr.ServiceBroker
 {
 
     /// <summary>

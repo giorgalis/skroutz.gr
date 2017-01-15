@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace skroutz.gr
+namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
     /// Provides methods for accessing SKU's data, similar SKU's, SKU's of a specific catecory and other.

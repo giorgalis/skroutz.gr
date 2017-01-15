@@ -19,7 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace skroutz.gr
+namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
     /// Provides methods for accesing Shop's data including shop locations, shop reviews.

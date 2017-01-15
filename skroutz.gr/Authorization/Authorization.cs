@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using Newtonsoft.Json;
+using skroutz.gr.ServiceBroker;
 using System;
 
 namespace skroutz.gr.Authorization
@@ -54,7 +55,7 @@ namespace skroutz.gr.Authorization
     /// <summary>
     /// Class Authorization.
     /// </summary>
-    /// <seealso cref="skroutz.gr.Request" />
+    /// <seealso cref="Request" />
     public class Authorization : Request
     {
         /// <summary>
@@ -74,7 +75,7 @@ namespace skroutz.gr.Authorization
         /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
         /// <param name="credentials">The credentials.</param>
-        /// <exception cref="System.ArgumentNullException">client_id
+        /// <exception cref="ArgumentNullException">client_id
         /// or
         /// client_secret</exception>
         public Authorization(AppCredentials credentials)
@@ -95,7 +96,7 @@ namespace skroutz.gr.Authorization
         /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
         /// <param name="credentials">The credentials.</param>
-        /// <exception cref="System.ArgumentNullException">client_id
+        /// <exception cref="ArgumentNullException">client_id
         /// or
         /// redirect_uri</exception>
         public Authorization(UserCredentials credentials)
@@ -136,7 +137,7 @@ namespace skroutz.gr.Authorization
         /// <summary>
         /// Class UserResponse.
         /// </summary>
-        /// <seealso cref="skroutz.gr.Authorization.Authorization.AppResponse" />
+        /// <seealso cref="Authorization.AppResponse" />
         private class UserResponse : AppResponse
         {
             /// <summary>

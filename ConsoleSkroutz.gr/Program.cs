@@ -1,9 +1,7 @@
-﻿using ConsoleSkroutz.gr;
-using skroutz.gr;
-using skroutz.gr.Authorization;
+﻿using skroutz.gr.Authorization;
+using skroutz.gr.ServiceBroker;
 using skroutz.gr.Shared;
 using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleSkroutz.gr

@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Authorization\Authorization.cs" />
-    <Compile Include="Category.cs" />
+    <Compile Include="ServiceBroker\Category.cs" />
     <Compile Include="Entities\PriceHistory.cs" />
     <Compile Include="Entities\Reviews.cs" />
     <Compile Include="Entities\SKUReviewFlag.cs" />
@@ -61,17 +61,17 @@
     <Compile Include="Shared\Meta.cs" />
     <Compile Include="Shared\Pagination.cs" />
     <Compile Include="Exceptions\Errors.cs" />
-    <Compile Include="FilterGroup.cs" />
-    <Compile Include="Flag.cs" />
-    <Compile Include="Manufacturer.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="ServiceBroker\FilterGroup.cs" />
+    <Compile Include="ServiceBroker\Flag.cs" />
+    <Compile Include="ServiceBroker\Manufacturer.cs" />
+    <Compile Include="ServiceBroker\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Request.cs" />
-    <Compile Include="Search.cs" />
-    <Compile Include="Shop.cs" />
+    <Compile Include="ServiceBroker\Request.cs" />
+    <Compile Include="ServiceBroker\Search.cs" />
+    <Compile Include="ServiceBroker\Shop.cs" />
     <Compile Include="Exceptions\SkroutzException.cs" />
-    <Compile Include="Sku.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="ServiceBroker\Sku.cs" />
+    <Compile Include="ServiceBroker\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

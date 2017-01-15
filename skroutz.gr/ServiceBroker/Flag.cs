@@ -16,7 +16,7 @@ using skroutz.gr.Entities;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace skroutz.gr
+namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
     /// Provides a method for retrieving available flags.

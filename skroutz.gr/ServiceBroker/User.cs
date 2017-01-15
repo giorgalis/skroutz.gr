@@ -4,7 +4,7 @@ using System;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace skroutz.gr
+namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
     /// Provides methods for accessing Users profile, favorites, notifications and other.

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace skroutz.gr
+namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
     /// Search
