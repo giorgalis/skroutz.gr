@@ -47,12 +47,20 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Lists all categories.
         /// </summary>
+        /// <param name="page">The page.</param>
+        /// <param name="per">The per.</param>
+        /// <returns>Task&lt;Categories&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories" />
-        public Task<Categories> ListAllCategories()
+        public Task<Categories> ListAllCategories(int page = 1, int per = 25)
         {
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+
             _builder.Clear();
             _builder.Append("categories?");
             _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
@@ -71,7 +79,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"categories/{categoryId}?");
             _builder.Append($"oauth_token={_accessToken}");
-
+            
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
@@ -112,15 +120,21 @@ namespace skroutz.gr.ServiceBroker
         /// List the children categories of a category.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
-        public Task<Categories> ListChildrenCategoriesOfCategory(int categoryId)
+        /// <param name="page">The page.</param>
+        /// <param name="per">The per.</param>
+        /// <returns>Task&lt;Categories&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category" />
+        public Task<Categories> ListChildrenCategoriesOfCategory(int categoryId, int page = 1, int per = 25)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/children?");
             _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
@@ -130,15 +144,21 @@ namespace skroutz.gr.ServiceBroker
         /// List a category's specifications.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
-        public Task<Specifications> ListCategorysSpecifications(int categoryId)
+        /// <param name="page">The page.</param>
+        /// <param name="per">The per.</param>
+        /// <returns>Task&lt;Specifications&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
+        public Task<Specifications> ListCategorysSpecifications(int categoryId, int page = 1, int per = 25)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/specifications?");
             _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Specifications>(t.Result.ToString()));
@@ -148,16 +168,22 @@ namespace skroutz.gr.ServiceBroker
         /// List a category's specifications.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
-        public Task<Groups> ListCategorysSpecificationsGroup(int categoryId)
+        /// <param name="page">The page.</param>
+        /// <param name="per">The per.</param>
+        /// <returns>Task&lt;Groups&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
+        public Task<Groups> ListCategorysSpecificationsGroup(int categoryId, int page = 1, int per = 25)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/specifications?");
             _builder.Append("include=group");
             _builder.Append($"&oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Groups>(t.Result.ToString()));
@@ -169,11 +195,16 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="orderBy">Order by name or popularity</param>
         /// <param name="orderDir">Order by ascending or descending</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
-        public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc)
+        /// <param name="page">The page.</param>
+        /// <param name="per">The per.</param>
+        /// <returns>Task&lt;Manufacturers&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers" />
+        public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc, int page = 1, int per = 25)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/manufacturers?");
@@ -185,6 +216,7 @@ namespace skroutz.gr.ServiceBroker
                 _builder.Append($"&order_dir={orderDir}");
 
             _builder.Append($"&oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
@@ -194,16 +226,22 @@ namespace skroutz.gr.ServiceBroker
         /// List a category's favorites.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
+        /// <param name="page">The page.</param>
+        /// <param name="per">The per.</param>
+        /// <returns>Task&lt;Favorites&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites" />
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
-        public Task<Favorites> ListCategorysFavorites(int categoryId)
+        public Task<Favorites> ListCategorysFavorites(int categoryId, int page = 1, int per = 25)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/favorites?");
             _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));

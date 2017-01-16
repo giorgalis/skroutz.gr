@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-13-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-14-2017
-// ***********************************************************************
-// <copyright file="Shop.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using skroutz.gr.Entities.Base;
 using skroutz.gr.Entities;
 using System;

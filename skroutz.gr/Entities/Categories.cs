@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-09-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-10-2017
-// ***********************************************************************
-// <copyright file="Categories.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 

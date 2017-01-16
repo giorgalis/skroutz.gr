@@ -41,6 +41,7 @@
     <Compile Include="Entities\Reviews.cs" />
     <Compile Include="Entities\SKUReviewFlag.cs" />
     <Compile Include="Entities\SKUReviewVote.cs" />
+    <Compile Include="ServiceBroker\RateLimit.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Groups.cs" />

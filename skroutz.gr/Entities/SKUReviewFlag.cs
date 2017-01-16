@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-12-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-14-2017
-// ***********************************************************************
-// <copyright file="SKUReviewFlag.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-namespace skroutz.gr.Entities.Base
+﻿namespace skroutz.gr.Entities.Base
 {
     /// <summary>
     /// Class SKUReviewFlag.

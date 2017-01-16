@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-08-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-11-2017
-// ***********************************************************************
-// <copyright file="FilterGroup.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using System;
 using System.Text;

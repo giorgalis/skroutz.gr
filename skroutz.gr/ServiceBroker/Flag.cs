@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-08-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-11-2017
-// ***********************************************************************
-// <copyright file="Flag.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using System.Text;
 using System.Threading.Tasks;

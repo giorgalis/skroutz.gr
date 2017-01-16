@@ -1,16 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-11-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-13-2017
-// ***********************************************************************
-// <copyright file="Reviews.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
+﻿using Newtonsoft.Json;
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
@@ -45,57 +33,68 @@ namespace skroutz.gr.Entities.Base
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
-        public int id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets the user identifier.
         /// </summary>
         /// <value>The user identifier.</value>
-        public int user_id { get; }
+        [JsonProperty("user_id")]
+        public int UserId { get; }
         /// <summary>
         /// Gets or sets the review.
         /// </summary>
         /// <value>The review.</value>
-        public string review { get; set; }
+        [JsonProperty("review")]
+        public string Review { get; set; }
         /// <summary>
         /// Gets or sets the rating.
         /// </summary>
         /// <value>The rating.</value>
-        public int rating { get; set; }
+        [JsonProperty("rating")]
+        public int Rating { get; set; }
         /// <summary>
         /// Gets or sets the created at.
         /// </summary>
         /// <value>The created at.</value>
-        public string created_at { get; set; }
+        [JsonProperty("created_at")]
+        public string CreatedAt { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="SKUReview" /> is demoted.
         /// </summary>
         /// <value><c>true</c> if demoted; otherwise, <c>false</c>.</value>
-        public bool demoted { get; set; }
+        [JsonProperty("demoted")]
+        public bool Demoted { get; set; }
         /// <summary>
         /// Gets or sets the votes count.
         /// </summary>
         /// <value>The votes count.</value>
-        public int votes_count { get; set; }
+        [JsonProperty("votes_count")]
+        public int VotesCount { get; set; }
         /// <summary>
         /// Gets or sets the helpful votes count.
         /// </summary>
         /// <value>The helpful votes count.</value>
-        public int helpful_votes_count { get; set; }
+        [JsonProperty("helpful_votes_count")]
+        public int HelpfulVotesCount { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="SKUReview" /> is voted.
         /// </summary>
         /// <value><c>true</c> if voted; otherwise, <c>false</c>.</value>
-        public bool voted { get; set; }
+        [JsonProperty("voted")]
+        public bool Voted { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="SKUReview" /> is flagged.
         /// </summary>
         /// <value><c>true</c> if flagged; otherwise, <c>false</c>.</value>
-        public bool flagged { get; set; }
+        [JsonProperty("flagged")]
+        public bool Flagged { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="SKUReview" /> is helpful.
         /// </summary>
         /// <value><c>true</c> if helpful; otherwise, <c>false</c>.</value>
-        public bool helpful { get; set; }
+        [JsonProperty("helpful")]
+        public bool Helpful { get; set; }
     }
 }

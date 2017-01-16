@@ -10,10 +10,10 @@ namespace ConsoleSkroutz.gr
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.Unicode;
-          
             Authorization auth = new Authorization(new AppCredentials { client_id = "", client_secret = "" });
             StringBuilder sb = new StringBuilder();
+
+            Console.OutputEncoding = Encoding.Unicode;
 
             try
             {
@@ -33,7 +33,7 @@ namespace ConsoleSkroutz.gr
                 result = cat.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result.manufacturers.printReflected();
 
                 //User token is required or else exception is thrown
-                //result = cat.ListCategorysFavorites(40).Result;
+                result = cat.ListCategorysFavorites(40).Result;
 
                 ApplyTitle("PRODUCTS");
                 Product pro = new Product(auth.ApplicationToken, sb);

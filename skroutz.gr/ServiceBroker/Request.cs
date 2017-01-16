@@ -1,4 +1,5 @@
-﻿using skroutz.gr.Exceptions;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Exceptions;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -9,18 +10,23 @@ namespace skroutz.gr.ServiceBroker
     /// <summary>
     /// Class Request.
     /// </summary>
-    public class Request
+    public class Request : RateLimiting
     {
         private const string Domain = "https://www.skroutz.gr/";
         private const string ApiEndPoint = "http://api.skroutz.gr/";
-        private const string ApiVersion = "3.0";
 
+        /// <summary>
+        /// Gets or sets the API version.
+        /// </summary>
+        /// <value>The API version.</value>
+        public string ApiVersion { get; set; } = "3.0";
         internal async Task<string> PostWebResultAsync(string value)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(Domain, value));
             req.Method = "POST";
             return await GetResponse(req);
         }
+
         internal async Task<string> GetWebResultAsync(string value)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, value));
@@ -38,6 +44,12 @@ namespace skroutz.gr.ServiceBroker
             {
                 using (HttpWebResponse response = (HttpWebResponse)await req.GetResponseAsync())
                 {
+
+                    int result = 0;
+                    if (int.TryParse(response.Headers["X-RateLimit-Limit"], out result)) Limit = result;
+                    if (int.TryParse(response.Headers["X-RateLimit-Remaining"], out result)) Remaining = result;
+                    if (int.TryParse(response.Headers["X-RateLimit-Reset"], out result)) Reset = result;
+
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                         content = await sr.ReadToEndAsync();
 
@@ -52,7 +64,8 @@ namespace skroutz.gr.ServiceBroker
                         content = sr.ReadToEnd();
 
                     code = response.StatusCode;
-                    throw new SkroutzException(code, content);
+                    Error error = JsonConvert.DeserializeObject<Error>(content);
+                    throw new SkroutzException(ex, code, content, error);
                 }
             }
 

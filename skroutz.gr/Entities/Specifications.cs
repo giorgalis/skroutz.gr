@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : giorgalis
-// Created          : 01-09-2017
-//
-// Last Modified By : giorgalis
-// Last Modified On : 01-12-2017
-// ***********************************************************************
-// <copyright file="Specifications.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace skroutz.gr.Entities
 {
