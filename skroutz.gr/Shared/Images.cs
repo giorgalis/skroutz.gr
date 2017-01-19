@@ -11,14 +11,14 @@ namespace skroutz.gr.Shared
         /// <summary>
         /// Main image
         /// </summary>
-        /// <value>The main.</value>
+        /// <value>The main image.</value>
         [JsonProperty("main")]
         public string Main { get; set; }
 
         /// <summary>
         /// Alternative images
         /// </summary>
-        /// <value>The alternatives.</value>
+        /// <value>Alternative images.</value>
         [JsonProperty("alternatives")]
         public List<string> Alternatives { get; set; }
     }
