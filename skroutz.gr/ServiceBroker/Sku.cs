@@ -56,7 +56,7 @@ namespace skroutz.gr.ServiceBroker
         public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-
+            //TODO: perform check
             //if (metaFilters.HasValue && metaFilters == MetaFilters.AppliedFilters)
             //{
             //    if(manufacturerIds == null && filterIds == null) throw new ArgumentOutOfRangeException(nameof(metaFilters));
