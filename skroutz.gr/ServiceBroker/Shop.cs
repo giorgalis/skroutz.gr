@@ -11,8 +11,6 @@ namespace skroutz.gr.ServiceBroker
     /// <summary>
     /// Provides methods for accesing Shop's data including shop locations, shop reviews.
     /// </summary>
-    /// <seealso cref="skroutz.gr.Request" />
-    /// <seealso cref="Request" />
     public class Shop : Request
     {
         /// <summary>

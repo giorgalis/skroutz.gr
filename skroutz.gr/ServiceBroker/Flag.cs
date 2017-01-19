@@ -9,7 +9,6 @@ namespace skroutz.gr.ServiceBroker
     /// Provides a method for retrieving available flags.
     /// </summary>
     /// <remarks>A Flag is used to mark user provided content as requiring attention/moderation.</remarks>
-    /// <seealso cref="skroutz.gr.Request" />
     public class Flag : Request
     {
         /// <summary>

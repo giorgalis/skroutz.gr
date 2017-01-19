@@ -9,7 +9,6 @@ namespace skroutz.gr.ServiceBroker
     /// <summary>
     /// Provides methods for accesing Product's data.
     /// </summary>
-    /// <seealso cref="skroutz.gr.Request" />
     public class Product : Request
     {
         /// <summary>

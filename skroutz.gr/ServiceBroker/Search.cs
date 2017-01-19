@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Entities;
+using System;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace skroutz.gr.ServiceBroker
 {
@@ -29,6 +33,24 @@ namespace skroutz.gr.ServiceBroker
         {
             _accessToken = accessToken;
             _builder = stringBuilder;
+        }
+
+        /// <summary>
+        /// Searches the query.
+        /// </summary>
+        /// <param name="searchString">The search string.</param>
+        /// <returns>Task&lt;Categories&gt;.</returns>
+        /// <exception cref="System.ArgumentNullException">searchString</exception>
+        public Task<RootSearch> SearchQuery(string searchString)
+        {
+            if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));
+            
+            _builder.Clear();
+            _builder.Append($"search?q={searchString}");
+            _builder.Append($"&oauth_token={_accessToken}");
+
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<RootSearch>(t.Result.ToString()));
         }
     }
 }

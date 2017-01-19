@@ -32,6 +32,7 @@ namespace skroutz.gr.ServiceBroker
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, value));
             req.Method = "GET";
             req.Accept = $"application/vnd.skroutz+json; version={ApiVersion}";
+            
             return await GetResponse(req);
         }
 
@@ -44,11 +45,13 @@ namespace skroutz.gr.ServiceBroker
             {
                 using (HttpWebResponse response = (HttpWebResponse)await req.GetResponseAsync())
                 {
-
-                    int result = 0;
-                    if (int.TryParse(response.Headers["X-RateLimit-Limit"], out result)) Limit = result;
-                    if (int.TryParse(response.Headers["X-RateLimit-Remaining"], out result)) Remaining = result;
-                    if (int.TryParse(response.Headers["X-RateLimit-Reset"], out result)) Reset = result;
+                    if (req.Method == "GET")
+                    {
+                        int result = 0;
+                        if (int.TryParse(response.Headers["X-RateLimit-Limit"], out result)) Limit = result;
+                        if (int.TryParse(response.Headers["X-RateLimit-Remaining"], out result)) Remaining = result;
+                        if (int.TryParse(response.Headers["X-RateLimit-Reset"], out result)) Reset = result;
+                    }
 
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                         content = await sr.ReadToEndAsync();
@@ -63,8 +66,13 @@ namespace skroutz.gr.ServiceBroker
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                         content = sr.ReadToEnd();
 
+                  
                     code = response.StatusCode;
-                    Error error = JsonConvert.DeserializeObject<Error>(content);
+
+                    Error error = null;
+                    if(!string.IsNullOrEmpty(content))
+                        error = JsonConvert.DeserializeObject<Error>(content);
+
                     throw new SkroutzException(ex, code, content, error);
                 }
             }

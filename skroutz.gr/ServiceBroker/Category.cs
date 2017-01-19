@@ -48,7 +48,7 @@ namespace skroutz.gr.ServiceBroker
         /// Lists all categories.
         /// </summary>
         /// <param name="page">The page.</param>
-        /// <param name="per">The per.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Categories&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories" />
@@ -121,7 +121,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
-        /// <param name="per">The per.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Categories&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category" />
@@ -145,7 +145,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
-        /// <param name="per">The per.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Specifications&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
@@ -169,7 +169,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
-        /// <param name="per">The per.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Groups&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
@@ -196,7 +196,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="orderBy">Order by name or popularity</param>
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <param name="page">The page.</param>
-        /// <param name="per">The per.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Manufacturers&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers" />
@@ -227,7 +227,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
-        /// <param name="per">The per.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Favorites&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites" />

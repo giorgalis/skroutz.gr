@@ -29,9 +29,9 @@ namespace skroutz.gr.Shared
         public int Page { get; set; }
 
         /// <summary>
-        /// Gets or sets the per.
+        /// Gets or sets Results per page.
         /// </summary>
-        /// <value>The per.</value>
+        /// <value>Results per page.</value>
         [JsonProperty("per")]
         public int Per { get; set; }
     }

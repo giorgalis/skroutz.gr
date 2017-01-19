@@ -36,12 +36,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Authorization\Authorization.cs" />
+    <Compile Include="Entities\Search.cs" />
     <Compile Include="ServiceBroker\Category.cs" />
     <Compile Include="Entities\PriceHistory.cs" />
     <Compile Include="Entities\Reviews.cs" />
     <Compile Include="Entities\SKUReviewFlag.cs" />
     <Compile Include="Entities\SKUReviewVote.cs" />
-    <Compile Include="ServiceBroker\RateLimit.cs" />
+    <Compile Include="ServiceBroker\RateLimitng.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Groups.cs" />
@@ -81,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

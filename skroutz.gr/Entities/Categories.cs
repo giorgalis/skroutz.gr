@@ -12,7 +12,8 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Category
         /// </summary>
-        public Base.Category category { get; set; }
+        [JsonProperty("category")]
+        public Base.Category Category { get; set; }
     }
 
     /// <summary>

@@ -57,7 +57,6 @@ namespace skroutz.gr.Authorization
         /// <value>The user token.</value>
         public string UserToken { get; private set; }
 
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>

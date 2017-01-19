@@ -30,7 +30,6 @@ namespace skroutz.gr.ServiceBroker
     /// </list>
     /// </summary>
     /// <remarks>A Filter Group is a collection of filters of the same kind.</remarks>
-    /// <seealso cref="skroutz.gr.Request" />
     public class FilterGroup : Request
     {
         /// <summary>
@@ -67,16 +66,21 @@ namespace skroutz.gr.ServiceBroker
         /// List FilterGroups
         /// </summary>
         /// <param name="categoryId">The category identifier.</param>
+        /// <param name="page">The page.</param>
+        /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;FilterGroups&gt;.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups" />
-        public Task<FilterGroups> ListFilterGroups(int categoryId)
+        public Task<FilterGroups> ListFilterGroups(int categoryId, int page = 1, int per = 25)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
+            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/filter_groups?");
             _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"&page={page}&per={per}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<FilterGroups>(t.Result.ToString()));
