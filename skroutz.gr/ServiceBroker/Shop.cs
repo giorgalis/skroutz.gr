@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// Provides methods for accesing Shop's data including shop locations, shop reviews.
+    /// Provides methods for accesing Shop's data including shop locations, shop reviews and other.
     /// </summary>
     public class Shop : Request
     {
@@ -66,8 +66,9 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieves the shop review.
         /// </summary>
         /// <param name="shopId">The shop identifier.</param>
-        /// <returns>Task&lt;RootShop&gt;.</returns>
+        /// <returns>Task&lt;ShopReviews&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId"/> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-shops-reviews"/>
         public Task<ShopReviews> RetrieveShopReview(int shopId)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
@@ -86,6 +87,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="shopId">The shop identifier.</param>
         /// <returns>Task&lt;ShopLocations&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId"/> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/shop/#list-shop-locations"/>
         public Task<ShopLocations> ListShopLocations(int shopId)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
@@ -105,8 +107,8 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="shopId">The shop identifier.</param>
         /// <param name="locationId">The location identifier.</param>
         /// <returns>Task&lt;Location&gt;.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId"/> is less than or equal to 0.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="locationId"/> is less than or equal to 0.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId"/> or <paramref name="locationId"/> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-single-shop-location"/>
         public Task<Location> RetrieveSingleShopLocation(int shopId, int locationId)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
@@ -126,6 +128,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="searchString">The search string.</param>
         /// <returns>Task&lt;Shops&gt;.</returns>
         /// <exception cref="ArgumentNullException">Thrown when <paramref name="searchString"/> is null or empty</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/shop/#search-for-shops"/>
         public Task<Shops> SearchForShops(string searchString)
         {
             if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));

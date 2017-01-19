@@ -36,17 +36,36 @@ namespace skroutz.gr.ServiceBroker
         }
 
         /// <summary>
-        /// Searches the query.
+        /// Performs search on a given string
         /// </summary>
-        /// <param name="searchString">The search string.</param>
-        /// <returns>Task&lt;Categories&gt;.</returns>
-        /// <exception cref="System.ArgumentNullException">searchString</exception>
+        /// <param name="searchString">The string to search.</param>
+        /// <returns>Task&lt;RootSearch&gt;.</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when <paramref name="searchString" /> is null or empty.</exception>
         public Task<RootSearch> SearchQuery(string searchString)
         {
             if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));
             
             _builder.Clear();
             _builder.Append($"search?q={searchString}");
+            _builder.Append($"&oauth_token={_accessToken}");
+
+            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<RootSearch>(t.Result.ToString()));
+        }
+
+        /// <summary>
+        /// Autocompletes the specified search string.
+        /// </summary>
+        /// <param name="searchString">The search string.</param>
+        /// <returns>Task&lt;RootSearch&gt;.</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when <paramref name="searchString" /> is null or empty.</exception>
+        /// <remarks>Note that the results of the autocomplete are to be treated as search suggestions. When the user selects any of them you should perform a search with the selected keyphrase.</remarks>
+        public Task<RootSearch> Autocomplete(string searchString)
+        {
+            if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));
+
+            _builder.Clear();
+            _builder.Append($"autocomplete?q={searchString}");
             _builder.Append($"&oauth_token={_accessToken}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>

@@ -70,6 +70,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single category.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
+        /// <returns>Task&lt;RootCategory&gt;</returns>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
         public Task<RootCategory> RetrieveSingleCategory(int categoryId)
@@ -88,6 +89,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve the parent of a category.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
+        /// <returns>Task&lt;RootCategory&gt;</returns>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
         public Task<RootCategory> RetrieveTheParentOfCategory(int categoryId)
@@ -105,6 +107,7 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Retrieve the root category.
         /// </summary>
+        /// <returns>Task&lt;RootCategory&gt;</returns>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category"/>
         public Task<RootCategory> RetrieveTheRootCategory()
         {
