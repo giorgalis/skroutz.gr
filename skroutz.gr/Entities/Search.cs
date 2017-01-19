@@ -5,7 +5,25 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Class Search.
+    /// <para>The main response type is a collection of Categories.</para>
+    /// <para>There may be alternate suggestion queries provided in the <c>alternatives</c> key of the meta object.</para>
+    /// <para>Any of those alternatives with the flag important set to true, are a hint for the client to perform a search with the alternative query instead.</para>
+    /// <para>There may also exist matches of different resources under the key <c>strong_matches</c>.</para>
+    /// <para>Currently there may be up-to one of each of the following resources in <see cref="StrongMatches"/>:
+    /// <list type="bullet">
+    /// <item>
+    /// <description><see cref="Category"/></description>
+    /// </item>
+    /// <item>
+    /// <description><see cref="SKU"/></description>
+    /// </item>
+    /// <item>
+    /// <description><see cref="Manufacturer"/></description>
+    /// </item>
+    /// <item>
+    /// <description><see cref="RootShop"/></description>
+    /// </item>
+    /// </list></para>
     /// </summary>
     /// <seealso cref="skroutz.gr.Entities.Base.Category" />
     public class Search : Base.Category

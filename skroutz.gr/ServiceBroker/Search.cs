@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// Search
+    /// Provides methods for performing search queries.
     /// </summary>
     public class Search : Request
     {

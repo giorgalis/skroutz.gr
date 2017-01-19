@@ -3,10 +3,9 @@
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// You can make up to a certain amount of requests for each OAuth token associated with your application.
-    /// We currently allow up to 100 requests per minute.
+    /// Provides info about Rate Limiting requests.
     /// </summary>
-    /// <remarks>You can check the returned HTTP headers of any API request to see your current rate limit status</remarks>
+    /// <remarks>You can make up to a certain amount of requests for each OAuth token associated with your application.</remarks>
     public class RateLimiting
     {
         /// <summary>
