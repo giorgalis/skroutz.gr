@@ -16,6 +16,14 @@ namespace skroutz.gr.ServiceBroker
         private const string ApiEndPoint = "http://api.skroutz.gr/";
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Request"/> class.
+        /// </summary>
+        public Request()
+        {
+        
+        }
+
+        /// <summary>
         /// Gets or sets the API version.
         /// </summary>
         /// <value>The API version.</value>

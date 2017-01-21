@@ -20,7 +20,7 @@ namespace skroutz.gr.Entities
     /// Categories
     /// </summary>
     /// <seealso cref="Base.Category"/>
-    /// <seealso cref="Meta"/>
+    /// <seealso cref="Shared.Meta"/>
     public class Categories
     {
         /// <summary>
@@ -33,7 +33,8 @@ namespace skroutz.gr.Entities
         /// Meta
         /// </summary>
         /// <value>The meta.</value>
-        public Meta meta { get; set; }
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 }
 

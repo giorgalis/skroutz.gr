@@ -6,15 +6,28 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Groups
     /// </summary>
+    /// <seealso cref="Base.Group"/>
+    /// <seealso cref="Base.GroupSpecification"/>
     public class Groups
     {
+        /// <summary>
+        /// Gets or sets the groups.
+        /// </summary>
+        /// <value>The groups.</value>
         public List<Base.Group> groups { get; set; }
+        /// <summary>
+        /// Gets or sets the specifications.
+        /// </summary>
+        /// <value>The specifications.</value>
         public List<Base.GroupSpecification> specifications { get; set; }
     }
 }
 
 namespace skroutz.gr.Entities.Base
 {
+    /// <summary>
+    /// Class Group.
+    /// </summary>
     public class Group
     {
         /// <summary>

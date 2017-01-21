@@ -6,6 +6,7 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Flags
     /// </summary>
+    /// <seealso cref="Base.Flag"/>
     public class Flags
     {
         /// <summary>

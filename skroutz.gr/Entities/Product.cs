@@ -7,6 +7,7 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Root Product
     /// </summary>
+    /// <seealso cref="Base.Product"/>
     public class RootProduct
     {
         /// <summary>
@@ -18,6 +19,8 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Products
     /// </summary>
+    /// <seealso cref="Base.Product"/>
+    /// <seealso cref="Meta"/>
     public class Products
     {
         /// <summary>

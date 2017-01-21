@@ -13,12 +13,14 @@ namespace skroutz.gr.Entities
         /// Gets or sets the locations.
         /// </summary>
         /// <value>The locations.</value>
-        public List<Base.Location> locations { get; set; }
+        [JsonProperty("locations")]
+        public List<Base.Location> Locations { get; set; }
         /// <summary>
         /// Gets or sets the meta.
         /// </summary>
         /// <value>The meta.</value>
-        public Meta meta { get; set; }
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 
 }

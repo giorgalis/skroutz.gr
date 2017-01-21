@@ -7,6 +7,8 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Filter Groups
     /// </summary>
+    /// <seealso cref="Base.FilterGroup"/>
+    /// <seealso cref="Shared.Meta"/>
     public class FilterGroups
     {
         /// <summary>
@@ -19,7 +21,8 @@ namespace skroutz.gr.Entities
         /// Meta
         /// </summary>
         /// <value>The meta.</value>
-        public Meta meta { get; set; }
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 }
 

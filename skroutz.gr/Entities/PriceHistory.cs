@@ -6,6 +6,7 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Class PriceHistory.
     /// </summary>
+    /// <seealso cref="Base.History"/>
     public class PriceHistory
     {
         /// <summary>

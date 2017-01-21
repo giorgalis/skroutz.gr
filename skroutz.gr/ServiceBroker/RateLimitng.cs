@@ -9,6 +9,13 @@ namespace skroutz.gr.ServiceBroker
     public class RateLimiting
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="RateLimiting"/> class.
+        /// </summary>
+        public RateLimiting()
+        {
+        
+        }
+        /// <summary>
         /// The maximum number of requests that the consumer is permitted to make per minute.
         /// </summary>
         public int Limit { get; set; }

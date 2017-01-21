@@ -11,13 +11,13 @@ namespace skroutz.gr.Authorization
     public struct AppCredentials
     {
         /// <summary>
-        /// The client Id you received from skroutz api team
+        /// The client Id you received from skroutz api team.
         /// </summary>
         [JsonProperty("client_id")]
         public string ClientId;
 
         /// <summary>
-        /// The client secret you received from skroutz api team
+        /// The client secret you received from skroutz api team.
         /// </summary>
         [JsonProperty("client_secret")]
         public string ClientSecret;
@@ -30,7 +30,7 @@ namespace skroutz.gr.Authorization
     public struct UserCredentials
     {
         /// <summary>
-        /// The client Id you received from skroutz api team
+        /// The client Id you received from skroutz api team.
         /// </summary>
         [JsonProperty("client_id")]
         public string ClientId;
@@ -46,7 +46,6 @@ namespace skroutz.gr.Authorization
     /// <summary>
     /// Class Authorization.
     /// </summary>
-    /// <seealso cref="Request" />
     public class Authorization : Request
     {
         /// <summary>

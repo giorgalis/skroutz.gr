@@ -1,4 +1,5 @@
-﻿using skroutz.gr.Entities.Base;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Entities.Base;
 using skroutz.gr.Shared;
 using System.Collections.Generic;
 
@@ -25,14 +26,15 @@ namespace skroutz.gr.Entities
     /// </item>
     /// </list></para>
     /// </summary>
-    /// <seealso cref="skroutz.gr.Entities.Base.Category" />
-    public class Search : Base.Category
+    /// <seealso cref="Category" />
+    public class Search : Category
     {
         /// <summary>
         /// Gets or sets the match count.
         /// </summary>
         /// <value>The match count.</value>
-        public int match_count { get; set; }
+        [JsonProperty("match_count")]
+        public int MatchCount { get; set; }
 
     }
 
@@ -45,22 +47,26 @@ namespace skroutz.gr.Entities
         /// Gets or sets the category.
         /// </summary>
         /// <value>The category.</value>
-        public Search category { get; set; }
+        [JsonProperty("category")]
+        public Search Category { get; set; }
         /// <summary>
         /// Gets or sets the manufacturer.
         /// </summary>
         /// <value>The manufacturer.</value>
-        public Manufacturer manufacturer { get; set; }
+        [JsonProperty("manufacturer")]
+        public Manufacturer Manufacturer { get; set; }
         /// <summary>
         /// Gets or sets the sku.
         /// </summary>
         /// <value>The sku.</value>
-        public SKU sku { get; set; }
+        [JsonProperty("sku")]
+        public SKU Sku { get; set; }
         /// <summary>
         /// Gets or sets the shop.
         /// </summary>
         /// <value>The shop.</value>
-        public RootShop shop { get; set; }
+        [JsonProperty("shop")]
+        public RootShop Shop { get; set; }
     }
 
     /// <summary>
@@ -72,12 +78,14 @@ namespace skroutz.gr.Entities
         /// Gets or sets the token.
         /// </summary>
         /// <value>The token.</value>
-        public string token { get; set; }
+        [JsonProperty("token")]
+        public string Token { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Drop"/> is dropped.
         /// </summary>
         /// <value><c>true</c> if dropped; otherwise, <c>false</c>.</value>
-        public bool dropped { get; set; }
+        [JsonProperty("dropped")]
+        public bool Dropped { get; set; }
     }
 
     /// <summary>
@@ -89,22 +97,26 @@ namespace skroutz.gr.Entities
         /// Gets or sets the term.
         /// </summary>
         /// <value>The term.</value>
-        public string term { get; set; }
+        [JsonProperty("term")]
+        public string Term { get; set; }
         /// <summary>
         /// Gets or sets the count.
         /// </summary>
         /// <value>The count.</value>
-        public int count { get; set; }
+        [JsonProperty("count")]
+        public int Count { get; set; }
         /// <summary>
         /// Gets or sets the drop.
         /// </summary>
         /// <value>The drop.</value>
-        public List<Drop> drop { get; set; }
+        [JsonProperty("drop")]
+        public List<Drop> Drop { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Alternative"/> is important.
         /// </summary>
         /// <value><c>true</c> if important; otherwise, <c>false</c>.</value>
-        public bool important { get; set; }
+        [JsonProperty("important")]
+        public bool Important { get; set; }
     }
 
     /// <summary>
@@ -122,12 +134,14 @@ namespace skroutz.gr.Entities
         /// Gets or sets the alternatives.
         /// </summary>
         /// <value>The alternatives.</value>
-        public List<Alternative> alternatives { get; set; }
+        [JsonProperty("alternatives")]
+        public List<Alternative> Alternatives { get; set; }
         /// <summary>
         /// Gets or sets the strong matches.
         /// </summary>
         /// <value>The strong matches.</value>
-        public StrongMatches strong_matches { get; set; }
+        [JsonProperty("strong_matches")]
+        public StrongMatches StrongMatches { get; set; }
     }
 
     /// <summary>
@@ -139,11 +153,12 @@ namespace skroutz.gr.Entities
         /// Gets or sets the categories.
         /// </summary>
         /// <value>The categories.</value>
-        public List<Search> categories { get; set; }
+        public List<Search> Categories { get; set; }
         /// <summary>
         /// Gets or sets the meta.
         /// </summary>
         /// <value>The meta.</value>
-        public SearchMeta meta { get; set; }
+        [JsonProperty("meta")]
+        public SearchMeta Meta { get; set; }
     }
 }

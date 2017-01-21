@@ -7,6 +7,8 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Class Reviews.
     /// </summary>
+    /// <seealso cref="Base.SKUReview"/>
+    /// <seealso cref="Shared.Meta"/>
     public class Reviews
     {
         /// <summary>
@@ -18,7 +20,8 @@ namespace skroutz.gr.Entities
         /// Gets or sets the meta.
         /// </summary>
         /// <value>The meta.</value>
-        public Meta meta { get; set; }
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 }
 

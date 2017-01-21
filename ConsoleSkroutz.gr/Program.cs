@@ -61,8 +61,8 @@ namespace ConsoleSkroutz.gr
                 ApplyTitle("Shop");
                 Shop shop = new Shop(auth.ApplicationToken,sb);
                 result = shop.RetrieveSingleShop(452).Result;
-                result = shop.RetrieveShopReview(452).Result.reviews.printReflected();
-                result = shop.ListShopLocations(452).Result.locations.printReflected();
+                result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
+                result = shop.ListShopLocations(452).Result.Locations.printReflected();
                 result = shop.RetrieveSingleShopLocation(452, 2500).Result;
 
                 ApplyTitle("Manufacturer");
@@ -85,31 +85,31 @@ namespace ConsoleSkroutz.gr
                 //result = s.SearchQuery("a").Result;
 
                 //Query that doesn't match anything
-                result = search.SearchQuery("asdf").Result.categories.printReflected();
+                result = search.SearchQuery("asdf").Result.Categories.printReflected();
 
                 //Query with more results when written in another language
-                result = search.SearchQuery("%CE%B9%CF%80%CE%B7%CE%BF%CE%BD%CE%B5").Result.categories.printReflected();
+                result = search.SearchQuery("%CE%B9%CF%80%CE%B7%CE%BF%CE%BD%CE%B5").Result.Categories.printReflected();
 
                 //Probably misspelled query
-                result = search.SearchQuery("ipone").Result.categories.printReflected();
+                result = search.SearchQuery("ipone").Result.Categories.printReflected();
 
                 //Query matching many categories
-                result = search.SearchQuery("iphone").Result.categories.printReflected();
+                result = search.SearchQuery("iphone").Result.Categories.printReflected();
 
                 //Query with strong hints for a specific category match
-                result = search.SearchQuery("Tablets").Result.categories.printReflected();
+                result = search.SearchQuery("Tablets").Result.Categories.printReflected();
 
                 //Query with strong hints for a specific manufacturer match
-                result = search.SearchQuery("apple").Result.categories.printReflected();
+                result = search.SearchQuery("apple").Result.Categories.printReflected();
 
                 //Query with strong hints for a specific SKU match
-                result = search.SearchQuery("nikon+1+j2").Result.categories.printReflected();
+                result = search.SearchQuery("nikon+1+j2").Result.Categories.printReflected();
 
                 //Query that matches SKUS from a single category
-                result = search.SearchQuery("samsung+galaxy+s5+16GB").Result.categories.printReflected();
+                result = search.SearchQuery("samsung+galaxy+s5+16GB").Result.Categories.printReflected();
 
                 //Query with results when parts of the query are omitted
-                result = search.SearchQuery("wrong+iphone").Result.categories.printReflected();
+                result = search.SearchQuery("wrong+iphone").Result.Categories.printReflected();
 
                 ApplyTitle("Flag");
                 Flag flag = new Flag(auth.ApplicationToken, sb);

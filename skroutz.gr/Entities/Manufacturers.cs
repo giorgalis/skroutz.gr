@@ -7,6 +7,7 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Root Manufacturer
     /// </summary>
+    /// <seealso cref="Base.Manufacturer"/>
     public class RootManufacturer
     {
         /// <summary>
@@ -18,6 +19,8 @@ namespace skroutz.gr.Entities
     /// <summary>
     /// Manufacturers
     /// </summary>
+    /// <seealso cref="Base.Manufacturer"/>
+    /// <seealso cref="Meta"/>
     public class Manufacturers
     {
         /// <summary>
