@@ -55,7 +55,7 @@ namespace ConsoleSkroutz.gr
                 ApplyTitle("Product");
                 Product product = new Product(auth.ApplicationToken, sb);
 
-                result = product.RetrieveSingleProduct(12176638).Result.product;
+                result = product.RetrieveSingleProduct(12176638).Result.Product;
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
                 ApplyTitle("Shop");

@@ -13,14 +13,15 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Product
         /// </summary>
-        public Base.Product product { get; set; }
+        [JsonProperty("product")]
+        public Base.Product Product { get; set; }
     }
 
     /// <summary>
     /// Products
     /// </summary>
     /// <seealso cref="Base.Product"/>
-    /// <seealso cref="Meta"/>
+    /// <seealso cref="Shared.Meta"/>
     public class Products
     {
         /// <summary>
@@ -31,7 +32,8 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Meta
         /// </summary>
-        public Meta meta { get; set; }
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 }
 
