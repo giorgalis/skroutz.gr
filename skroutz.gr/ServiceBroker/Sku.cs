@@ -5,6 +5,7 @@ using skroutz.gr.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,13 +48,15 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="orderBy">Order by price, popularity or rating</param>
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <param name="searchKeyword">The keyword to search by</param>
+        /// <param name="metaFilters">The meta filters.</param>
         /// <param name="manufacturerIds">The ids of the manufacturers of the SKUs</param>
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
-        /// <remarks>The default <c>order_by value</c> may differ across categories but in most cases it's <c>pricevat</c>.</remarks>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;SKUs&gt;.</returns>
-        public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category" />
+        /// <remarks>The default <c>order_by value</c> may differ across categories but in most cases it's <c>pricevat</c>.</remarks>
+        public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null, params Expression<Func<SKU, object>>[] sparseFields)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
             //TODO: perform check
@@ -78,6 +81,9 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Append($"&oauth_token={_accessToken}");
 
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
         }
@@ -86,10 +92,11 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single SKU.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-single-sku"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;RootSKU&gt;.</returns>
-        public Task<RootSKU> RetrieveSingleSKU(int skuId)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-single-sku" />
+        public Task<RootSKU> RetrieveSingleSKU(int skuId, params Expression<Func<SKU, object>>[] sparseFields)
         {
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
@@ -97,6 +104,9 @@ namespace skroutz.gr.ServiceBroker
             _builder.Append($"skus/{skuId}?");
 
             _builder.Append($"oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootSKU>(t.Result.ToString()));
@@ -106,10 +116,11 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve similar SKUs.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-similar-skus"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;SKUs&gt;.</returns>
-        public Task<SKUs> RetrieveSimilarSKUs(int skuId)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-similar-skus" />
+        public Task<SKUs> RetrieveSimilarSKUs(int skuId, params Expression<Func<SKU, object>>[] sparseFields)
         {
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
@@ -117,6 +128,9 @@ namespace skroutz.gr.ServiceBroker
             _builder.Append($"skus/{skuId}/similar?");
 
             _builder.Append($"oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
@@ -126,16 +140,20 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve an SKU's products.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-products"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0..</exception>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;Products&gt;.</returns>
-        public Task<Products> RetrieveSKUsProducts(int skuId)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0..</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-products" />
+        public Task<Products> RetrieveSKUsProducts(int skuId, params Expression<Func<Entities.RootProduct, object>>[] sparseFields)
         {
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
             _builder.Append($"skus/{skuId}/products?");
             _builder.Append($"oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Products>(t.Result.ToString()));
@@ -145,16 +163,20 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve an SKU's reviews.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-reviews"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;Reviews&gt;.</returns>
-        public Task<Reviews> RetrieveSKUsReviews(int skuId)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-reviews" />
+        public Task<Reviews> RetrieveSKUsReviews(int skuId, params Expression<Func<SKUReview, object>>[] sparseFields)
         {
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
             _builder.Append($"skus/{skuId}/reviews?");
             _builder.Append($"oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Reviews>(t.Result.ToString()));
@@ -217,17 +239,21 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve SKUs Specifications.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-specifications"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
-        /// <remarks>Pagination is not available for this endpoint.</remarks>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;Specifications&gt;.</returns>
-        public Task<Specifications> RetrieveSKUsSpecifications(int skuId)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-specifications" />
+        /// <remarks>Pagination is not available for this endpoint.</remarks>
+        public Task<Specifications> RetrieveSKUsSpecifications(int skuId, params Expression<Func<Specification, object>>[] sparseFields)
         {
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
             
             _builder.Clear();
             _builder.Append($"skus/{skuId}/specifications?");
             _builder.Append($"oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Specifications>(t.Result.ToString()));
@@ -237,17 +263,21 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve SKUs Price History.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-skus-price-history"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId"/> is less than or equal to 0.</exception>
-        /// <remarks>Currently this endpoint responds with any available data for the last 6 months</remarks>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;PriceHistory&gt;.</returns>
-        public Task<PriceHistory> RetrieveSKUsPriceHistory(int skuId)
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-skus-price-history" />
+        /// <remarks>Currently this endpoint responds with any available data for the last 6 months</remarks>
+        public Task<PriceHistory> RetrieveSKUsPriceHistory(int skuId, params Expression<Func<History, object>>[] sparseFields)
         {
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
             _builder.Append($"skus/{skuId}/price_history?");
             _builder.Append($"oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<PriceHistory>(t.Result.ToString()));

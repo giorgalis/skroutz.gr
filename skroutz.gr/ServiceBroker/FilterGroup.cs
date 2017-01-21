@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using System;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -68,10 +69,11 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">The category identifier.</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;FilterGroups&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups" />
-        public Task<FilterGroups> ListFilterGroups(int categoryId, int page = 1, int per = 25)
+        public Task<FilterGroups> ListFilterGroups(int categoryId, int page = 1, int per = 25, params Expression<Func<Entities.Base.FilterGroup, object>>[] sparseFields)
         {
             if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
@@ -81,6 +83,9 @@ namespace skroutz.gr.ServiceBroker
             _builder.Append($"categories/{categoryId}/filter_groups?");
             _builder.Append($"oauth_token={_accessToken}");
             _builder.Append($"&page={page}&per={per}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<FilterGroups>(t.Result.ToString()));
