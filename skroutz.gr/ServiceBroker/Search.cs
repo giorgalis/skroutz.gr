@@ -15,7 +15,7 @@ namespace skroutz.gr.ServiceBroker
         private readonly string _accessToken;
 
         /// <summary>
-        /// Initializes a new instance of the Search class
+        /// Initializes a new instance of the <see cref="Search" /> class
         /// </summary>
         /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
         public Search(string accessToken)
@@ -25,7 +25,7 @@ namespace skroutz.gr.ServiceBroker
         }
 
         /// <summary>
-        /// Initializes a new instance of the Search class
+        /// Initializes a new instance of the <see cref="Search" /> class
         /// </summary>
         /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>

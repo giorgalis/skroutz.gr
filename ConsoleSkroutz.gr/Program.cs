@@ -10,7 +10,7 @@ namespace ConsoleSkroutz.gr
     {
         static void Main(string[] args)
         {
-            Authorization auth = new Authorization(new AppCredentials { client_id = "", client_secret = "" });
+            Authorization auth = new Authorization(new AppCredentials {  ClientId = "",  ClientSecret = "" });
             StringBuilder sb = new StringBuilder();
 
             Console.OutputEncoding = Encoding.Unicode;
