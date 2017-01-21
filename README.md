@@ -1,6 +1,6 @@
 # Prortable Class Library for accessing the skroutz.gr API
 
-  dynamic result = null;
+                dynamic result = null;
 
                 ApplyTitle("Category");
                 Category category = new Category(auth.AppResponse.AccessToken, sb);
