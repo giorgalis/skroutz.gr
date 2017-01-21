@@ -22,7 +22,8 @@ namespace ConsoleSkroutz.gr
                 ApplyTitle("Category");
                 Category category = new Category(auth.AppResponse.AccessToken, sb);
 
-                result = category.ListAllCategories().Result.categories.printReflected();
+                result = category.ListAllCategories(sparseFields: x => x.Code).Result.categories.printReflected();
+
                 result = category.RetrieveSingleCategory(1442).Result.Category.printReflected();
                 result = category.RetrieveTheParentOfCategory(1442).Result.Category.printReflected();
                 result = category.RetrieveTheRootCategory().Result.Category.printReflected();
@@ -35,7 +36,7 @@ namespace ConsoleSkroutz.gr
                 result = category.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result.manufacturers.printReflected();
 
                 //User token is required or else exception is thrown
-                //result = cat.ListCategorysFavorites(40).Result;
+                result = category.ListCategorysFavorites(40).Result;
 
                 ApplyTitle("SKU");
                 Sku sku = new Sku(auth.AppResponse.AccessToken, sb);
@@ -55,11 +56,12 @@ namespace ConsoleSkroutz.gr
                 ApplyTitle("Product");
                 Product product = new Product(auth.AppResponse.AccessToken, sb);
 
-                result = product.RetrieveSingleProduct(12176638).Result.Product;
+                result = product.RetrieveSingleProduct(12176638, x=> x.Name, x => x.Price).Result.Product;
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
                 ApplyTitle("Shop");
                 Shop shop = new Shop(auth.AppResponse.AccessToken, sb);
+
                 result = shop.RetrieveSingleShop(452).Result;
                 result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
                 result = shop.ListShopLocations(452).Result.Locations.printReflected();
@@ -81,8 +83,9 @@ namespace ConsoleSkroutz.gr
 
                 ApplyTitle("Search");
                 Search search = new Search(auth.AppResponse.AccessToken, sb);
+
                 //Query with less than 2 characters
-                //result = s.SearchQuery("a").Result;
+                result = search.SearchQuery("a").Result;
 
                 //Query that doesn't match anything
                 result = search.SearchQuery("asdf").Result.Categories.printReflected();
@@ -120,9 +123,7 @@ namespace ConsoleSkroutz.gr
                 FilterGroup filterGroup = new FilterGroup(auth.AppResponse.AccessToken, sb);
 
                 result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
-
-              
-
+                
                 Console.ReadLine();
 
             }

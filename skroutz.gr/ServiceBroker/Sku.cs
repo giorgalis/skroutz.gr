@@ -51,7 +51,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"/>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId"/> is less than or equal to 0.</exception>
-        /// <remarks>The default order_by value may differ across categories but in most cases it's pricevat.</remarks>
+        /// <remarks>The default <c>order_by value</c> may differ across categories but in most cases it's <c>pricevat</c>.</remarks>
         /// <returns>Task&lt;SKUs&gt;.</returns>
         public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null)
         {

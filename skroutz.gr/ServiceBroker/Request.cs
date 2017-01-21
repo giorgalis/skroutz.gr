@@ -13,7 +13,7 @@ namespace skroutz.gr.ServiceBroker
     public class Request : RateLimiting
     {
         private const string Domain = "https://www.skroutz.gr/";
-        private const string ApiEndPoint = "http://api.skroutz.gr/";
+        private const string ApiEndPoint = "https://api.skroutz.gr/";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Request"/> class.

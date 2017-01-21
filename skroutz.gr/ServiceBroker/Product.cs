@@ -1,6 +1,24 @@
-﻿using Newtonsoft.Json;
+﻿// ***********************************************************************
+// Assembly         : skroutz.gr
+// Author           : kakal
+// Created          : 01-15-2017
+//
+// Last Modified By : kakal
+// Last Modified On : 01-21-2017
+// ***********************************************************************
+// <copyright file="Product.cs" company="">
+//     Copyright ©  2017
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Newtonsoft.Json;
 using skroutz.gr.Entities;
+using skroutz.gr.ServiceBroker;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +27,7 @@ namespace skroutz.gr.ServiceBroker
     /// <summary>
     /// Provides methods for accesing Product's data.
     /// </summary>
+    /// <seealso cref="skroutz.gr.ServiceBroker.Request" />
     public class Product : Request
     {
         /// <summary>
@@ -45,16 +64,20 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single product
         /// </summary>
         /// <param name="productId">Unique Identifier of the product</param>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;RootProduct&gt;.</returns>
-        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="productId"/> is less than or equal to 0.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="productId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product" />
-        public Task<RootProduct> RetrieveSingleProduct(int productId)
+        public Task<RootProduct> RetrieveSingleProduct(int productId, params Expression<Func<Entities.Base.Product, object>>[] sparseFields)
         {
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
 
             _builder.Clear();
             _builder.Append($"products/{productId}?");
             _builder.Append($"oauth_token={_accessToken}");
+
+            if(sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootProduct>(t.Result.ToString()));
@@ -65,11 +88,11 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="shopId">Unique identifier of the shop</param>
         /// <param name="shopUid">Search with the product identifier as assigned by the shop</param>
+        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;Products&gt;.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId"/> is less than or equal to 0.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopUid"/> is less than or equal to 0.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> or <paramref name="shopUid" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products" />
-        public Task<Products> SearchForProducts(int shopId, string shopUid)
+        public Task<Products> SearchForProducts(int shopId, string shopUid, params Expression<Func<Entities.Base.Product, object>>[] sparseFields)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
             if (string.IsNullOrEmpty(shopUid)) throw new ArgumentNullException(nameof(shopUid));
@@ -78,6 +101,9 @@ namespace skroutz.gr.ServiceBroker
             _builder.Append($"shops/{shopId}/products/search?");
             _builder.Append($"shop_uid={shopUid}");
             _builder.Append($"&oauth_token={_accessToken}");
+
+            if (sparseFields != null)
+                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Products>(t.Result.ToString()));
