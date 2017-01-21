@@ -20,7 +20,7 @@ namespace ConsoleSkroutz.gr
                 dynamic result = null;
 
                 ApplyTitle("Category");
-                Category category = new Category(auth.ApplicationToken, sb);
+                Category category = new Category(auth.AppResponse.AccessToken, sb);
 
                 result = category.ListAllCategories().Result.categories.printReflected();
                 result = category.RetrieveSingleCategory(1442).Result.Category.printReflected();
@@ -38,7 +38,7 @@ namespace ConsoleSkroutz.gr
                 //result = cat.ListCategorysFavorites(40).Result;
 
                 ApplyTitle("SKU");
-                Sku sku = new Sku(auth.ApplicationToken, sb);
+                Sku sku = new Sku(auth.AppResponse.AccessToken, sb);
 
                 result = sku.ListSKUsOfSpecificCategory(40).Result.skus.printReflected();
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.popularity).Result.skus.printReflected();
@@ -53,20 +53,20 @@ namespace ConsoleSkroutz.gr
                 result = sku.RetrieveSKUsReviews(3690169).Result.printReflected();
 
                 ApplyTitle("Product");
-                Product product = new Product(auth.ApplicationToken, sb);
+                Product product = new Product(auth.AppResponse.AccessToken, sb);
 
                 result = product.RetrieveSingleProduct(12176638).Result.Product;
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
                 ApplyTitle("Shop");
-                Shop shop = new Shop(auth.ApplicationToken,sb);
+                Shop shop = new Shop(auth.AppResponse.AccessToken, sb);
                 result = shop.RetrieveSingleShop(452).Result;
                 result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
                 result = shop.ListShopLocations(452).Result.Locations.printReflected();
                 result = shop.RetrieveSingleShopLocation(452, 2500).Result;
 
                 ApplyTitle("Manufacturer");
-                Manufacturer manufacturer = new Manufacturer(auth.ApplicationToken, sb);
+                Manufacturer manufacturer = new Manufacturer(auth.AppResponse.AccessToken, sb);
 
                 result = manufacturer.ListManufacturers().Result.manufacturers.printReflected();
                 result = manufacturer.RetrieveSingleManufacturer(12907).Result.manufacturer.printReflected();
@@ -80,7 +80,7 @@ namespace ConsoleSkroutz.gr
                 result = manufacturer.RetrieveManufacturerSKUs(356, OrderByPrcPop.popularity, OrderDir.asc).Result.skus.printReflected();
 
                 ApplyTitle("Search");
-                Search search = new Search(auth.ApplicationToken, sb);
+                Search search = new Search(auth.AppResponse.AccessToken, sb);
                 //Query with less than 2 characters
                 //result = s.SearchQuery("a").Result;
 
@@ -112,12 +112,12 @@ namespace ConsoleSkroutz.gr
                 result = search.SearchQuery("wrong+iphone").Result.Categories.printReflected();
 
                 ApplyTitle("Flag");
-                Flag flag = new Flag(auth.ApplicationToken, sb);
+                Flag flag = new Flag(auth.AppResponse.AccessToken, sb);
 
                 result = flag.RetrieveAllFlags().Result.flags.printReflected();
 
                 ApplyTitle("Filter Groups");
-                FilterGroup filterGroup = new FilterGroup(auth.ApplicationToken, sb);
+                FilterGroup filterGroup = new FilterGroup(auth.AppResponse.AccessToken, sb);
 
                 result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
 
