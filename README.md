@@ -106,15 +106,3 @@
                 FilterGroup filterGroup = new FilterGroup(auth.AppResponse.AccessToken, sb);
 
                 result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
-                
-                Console.ReadLine();
-
-            }
-            catch (skroutz.gr.Exceptions.SkroutzException se)
-            {
-
-            }
-            catch (Exception se)
-            {
-
-            }
