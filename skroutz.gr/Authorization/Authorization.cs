@@ -123,7 +123,7 @@ namespace skroutz.gr.Authorization
         /// <summary>
         /// Gets or sets the expires in.
         /// </summary>
-        /// <value>The expires in.</value>
+        /// <value>The expires in. (seconds).</value>
         [JsonProperty("expires_in")]
         public int ExpiresIn { get; set; }
     }

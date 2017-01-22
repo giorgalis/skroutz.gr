@@ -1,27 +1,85 @@
-﻿using skroutz.gr.Authorization;
+﻿using Newtonsoft.Json;
+using skroutz.gr.Authorization;
 using skroutz.gr.ServiceBroker;
 using skroutz.gr.Shared;
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Text;
 
 namespace ConsoleSkroutz.gr
 {
+    public class Token
+    {
+
+        public string access_token { get; set; }
+
+  
+        public string token_type { get; set; }
+
+   
+        public int expires_in { get; set; }
+
+        public string refresh_token { get; set; }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Authorization auth = new Authorization(new AppCredentials {  ClientId = "",  ClientSecret = "" });
+            //Authorization auth = new Authorization(new AppCredentials {  ClientId = "",  ClientSecret = "" });
+            Authorization auth = new Authorization(new AppCredentials { ClientId = "",  ClientSecret = "" });
             StringBuilder sb = new StringBuilder();
 
             Console.OutputEncoding = Encoding.Unicode;
-            
+
+            string baseAddress = "http://dotnet.media/";
+
+            // Start OWIN host     
+            //using (Microsoft.Owin.Hosting.WebApp.Start<WebApp.Startup>(url: baseAddress))
+            //{
+                var client = new HttpClient() { BaseAddress = new Uri( baseAddress) };
+                var response = client.GetAsync(baseAddress + "test").Result;
+                Console.WriteLine(response);
+
+                Console.WriteLine();
+
+                var authorizationHeader = Convert.ToBase64String(Encoding.UTF8.GetBytes("xyz:secretKey"));
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorizationHeader);
+
+                var form = new Dictionary<string, string>
+               {
+                   {"grant_type", "password"},
+                   {"username", "xyz"},
+                   {"password", "xyz@123"},
+               };
+
+                var tokenResponse = client.PostAsync(baseAddress + "accesstoken", new FormUrlEncodedContent(form)).Result;
+                //var token = JsonConvert.DeserializeObject<Token>(tokenResponse.Content.ToString());
+                var token = tokenResponse.Content.ReadAsAsync<Token>(new[] { new JsonMediaTypeFormatter() }).Result;
+
+            auth.skroutzRequest.AccessToken = token.access_token;
+
+                Console.WriteLine("Token issued is: {0}", token.access_token);
+
+                Console.WriteLine();
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.access_token);
+                var authorizedResponse = client.GetAsync(baseAddress + "test").Result;
+                Console.WriteLine(authorizedResponse);
+                Console.WriteLine(authorizedResponse.Content.ReadAsStringAsync().Result);
+            //}
+
+            //Console.ReadLine();
             try
             {
                 dynamic result = null;
 
                 //ApplyTitle("User");
-                //User user = new User(auth.AppResponse, sb);
-                //result = user.ListFavorites();
+                User user = new User(auth.skroutzRequest, sb);
+                result = user.ListFavorites().Result;
 
                 ApplyTitle("Category");
                 Category category = new Category(auth.skroutzRequest, sb);

@@ -1,0 +1,1016 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CE05902-D253-4F71-BE09-FC176AEDC6D5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/308893be-6b7f-4829-a768-76b968cde8fc/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/WebApp</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/308893be-6b7f-4829-a768-76b968cde8fc/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/WebApp</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.TraceListener, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.TraceListener.2.2.0\lib\net45\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\ftp.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Authorization.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Entities.Base.FilterGroup.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Entities.Base.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Entities.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Entities.User.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Exceptions.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.ServiceBroker.htm" />
+    <Content Include="skroutz\4294967296-skroutz.gr.Shared.htm" />
+    <Content Include="skroutz\4294967381-Constructors.htm" />
+    <Content Include="skroutz\4294967381-Properties.htm" />
+    <Content Include="skroutz\4294967381.htm" />
+    <Content Include="skroutz\4294967388.htm" />
+    <Content Include="skroutz\4294967391-Constructors.htm" />
+    <Content Include="skroutz\4294967391-Properties.htm" />
+    <Content Include="skroutz\4294967391.htm" />
+    <Content Include="skroutz\4294967401.htm" />
+    <Content Include="skroutz\4294967402.htm" />
+    <Content Include="skroutz\4294967404.htm" />
+    <Content Include="skroutz\4294967407.htm" />
+    <Content Include="skroutz\4294967415.htm" />
+    <Content Include="skroutz\4294967419.htm" />
+    <Content Include="skroutz\4294967423.htm" />
+    <Content Include="skroutz\4294967427.htm" />
+    <Content Include="skroutz\4294967432.htm" />
+    <Content Include="skroutz\4294967437-Constructors.htm" />
+    <Content Include="skroutz\4294967437-Properties.htm" />
+    <Content Include="skroutz\4294967437.htm" />
+    <Content Include="skroutz\4294967444.htm" />
+    <Content Include="skroutz\4294967447-Constructors.htm" />
+    <Content Include="skroutz\4294967447-Properties.htm" />
+    <Content Include="skroutz\4294967447.htm" />
+    <Content Include="skroutz\4294967451.htm" />
+    <Content Include="skroutz\4294967453-Constructors.htm" />
+    <Content Include="skroutz\4294967453-Properties.htm" />
+    <Content Include="skroutz\4294967453.htm" />
+    <Content Include="skroutz\4294967466.htm" />
+    <Content Include="skroutz\4294967471-Constructors.htm" />
+    <Content Include="skroutz\4294967471-Methods.htm" />
+    <Content Include="skroutz\4294967471.htm" />
+    <Content Include="skroutz\4294967472.htm" />
+    <Content Include="skroutz\4294967474.htm" />
+    <Content Include="skroutz\4294967477.htm" />
+    <Content Include="skroutz\4294967481.htm" />
+    <Content Include="skroutz\4294967484.htm" />
+    <Content Include="skroutz\4294967487.htm" />
+    <Content Include="skroutz\4294967489.htm" />
+    <Content Include="skroutz\4294967494.htm" />
+    <Content Include="skroutz\4294967499.htm" />
+    <Content Include="skroutz\4294967504.htm" />
+    <Content Include="skroutz\4294967511.htm" />
+    <Content Include="skroutz\4294967518-Methods.htm" />
+    <Content Include="skroutz\4294967518.htm" />
+    <Content Include="skroutz\4294967519.htm" />
+    <Content Include="skroutz\4294967526-Constructors.htm" />
+    <Content Include="skroutz\4294967526-Properties.htm" />
+    <Content Include="skroutz\4294967526.htm" />
+    <Content Include="skroutz\4294967527.htm" />
+    <Content Include="skroutz\4294967546-Constructors.htm" />
+    <Content Include="skroutz\4294967546-Methods.htm" />
+    <Content Include="skroutz\4294967546.htm" />
+    <Content Include="skroutz\4294967547.htm" />
+    <Content Include="skroutz\4294967549.htm" />
+    <Content Include="skroutz\4294967552.htm" />
+    <Content Include="skroutz\4294967559-Constructors.htm" />
+    <Content Include="skroutz\4294967559-Methods.htm" />
+    <Content Include="skroutz\4294967559.htm" />
+    <Content Include="skroutz\4294967560.htm" />
+    <Content Include="skroutz\4294967562.htm" />
+    <Content Include="skroutz\4294967565.htm" />
+    <Content Include="skroutz\4294967568-Constructors.htm" />
+    <Content Include="skroutz\4294967568-Methods.htm" />
+    <Content Include="skroutz\4294967568.htm" />
+    <Content Include="skroutz\4294967569.htm" />
+    <Content Include="skroutz\4294967571.htm" />
+    <Content Include="skroutz\4294967574.htm" />
+    <Content Include="skroutz\4294967578.htm" />
+    <Content Include="skroutz\4294967581.htm" />
+    <Content Include="skroutz\4294967588.htm" />
+    <Content Include="skroutz\4294967597-Constructors.htm" />
+    <Content Include="skroutz\4294967597-Methods.htm" />
+    <Content Include="skroutz\4294967597.htm" />
+    <Content Include="skroutz\4294967598.htm" />
+    <Content Include="skroutz\4294967600.htm" />
+    <Content Include="skroutz\4294967603.htm" />
+    <Content Include="skroutz\4294967606.htm" />
+    <Content Include="skroutz\4294967612-Constructors.htm" />
+    <Content Include="skroutz\4294967612-Properties.htm" />
+    <Content Include="skroutz\4294967612.htm" />
+    <Content Include="skroutz\4294967613.htm" />
+    <Content Include="skroutz\4294967626-Constructors.htm" />
+    <Content Include="skroutz\4294967626-Methods.htm" />
+    <Content Include="skroutz\4294967626.htm" />
+    <Content Include="skroutz\4294967627.htm" />
+    <Content Include="skroutz\4294967629.htm" />
+    <Content Include="skroutz\4294967632.htm" />
+    <Content Include="skroutz\4294967635.htm" />
+    <Content Include="skroutz\4294967640-Constructors.htm" />
+    <Content Include="skroutz\4294967640-Methods.htm" />
+    <Content Include="skroutz\4294967640.htm" />
+    <Content Include="skroutz\4294967641.htm" />
+    <Content Include="skroutz\4294967643.htm" />
+    <Content Include="skroutz\4294967646.htm" />
+    <Content Include="skroutz\4294967649.htm" />
+    <Content Include="skroutz\4294967652.htm" />
+    <Content Include="skroutz\4294967655.htm" />
+    <Content Include="skroutz\4294967659.htm" />
+    <Content Include="skroutz\4294967664-Constructors.htm" />
+    <Content Include="skroutz\4294967664-Methods.htm" />
+    <Content Include="skroutz\4294967664.htm" />
+    <Content Include="skroutz\4294967665.htm" />
+    <Content Include="skroutz\4294967667.htm" />
+    <Content Include="skroutz\4294967670.htm" />
+    <Content Include="skroutz\4294967679.htm" />
+    <Content Include="skroutz\4294967682.htm" />
+    <Content Include="skroutz\4294967685.htm" />
+    <Content Include="skroutz\4294967688.htm" />
+    <Content Include="skroutz\4294967691.htm" />
+    <Content Include="skroutz\4294967695.htm" />
+    <Content Include="skroutz\4294967699.htm" />
+    <Content Include="skroutz\4294967702.htm" />
+    <Content Include="skroutz\4294967705.htm" />
+    <Content Include="skroutz\4294967709-Constructors.htm" />
+    <Content Include="skroutz\4294967709-Methods.htm" />
+    <Content Include="skroutz\4294967709.htm" />
+    <Content Include="skroutz\4294967710.htm" />
+    <Content Include="skroutz\4294967712.htm" />
+    <Content Include="skroutz\4294967715.htm" />
+    <Content Include="skroutz\4294967716.htm" />
+    <Content Include="skroutz\4294967717.htm" />
+    <Content Include="skroutz\4294967718.htm" />
+    <Content Include="skroutz\4294967719.htm" />
+    <Content Include="skroutz\4294967720.htm" />
+    <Content Include="skroutz\4294967722.htm" />
+    <Content Include="skroutz\4294967724.htm" />
+    <Content Include="skroutz\4294967725.htm" />
+    <Content Include="skroutz\4294967726.htm" />
+    <Content Include="skroutz\4294967727.htm" />
+    <Content Include="skroutz\4294967728.htm" />
+    <Content Include="skroutz\4294967730.htm" />
+    <Content Include="skroutz\4294967733-Constructors.htm" />
+    <Content Include="skroutz\4294967733-Properties.htm" />
+    <Content Include="skroutz\4294967733.htm" />
+    <Content Include="skroutz\4294967734.htm" />
+    <Content Include="skroutz\4294967739-Constructors.htm" />
+    <Content Include="skroutz\4294967739-Properties.htm" />
+    <Content Include="skroutz\4294967739.htm" />
+    <Content Include="skroutz\4294967752.htm" />
+    <Content Include="skroutz\4294967757-Constructors.htm" />
+    <Content Include="skroutz\4294967757-Properties.htm" />
+    <Content Include="skroutz\4294967757.htm" />
+    <Content Include="skroutz\4294967764.htm" />
+    <Content Include="skroutz\4294967767-Constructors.htm" />
+    <Content Include="skroutz\4294967767-Properties.htm" />
+    <Content Include="skroutz\4294967767.htm" />
+    <Content Include="skroutz\4294967780.htm" />
+    <Content Include="skroutz\4294967785-Constructors.htm" />
+    <Content Include="skroutz\4294967785-Properties.htm" />
+    <Content Include="skroutz\4294967785.htm" />
+    <Content Include="skroutz\4294967795.htm" />
+    <Content Include="skroutz\4294967799-Constructors.htm" />
+    <Content Include="skroutz\4294967799-Properties.htm" />
+    <Content Include="skroutz\4294967799.htm" />
+    <Content Include="skroutz\4294967806.htm" />
+    <Content Include="skroutz\4294967809-Constructors.htm" />
+    <Content Include="skroutz\4294967809-Properties.htm" />
+    <Content Include="skroutz\4294967809.htm" />
+    <Content Include="skroutz\4294967813.htm" />
+    <Content Include="skroutz\4294967815-Constructors.htm" />
+    <Content Include="skroutz\4294967815-Properties.htm" />
+    <Content Include="skroutz\4294967815.htm" />
+    <Content Include="skroutz\4294967822.htm" />
+    <Content Include="skroutz\4294967825-Constructors.htm" />
+    <Content Include="skroutz\4294967825-Properties.htm" />
+    <Content Include="skroutz\4294967825.htm" />
+    <Content Include="skroutz\4294967829.htm" />
+    <Content Include="skroutz\4294967831-Constructors.htm" />
+    <Content Include="skroutz\4294967831-Properties.htm" />
+    <Content Include="skroutz\4294967831.htm" />
+    <Content Include="skroutz\4294967835.htm" />
+    <Content Include="skroutz\4294967837-Constructors.htm" />
+    <Content Include="skroutz\4294967837-Properties.htm" />
+    <Content Include="skroutz\4294967837.htm" />
+    <Content Include="skroutz\4294967844.htm" />
+    <Content Include="skroutz\4294967847-Constructors.htm" />
+    <Content Include="skroutz\4294967847-Properties.htm" />
+    <Content Include="skroutz\4294967847.htm" />
+    <Content Include="skroutz\4294967854.htm" />
+    <Content Include="skroutz\4294967857-Constructors.htm" />
+    <Content Include="skroutz\4294967857-Properties.htm" />
+    <Content Include="skroutz\4294967857.htm" />
+    <Content Include="skroutz\4294967864.htm" />
+    <Content Include="skroutz\4294967867-Constructors.htm" />
+    <Content Include="skroutz\4294967867-Properties.htm" />
+    <Content Include="skroutz\4294967867.htm" />
+    <Content Include="skroutz\4294967871.htm" />
+    <Content Include="skroutz\4294967873-Constructors.htm" />
+    <Content Include="skroutz\4294967873-Properties.htm" />
+    <Content Include="skroutz\4294967873.htm" />
+    <Content Include="skroutz\4294967880.htm" />
+    <Content Include="skroutz\4294967883-Constructors.htm" />
+    <Content Include="skroutz\4294967883-Properties.htm" />
+    <Content Include="skroutz\4294967883.htm" />
+    <Content Include="skroutz\4294967890.htm" />
+    <Content Include="skroutz\4294967893-Constructors.htm" />
+    <Content Include="skroutz\4294967893-Properties.htm" />
+    <Content Include="skroutz\4294967893.htm" />
+    <Content Include="skroutz\4294967897.htm" />
+    <Content Include="skroutz\4294967899-Constructors.htm" />
+    <Content Include="skroutz\4294967899-Properties.htm" />
+    <Content Include="skroutz\4294967899.htm" />
+    <Content Include="skroutz\4294967906.htm" />
+    <Content Include="skroutz\4294967909-Constructors.htm" />
+    <Content Include="skroutz\4294967909-Properties.htm" />
+    <Content Include="skroutz\4294967909.htm" />
+    <Content Include="skroutz\4294967913.htm" />
+    <Content Include="skroutz\4294967915-Constructors.htm" />
+    <Content Include="skroutz\4294967915-Properties.htm" />
+    <Content Include="skroutz\4294967915.htm" />
+    <Content Include="skroutz\4294967922.htm" />
+    <Content Include="skroutz\4294967925-Constructors.htm" />
+    <Content Include="skroutz\4294967925-Properties.htm" />
+    <Content Include="skroutz\4294967925.htm" />
+    <Content Include="skroutz\4294967968.htm" />
+    <Content Include="skroutz\4294967983-Constructors.htm" />
+    <Content Include="skroutz\4294967983-Properties.htm" />
+    <Content Include="skroutz\4294967983.htm" />
+    <Content Include="skroutz\4294967990.htm" />
+    <Content Include="skroutz\4294967993-Constructors.htm" />
+    <Content Include="skroutz\4294967993-Properties.htm" />
+    <Content Include="skroutz\4294967993.htm" />
+    <Content Include="skroutz\4294967997.htm" />
+    <Content Include="skroutz\4294967999-Constructors.htm" />
+    <Content Include="skroutz\4294967999-Properties.htm" />
+    <Content Include="skroutz\4294967999.htm" />
+    <Content Include="skroutz\4294968006.htm" />
+    <Content Include="skroutz\4294968009-Constructors.htm" />
+    <Content Include="skroutz\4294968009-Properties.htm" />
+    <Content Include="skroutz\4294968009.htm" />
+    <Content Include="skroutz\4294968013.htm" />
+    <Content Include="skroutz\4294968015-Constructors.htm" />
+    <Content Include="skroutz\4294968015-Properties.htm" />
+    <Content Include="skroutz\4294968015.htm" />
+    <Content Include="skroutz\4294968025.htm" />
+    <Content Include="skroutz\4294968029-Constructors.htm" />
+    <Content Include="skroutz\4294968029-Properties.htm" />
+    <Content Include="skroutz\4294968029.htm" />
+    <Content Include="skroutz\4294968036.htm" />
+    <Content Include="skroutz\4294968039-Constructors.htm" />
+    <Content Include="skroutz\4294968039-Properties.htm" />
+    <Content Include="skroutz\4294968039.htm" />
+    <Content Include="skroutz\4294968064.htm" />
+    <Content Include="skroutz\4294968073-Constructors.htm" />
+    <Content Include="skroutz\4294968073-Properties.htm" />
+    <Content Include="skroutz\4294968073.htm" />
+    <Content Include="skroutz\4294968080.htm" />
+    <Content Include="skroutz\4294968083-Constructors.htm" />
+    <Content Include="skroutz\4294968083-Properties.htm" />
+    <Content Include="skroutz\4294968083.htm" />
+    <Content Include="skroutz\4294968096.htm" />
+    <Content Include="skroutz\4294968101-Constructors.htm" />
+    <Content Include="skroutz\4294968101-Properties.htm" />
+    <Content Include="skroutz\4294968101.htm" />
+    <Content Include="skroutz\4294968126.htm" />
+    <Content Include="skroutz\4294968135.htm" />
+    <Content Include="skroutz\4294968149-Constructors.htm" />
+    <Content Include="skroutz\4294968149-Properties.htm" />
+    <Content Include="skroutz\4294968149.htm" />
+    <Content Include="skroutz\4294968192.htm" />
+    <Content Include="skroutz\4294968207-Constructors.htm" />
+    <Content Include="skroutz\4294968207-Properties.htm" />
+    <Content Include="skroutz\4294968207.htm" />
+    <Content Include="skroutz\4294968214.htm" />
+    <Content Include="skroutz\4294968217-Constructors.htm" />
+    <Content Include="skroutz\4294968217-Properties.htm" />
+    <Content Include="skroutz\4294968217.htm" />
+    <Content Include="skroutz\4294968233.htm" />
+    <Content Include="skroutz\4294968239-Constructors.htm" />
+    <Content Include="skroutz\4294968239-Properties.htm" />
+    <Content Include="skroutz\4294968239.htm" />
+    <Content Include="skroutz\4294968243.htm" />
+    <Content Include="skroutz\4294968245-Constructors.htm" />
+    <Content Include="skroutz\4294968245-Properties.htm" />
+    <Content Include="skroutz\4294968245.htm" />
+    <Content Include="skroutz\4294968252.htm" />
+    <Content Include="skroutz\4294968255-Constructors.htm" />
+    <Content Include="skroutz\4294968255-Properties.htm" />
+    <Content Include="skroutz\4294968255.htm" />
+    <Content Include="skroutz\4294968265.htm" />
+    <Content Include="skroutz\4294968269-Constructors.htm" />
+    <Content Include="skroutz\4294968269-Properties.htm" />
+    <Content Include="skroutz\4294968269.htm" />
+    <Content Include="skroutz\4294968276.htm" />
+    <Content Include="skroutz\4294968279-Constructors.htm" />
+    <Content Include="skroutz\4294968279-Properties.htm" />
+    <Content Include="skroutz\4294968279.htm" />
+    <Content Include="skroutz\4294968311.htm" />
+    <Content Include="skroutz\4294968323-Constructors.htm" />
+    <Content Include="skroutz\4294968323-Properties.htm" />
+    <Content Include="skroutz\4294968323.htm" />
+    <Content Include="skroutz\4294968345.htm" />
+    <Content Include="skroutz\4294968353-Constructors.htm" />
+    <Content Include="skroutz\4294968353-Properties.htm" />
+    <Content Include="skroutz\4294968353.htm" />
+    <Content Include="skroutz\4294968369.htm" />
+    <Content Include="skroutz\4294968375-Constructors.htm" />
+    <Content Include="skroutz\4294968375-Properties.htm" />
+    <Content Include="skroutz\4294968375.htm" />
+    <Content Include="skroutz\4294968412.htm" />
+    <Content Include="skroutz\4294968425-Constructors.htm" />
+    <Content Include="skroutz\4294968425-Properties.htm" />
+    <Content Include="skroutz\4294968425.htm" />
+    <Content Include="skroutz\4294968435.htm" />
+    <Content Include="skroutz\4294968439-Constructors.htm" />
+    <Content Include="skroutz\4294968439-Properties.htm" />
+    <Content Include="skroutz\4294968439.htm" />
+    <Content Include="skroutz\4294968455.htm" />
+    <Content Include="skroutz\4294968461-Constructors.htm" />
+    <Content Include="skroutz\4294968461-Properties.htm" />
+    <Content Include="skroutz\4294968461.htm" />
+    <Content Include="skroutz\4294968489.htm" />
+    <Content Include="skroutz\4294968499-Constructors.htm" />
+    <Content Include="skroutz\4294968499-Properties.htm" />
+    <Content Include="skroutz\4294968499.htm" />
+    <Content Include="skroutz\4294968506.htm" />
+    <Content Include="skroutz\4294968509-Constructors.htm" />
+    <Content Include="skroutz\4294968509-Properties.htm" />
+    <Content Include="skroutz\4294968509.htm" />
+    <Content Include="skroutz\4294968540.htm" />
+    <Content Include="skroutz\4294968551-Constructors.htm" />
+    <Content Include="skroutz\4294968551-Properties.htm" />
+    <Content Include="skroutz\4294968551.htm" />
+    <Content Include="skroutz\4294968576.htm" />
+    <Content Include="skroutz\4294968585-Constructors.htm" />
+    <Content Include="skroutz\4294968585-Properties.htm" />
+    <Content Include="skroutz\4294968585.htm" />
+    <Content Include="skroutz\4294968595.htm" />
+    <Content Include="skroutz\4294968599-Constructors.htm" />
+    <Content Include="skroutz\4294968599-Properties.htm" />
+    <Content Include="skroutz\4294968599.htm" />
+    <Content Include="skroutz\4294968639.htm" />
+    <Content Include="skroutz\4294968653-Constructors.htm" />
+    <Content Include="skroutz\4294968653-Properties.htm" />
+    <Content Include="skroutz\4294968653.htm" />
+    <Content Include="skroutz\4294968660.htm" />
+    <Content Include="skroutz\4294968663-Constructors.htm" />
+    <Content Include="skroutz\4294968663-Properties.htm" />
+    <Content Include="skroutz\4294968663.htm" />
+    <Content Include="skroutz\4294968679.htm" />
+    <Content Include="skroutz\4294968685-Constructors.htm" />
+    <Content Include="skroutz\4294968685-Properties.htm" />
+    <Content Include="skroutz\4294968685.htm" />
+    <Content Include="skroutz\4294968698.htm" />
+    <Content Include="skroutz\4294968703-Constructors.htm" />
+    <Content Include="skroutz\4294968703-Properties.htm" />
+    <Content Include="skroutz\4294968703.htm" />
+    <Content Include="skroutz\4294968761.htm" />
+    <Content Include="skroutz\4294968781-Constructors.htm" />
+    <Content Include="skroutz\4294968781-Properties.htm" />
+    <Content Include="skroutz\4294968781.htm" />
+    <Content Include="skroutz\4294968797.htm" />
+    <Content Include="skroutz\4294968803-Fields.htm" />
+    <Content Include="skroutz\4294968803.htm" />
+    <Content Include="skroutz\4294968804.htm" />
+    <Content Include="skroutz\4294968805.htm" />
+    <Content Include="skroutz\4294968806-Fields.htm" />
+    <Content Include="skroutz\4294968806.htm" />
+    <Content Include="skroutz\4294968807.htm" />
+    <Content Include="skroutz\4294968808.htm" />
+    <Content Include="skroutz\4294968809-Constructors.htm" />
+    <Content Include="skroutz\4294968809-Properties.htm" />
+    <Content Include="skroutz\4294968809.htm" />
+    <Content Include="skroutz\4294968816.htm" />
+    <Content Include="skroutz\4294968818.htm" />
+    <Content Include="skroutz\4294968822-Constructors.htm" />
+    <Content Include="skroutz\4294968822-Properties.htm" />
+    <Content Include="skroutz\4294968822.htm" />
+    <Content Include="skroutz\4294968832.htm" />
+    <Content Include="skroutz\4294968836-Constructors.htm" />
+    <Content Include="skroutz\4294968836-Properties.htm" />
+    <Content Include="skroutz\4294968836.htm" />
+    <Content Include="skroutz\4294968840.htm" />
+    <Content Include="skroutz\4294969050.htm" />
+    <Content Include="skroutz\4295012898.htm" />
+    <Content Include="skroutz\4295012904.htm" />
+    <Content Include="skroutz\4295012910.htm" />
+    <Content Include="skroutz\4295012916.htm" />
+    <Content Include="skroutz\4295012922.htm" />
+    <Content Include="skroutz\4295012928.htm" />
+    <Content Include="skroutz\4295012934.htm" />
+    <Content Include="skroutz\4295012940.htm" />
+    <Content Include="skroutz\4295012946.htm" />
+    <Content Include="skroutz\4295012952.htm" />
+    <Content Include="skroutz\4295012958.htm" />
+    <Content Include="skroutz\4295012964.htm" />
+    <Content Include="skroutz\4295012970.htm" />
+    <Content Include="skroutz\4295012976.htm" />
+    <Content Include="skroutz\4295012982.htm" />
+    <Content Include="skroutz\4295012988.htm" />
+    <Content Include="skroutz\4295012994.htm" />
+    <Content Include="skroutz\4295013000.htm" />
+    <Content Include="skroutz\4295013006.htm" />
+    <Content Include="skroutz\4295013012.htm" />
+    <Content Include="skroutz\4295013018.htm" />
+    <Content Include="skroutz\4295013024.htm" />
+    <Content Include="skroutz\4295013030.htm" />
+    <Content Include="skroutz\4295013036.htm" />
+    <Content Include="skroutz\4295013042.htm" />
+    <Content Include="skroutz\4295013048.htm" />
+    <Content Include="skroutz\4295013054.htm" />
+    <Content Include="skroutz\4295013060.htm" />
+    <Content Include="skroutz\4295013066.htm" />
+    <Content Include="skroutz\4295013072.htm" />
+    <Content Include="skroutz\4295013078.htm" />
+    <Content Include="skroutz\4295013084.htm" />
+    <Content Include="skroutz\4295013090.htm" />
+    <Content Include="skroutz\4295013096.htm" />
+    <Content Include="skroutz\4295013102.htm" />
+    <Content Include="skroutz\4295013108.htm" />
+    <Content Include="skroutz\4295013114.htm" />
+    <Content Include="skroutz\4295013120.htm" />
+    <Content Include="skroutz\4295013126.htm" />
+    <Content Include="skroutz\4295013132.htm" />
+    <Content Include="skroutz\4295013138.htm" />
+    <Content Include="skroutz\4295013144.htm" />
+    <Content Include="skroutz\4295013150.htm" />
+    <Content Include="skroutz\4295013156.htm" />
+    <Content Include="skroutz\4295013162.htm" />
+    <Content Include="skroutz\4295013168.htm" />
+    <Content Include="skroutz\4295013174.htm" />
+    <Content Include="skroutz\4295013180.htm" />
+    <Content Include="skroutz\4295013186.htm" />
+    <Content Include="skroutz\4295013192.htm" />
+    <Content Include="skroutz\4295013198.htm" />
+    <Content Include="skroutz\4295013204.htm" />
+    <Content Include="skroutz\4295013210.htm" />
+    <Content Include="skroutz\4295013216.htm" />
+    <Content Include="skroutz\4295013222.htm" />
+    <Content Include="skroutz\4295013228.htm" />
+    <Content Include="skroutz\4295013234.htm" />
+    <Content Include="skroutz\4295013240.htm" />
+    <Content Include="skroutz\4295013246.htm" />
+    <Content Include="skroutz\4295013252.htm" />
+    <Content Include="skroutz\4295013258.htm" />
+    <Content Include="skroutz\4295013264.htm" />
+    <Content Include="skroutz\4295013270.htm" />
+    <Content Include="skroutz\4295013276.htm" />
+    <Content Include="skroutz\4295013282.htm" />
+    <Content Include="skroutz\4295013288.htm" />
+    <Content Include="skroutz\4295013294.htm" />
+    <Content Include="skroutz\4295013300.htm" />
+    <Content Include="skroutz\4295013306.htm" />
+    <Content Include="skroutz\4295013312.htm" />
+    <Content Include="skroutz\4295013318.htm" />
+    <Content Include="skroutz\4295013324.htm" />
+    <Content Include="skroutz\4295013330.htm" />
+    <Content Include="skroutz\4295013336.htm" />
+    <Content Include="skroutz\4295013342.htm" />
+    <Content Include="skroutz\4295013348.htm" />
+    <Content Include="skroutz\4295013354.htm" />
+    <Content Include="skroutz\4295013360.htm" />
+    <Content Include="skroutz\4295013366.htm" />
+    <Content Include="skroutz\4295013372.htm" />
+    <Content Include="skroutz\4295013378.htm" />
+    <Content Include="skroutz\4295013384.htm" />
+    <Content Include="skroutz\4295013390.htm" />
+    <Content Include="skroutz\4295013396.htm" />
+    <Content Include="skroutz\4295013402.htm" />
+    <Content Include="skroutz\4295013408.htm" />
+    <Content Include="skroutz\4295013414.htm" />
+    <Content Include="skroutz\4295013420.htm" />
+    <Content Include="skroutz\4295013426.htm" />
+    <Content Include="skroutz\4295013432.htm" />
+    <Content Include="skroutz\4295013438.htm" />
+    <Content Include="skroutz\4295013444.htm" />
+    <Content Include="skroutz\4295013450.htm" />
+    <Content Include="skroutz\4295013456.htm" />
+    <Content Include="skroutz\4295013462.htm" />
+    <Content Include="skroutz\4295013468.htm" />
+    <Content Include="skroutz\4295013474.htm" />
+    <Content Include="skroutz\4295013480.htm" />
+    <Content Include="skroutz\4295013486.htm" />
+    <Content Include="skroutz\4295013492.htm" />
+    <Content Include="skroutz\4295013498.htm" />
+    <Content Include="skroutz\4295013504.htm" />
+    <Content Include="skroutz\4295013510.htm" />
+    <Content Include="skroutz\4295013516.htm" />
+    <Content Include="skroutz\4295013522.htm" />
+    <Content Include="skroutz\4295013528.htm" />
+    <Content Include="skroutz\4295013534.htm" />
+    <Content Include="skroutz\4295013540.htm" />
+    <Content Include="skroutz\4295013546.htm" />
+    <Content Include="skroutz\4295013552.htm" />
+    <Content Include="skroutz\4295013558.htm" />
+    <Content Include="skroutz\4295013564.htm" />
+    <Content Include="skroutz\4295013570.htm" />
+    <Content Include="skroutz\4295013576.htm" />
+    <Content Include="skroutz\4295013582.htm" />
+    <Content Include="skroutz\4295013588.htm" />
+    <Content Include="skroutz\4295013594.htm" />
+    <Content Include="skroutz\4295013600.htm" />
+    <Content Include="skroutz\4295013606.htm" />
+    <Content Include="skroutz\4295013612.htm" />
+    <Content Include="skroutz\4295013618.htm" />
+    <Content Include="skroutz\4295013624.htm" />
+    <Content Include="skroutz\4295013630.htm" />
+    <Content Include="skroutz\4295013636.htm" />
+    <Content Include="skroutz\4295013642.htm" />
+    <Content Include="skroutz\4295013648.htm" />
+    <Content Include="skroutz\4295013654.htm" />
+    <Content Include="skroutz\4295013660.htm" />
+    <Content Include="skroutz\4295013666.htm" />
+    <Content Include="skroutz\4295013672.htm" />
+    <Content Include="skroutz\4295013678.htm" />
+    <Content Include="skroutz\4295013684.htm" />
+    <Content Include="skroutz\4295013690.htm" />
+    <Content Include="skroutz\4295013696.htm" />
+    <Content Include="skroutz\4295013702.htm" />
+    <Content Include="skroutz\4295013708.htm" />
+    <Content Include="skroutz\4295013714.htm" />
+    <Content Include="skroutz\4295013720.htm" />
+    <Content Include="skroutz\4295013726.htm" />
+    <Content Include="skroutz\4295013732.htm" />
+    <Content Include="skroutz\4295013738.htm" />
+    <Content Include="skroutz\4295013744.htm" />
+    <Content Include="skroutz\4295013750.htm" />
+    <Content Include="skroutz\4295013756.htm" />
+    <Content Include="skroutz\4295013762.htm" />
+    <Content Include="skroutz\4295013768.htm" />
+    <Content Include="skroutz\4295013774.htm" />
+    <Content Include="skroutz\4295013780.htm" />
+    <Content Include="skroutz\4295013786.htm" />
+    <Content Include="skroutz\4295013792.htm" />
+    <Content Include="skroutz\4295013798.htm" />
+    <Content Include="skroutz\4295013804.htm" />
+    <Content Include="skroutz\4295013810.htm" />
+    <Content Include="skroutz\4295013816.htm" />
+    <Content Include="skroutz\4295013822.htm" />
+    <Content Include="skroutz\4295013828.htm" />
+    <Content Include="skroutz\4295013834.htm" />
+    <Content Include="skroutz\4295013840.htm" />
+    <Content Include="skroutz\4295013846.htm" />
+    <Content Include="skroutz\4295013852.htm" />
+    <Content Include="skroutz\4295013858.htm" />
+    <Content Include="skroutz\4295013864.htm" />
+    <Content Include="skroutz\4295013870.htm" />
+    <Content Include="skroutz\4295013876.htm" />
+    <Content Include="skroutz\4295013882.htm" />
+    <Content Include="skroutz\4295013888.htm" />
+    <Content Include="skroutz\4295013894.htm" />
+    <Content Include="skroutz\4295013900.htm" />
+    <Content Include="skroutz\4295013906.htm" />
+    <Content Include="skroutz\4295013912.htm" />
+    <Content Include="skroutz\4295013918.htm" />
+    <Content Include="skroutz\4295013924.htm" />
+    <Content Include="skroutz\4295013930.htm" />
+    <Content Include="skroutz\4295013936.htm" />
+    <Content Include="skroutz\4295013942.htm" />
+    <Content Include="skroutz\4295013948.htm" />
+    <Content Include="skroutz\4295013954.htm" />
+    <Content Include="skroutz\4295013960.htm" />
+    <Content Include="skroutz\4295013966.htm" />
+    <Content Include="skroutz\4295013972.htm" />
+    <Content Include="skroutz\4295013978.htm" />
+    <Content Include="skroutz\4295013984.htm" />
+    <Content Include="skroutz\4295013990.htm" />
+    <Content Include="skroutz\4295013996.htm" />
+    <Content Include="skroutz\4295014002.htm" />
+    <Content Include="skroutz\4295014008.htm" />
+    <Content Include="skroutz\4295014014.htm" />
+    <Content Include="skroutz\4295014020.htm" />
+    <Content Include="skroutz\4295014026.htm" />
+    <Content Include="skroutz\4295014032.htm" />
+    <Content Include="skroutz\4295014038.htm" />
+    <Content Include="skroutz\4295014044.htm" />
+    <Content Include="skroutz\4295014050.htm" />
+    <Content Include="skroutz\4295014056.htm" />
+    <Content Include="skroutz\4295014062.htm" />
+    <Content Include="skroutz\4295014068.htm" />
+    <Content Include="skroutz\4295014074.htm" />
+    <Content Include="skroutz\4295014080.htm" />
+    <Content Include="skroutz\4295014086.htm" />
+    <Content Include="skroutz\4295014092.htm" />
+    <Content Include="skroutz\4295014098.htm" />
+    <Content Include="skroutz\4295014104.htm" />
+    <Content Include="skroutz\4295014110.htm" />
+    <Content Include="skroutz\4295014116.htm" />
+    <Content Include="skroutz\4295014122.htm" />
+    <Content Include="skroutz\4295014128.htm" />
+    <Content Include="skroutz\4295014134.htm" />
+    <Content Include="skroutz\4295014140.htm" />
+    <Content Include="skroutz\4295014146.htm" />
+    <Content Include="skroutz\4295014152.htm" />
+    <Content Include="skroutz\4295014158.htm" />
+    <Content Include="skroutz\4295014164.htm" />
+    <Content Include="skroutz\4295014170.htm" />
+    <Content Include="skroutz\4295014176.htm" />
+    <Content Include="skroutz\4295014182.htm" />
+    <Content Include="skroutz\4295014188.htm" />
+    <Content Include="skroutz\4295014194.htm" />
+    <Content Include="skroutz\4295014200.htm" />
+    <Content Include="skroutz\4295014206.htm" />
+    <Content Include="skroutz\4295014212.htm" />
+    <Content Include="skroutz\4295014218.htm" />
+    <Content Include="skroutz\4295014224.htm" />
+    <Content Include="skroutz\4295014230.htm" />
+    <Content Include="skroutz\4295014236.htm" />
+    <Content Include="skroutz\4295014242.htm" />
+    <Content Include="skroutz\4295014248.htm" />
+    <Content Include="skroutz\4295014254.htm" />
+    <Content Include="skroutz\4295014260.htm" />
+    <Content Include="skroutz\4295014266.htm" />
+    <Content Include="skroutz\4295014272.htm" />
+    <Content Include="skroutz\4295014278.htm" />
+    <Content Include="skroutz\4295014284.htm" />
+    <Content Include="skroutz\4295014290.htm" />
+    <Content Include="skroutz\4295014296.htm" />
+    <Content Include="skroutz\4295014302.htm" />
+    <Content Include="skroutz\4295014308.htm" />
+    <Content Include="skroutz\4295014314.htm" />
+    <Content Include="skroutz\4295014320.htm" />
+    <Content Include="skroutz\4295014326.htm" />
+    <Content Include="skroutz\4295014332.htm" />
+    <Content Include="skroutz\4295014338.htm" />
+    <Content Include="skroutz\4295014344.htm" />
+    <Content Include="skroutz\4295014350.htm" />
+    <Content Include="skroutz\4295014356.htm" />
+    <Content Include="skroutz\4295014362.htm" />
+    <Content Include="skroutz\4295014368.htm" />
+    <Content Include="skroutz\4295014374.htm" />
+    <Content Include="skroutz\4295014380.htm" />
+    <Content Include="skroutz\4295014386.htm" />
+    <Content Include="skroutz\4295014392.htm" />
+    <Content Include="skroutz\4295014398.htm" />
+    <Content Include="skroutz\4295014404.htm" />
+    <Content Include="skroutz\4295014410.htm" />
+    <Content Include="skroutz\4295014416.htm" />
+    <Content Include="skroutz\4295014422.htm" />
+    <Content Include="skroutz\4295014428.htm" />
+    <Content Include="skroutz\4295014434.htm" />
+    <Content Include="skroutz\4295014440.htm" />
+    <Content Include="skroutz\4295014446.htm" />
+    <Content Include="skroutz\4295014452.htm" />
+    <Content Include="skroutz\index.htm" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52286</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52286/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
