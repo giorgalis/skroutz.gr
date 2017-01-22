@@ -14,6 +14,7 @@
 using Newtonsoft.Json;
 using skroutz.gr.Entities;
 using skroutz.gr.ServiceBroker;
+using skroutz.gr.Shared;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,26 +38,26 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// The access token
         /// </summary>
-        private readonly string _accessToken;
+        private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Product" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
-        public Product(string accessToken)
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        public Product(SkroutzRequest skroutzRequest)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = new StringBuilder();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Product" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>
-        public Product(string accessToken, StringBuilder stringBuilder)
+        public Product(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = stringBuilder;
         }
 
@@ -74,12 +75,13 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"products/{productId}?");
-            _builder.Append($"oauth_token={_accessToken}");
 
             if(sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootProduct>(t.Result.ToString()));
         }
 
@@ -100,12 +102,13 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"shops/{shopId}/products/search?");
             _builder.Append($"shop_uid={shopUid}");
-            _builder.Append($"&oauth_token={_accessToken}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Products>(t.Result.ToString()));
         }
     }

@@ -42,7 +42,8 @@
     <Compile Include="Entities\Reviews.cs" />
     <Compile Include="Entities\SKUReviewFlag.cs" />
     <Compile Include="Entities\SKUReviewVote.cs" />
-    <Compile Include="ServiceBroker\NameReader.cs" />
+    <Compile Include="ServiceBroker\SkroutzRequest.cs" />
+    <Compile Include="Shared\NameReader.cs" />
     <Compile Include="ServiceBroker\RateLimitng.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />
@@ -83,7 +84,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace skroutz.gr.ServiceBroker
+namespace skroutz.gr.Shared
 {
     /// <summary>
     /// Class NameReader.
     /// </summary>
-    public static class NameReader
+    internal static class NameReader
     {
         /// <summary>
         /// Gets the member names.

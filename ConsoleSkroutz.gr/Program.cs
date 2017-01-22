@@ -19,12 +19,16 @@ namespace ConsoleSkroutz.gr
             {
                 dynamic result = null;
 
+                //ApplyTitle("User");
+                //User user = new User(auth.AppResponse, sb);
+                //result = user.ListFavorites();
+
                 ApplyTitle("Category");
-                Category category = new Category(auth.AppResponse.AccessToken, sb);
+                Category category = new Category(auth.skroutzRequest, sb);
 
-                result = category.ListAllCategories(sparseFields: x => x.Code).Result.categories.printReflected();
+                result = category.ListAllCategories().Result.categories.printReflected();
 
-                result = category.RetrieveSingleCategory(1442).Result.Category.printReflected();
+                result = category.RetrieveSingleCategory(1442, x=> x.Code, x => x.Id).Result.Category.printReflected();
                 result = category.RetrieveTheParentOfCategory(1442).Result.Category.printReflected();
                 result = category.RetrieveTheRootCategory().Result.Category.printReflected();
                 result = category.ListChildrenCategoriesOfCategory(252).Result.categories.printReflected();
@@ -39,7 +43,7 @@ namespace ConsoleSkroutz.gr
                 result = category.ListCategorysFavorites(40).Result;
 
                 ApplyTitle("SKU");
-                Sku sku = new Sku(auth.AppResponse.AccessToken, sb);
+                Sku sku = new Sku(auth.skroutzRequest, sb);
 
                 result = sku.ListSKUsOfSpecificCategory(40).Result.skus.printReflected();
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.popularity).Result.skus.printReflected();
@@ -54,13 +58,13 @@ namespace ConsoleSkroutz.gr
                 result = sku.RetrieveSKUsReviews(3690169).Result.printReflected();
 
                 ApplyTitle("Product");
-                Product product = new Product(auth.AppResponse.AccessToken, sb);
+                Product product = new Product(auth.skroutzRequest, sb);
 
                 result = product.RetrieveSingleProduct(12176638, x=> x.Name, x => x.Price).Result.Product;
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
                 ApplyTitle("Shop");
-                Shop shop = new Shop(auth.AppResponse.AccessToken, sb);
+                Shop shop = new Shop(auth.skroutzRequest, sb);
 
                 result = shop.RetrieveSingleShop(452).Result;
                 result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
@@ -68,7 +72,7 @@ namespace ConsoleSkroutz.gr
                 result = shop.RetrieveSingleShopLocation(452, 2500).Result;
 
                 ApplyTitle("Manufacturer");
-                Manufacturer manufacturer = new Manufacturer(auth.AppResponse.AccessToken, sb);
+                Manufacturer manufacturer = new Manufacturer(auth.skroutzRequest, sb);
 
                 result = manufacturer.ListManufacturers().Result.manufacturers.printReflected();
                 result = manufacturer.RetrieveSingleManufacturer(12907).Result.manufacturer.printReflected();
@@ -82,7 +86,7 @@ namespace ConsoleSkroutz.gr
                 result = manufacturer.RetrieveManufacturerSKUs(356, OrderByPrcPop.popularity, OrderDir.asc).Result.skus.printReflected();
 
                 ApplyTitle("Search");
-                Search search = new Search(auth.AppResponse.AccessToken, sb);
+                Search search = new Search(auth.skroutzRequest, sb);
 
                 //Query with less than 2 characters
                 result = search.SearchQuery("a").Result;
@@ -115,15 +119,17 @@ namespace ConsoleSkroutz.gr
                 result = search.SearchQuery("wrong+iphone").Result.Categories.printReflected();
 
                 ApplyTitle("Flag");
-                Flag flag = new Flag(auth.AppResponse.AccessToken, sb);
+                Flag flag = new Flag(auth.skroutzRequest, sb);
 
                 result = flag.RetrieveAllFlags().Result.flags.printReflected();
 
                 ApplyTitle("Filter Groups");
-                FilterGroup filterGroup = new FilterGroup(auth.AppResponse.AccessToken, sb);
+                FilterGroup filterGroup = new FilterGroup(auth.skroutzRequest, sb);
 
                 result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
-                
+
+              
+
                 Console.ReadLine();
 
             }

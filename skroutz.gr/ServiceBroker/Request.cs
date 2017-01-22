@@ -16,14 +16,6 @@ namespace skroutz.gr.ServiceBroker
         private const string ApiEndPoint = "https://api.skroutz.gr/";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Request"/> class.
-        /// </summary>
-        public Request()
-        {
-        
-        }
-
-        /// <summary>
         /// Gets or sets the API version.
         /// </summary>
         /// <value>The API version.</value>
@@ -35,12 +27,13 @@ namespace skroutz.gr.ServiceBroker
             return await GetResponse(req);
         }
 
-        internal async Task<string> GetWebResultAsync(string value)
+        internal async Task<string> GetWebResultAsync(SkroutzRequest skroutzRequest)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, value));
-            req.Method = "GET";
-            req.Accept = $"application/vnd.skroutz+json; version={ApiVersion}";
-            
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, skroutzRequest.Path));
+            req.Method = skroutzRequest.Method.ToString().ToUpper();
+            req.Accept = $"application/vnd.skroutz+json; version={skroutzRequest.ApiVersion}";
+            req.Headers["Authorization"] = $"{skroutzRequest.TokenType} {skroutzRequest.AccessToken}";
+           
             return await GetResponse(req);
         }
 

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Authorization;
 using skroutz.gr.Entities.User;
 using System;
 using System.Text;
@@ -12,26 +13,26 @@ namespace skroutz.gr.ServiceBroker
     public class User : Request
     {
         private readonly StringBuilder _builder;
-        private readonly string _accessToken;
+        private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="User" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
-        public User(string accessToken)
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        public User(SkroutzRequest skroutzRequest)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = new StringBuilder();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="User" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>
-        public User(string accessToken, StringBuilder stringBuilder)
+        public User(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = stringBuilder;
         }
 
@@ -44,10 +45,11 @@ namespace skroutz.gr.ServiceBroker
         public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
         {
             _builder.Clear();
-            _builder.Append("user?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append("user");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.User>(t.Result.ToString()));
         }
 
@@ -62,10 +64,11 @@ namespace skroutz.gr.ServiceBroker
         public Task<UserFavorites> ListFavoriteLists()
         {
             _builder.Clear();
-            _builder.Append("favorite_lists?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append("favorite_lists");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserFavorites>(t.Result.ToString()));
         }
 
@@ -94,10 +97,11 @@ namespace skroutz.gr.ServiceBroker
         public Task<Favorites> ListFavorites()
         {
             _builder.Clear();
-            _builder.Append("favorites?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append("favorites");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
         }
 
@@ -112,10 +116,11 @@ namespace skroutz.gr.ServiceBroker
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
 
             _builder.Clear();
-            _builder.Append($"favorite_lists/{listId}/favorites?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"favorite_lists/{listId}/favorites");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
         }
 
@@ -130,10 +135,11 @@ namespace skroutz.gr.ServiceBroker
             if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
 
             _builder.Clear();
-            _builder.Append($"favorites/{favoriteId}?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"favorites/{favoriteId}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorite>(t.Result.ToString()));
         }
 
@@ -175,10 +181,11 @@ namespace skroutz.gr.ServiceBroker
         public Task<UserNotifications> ListNotifications()
         {
             _builder.Clear();
-            _builder.Append("notifications?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append("notifications");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserNotifications>(t.Result.ToString()));
         }
 
@@ -193,10 +200,11 @@ namespace skroutz.gr.ServiceBroker
             if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));
 
             _builder.Clear();
-            _builder.Append($"notifications/{notificationId}?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"notifications/{notificationId}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Notification>(t.Result.ToString()));
         }
 

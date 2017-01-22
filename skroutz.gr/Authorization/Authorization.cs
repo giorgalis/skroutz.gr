@@ -4,42 +4,41 @@ using System;
 
 namespace skroutz.gr.Authorization
 {
-
     /// <summary>
     /// Struct AppCredentials
     /// </summary>
-    public struct AppCredentials
+    public struct AppCredentials 
     {
         /// <summary>
         /// The client Id you received from skroutz api team.
         /// </summary>
         [JsonProperty("client_id")]
-        public string ClientId;
+        public string ClientId { get; set; }
 
         /// <summary>
         /// The client secret you received from skroutz api team.
         /// </summary>
         [JsonProperty("client_secret")]
-        public string ClientSecret;
+        public string ClientSecret { get; set; }
     }
 
 
     /// <summary>
     /// Struct UserCredentials
     /// </summary>
-    public struct UserCredentials
+    public struct UserCredentials 
     {
         /// <summary>
         /// The client Id you received from skroutz api team.
         /// </summary>
         [JsonProperty("client_id")]
-        public string ClientId;
+        public string ClientId { get; set; }
 
         /// <summary>
         /// The URL in your application where users will be sent after authorization.
         /// </summary>
         [JsonProperty("redirect_uri")]
-        public string RedirectUri;
+        public string RedirectUri { get; set; }
     }
 
 
@@ -59,7 +58,9 @@ namespace skroutz.gr.Authorization
         /// Gets the response.
         /// </summary>
         /// <value>The response.</value>
-        public UserResponse UserResponse { get; private set; }
+        //public UserResponse UserResponse { get; private set; }
+
+        public SkroutzRequest skroutzRequest { get; private set; } = new SkroutzRequest();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Authorization" /> class.
@@ -73,8 +74,11 @@ namespace skroutz.gr.Authorization
 
             string request = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
 
-            this.AppResponse = PostWebResultAsync(request).ContinueWith((t) =>
+            AppResponse appResponse = PostWebResultAsync(request).ContinueWith((t) =>
                 JsonConvert.DeserializeObject<AppResponse>(t.Result.ToString())).Result;
+
+            this.skroutzRequest.AccessToken = appResponse.AccessToken;
+            this.skroutzRequest.TokenType = appResponse.TokenType;
         }
 
 
@@ -90,8 +94,11 @@ namespace skroutz.gr.Authorization
 
             string request = $"oauth2/authorizations/new?client_id={credentials.ClientId}&redirect_uri={credentials.RedirectUri}&response_type=code&scope=public,favorites,notifications";
 
-            this.UserResponse = PostWebResultAsync(request).ContinueWith((t) =>
+            UserResponse userResponse = PostWebResultAsync(request).ContinueWith((t) =>
                 JsonConvert.DeserializeObject<UserResponse>(t.Result.ToString())).Result;
+
+            this.skroutzRequest.AccessToken = userResponse.AccessToken;
+            this.skroutzRequest.TokenType = userResponse.TokenType;
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using skroutz.gr.Authorization;
 using skroutz.gr.Entities;
 using skroutz.gr.Entities.User;
 using skroutz.gr.Shared;
@@ -22,26 +23,26 @@ namespace skroutz.gr.ServiceBroker
     public class Category : Request
     {
         private readonly StringBuilder _builder;
-        private readonly string _accessToken;
+        private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
-        public Category(string accessToken)
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        public Category(SkroutzRequest skroutzRequest)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = new StringBuilder();
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>
-        public Category(string accessToken, StringBuilder stringBuilder)
+        public Category(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = stringBuilder;
         }
 
@@ -50,24 +51,21 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;Categories&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories" />
-        public Task<Categories> ListAllCategories(int page = 1, int per = 25, params Expression<Func<Entities.Base.Category, object>>[] sparseFields)
+        public Task<Categories> ListAllCategories(int page = 1, int per = 25)
         {
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
             if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append("categories?");
-            _builder.Append($"oauth_token={_accessToken}");
-            _builder.Append($"&page={page}&per={per}");
+            _builder.Append($"page={page}&per={per}");
 
-            if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+            _skroutzRequest.Path = _builder.ToString();
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
 
@@ -85,12 +83,13 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}?");
-            _builder.Append($"oauth_token={_accessToken}");
 
             if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
 
@@ -108,31 +107,29 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/parent?");
-            _builder.Append($"oauth_token={_accessToken}");
 
             if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
 
         /// <summary>
         /// Retrieve the root category.
         /// </summary>
-        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;RootCategory&gt;</returns>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-the-root-category" />
-        public Task<RootCategory> RetrieveTheRootCategory(params Expression<Func<Entities.Base.Category, object>>[] sparseFields)
+        public Task<RootCategory> RetrieveTheRootCategory()
         {
             _builder.Clear();
-            _builder.Append("categories/root?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append("categories/root");
 
-            if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+            _skroutzRequest.Path = _builder.ToString();
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
 
@@ -154,13 +151,14 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/children?");
-            _builder.Append($"oauth_token={_accessToken}");
-            _builder.Append($"&page={page}&per={per}");
+            _builder.Append($"page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
 
@@ -182,13 +180,14 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/specifications?");
-            _builder.Append($"oauth_token={_accessToken}");
-            _builder.Append($"&page={page}&per={per}");
+            _builder.Append($"page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Specifications>(t.Result.ToString()));
         }
 
@@ -211,13 +210,14 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/specifications?");
             _builder.Append("include=group");
-            _builder.Append($"&oauth_token={_accessToken}");
             _builder.Append($"&page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Groups>(t.Result.ToString()));
         }
 
@@ -248,13 +248,14 @@ namespace skroutz.gr.ServiceBroker
             if (orderDir.HasValue)
                 _builder.Append($"&order_dir={orderDir}");
 
-            _builder.Append($"&oauth_token={_accessToken}");
             _builder.Append($"&page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
         }
 
@@ -277,13 +278,14 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"categories/{categoryId}/favorites?");
-            _builder.Append($"oauth_token={_accessToken}");
-            _builder.Append($"&page={page}&per={per}");
+            _builder.Append($"page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
         }
     }

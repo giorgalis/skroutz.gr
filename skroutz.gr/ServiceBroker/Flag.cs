@@ -15,29 +15,26 @@ namespace skroutz.gr.ServiceBroker
         /// The builder
         /// </summary>
         private readonly StringBuilder _builder;
-        /// <summary>
-        /// The access token
-        /// </summary>
-        private readonly string _accessToken;
+        private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Flag" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
-        public Flag(string accessToken)
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        public Flag(SkroutzRequest skroutzRequest)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = new StringBuilder();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Flag" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>
-        public Flag(string accessToken, StringBuilder stringBuilder)
+        public Flag(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = stringBuilder;
         }
 
@@ -49,10 +46,11 @@ namespace skroutz.gr.ServiceBroker
         public Task<Flags> RetrieveAllFlags()
         {
             _builder.Clear();
-            _builder.Append($"flags?");
-            _builder.Append($"oauth_token={_accessToken}");
+            _builder.Append($"flags");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Flags>(t.Result.ToString()));
         }
     }

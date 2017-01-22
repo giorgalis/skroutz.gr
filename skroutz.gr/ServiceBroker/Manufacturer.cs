@@ -20,26 +20,26 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// The access token
         /// </summary>
-        private readonly string _accessToken;
+        private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Manufacturer" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
-        public Manufacturer(string accessToken)
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        public Manufacturer(SkroutzRequest skroutzRequest)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = new StringBuilder();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Manufacturer" /> class
+        /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="accessToken">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
         /// <param name="stringBuilder">The string builder to write to.</param>
-        public Manufacturer(string accessToken, StringBuilder stringBuilder)
+        public Manufacturer(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
         {
-            _accessToken = accessToken;
+            _skroutzRequest = skroutzRequest;
             _builder = stringBuilder;
         }
 
@@ -49,25 +49,21 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
         /// <returns>Task&lt;Manufacturers&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#list-manufacturers" />
-        public Task<Manufacturers> ListManufacturers(int page = 1, int per = 25, params Expression<Func<Entities.Base.Manufacturer, object>>[] sparseFields)
+        public Task<Manufacturers> ListManufacturers(int page = 1, int per = 25)
         {
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
             if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
             _builder.Clear();
             _builder.Append("manufacturers?");
-            _builder.Append($"oauth_token={_accessToken}");
-            _builder.Append($"&page={page}&per={per}");
+            _builder.Append($"page={page}&per={per}");
 
-            if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+            _skroutzRequest.Path = _builder.ToString();
 
-
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
         }
 
@@ -85,12 +81,13 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Clear();
             _builder.Append($"manufacturers/{manufacturerId}?");
-            _builder.Append($"oauth_token={_accessToken}");
 
             if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootManufacturer>(t.Result.ToString()));
         }
 
@@ -122,14 +119,14 @@ namespace skroutz.gr.ServiceBroker
             if (orderDir.HasValue)
                 _builder.Append($"&order_dir={orderDir}");
 
-            _builder.Append($"&oauth_token={_accessToken}");
-
             _builder.Append($"&page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
 
@@ -160,14 +157,14 @@ namespace skroutz.gr.ServiceBroker
             if (orderDir.HasValue)
                 _builder.Append($"&order_dir={orderDir}");
 
-            _builder.Append($"&oauth_token={_accessToken}");
-
             _builder.Append($"&page={page}&per={per}");
 
             if (sparseFields != null)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            return GetWebResultAsync(_builder.ToString()).ContinueWith((t) =>
+            _skroutzRequest.Path = _builder.ToString();
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));
         }
     }
