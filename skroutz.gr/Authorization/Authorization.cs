@@ -28,17 +28,11 @@ namespace skroutz.gr.Authorization
     public class Authorization : Request
     {
         /// <summary>
-        /// Gets the application response.
-        /// </summary>
-        /// <value>The application response.</value>
-        public AuthResponse AuthResponse { get; private set; }
-
-        /// <summary>
         /// Gets the response.
         /// </summary>
         /// <value>The response.</value>
-        public SkroutzRequest skroutzRequest { get; private set; } = new SkroutzRequest();
-
+        public SkroutzRequest SkroutzRequest { get; private set; } = new SkroutzRequest();
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
@@ -51,7 +45,7 @@ namespace skroutz.gr.Authorization
 
             string request = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
             
-            this.skroutzRequest.AuthResponse = PostWebResultAsync(request).ContinueWith((t) =>
+            this.SkroutzRequest.AuthResponse = PostWebResultAsync(request).ContinueWith((t) =>
                 JsonConvert.DeserializeObject<AuthResponse>(t.Result.ToString())).Result;
         }
     }

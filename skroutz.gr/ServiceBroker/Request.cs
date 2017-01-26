@@ -13,13 +13,13 @@ namespace skroutz.gr.ServiceBroker
     public class Request : RateLimiting
     {
         private const string Domain = "https://www.skroutz.gr/";
-        private const string ApiEndPoint = "https://api.skroutz.gr/";
+        //private const string ApiEndPoint = "https://api.skroutz.gr/";
 
         /// <summary>
         /// Gets or sets the API version.
         /// </summary>
         /// <value>The API version.</value>
-        public string ApiVersion { get; set; } = "3.0";
+        //public string ApiVersion { get; set; } = "3.0";
         internal async Task<string> PostWebResultAsync(string value)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(Domain, value));
@@ -29,7 +29,7 @@ namespace skroutz.gr.ServiceBroker
 
         internal async Task<string> GetWebResultAsync(SkroutzRequest skroutzRequest)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, skroutzRequest.Path));
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(skroutzRequest.ApiEndPoint, skroutzRequest.Path));
             req.Method = skroutzRequest.Method.ToString();
             req.Accept = $"application/vnd.skroutz+json; version={skroutzRequest.ApiVersion}";
             req.Headers["Authorization"] = $"{skroutzRequest.AuthResponse.TokenType} {skroutzRequest.AuthResponse.AccessToken}";
