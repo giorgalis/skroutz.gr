@@ -30,9 +30,9 @@ namespace skroutz.gr.ServiceBroker
         internal async Task<string> GetWebResultAsync(SkroutzRequest skroutzRequest)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(ApiEndPoint, skroutzRequest.Path));
-            req.Method = skroutzRequest.Method.ToString().ToUpper();
+            req.Method = skroutzRequest.Method.ToString();
             req.Accept = $"application/vnd.skroutz+json; version={skroutzRequest.ApiVersion}";
-            req.Headers["Authorization"] = $"{skroutzRequest.TokenType} {skroutzRequest.AccessToken}";
+            req.Headers["Authorization"] = $"{skroutzRequest.AuthResponse.TokenType} {skroutzRequest.AuthResponse.AccessToken}";
            
             return await GetResponse(req);
         }

@@ -75,7 +75,8 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Create a favorite_list
         /// </summary>
-        /// <see href="Https://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist"/>
+        /// <exception cref="NotImplementedException"></exception>
+        /// <see href="Https://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist" />
         public void CreateFavoriteList()
         {
             throw new NotImplementedException();
@@ -84,7 +85,8 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Destroy a favorite_list
         /// </summary>
-        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favoritelist"/>
+        /// <exception cref="NotImplementedException"></exception>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favoritelist" />
         public void DestroyFavoriteList()
         {
             throw new NotImplementedException();
@@ -145,8 +147,9 @@ namespace skroutz.gr.ServiceBroker
 
         /// <summary>
         /// Create a new favorite
-        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#create-a-new-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#create-a-new-favorite" />
         /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void CreateNewFavorite()
         {
             throw new NotImplementedException();
@@ -154,8 +157,9 @@ namespace skroutz.gr.ServiceBroker
 
         /// <summary>
         /// Destroy a favorite
-        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favorite" />
         /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void DestroyFavorite()
         {
             throw new NotImplementedException();
@@ -163,8 +167,9 @@ namespace skroutz.gr.ServiceBroker
 
         /// <summary>
         /// Update a favorite
-        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#update-a-favorite"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/favorites/#update-a-favorite" />
         /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void UpdateFavorite()
         {
             throw new NotImplementedException();
@@ -210,8 +215,9 @@ namespace skroutz.gr.ServiceBroker
 
         /// <summary>
         /// Mark notifications as viewed
-        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#mark-notifications-as-viewed"/>
+        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#mark-notifications-as-viewed" />
         /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
         public void MarkNotificationsAsViewed()
         {
             throw new NotImplementedException();

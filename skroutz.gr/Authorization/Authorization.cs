@@ -7,7 +7,7 @@ namespace skroutz.gr.Authorization
     /// <summary>
     /// Struct AppCredentials
     /// </summary>
-    public struct AppCredentials 
+    public struct Credentials 
     {
         /// <summary>
         /// The client Id you received from skroutz api team.
@@ -22,91 +22,45 @@ namespace skroutz.gr.Authorization
         public string ClientSecret { get; set; }
     }
 
-
-    /// <summary>
-    /// Struct UserCredentials
-    /// </summary>
-    public struct UserCredentials 
-    {
-        /// <summary>
-        /// The client Id you received from skroutz api team.
-        /// </summary>
-        [JsonProperty("client_id")]
-        public string ClientId { get; set; }
-
-        /// <summary>
-        /// The URL in your application where users will be sent after authorization.
-        /// </summary>
-        [JsonProperty("redirect_uri")]
-        public string RedirectUri { get; set; }
-    }
-
-
     /// <summary>
     /// Class Authorization.
     /// </summary>
     public class Authorization : Request
     {
-
         /// <summary>
         /// Gets the application response.
         /// </summary>
         /// <value>The application response.</value>
-        public AppResponse AppResponse { get; private set; }
+        public AuthResponse AuthResponse { get; private set; }
 
         /// <summary>
         /// Gets the response.
         /// </summary>
         /// <value>The response.</value>
-        //public UserResponse UserResponse { get; private set; }
-
         public SkroutzRequest skroutzRequest { get; private set; } = new SkroutzRequest();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
         /// <param name="credentials">The credentials.</param>
-        /// <exception cref="ArgumentNullException">Thrown when <see cref="AppCredentials.ClientId"/> or <see cref="AppCredentials.ClientSecret"/> is null or empty.</exception>
-        public Authorization(AppCredentials credentials)
+        /// <exception cref="ArgumentNullException">Thrown when <see cref="Credentials.ClientId"/> or <see cref="Credentials.ClientSecret"/> is null or empty.</exception>
+        public Authorization(Credentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
             if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
 
             string request = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
-
-            AppResponse appResponse = PostWebResultAsync(request).ContinueWith((t) =>
-                JsonConvert.DeserializeObject<AppResponse>(t.Result.ToString())).Result;
-
-            this.skroutzRequest.AccessToken = appResponse.AccessToken;
-            this.skroutzRequest.TokenType = appResponse.TokenType;
-        }
-
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Authorization" /> class.
-        /// </summary>
-        /// <param name="credentials">The credentials.</param>
-        /// <exception cref="ArgumentNullException">Thrown when <see cref="UserCredentials.ClientId"/> or <see cref="UserCredentials.RedirectUri"/> is null or empty.</exception>
-        public Authorization(UserCredentials credentials)
-        {
-            if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
-            if (string.IsNullOrEmpty(credentials.RedirectUri)) throw new ArgumentNullException(nameof(credentials.RedirectUri));
-
-            string request = $"oauth2/authorizations/new?client_id={credentials.ClientId}&redirect_uri={credentials.RedirectUri}&response_type=code&scope=public,favorites,notifications";
-
-            UserResponse userResponse = PostWebResultAsync(request).ContinueWith((t) =>
-                JsonConvert.DeserializeObject<UserResponse>(t.Result.ToString())).Result;
-
-            this.skroutzRequest.AccessToken = userResponse.AccessToken;
-            this.skroutzRequest.TokenType = userResponse.TokenType;
+            
+            this.skroutzRequest.AuthResponse = PostWebResultAsync(request).ContinueWith((t) =>
+                JsonConvert.DeserializeObject<AuthResponse>(t.Result.ToString())).Result;
         }
     }
 
 
     /// <summary>
-    /// Class AppResponse.
+    /// Class AuthResponse.
     /// </summary>
-    public class AppResponse
+    public class AuthResponse
     {
         /// <summary>
         /// Gets or sets the access token.
@@ -114,31 +68,47 @@ namespace skroutz.gr.Authorization
         /// <value>The access token.</value>
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }
+      
+
+        private string _TokenType;
         /// <summary>
         /// Gets or sets the type of the token.
         /// </summary>
         /// <value>The type of the token.</value>
         [JsonProperty("token_type")]
-        public string TokenType { get; set; }
+
+        public string TokenType
+        {
+            get { return _TokenType; }
+            set { _TokenType = ToTitleCase(value); }
+        }
+
         /// <summary>
         /// Gets or sets the expires in.
         /// </summary>
         /// <value>The expires in. (seconds).</value>
         [JsonProperty("expires_in")]
         public int ExpiresIn { get; set; }
-    }
+        
+        string ToTitleCase(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return s;
 
-    /// <summary>
-    /// Class UserResponse.
-    /// </summary>
-    /// <seealso cref="Authorization.AppResponse" />
-    public class UserResponse : AppResponse
-    {
-        /// <summary>
-        /// Gets or sets the refresh token.
-        /// </summary>
-        /// <value>The refresh token.</value>
-        [JsonProperty("refresh_token")]
-        public string RefreshToken { get; set; }
+            string[] textArray = s.Split(' ');
+
+            for (int i = 0; i < textArray.Length; i++)
+            {
+                switch (textArray[i].Length)
+                {
+                    case 1:
+                        break;
+                    default:
+                        textArray[i] = char.ToUpper(textArray[i][0]) + textArray[i].Substring(1);
+                        break;
+                }
+            }
+
+            return string.Join(" ", textArray);
+        }
     }
 }

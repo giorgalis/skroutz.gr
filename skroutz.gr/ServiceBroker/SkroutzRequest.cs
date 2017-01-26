@@ -1,4 +1,6 @@
-﻿namespace skroutz.gr.ServiceBroker
+﻿using skroutz.gr.Authorization;
+
+namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
     /// Enum Method
@@ -23,38 +25,33 @@
         /// <summary>
         /// The domain
         /// </summary>
-        public const string Domain = "https://www.skroutz.gr/";
+        public string Domain { get; private set; } = "https://www.skroutz.gr/";
         /// <summary>
         /// The API end point
         /// </summary>
-        public const string ApiEndPoint = "https://api.skroutz.gr/";
+        public string ApiEndPoint { get; private set; } = "https://api.skroutz.gr/";
         /// <summary>
         /// Gets or sets the API version.
         /// </summary>
         /// <value>The API version.</value>
         public string ApiVersion { get; set; } = "3.0";
 
-        /// <summary>
-        /// Gets or sets the access token.
-        /// </summary>
-        /// <value>The access token.</value>
-        public string AccessToken { get; set; }
 
+       // private AuthResponse _authResponse = new AuthResponse();
 
         /// <summary>
-        /// The token type
+        /// Gets or sets the authentication response.
         /// </summary>
-        private string _tokenType;
-
-        /// <summary>
-        /// Gets or sets the type of the token.
-        /// </summary>
-        /// <value>The type of the token.</value>
-        public string TokenType
-        {
-            get { return _tokenType; }
-            set { _tokenType = ToTitleCase(value.ToLower()); }
-        }
+        /// <value>The authentication response.</value>
+        public AuthResponse AuthResponse { get; set; }
+        //{
+        //    get { return _authResponse; }
+        //    set
+        //    {
+        //        _authResponse.TokenType = ToTitleCase(value.TokenType);
+        //        _authResponse = value;
+        //    }
+        //}
 
         /// <summary>
         /// Gets or sets the path.
@@ -73,32 +70,6 @@
         /// </summary>
         /// <value>The postdata.</value>
         public string Postdata { get; set; }
-
-        /// <summary>
-        /// To the title case.
-        /// </summary>
-        /// <param name="s">The s.</param>
-        /// <returns>System.String.</returns>
-        string ToTitleCase(string s)
-        {
-            if (string.IsNullOrEmpty(s)) return s;
-
-            string[] textArray = s.Split(' ');
-
-            for (int i = 0; i < textArray.Length; i++)
-            {
-                switch (textArray[i].Length)
-                {
-                    case 1:
-                        break;
-                    default:
-                        textArray[i] = char.ToUpper(textArray[i][0]) + textArray[i].Substring(1);
-                        break;
-                }
-            }
-
-            return string.Join(" ", textArray);
-        }
     }
 
  
