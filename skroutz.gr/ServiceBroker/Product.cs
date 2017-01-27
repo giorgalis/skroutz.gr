@@ -16,9 +16,6 @@ using skroutz.gr.Entities;
 using skroutz.gr.ServiceBroker;
 using skroutz.gr.Shared;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,7 +73,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"products/{productId}?");
 
-            if(sparseFields != null)
+            if(sparseFields.Length > 0)
                 _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -103,7 +100,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Append($"shops/{shopId}/products/search?");
             _builder.Append($"shop_uid={shopUid}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();

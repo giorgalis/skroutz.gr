@@ -82,7 +82,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"manufacturers/{manufacturerId}?");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -121,7 +121,7 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Append($"&page={page}&per={per}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -159,7 +159,7 @@ namespace skroutz.gr.ServiceBroker
 
             _builder.Append($"&page={page}&per={per}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();

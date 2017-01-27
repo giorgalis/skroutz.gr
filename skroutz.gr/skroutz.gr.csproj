@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Authorization\Authorization.cs" />
+    <Compile Include="Authorization\AuthResponse.cs" />
     <Compile Include="Entities\Search.cs" />
     <Compile Include="ServiceBroker\Category.cs" />
     <Compile Include="Entities\PriceHistory.cs" />
@@ -43,6 +44,7 @@
     <Compile Include="Entities\SKUReviewFlag.cs" />
     <Compile Include="Entities\SKUReviewVote.cs" />
     <Compile Include="ServiceBroker\SkroutzRequest.cs" />
+    <Compile Include="Shared\ExtentionMethods.cs" />
     <Compile Include="Shared\NameReader.cs" />
     <Compile Include="ServiceBroker\RateLimitng.cs" />
     <Compile Include="Shared\Enumerations.cs" />

@@ -79,7 +79,7 @@ namespace skroutz.gr.ServiceBroker
             if (filterIds != null)
                 _builder.Append($"&filter_ids[]={string.Join("&filter_ids[]=", filterIds.Select(s => s.ToString()))}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -103,7 +103,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"skus/{skuId}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -127,7 +127,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"skus/{skuId}/similar?");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -149,10 +149,10 @@ namespace skroutz.gr.ServiceBroker
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{skuId}/products");
+            _builder.Append($"skus/{skuId}/products?");
 
-            if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+            if (sparseFields.Length > 0)
+                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
 
@@ -173,10 +173,10 @@ namespace skroutz.gr.ServiceBroker
             if (skuId <= 0) throw new ArgumentOutOfRangeException(nameof(skuId));
 
             _builder.Clear();
-            _builder.Append($"skus/{skuId}/reviews");
+            _builder.Append($"skus/{skuId}/reviews?");
 
-            if (sparseFields != null)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+            if (sparseFields.Length > 0)
+                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
 
@@ -254,7 +254,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"skus/{skuId}/specifications?");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -279,7 +279,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"skus/{skuId}/price_history?");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();

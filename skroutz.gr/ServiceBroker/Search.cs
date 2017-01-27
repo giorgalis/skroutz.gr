@@ -51,7 +51,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"search?q={searchString}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();
@@ -75,7 +75,7 @@ namespace skroutz.gr.ServiceBroker
             _builder.Clear();
             _builder.Append($"autocomplete?q={searchString}");
 
-            if (sparseFields != null)
+            if (sparseFields.Length > 0)
                 _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             _skroutzRequest.Path = _builder.ToString();

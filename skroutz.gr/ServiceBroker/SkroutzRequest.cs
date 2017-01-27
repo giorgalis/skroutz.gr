@@ -20,7 +20,7 @@ namespace skroutz.gr.ServiceBroker
     /// <summary>
     /// Class SkroutzRequest.
     /// </summary>
-    public class SkroutzRequest
+    public class SkroutzRequest : Request
     {
         /// <summary>
         /// The domain
@@ -36,22 +36,13 @@ namespace skroutz.gr.ServiceBroker
         /// <value>The API version.</value>
         public string ApiVersion { get; set; } = "3.0";
 
-
-       // private AuthResponse _authResponse = new AuthResponse();
-
         /// <summary>
         /// Gets or sets the authentication response.
         /// </summary>
         /// <value>The authentication response.</value>
         public AuthResponse AuthResponse { get; set; }
-        //{
-        //    get { return _authResponse; }
-        //    set
-        //    {
-        //        _authResponse.TokenType = ToTitleCase(value.TokenType);
-        //        _authResponse = value;
-        //    }
-        //}
+
+        public RateLimiting RateLimiting { get; set; }
 
         /// <summary>
         /// Gets or sets the path.
