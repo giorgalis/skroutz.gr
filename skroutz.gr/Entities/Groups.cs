@@ -51,7 +51,7 @@ namespace skroutz.gr.Entities.Base
     }
 
     /// <summary>
-    /// GroupSpecification
+    /// Class GroupSpecification.
     /// </summary>
     public class GroupSpecification
     {

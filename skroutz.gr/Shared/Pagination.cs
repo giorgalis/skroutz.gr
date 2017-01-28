@@ -22,14 +22,14 @@ namespace skroutz.gr.Shared
         public int TotalPages { get; set; }
 
         /// <summary>
-        /// Gets or sets the page.
+        /// Gets or sets the Current page.
         /// </summary>
         /// <value>The page.</value>
         [JsonProperty("page")]
         public int Page { get; set; }
 
         /// <summary>
-        /// Gets or sets Results per page.
+        /// Gets or sets the Results per page.
         /// </summary>
         /// <value>Results per page.</value>
         [JsonProperty("per")]

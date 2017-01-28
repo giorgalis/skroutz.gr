@@ -60,7 +60,7 @@ namespace skroutz.gr.Entities.Base
     }
 
     /// <summary>
-    /// Filter Group
+    /// Class FilterGroup.
     /// </summary>
     public class FilterGroup
     {

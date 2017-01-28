@@ -18,7 +18,7 @@ namespace skroutz.gr.Entities
     }
 
     /// <summary>
-    /// Manufacturers
+    /// Class Manufacturers.
     /// </summary>
     /// <seealso cref="Base.Manufacturer"/>
     /// <seealso cref="Shared.Meta"/>
@@ -40,7 +40,7 @@ namespace skroutz.gr.Entities
 namespace skroutz.gr.Entities.Base
 {
     /// <summary>
-    /// Manufacturer
+    /// Class Manufacturer.
     /// </summary>
     public class Manufacturer
     {

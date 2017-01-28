@@ -35,7 +35,7 @@ namespace skroutz.gr.Entities
 namespace skroutz.gr.Entities.Base
 {
     /// <summary>
-    /// Sku
+    /// Class Sku.
     /// </summary>
     public class SKU
     {

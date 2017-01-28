@@ -41,7 +41,7 @@ namespace skroutz.gr.Entities
 namespace skroutz.gr.Entities.Base
 {
     /// <summary>
-    /// Product
+    /// Class Product.
     /// </summary>
     public class Product
     {

@@ -1,10 +1,16 @@
-﻿namespace skroutz.gr.Shared
+﻿using Newtonsoft.Json;
+
+namespace skroutz.gr.Shared
 {
     /// <summary>
-    /// Class Meta
+    /// Class Meta.
     /// </summary>
     public class Meta
     {
-        public Pagination pagination { get; set; }
+        /// <summary>
+        /// Pagination
+        /// </summary>
+        [JsonProperty("pagination")]
+        public Pagination Pagination { get; set; }
     }
 }
