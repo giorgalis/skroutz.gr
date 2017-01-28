@@ -5,7 +5,7 @@ using System;
 namespace skroutz.gr.Authorization
 {
     /// <summary>
-    /// Struct AppCredentials
+    /// Struct Credentials
     /// </summary>
     public struct Credentials
     {
@@ -28,7 +28,7 @@ namespace skroutz.gr.Authorization
     internal class Authorization : Request
     {
         /// <summary>
-        /// Gets the SkroutzRequest.
+        /// Gets the AuthResponse.
         /// </summary>
         /// <value>The response.</value>
         public AuthResponse AuthResponse { get; private set; }

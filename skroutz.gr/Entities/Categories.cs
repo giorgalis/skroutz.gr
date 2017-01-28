@@ -41,7 +41,7 @@ namespace skroutz.gr.Entities
 namespace skroutz.gr.Entities.Base
 {
     /// <summary>
-    /// Category
+    /// Class Category.
     /// </summary>
     public class Category
     {
@@ -60,7 +60,7 @@ namespace skroutz.gr.Entities.Base
         public string Name { get; set; }
 
         /// <summary>
-        /// Subcategory count
+        /// Children count
         /// </summary>
         /// <value>The children count.</value>
         [JsonProperty("children_count")]
