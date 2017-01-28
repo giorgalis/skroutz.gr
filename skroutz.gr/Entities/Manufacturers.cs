@@ -13,14 +13,15 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Manufacturer
         /// </summary>
-        public Base.Manufacturer manufacturer { get; set; }
+        [JsonProperty("manufacturer")]
+        public Base.Manufacturer Manufacturer { get; set; }
     }
 
     /// <summary>
     /// Manufacturers
     /// </summary>
     /// <seealso cref="Base.Manufacturer"/>
-    /// <seealso cref="Meta"/>
+    /// <seealso cref="Shared.Meta"/>
     public class Manufacturers
     {
         /// <summary>
@@ -31,7 +32,8 @@ namespace skroutz.gr.Entities
         /// <summary>
         /// Meta
         /// </summary>
-        public Meta meta { get; set; }
+        [JsonProperty("meta")]
+        public Meta Meta { get; set; }
     }
 }
 

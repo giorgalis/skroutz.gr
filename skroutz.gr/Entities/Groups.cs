@@ -19,7 +19,8 @@ namespace skroutz.gr.Entities
         /// Gets or sets the specifications.
         /// </summary>
         /// <value>The specifications.</value>
-        public List<Base.GroupSpecification> specifications { get; set; }
+        [JsonProperty("specifications")]
+        public List<Base.GroupSpecification> Specifications { get; set; }
     }
 }
 

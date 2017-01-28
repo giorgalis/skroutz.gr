@@ -13,7 +13,8 @@ namespace skroutz.gr.Entities
         /// Gets or sets the history.
         /// </summary>
         /// <value>The history.</value>
-        public Base.History history { get; set; }
+        [JsonProperty("history")]
+        public Base.History History { get; set; }
     }
 }
 
@@ -49,12 +50,14 @@ namespace skroutz.gr.Entities.Base
         /// <value>The date.</value>
         [JsonProperty("date")]
         public string Date { get; set; }
+
         /// <summary>
         /// Gets or sets the price.
         /// </summary>
         /// <value>The price.</value>
         [JsonProperty("price")]
         public double Price { get; set; }
+
         /// <summary>
         /// Gets or sets the name of the shop.
         /// </summary>
@@ -74,6 +77,7 @@ namespace skroutz.gr.Entities.Base
         /// <value>The average.</value>
         [JsonProperty("average")]
         public List<Average> Average { get; set; }
+
         /// <summary>
         /// Gets or sets the lowest.
         /// </summary>

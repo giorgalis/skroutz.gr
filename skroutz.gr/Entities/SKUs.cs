@@ -153,6 +153,7 @@ namespace skroutz.gr.Entities.Base
         [JsonProperty("web_uri")]
         public string WebUri { get; set; }
 
+        //TODO: Check field
         ///// <summary>
         ///// Favorited
         ///// </summary>

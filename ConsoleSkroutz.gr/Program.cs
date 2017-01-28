@@ -70,7 +70,7 @@ namespace ConsoleSkroutz.gr
             result = manufacturer.ListManufacturers().Result.manufacturers.printReflected();
 
             //Retrieve Manufacturer with Manufacturerid: 12907.
-            result = manufacturer.RetrieveSingleManufacturer(12907).Result.manufacturer.printReflected();
+            result = manufacturer.RetrieveSingleManufacturer(12907).Result.Manufacturer.printReflected();
 
             //Retrieve Manufacturer Categories with Manufacturerid: 356. Retrieve the first 10 results.
             result = manufacturer.RetrieveManufacturerCategories(356, page: 1, per: 10).Result.categories;

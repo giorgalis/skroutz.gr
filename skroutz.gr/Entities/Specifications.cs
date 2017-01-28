@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace skroutz.gr.Entities
 {
@@ -26,26 +27,35 @@ namespace skroutz.gr.Entities.Base
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
-        public int id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string name { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
         /// <summary>
         /// Gets or sets the values.
         /// </summary>
         /// <value>The values.</value>
-        public List<object> values { get; set; }
+        [JsonProperty("values")]
+        public List<object> Values { get; set; }
+
         /// <summary>
         /// Gets or sets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int order { get; set; }
+        [JsonProperty("order")]
+        public int Order { get; set; }
+
         /// <summary>
         /// Gets or sets the unit.
         /// </summary>
         /// <value>The unit.</value>
-        public string unit { get; set; }
+        [JsonProperty("unit")]
+        public string Unit { get; set; }
     }
 }

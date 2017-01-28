@@ -1,4 +1,6 @@
-﻿namespace skroutz.gr.Entities.Base
+﻿using Newtonsoft.Json;
+
+namespace skroutz.gr.Entities.Base
 {
     /// <summary>
     /// Class SKUReviewFlag.
@@ -9,36 +11,49 @@
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
-        public int id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
         /// <summary>
         /// Gets or sets the flaggable identifier.
         /// </summary>
         /// <value>The flaggable identifier.</value>
-        public int flaggable_id { get; set; }
+        [JsonProperty("flaggable_id")]
+        public int FlaggableId { get; set; }
+
         /// <summary>
         /// Gets or sets the type of the flaggable.
         /// </summary>
         /// <value>The type of the flaggable.</value>
-        public string flaggable_type { get; set; }
+        [JsonProperty("flaggable_type")]
+        public string FlaggableType { get; set; }
+
         /// <summary>
         /// Gets or sets the user identifier.
         /// </summary>
         /// <value>The user identifier.</value>
-        public int user_id { get; set; }
+        [JsonProperty("user_id")]
+        public int UserId { get; set; }
+
         /// <summary>
         /// Gets or sets the reason.
         /// </summary>
         /// <value>The reason.</value>
-        public string reason { get; set; }
+        [JsonProperty("reason")]
+        public string Reason { get; set; }
+
         /// <summary>
         /// Gets or sets the created at.
         /// </summary>
         /// <value>The created at.</value>
-        public string created_at { get; set; }
+        [JsonProperty("created_at")]
+        public string CreatedAt { get; set; }
+
         /// <summary>
         /// Gets or sets the updated at.
         /// </summary>
         /// <value>The updated at.</value>
-        public string updated_at { get; set; }
+        [JsonProperty("updated_at")]
+        public string UpdatedAt { get; set; }
     }
 }
