@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Root Manufacturer
+    /// Class RootManufacturer.
     /// </summary>
     /// <seealso cref="Base.Manufacturer"/>
     public class RootManufacturer
@@ -24,7 +24,7 @@ namespace skroutz.gr.Entities
     public class Manufacturers
     {
         /// <summary>
-        /// Manufacturers
+        /// Class Manufacturers.
         /// </summary>
         public List<Base.Manufacturer> manufacturers { get; set; }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Flags
+    /// Class Flags.
     /// </summary>
     /// <seealso cref="Base.Flag"/>
     public class Flags
@@ -19,7 +19,7 @@ namespace skroutz.gr.Entities
 namespace skroutz.gr.Entities.Base
 {
     /// <summary>
-    /// Flag
+    /// Class Flag.
     /// </summary>
     public class Flag
     {

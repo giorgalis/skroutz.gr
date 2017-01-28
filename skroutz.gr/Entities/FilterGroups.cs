@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Filter Groups
+    /// Class FilterGroups.
     /// </summary>
     /// <seealso cref="Base.FilterGroup"/>
     /// <seealso cref="Shared.Meta"/>
@@ -29,41 +29,41 @@ namespace skroutz.gr.Entities
 namespace skroutz.gr.Entities.Base
 {
     /// <summary>
+    /// Enum FilterTypes
+    /// </summary>
+    public enum FilterTypes
+    {
+        /// <summary>
+        /// The price
+        /// </summary>
+        Price = 0,
+        /// <summary>
+        /// The keyword
+        /// </summary>
+        Keyword,
+        /// <summary>
+        /// The spec
+        /// </summary>
+        Spec,
+        /// <summary>
+        /// The synced spec
+        /// </summary>
+        SyncedSpec,
+        /// <summary>
+        /// The custom range
+        /// </summary>
+        CustomRange,
+        /// <summary>
+        /// The sizes
+        /// </summary>
+        Sizes
+    }
+
+    /// <summary>
     /// Filter Group
     /// </summary>
     public class FilterGroup
     {
-        /// <summary>
-        /// Enum FilterTypes
-        /// </summary>
-        public enum FilterTypes
-        {
-            /// <summary>
-            /// The price
-            /// </summary>
-            Price = 0,
-            /// <summary>
-            /// The keyword
-            /// </summary>
-            Keyword,
-            /// <summary>
-            /// The spec
-            /// </summary>
-            Spec,
-            /// <summary>
-            /// The synced spec
-            /// </summary>
-            SyncedSpec,
-            /// <summary>
-            /// The custom range
-            /// </summary>
-            CustomRange,
-            /// <summary>
-            /// The sizes
-            /// </summary>
-            Sizes
-        }
-
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>

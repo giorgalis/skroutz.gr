@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Root Product
+    /// Class RootProduct.
     /// </summary>
     /// <seealso cref="Base.Product"/>
     public class RootProduct
@@ -18,7 +18,7 @@ namespace skroutz.gr.Entities
     }
 
     /// <summary>
-    /// Products
+    /// Class Products.
     /// </summary>
     /// <seealso cref="Base.Product"/>
     /// <seealso cref="Shared.Meta"/>

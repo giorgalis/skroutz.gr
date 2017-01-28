@@ -8,10 +8,10 @@ namespace skroutz.gr.Shared
     public static class ExtentionMethods
     {
         /// <summary>
-        /// Unixes the time to date time.
+        /// Converts the Unix time to standard date time.
         /// </summary>
-        /// <param name="unixTime">The unix time.</param>
-        /// <returns>DateTime.</returns>
+        /// <param name="unixTime">The unix time to convert.</param>
+        /// <returns><see cref="DateTime"/>.</returns>
         public static DateTime UnixTimeToDateTime(this long unixTime)
         {
             var timeInTicks = unixTime * TimeSpan.TicksPerSecond;
@@ -19,9 +19,9 @@ namespace skroutz.gr.Shared
         }
 
         /// <summary>
-        /// To the title case.
+        /// Converts the specified string to title case.
         /// </summary>
-        /// <param name="s">The s.</param>
+        /// <param name="s">The string to convert.</param>
         /// <returns>System.String.</returns>
         public static string ToTitleCase(this string s)
         {

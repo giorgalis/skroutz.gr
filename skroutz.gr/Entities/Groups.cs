@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Groups
+    /// Class Groups.
     /// </summary>
     /// <seealso cref="Base.Group"/>
     /// <seealso cref="Base.GroupSpecification"/>

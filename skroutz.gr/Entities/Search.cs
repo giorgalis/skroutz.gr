@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// <para>The main response type is a collection of <see cref="Categories"/>.</para>
+    /// <para>Class Search. The main response type is a collection of <see cref="Categories"/>.</para>
     /// <para>There may be alternate suggestion queries provided in the <c>alternatives</c> key of the meta object.</para>
     /// <para>Any of those alternatives with the flag important set to true, are a hint for the client to perform a search with the alternative query instead.</para>
     /// <para>There may also exist matches of different resources under the key <c>strong_matches</c>.</para>

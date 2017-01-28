@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// RootSKU
+    /// Class RootSKU.
     /// </summary>
     public class RootSKU
     {
@@ -16,7 +16,7 @@ namespace skroutz.gr.Entities
     }
 
     /// <summary>
-    /// SKUs
+    /// Class SKUs.
     /// </summary>
     public class SKUs
     {

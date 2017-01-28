@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace skroutz.gr.Entities
 {
     /// <summary>
-    /// Root Category
+    /// Class Root Category.
     /// </summary>
     public class RootCategory
     {
@@ -17,7 +17,7 @@ namespace skroutz.gr.Entities
     }
 
     /// <summary>
-    /// Categories
+    /// Class Categories.
     /// </summary>
     /// <seealso cref="Base.Category"/>
     /// <seealso cref="Shared.Meta"/>
