@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>skroutz.gr</name>
+  </assembly>
+  <members>
+    <member name="N:skroutz.gr.ServiceBroker" />
+    <member name="T:skroutz.gr.ServiceBroker.Request"> <summary>
+ Class Request.
+ </summary></member>
+  </members>
+</doc>
