@@ -20,13 +20,12 @@ namespace skroutz.gr.ServiceBroker
         private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
+        /// Initializes a new instance of the <see cref="Product" /> class
         /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">Instance of the SkroutzRequest class</param>
         public Product(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         /// <summary>

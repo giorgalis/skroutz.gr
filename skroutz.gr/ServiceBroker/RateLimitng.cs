@@ -4,7 +4,7 @@ using System;
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// Provides info about Rate Limiting requests.
+    /// Provides info about Rate Limits.
     /// </summary>
     /// <remarks>You can make up to a certain amount of requests for each OAuth token associated with your application.</remarks>
     public class RateLimiting

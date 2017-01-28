@@ -26,7 +26,7 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Initializes a new instance of the <see cref="Category" /> class
         /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">Instance of the SkroutzRequest class</param>
         public Category(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;

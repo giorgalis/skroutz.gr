@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using skroutz.gr.Authorization;
 using skroutz.gr.Entities.User;
 using System;
 using System.Text;
@@ -15,13 +14,12 @@ namespace skroutz.gr.ServiceBroker
         private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
+        /// Initializes a new instance of the <see cref="User" /> class
         /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">Instance of the SkroutzRequest class</param>
         public User(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         #region "User Profile"

@@ -42,11 +42,10 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterGroup" /> class
         /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
+        /// <param name="skroutzRequest">Instance of the SkroutzRequest class</param>
         public FilterGroup(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         /// <summary>
