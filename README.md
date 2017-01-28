@@ -1,4 +1,4 @@
-# Prortable Class Library for accessing the skroutz.gr API
+# Portable Class Library for accessing the skroutz.gr API
 
             SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
             
