@@ -29,10 +29,6 @@ namespace skroutz.gr.ServiceBroker
     public class Product : Request
     {
         /// <summary>
-        /// The builder
-        /// </summary>
-        private readonly StringBuilder _builder;
-        /// <summary>
         /// The access token
         /// </summary>
         private readonly SkroutzRequest _skroutzRequest;
@@ -44,18 +40,7 @@ namespace skroutz.gr.ServiceBroker
         public Product(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public Product(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         /// <summary>
@@ -70,13 +55,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (productId <= 0) throw new ArgumentOutOfRangeException(nameof(productId));
 
-            _builder.Clear();
-            _builder.Append($"products/{productId}?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"products/{productId}?");
 
             if(sparseFields.Length > 0)
-                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootProduct>(t.Result.ToString()));
@@ -96,14 +79,12 @@ namespace skroutz.gr.ServiceBroker
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
             if (string.IsNullOrEmpty(shopUid)) throw new ArgumentNullException(nameof(shopUid));
 
-            _builder.Clear();
-            _builder.Append($"shops/{shopId}/products/search?");
-            _builder.Append($"shop_uid={shopUid}");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"shops/{shopId}/products/search?");
+            _skroutzRequest.SBuilder.Append($"shop_uid={shopUid}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Products>(t.Result.ToString()));

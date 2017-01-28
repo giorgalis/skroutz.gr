@@ -15,10 +15,6 @@ namespace skroutz.gr.ServiceBroker
     public class Shop : Request
     {
         /// <summary>
-        /// The builder
-        /// </summary>
-        private readonly StringBuilder _builder;
-        /// <summary>
         /// The access token
         /// </summary>
         private readonly SkroutzRequest _skroutzRequest;
@@ -30,18 +26,7 @@ namespace skroutz.gr.ServiceBroker
         public Shop(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public Shop(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         /// <summary>
@@ -56,13 +41,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
 
-            _builder.Clear();
-            _builder.Append($"shops/{shopId}?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"shops/{shopId}?");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootShop>(t.Result.ToString()));
@@ -80,13 +63,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
 
-            _builder.Clear();
-            _builder.Append($"shops/{shopId}/reviews?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"shops/{shopId}/reviews?");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<ShopReviews>(t.Result.ToString()));
@@ -104,13 +85,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
 
-            _builder.Clear();
-            _builder.Append($"shops/{shopId}/locations?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"shops/{shopId}/locations?");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<ShopLocations>(t.Result.ToString()));
@@ -131,13 +110,11 @@ namespace skroutz.gr.ServiceBroker
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
             if (locationId <= 0) throw new ArgumentOutOfRangeException(nameof(locationId));
 
-            _builder.Clear();
-            _builder.Append($"shops/{shopId}/locations?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"shops/{shopId}/locations?");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Location>(t.Result.ToString()));
@@ -155,13 +132,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));
 
-            _builder.Clear();
-            _builder.Append($"shops/search?q={searchString}");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"shops/search?q={searchString}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Shops>(t.Result.ToString()));

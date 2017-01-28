@@ -14,10 +14,6 @@ namespace skroutz.gr.ServiceBroker
     public class Manufacturer : Request
     {
         /// <summary>
-        /// The builder
-        /// </summary>
-        private readonly StringBuilder _builder;
-        /// <summary>
         /// The access token
         /// </summary>
         private readonly SkroutzRequest _skroutzRequest;
@@ -29,20 +25,8 @@ namespace skroutz.gr.ServiceBroker
         public Manufacturer(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public Manufacturer(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
-        }
-
 
         /// <summary>
         /// List manufacturers
@@ -57,11 +41,9 @@ namespace skroutz.gr.ServiceBroker
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
             if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
-            _builder.Clear();
-            _builder.Append("manufacturers?");
-            _builder.Append($"page={page}&per={per}");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append("manufacturers?");
+            _skroutzRequest.SBuilder.Append($"page={page}&per={per}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
@@ -79,13 +61,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
-            _builder.Clear();
-            _builder.Append($"manufacturers/{manufacturerId}?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"manufacturers/{manufacturerId}?");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootManufacturer>(t.Result.ToString()));
@@ -110,21 +90,19 @@ namespace skroutz.gr.ServiceBroker
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
             if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
-            _builder.Clear();
-            _builder.Append($"manufacturers/{manufacturerId}/categories?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"manufacturers/{manufacturerId}/categories?");
 
             if (orderBy.HasValue)
-                _builder.Append($"&order_by={orderBy}");
+                _skroutzRequest.SBuilder.Append($"&order_by={orderBy}");
 
             if (orderDir.HasValue)
-                _builder.Append($"&order_dir={orderDir}");
+                _skroutzRequest.SBuilder.Append($"&order_dir={orderDir}");
 
-            _builder.Append($"&page={page}&per={per}");
+            _skroutzRequest.SBuilder.Append($"&page={page}&per={per}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
@@ -148,21 +126,19 @@ namespace skroutz.gr.ServiceBroker
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
             if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
-            _builder.Clear();
-            _builder.Append($"manufacturers/{manufacturerId}/skus?");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"manufacturers/{manufacturerId}/skus?");
 
             if (orderBy.HasValue)
-                _builder.Append($"&order_by={orderBy}");
+                _skroutzRequest.SBuilder.Append($"&order_by={orderBy}");
 
             if (orderDir.HasValue)
-                _builder.Append($"&order_dir={orderDir}");
+                _skroutzRequest.SBuilder.Append($"&order_dir={orderDir}");
 
-            _builder.Append($"&page={page}&per={per}");
+            _skroutzRequest.SBuilder.Append($"&page={page}&per={per}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));

@@ -11,10 +11,6 @@ namespace skroutz.gr.ServiceBroker
     /// <remarks>A Flag is used to mark user provided content as requiring attention/moderation.</remarks>
     public class Flag : Request
     {
-        /// <summary>
-        /// The builder
-        /// </summary>
-        private readonly StringBuilder _builder;
         private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
@@ -24,18 +20,7 @@ namespace skroutz.gr.ServiceBroker
         public Flag(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public Flag(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         /// <summary>
@@ -45,10 +30,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/flag/#retrieve-all-flags" />
         public Task<Flags> RetrieveAllFlags()
         {
-            _builder.Clear();
-            _builder.Append($"flags");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"flags");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Flags>(t.Result.ToString()));

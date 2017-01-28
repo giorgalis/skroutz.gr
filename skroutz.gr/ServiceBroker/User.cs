@@ -12,7 +12,6 @@ namespace skroutz.gr.ServiceBroker
     /// </summary>
     public class User : Request
     {
-        private readonly StringBuilder _builder;
         private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
@@ -22,18 +21,7 @@ namespace skroutz.gr.ServiceBroker
         public User(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public User(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         #region "User Profile"
@@ -44,10 +32,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
         public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
         {
-            _builder.Clear();
-            _builder.Append("user");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append("user");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Entities.User.User>(t.Result.ToString()));
@@ -63,10 +49,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorite-lists"/>
         public Task<UserFavorites> ListFavoriteLists()
         {
-            _builder.Clear();
-            _builder.Append("favorite_lists");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append("favorite_lists");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserFavorites>(t.Result.ToString()));
@@ -98,10 +82,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#list-favorites"/>
         public Task<Favorites> ListFavorites()
         {
-            _builder.Clear();
-            _builder.Append("favorites");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append("favorites");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
@@ -117,10 +99,8 @@ namespace skroutz.gr.ServiceBroker
         {
             if (listId <= 0) throw new ArgumentOutOfRangeException(nameof(listId));
 
-            _builder.Clear();
-            _builder.Append($"favorite_lists/{listId}/favorites");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"favorite_lists/{listId}/favorites");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
@@ -136,10 +116,8 @@ namespace skroutz.gr.ServiceBroker
         {
             if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
 
-            _builder.Clear();
-            _builder.Append($"favorites/{favoriteId}");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"favorites/{favoriteId}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorite>(t.Result.ToString()));
@@ -185,10 +163,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/notifications/#list-notifications"/>
         public Task<UserNotifications> ListNotifications()
         {
-            _builder.Clear();
-            _builder.Append("notifications");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append("notifications");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserNotifications>(t.Result.ToString()));
@@ -204,10 +180,8 @@ namespace skroutz.gr.ServiceBroker
         {
             if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));
 
-            _builder.Clear();
-            _builder.Append($"notifications/{notificationId}");
-
-            _skroutzRequest.Path = _builder.ToString();
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"notifications/{notificationId}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Notification>(t.Result.ToString()));

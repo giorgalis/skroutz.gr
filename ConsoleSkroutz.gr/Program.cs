@@ -10,13 +10,12 @@ namespace ConsoleSkroutz.gr
     {
         static void Main(string[] args)
         {
-            Authorization auth = new Authorization(new Credentials { ClientId = "", ClientSecret = "" });
-            StringBuilder sb = new StringBuilder();
-
+            SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
+                        
             Console.OutputEncoding = Encoding.Unicode;
 
             ApplyTitle("Category");
-            Category category = new Category(auth.SkroutzRequest, sb);
+            Category category = new Category(skroutzRequest);
 
             dynamic result = null;
             result = category.ListAllCategories().Result.categories.printReflected();
@@ -33,10 +32,10 @@ namespace ConsoleSkroutz.gr
             result = category.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result.manufacturers.printReflected();
 
             //User token is required or else exception is thrown
-            result = category.ListCategorysFavorites(40).Result;
+            //result = category.ListCategorysFavorites(40).Result;
 
             ApplyTitle("SKU");
-            Sku sku = new Sku(auth.SkroutzRequest, sb);
+            Sku sku = new Sku(skroutzRequest);
 
             result = sku.ListSKUsOfSpecificCategory(40).Result.skus.printReflected();
             result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.popularity).Result.skus.printReflected();
@@ -51,13 +50,13 @@ namespace ConsoleSkroutz.gr
             result = sku.RetrieveSKUsReviews(3690169).Result.reviews.printReflected();
 
             ApplyTitle("Product");
-            Product product = new Product(auth.SkroutzRequest, sb);
+            Product product = new Product(skroutzRequest);
 
             result = product.RetrieveSingleProduct(12176638, x => x.Name, x => x.Price).Result.Product;
             result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
             ApplyTitle("Shop");
-            Shop shop = new Shop(auth.SkroutzRequest, sb);
+            Shop shop = new Shop(skroutzRequest);
 
             result = shop.RetrieveSingleShop(452).Result;
             result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
@@ -65,13 +64,21 @@ namespace ConsoleSkroutz.gr
             result = shop.RetrieveSingleShopLocation(452, 2500).Result;
 
             ApplyTitle("Manufacturer");
-            Manufacturer manufacturer = new Manufacturer(auth.SkroutzRequest, sb);
+            Manufacturer manufacturer = new Manufacturer(skroutzRequest);
 
+            //List Manufacturers 
             result = manufacturer.ListManufacturers().Result.manufacturers.printReflected();
+
+            //Retrieve Manufacturer with Manufacturerid: 12907.
             result = manufacturer.RetrieveSingleManufacturer(12907).Result.manufacturer.printReflected();
 
+            //Retrieve Manufacturer Categories with Manufacturerid: 356. Retrieve the first 10 results.
             result = manufacturer.RetrieveManufacturerCategories(356, page: 1, per: 10).Result.categories;
+
+            //Retrieve Manufacturer Categories with Manufacturerid: 356. Order by Manufacturer name.
             result = manufacturer.RetrieveManufacturerCategories(356, OrderByNamePop.name).Result.categories.printReflected();
+
+            //Retrieve Manufacturer Categories with Manufacturerid: 356. Order by Popularity Asceding.
             result = manufacturer.RetrieveManufacturerCategories(356, OrderByNamePop.popularity, OrderDir.asc).Result.categories.printReflected();
 
             result = manufacturer.RetrieveManufacturerSKUs(356).Result.skus.printReflected();
@@ -79,7 +86,7 @@ namespace ConsoleSkroutz.gr
             result = manufacturer.RetrieveManufacturerSKUs(356, OrderByPrcPop.popularity, OrderDir.asc).Result.skus.printReflected();
 
             ApplyTitle("Search");
-            Search search = new Search(auth.SkroutzRequest, sb);
+            Search search = new Search(skroutzRequest);
 
             //Query with less than 2 characters
             result = search.SearchQuery("a").Result;
@@ -112,12 +119,12 @@ namespace ConsoleSkroutz.gr
             result = search.SearchQuery("wrong+iphone").Result.Categories.printReflected();
 
             ApplyTitle("Flag");
-            Flag flag = new Flag(auth.SkroutzRequest, sb);
+            Flag flag = new Flag(skroutzRequest);
 
             result = flag.RetrieveAllFlags().Result.flags.printReflected();
 
             ApplyTitle("Filter Groups");
-            FilterGroup filterGroup = new FilterGroup(auth.SkroutzRequest, sb);
+            FilterGroup filterGroup = new FilterGroup(skroutzRequest);
 
             result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
 

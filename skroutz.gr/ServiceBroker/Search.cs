@@ -13,7 +13,6 @@ namespace skroutz.gr.ServiceBroker
     /// </summary>
     public class Search : Request
     {
-        private readonly StringBuilder _builder;
         private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
@@ -23,20 +22,9 @@ namespace skroutz.gr.ServiceBroker
         public Search(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Category" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public Search(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
-        }
-
+        
         /// <summary>
         /// Performs search on a given string
         /// </summary>
@@ -48,13 +36,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));
             
-            _builder.Clear();
-            _builder.Append($"search?q={searchString}");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"search?q={searchString}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootSearch>(t.Result.ToString()));
@@ -72,13 +58,11 @@ namespace skroutz.gr.ServiceBroker
         {
             if (string.IsNullOrEmpty(searchString)) throw new ArgumentNullException(nameof(searchString));
 
-            _builder.Clear();
-            _builder.Append($"autocomplete?q={searchString}");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"autocomplete?q={searchString}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootSearch>(t.Result.ToString()));

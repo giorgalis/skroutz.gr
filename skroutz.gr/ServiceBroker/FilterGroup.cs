@@ -35,10 +35,6 @@ namespace skroutz.gr.ServiceBroker
     public class FilterGroup : Request
     {
         /// <summary>
-        /// The builder
-        /// </summary>
-        private readonly StringBuilder _builder;
-        /// <summary>
         /// The access token
         /// </summary>
         private readonly SkroutzRequest _skroutzRequest;
@@ -50,18 +46,7 @@ namespace skroutz.gr.ServiceBroker
         public FilterGroup(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
-            _builder = new StringBuilder();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FilterGroup" /> class
-        /// </summary>
-        /// <param name="skroutzRequest">The access token provided by the OAuth2.0 protocol</param>
-        /// <param name="stringBuilder">The string builder to write to.</param>
-        public FilterGroup(SkroutzRequest skroutzRequest, StringBuilder stringBuilder)
-        {
-            _skroutzRequest = skroutzRequest;
-            _builder = stringBuilder;
+            _skroutzRequest.SBuilder = new StringBuilder();
         }
 
         /// <summary>
@@ -80,14 +65,12 @@ namespace skroutz.gr.ServiceBroker
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
             if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
 
-            _builder.Clear();
-            _builder.Append($"categories/{categoryId}/filter_groups?");
-            _builder.Append($"page={page}&per={per}");
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"categories/{categoryId}/filter_groups?");
+            _skroutzRequest.SBuilder.Append($"page={page}&per={per}");
 
             if (sparseFields.Length > 0)
-                _builder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
-
-            _skroutzRequest.Path = _builder.ToString();
+                _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<FilterGroups>(t.Result.ToString()));
