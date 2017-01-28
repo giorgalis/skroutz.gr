@@ -29,7 +29,7 @@ namespace skroutz.gr.ServiceBroker
         /// Performs search on a given string
         /// </summary>
         /// <param name="searchString">The string to search.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootSearch&gt;.</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when <paramref name="searchString" /> is null or empty.</exception>
         public Task<RootSearch> SearchQuery(string searchString, params Expression<Func<Entities.Search, object>>[] sparseFields)
@@ -50,7 +50,7 @@ namespace skroutz.gr.ServiceBroker
         /// Autocompletes the specified search string.
         /// </summary>
         /// <param name="searchString">The search string.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootSearch&gt;.</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when <paramref name="searchString" /> is null or empty.</exception>
         /// <remarks>Note that the results of the autocomplete are to be treated as search suggestions. When the user selects any of them you should perform a search with the selected keyphrase.</remarks>

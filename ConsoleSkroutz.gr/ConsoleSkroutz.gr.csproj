@@ -76,10 +76,6 @@
       <Project>{c651365e-df5f-4fda-a468-5fec7b8562cd}</Project>
       <Name>skroutz.gr</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebApp\WebApp.csproj">
-      <Project>{9ce05902-d253-4f71-be09-fc176aedc6d5}</Project>
-      <Name>WebApp</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,18 +5,39 @@ using System.Text;
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// Enum Method
+    /// Enum HttpMethod
     /// </summary>
-    public enum Method
+    public enum HttpMethod
     {
         /// <summary>
-        /// The get
+        /// Represents an HTTP DELETE protocol method.
+        /// </summary>
+        DELETE,
+
+        /// <summary>
+        /// Represents an HTTP GET protocol method.
         /// </summary>
         GET,
+
         /// <summary>
-        /// The post
+        /// Represents an HTTP HEAD protocol method. The HEAD method is identical to GET except that the server only returns message-headers in the response, without a message-body.
         /// </summary>
-        POST
+        HEAD,
+
+        /// <summary>
+        /// Represents an HTTP POST protocol method that is used to post a new entity as an addition to a URI.
+        /// </summary>
+        POST,
+
+        /// <summary>
+        /// Represents an HTTP PUT protocol method that is used to replace an entity identified by a URI.
+        /// </summary>
+        PUT,
+
+        /// <summary>
+        /// Represents an HTTP TRACE protocol method.
+        /// </summary>
+        TRACE
     }
 
     /// <summary>
@@ -24,6 +45,10 @@ namespace skroutz.gr.ServiceBroker
     /// </summary>
     public class SkroutzRequest
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SkroutzRequest" /> class
+        /// </summary>
+        /// <param name="credentials"></param>
         public SkroutzRequest(Credentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
@@ -35,9 +60,9 @@ namespace skroutz.gr.ServiceBroker
             this.SBuilder = new StringBuilder();
         }
         /// <summary>
-        /// The domain
+        /// The Domain end point
         /// </summary>
-        public string Domain { get; set; } = "https://www.skroutz.gr/";
+        public string DomainEndPoint { get; set; } = "https://www.skroutz.gr/";
         /// <summary>
         /// The API end point
         /// </summary>
@@ -82,7 +107,7 @@ namespace skroutz.gr.ServiceBroker
         /// Gets or sets the method.
         /// </summary>
         /// <value>The method.</value>
-        public Method Method { get; set; } = Method.GET;
+        public HttpMethod Method { get; set; } = HttpMethod.GET;
 
         /// <summary>
         /// Gets or sets the postdata.

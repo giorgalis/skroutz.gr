@@ -22,7 +22,7 @@ namespace skroutz.gr.ServiceBroker
         private long reset;
 
         /// <summary>
-        /// The time at which the current rate limit window resets in UTC epoch seconds.
+        /// The time at which the current rate limit window resets in <see href="https://en.wikipedia.org/wiki/Unix_time">UTC epoch seconds</see>.
         /// </summary>
         /// <value>The UTC epoch seconds.</value>
         public long Reset

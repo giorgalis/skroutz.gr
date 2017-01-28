@@ -39,7 +39,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="per">Results per page.</param>
         /// <returns>Task&lt;Categories&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
-        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories" />
+        /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories"></see>
         public Task<Categories> ListAllCategories(int page = 1, int per = 25)
         {
             if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
@@ -57,7 +57,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single category.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootCategory&gt;</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category" />
@@ -79,7 +79,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve the parent of a category.
         /// </summary>
         /// <param name="categoryId">Unique identifier of the Category</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootCategory&gt;</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category" />
@@ -117,7 +117,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Categories&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category" />
@@ -144,7 +144,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Specifications&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
@@ -171,7 +171,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Groups&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
@@ -201,7 +201,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Manufacturers&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers" />
@@ -235,7 +235,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">Unique identifier of the Category</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Favorites&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-favorites" />

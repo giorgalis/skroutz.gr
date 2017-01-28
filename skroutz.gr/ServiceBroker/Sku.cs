@@ -39,10 +39,10 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="metaFilters">The meta filters.</param>
         /// <param name="manufacturerIds">The ids of the manufacturers of the SKUs</param>
         /// <param name="filterIds">The ids of the filters to be applied on the SKUs</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;SKUs&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> is less than or equal to 0.</exception>
-        /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category" />
+        /// <see href="https://developer.skroutz.gr/api/v3/sku/#list-skus-of-specific-category"></see>
         /// <remarks>The default <c>order_by value</c> may differ across categories but in most cases it's <c>pricevat</c>.</remarks>
         public Task<SKUs> ListSKUsOfSpecificCategory(int categoryId, OrderByPrcPopRating orderBy = OrderByPrcPopRating.pricevat, OrderDir orderDir = OrderDir.asc, string searchKeyword = null, MetaFilters? metaFilters = null, IList<int> manufacturerIds = null, IList<int> filterIds = null, params Expression<Func<SKU, object>>[] sparseFields)
         {
@@ -78,7 +78,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single SKU.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootSKU&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-single-sku" />
@@ -100,7 +100,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve similar SKUs.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;SKUs&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-similar-skus" />
@@ -122,7 +122,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve an SKU's products.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Products&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0..</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-products" />
@@ -144,7 +144,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve an SKU's reviews.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Reviews&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-reviews" />
@@ -181,7 +181,7 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"skus/{skuId}/reviews/{reviewId}votes?vote[helpful]={helpful.ToString().ToLower()}");
 
-            _skroutzRequest.Method = Method.POST;
+            _skroutzRequest.Method = HttpMethod.POST;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootSKUReviewVote>(t.Result.ToString()));
@@ -208,7 +208,7 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"skus/{skuId}/reviews/{reviewId}flags?flag[reason]={flagReason}");
 
-            _skroutzRequest.Method = Method.POST;
+            _skroutzRequest.Method = HttpMethod.POST;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUReviewFlag>(t.Result.ToString()));
@@ -218,7 +218,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve SKUs Specifications.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Specifications&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-an-skus-specifications" />
@@ -241,7 +241,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve SKUs Price History.
         /// </summary>
         /// <param name="skuId">Unique identifier of the SKU</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;PriceHistory&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/sku/#retrieve-a-skus-price-history" />

@@ -33,7 +33,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve single shop
         /// </summary>
         /// <param name="shopId">The shop identifier.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootShop&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-single-shop" />
@@ -55,7 +55,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieves the shop review.
         /// </summary>
         /// <param name="shopId">The shop identifier.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;ShopReviews&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-shops-reviews" />
@@ -77,7 +77,7 @@ namespace skroutz.gr.ServiceBroker
         /// Lists the shop locations.
         /// </summary>
         /// <param name="shopId">The shop identifier.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;ShopLocations&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#list-shop-locations" />
@@ -101,7 +101,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="shopId">The shop identifier.</param>
         /// <param name="locationId">The location identifier.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Location&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> or <paramref name="locationId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-single-shop-location" />
@@ -124,7 +124,7 @@ namespace skroutz.gr.ServiceBroker
         /// Searches for shops.
         /// </summary>
         /// <param name="searchString">The search string.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Shops&gt;.</returns>
         /// <exception cref="ArgumentNullException">Thrown when <paramref name="searchString" /> is null or empty</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#search-for-shops" />

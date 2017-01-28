@@ -53,7 +53,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single manufacturer
         /// </summary>
         /// <param name="manufacturerId">Unique Identifier of the manufacturer</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootManufacturer&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="manufacturerId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-single-manufacturer" />
@@ -80,7 +80,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Categories&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="manufacturerId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories" />
@@ -116,7 +116,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="orderDir">Order by ascending or descending</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;SKUs&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="manufacturerId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// Provides methods for grouping a collection of filters.
+    /// Provides methods for grouping a collection of filters such as Price, Keyword and other.
     /// <list type="bullet">
     /// <item>
     /// <description>Price</description>
@@ -55,7 +55,7 @@ namespace skroutz.gr.ServiceBroker
         /// <param name="categoryId">The category identifier.</param>
         /// <param name="page">The page.</param>
         /// <param name="per">Results per page.</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;FilterGroups&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="categoryId" /> or <paramref name="page" /> or <paramref name="per" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups" />

@@ -1,19 +1,5 @@
-﻿// ***********************************************************************
-// Assembly         : skroutz.gr
-// Author           : kakal
-// Created          : 01-15-2017
-//
-// Last Modified By : kakal
-// Last Modified On : 01-21-2017
-// ***********************************************************************
-// <copyright file="Product.cs" company="">
-//     Copyright ©  2017
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using skroutz.gr.Entities;
-using skroutz.gr.ServiceBroker;
 using skroutz.gr.Shared;
 using System;
 using System.Linq.Expressions;
@@ -47,7 +33,7 @@ namespace skroutz.gr.ServiceBroker
         /// Retrieve a single product
         /// </summary>
         /// <param name="productId">Unique Identifier of the product</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;RootProduct&gt;.</returns>
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="productId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#retrieve-a-single-product" />
@@ -70,7 +56,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="shopId">Unique identifier of the shop</param>
         /// <param name="shopUid">Search with the product identifier as assigned by the shop</param>
-        /// <param name="sparseFields">The sparse fields.</param>
+        /// <param name="sparseFields">Sparse fields are a way for clients to request specific json fields from the server response.</param>
         /// <returns>Task&lt;Products&gt;.</returns>
         /// <exception cref="System.ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> or <paramref name="shopUid" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/product/#search-for-products" />
