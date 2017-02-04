@@ -37,6 +37,7 @@ namespace skroutz.gr.Authorization
         /// Initializes a new instance of the <see cref="Authorization" /> class.
         /// </summary>
         /// <param name="credentials">The credentials.</param>
+        /// <param name="skroutzRequest">The SkroutzRequest</param>
         /// <exception cref="ArgumentNullException">Thrown when <see cref="Credentials.ClientId"/> or <see cref="Credentials.ClientSecret"/> are null or empty.</exception>
         public Authorization(SkroutzRequest skroutzRequest, Credentials credentials)
         {
