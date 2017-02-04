@@ -53,7 +53,8 @@ namespace ConsoleSkroutz.gr
                 //List Category's Manufacturers, of Category with Id: 25 and order results by Popularity Asceding.
                 result = category.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result.manufacturers.printReflected();
 
-                //List Category's Favorites. (Important! User token is required).
+                //List Category's Favorites. 
+                //[Important] User token is required or else exception is thrown.
                 result = category.ListCategorysFavorites(40).Result;
 
                 #endregion
@@ -71,25 +72,25 @@ namespace ConsoleSkroutz.gr
                 //List SKU's, of Category with Id: 40 and order results by Popularity Descending.
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.rating, OrderDir.desc).Result.skus.printReflected();
 
-                //
+                //List SKU's, of Category with Id: 40 and keyword equal to iphone.
                 result = sku.ListSKUsOfSpecificCategory(40, searchKeyword: "iphone").Result.skus.printReflected();
 
-                //
+                //List SKU's, of Category with Id: 40 and manufacturerIds 28, 2.
                 result = sku.ListSKUsOfSpecificCategory(40, manufacturerIds: new int[] { 28, 2 }).Result.skus.printReflected();
 
-                //
+                //List SKU's, of Category with Id: 40 and filter Ids 355559, 6282.
                 result = sku.ListSKUsOfSpecificCategory(40, filterIds: new int[] { 355559, 6282 }).Result.skus.printReflected();
 
-                //
+                //Retrieve SKU with SKUid: 3690169.
                 result = sku.RetrieveSingleSKU(3690169).Result.sku.printReflected();
 
-                //
+                //Retrieve similar SKU's of SKUid: 3034682.
                 result = sku.RetrieveSimilarSKUs(3034682).Result.skus.printReflected();
 
-                //
+                //Retrieve SKU's products of SKUid: 3783654.
                 result = sku.RetrieveSKUsProducts(3783654).Result.products.printReflected();
 
-                //
+                //Retrieve SKU's Reviews of SKUid: 3690169.
                 result = sku.RetrieveSKUsReviews(3690169).Result.reviews.printReflected();
 
                 #endregion
@@ -98,10 +99,10 @@ namespace ConsoleSkroutz.gr
 
                 Product product = new Product(skroutzRequest);
 
-                //
-                result = product.RetrieveSingleProduct(12176638, x => x.Name, x => x.Price).Result.Product;
+                //Retrieve Product with ProductId: 12176638.
+                result = product.RetrieveSingleProduct(12176638).Result.Product;
 
-                //
+                //Search for Products with ShopId: 670 and ShopUniqueId : 220004386.
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
                 #endregion
@@ -110,16 +111,16 @@ namespace ConsoleSkroutz.gr
 
                 Shop shop = new Shop(skroutzRequest);
 
-                //
+                //Retrieve Shop with ShopId: 452.
                 result = shop.RetrieveSingleShop(452).Result;
 
-                //
+                //Retrieve Shop Reviews of ShopId: 452.
                 result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
 
-                //
+                //List Shop Locations of ShopId: 452.
                 result = shop.ListShopLocations(452).Result.Locations.printReflected();
 
-                //
+                //Retrieve Shop Location of ShopId: 452 and LocationId: 2500.
                 result = shop.RetrieveSingleShopLocation(452, 2500).Result;
 
                 #endregion
@@ -143,13 +144,13 @@ namespace ConsoleSkroutz.gr
                 //Retrieve Manufacturer Categories with ManufacturerId: 356 and order results by Popularity Asceding.
                 result = manufacturer.RetrieveManufacturerCategories(356, OrderByNamePop.popularity, OrderDir.asc).Result.categories.printReflected();
 
-                //
+                //Retrieve Manufacturer SKU's with ManufacturerId: 356.
                 result = manufacturer.RetrieveManufacturerSKUs(356).Result.skus.printReflected();
 
-                //
+                //Retrieve Manufacturer SKU's with ManufacturerId: 356 and order results by Price.
                 result = manufacturer.RetrieveManufacturerSKUs(356, OrderByPrcPop.price).Result.skus.printReflected();
 
-                //
+                //Retrieve Manufacturer SKU's with ManufacturerId: 356 and order results by Popularity Asceding.
                 result = manufacturer.RetrieveManufacturerSKUs(356, OrderByPrcPop.popularity, OrderDir.asc).Result.skus.printReflected();
 
                 #endregion
@@ -194,7 +195,7 @@ namespace ConsoleSkroutz.gr
 
                 Flag flag = new Flag(skroutzRequest);
 
-                //
+                //Retrieve All Flags.
                 result = flag.RetrieveAllFlags().Result.flags.printReflected();
 
                 #endregion
@@ -203,7 +204,7 @@ namespace ConsoleSkroutz.gr
 
                 FilterGroup filterGroup = new FilterGroup(skroutzRequest);
 
-                //
+                //List Filter Groups of Category with CategoryId: 40.
                 result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
 
                 #endregion
