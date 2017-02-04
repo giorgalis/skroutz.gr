@@ -38,6 +38,7 @@
     <Compile Include="Authorization\Authorization.cs" />
     <Compile Include="Authorization\AuthResponse.cs" />
     <Compile Include="Entities\Search.cs" />
+    <Compile Include="Exceptions\BadRequest.cs" />
     <Compile Include="Exceptions\SkroutzError.cs" />
     <Compile Include="ServiceBroker\Category.cs" />
     <Compile Include="Entities\PriceHistory.cs" />

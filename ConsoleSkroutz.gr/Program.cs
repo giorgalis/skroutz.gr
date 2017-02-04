@@ -55,7 +55,7 @@ namespace ConsoleSkroutz.gr
 
                 //List Category's Favorites, of Category with Id: 40. 
                 //[Important] User token is required or else exception is thrown.
-                result = category.ListCategorysFavorites(40).Result;
+                //result = category.ListCategorysFavorites(40).Result;
 
                 #endregion
 
@@ -217,6 +217,7 @@ namespace ConsoleSkroutz.gr
                     if (skroutzException != null)
                     {
                         Console.WriteLine($"Status code: {skroutzException.StatusCode}");
+
                         foreach (Error error in skroutzException.SkroutzError.Errors)
                         {
                             Console.WriteLine($"Error code: {error.Code}");
@@ -226,6 +227,7 @@ namespace ConsoleSkroutz.gr
 
                         }
                         return true;
+
                     }
                     return false;
                 });

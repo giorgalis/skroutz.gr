@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Exceptions;
-using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ namespace skroutz.gr.ServiceBroker
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(SkroutzRequest.DomainEndPoint, path));
             req.Method = "POST";
+
             return GetResponse(req);
         }
 
@@ -52,6 +53,8 @@ namespace skroutz.gr.ServiceBroker
             }
             catch (WebException ex)
             {
+                SkroutzError skroutzError = new SkroutzError();
+
                 using (HttpWebResponse response = (HttpWebResponse)ex.Response)
                 {
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
@@ -59,11 +62,20 @@ namespace skroutz.gr.ServiceBroker
 
                     code = response.StatusCode;
 
-                    SkroutzError error = null;
-                    if (!string.IsNullOrEmpty(content))
-                        error = JsonConvert.DeserializeObject<SkroutzError>(content);
+                    switch (code)
+                    {
+                        case HttpStatusCode.BadRequest:
+                            BadRequest badrequest = JsonConvert.DeserializeObject<BadRequest>(content);
+                            skroutzError.Errors = new List<Error>();
+                            skroutzError.Errors.Add(new Error { Code = badrequest.Error, Messages = new List<string> { badrequest.ErrorDescription } });
+                            break;
+                        default:
+                            skroutzError = JsonConvert.DeserializeObject<SkroutzError>(content);
+                            break;
+                    }
 
-                    throw new SkroutzException(ex, code, content, error);
+                    throw new SkroutzException(ex, code, content, skroutzError);
+
                 }
             }
 
