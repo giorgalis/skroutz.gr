@@ -4,18 +4,6 @@ using System.Collections.Generic;
 namespace skroutz.gr.Exceptions
 {
     /// <summary>
-    /// Class RootError.
-    /// </summary>
-    public class SkroutzError
-    {
-        /// <summary>
-        /// Gets or sets the Errors.
-        /// </summary>
-        [JsonProperty("errors")]
-        public List<Error> Errors { get; set; }
-    }
-
-    /// <summary>
     /// Class Error.
     /// </summary>
     public class Error

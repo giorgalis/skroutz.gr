@@ -13,9 +13,9 @@ namespace skroutz.gr.ServiceBroker
     public class Request : RateLimit
     {
         
-        internal Task<string> PostWebResultAsync(string value)
+        internal Task<string> PostWebResultAsync(string path)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(SkroutzRequest.DomainEndPoint, value));
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(SkroutzRequest.DomainEndPoint, path));
             req.Method = "POST";
             return GetResponse(req);
         }

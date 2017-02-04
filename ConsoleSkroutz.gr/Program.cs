@@ -53,7 +53,7 @@ namespace ConsoleSkroutz.gr
                 //List Category's Manufacturers, of Category with Id: 25 and order results by Popularity Asceding.
                 result = category.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result.manufacturers.printReflected();
 
-                //List Category's Favorites. 
+                //List Category's Favorites, of Category with Id: 40. 
                 //[Important] User token is required or else exception is thrown.
                 result = category.ListCategorysFavorites(40).Result;
 
