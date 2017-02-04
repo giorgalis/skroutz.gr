@@ -11,12 +11,12 @@ namespace ConsoleSkroutz.gr
     {
         static void Main(string[] args)
         {
-            SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
-            
+
             Console.OutputEncoding = Encoding.Unicode;
 
             try
             {
+                SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
                 dynamic result = null;
 
                 #region CATEGORY
@@ -93,14 +93,14 @@ namespace ConsoleSkroutz.gr
                 result = sku.RetrieveSKUsReviews(3690169).Result.reviews.printReflected();
 
                 #endregion
-                
+
                 #region PRODUCT
 
                 Product product = new Product(skroutzRequest);
 
                 //
                 result = product.RetrieveSingleProduct(12176638, x => x.Name, x => x.Price).Result.Product;
-                
+
                 //
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
 
@@ -205,7 +205,7 @@ namespace ConsoleSkroutz.gr
 
                 //
                 result = filterGroup.ListFilterGroups(40).Result.filter_groups.printReflected();
-    
+
                 #endregion
             }
             catch (AggregateException aggregateException)
@@ -228,6 +228,10 @@ namespace ConsoleSkroutz.gr
                     }
                     return false;
                 });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             Console.ReadLine();
