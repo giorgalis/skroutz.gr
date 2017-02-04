@@ -46,20 +46,6 @@ namespace skroutz.gr.ServiceBroker
     public class SkroutzRequest
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SkroutzRequest" /> class
-        /// </summary>
-        /// <param name="credentials"></param>
-        public SkroutzRequest(Credentials credentials)
-        {
-            if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
-            if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
-
-            Authorization.Authorization authorization = new Authorization.Authorization(credentials);
-            this.AuthResponse = authorization.AuthResponse;
-
-            this.SBuilder = new StringBuilder();
-        }
-        /// <summary>
         /// The Domain end point
         /// </summary>
         public static readonly string DomainEndPoint = "https://www.skroutz.gr/";
@@ -110,7 +96,20 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <value>The postdata.</value>
         public string Postdata { get; set; }
-    }
 
- 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SkroutzRequest" /> class
+        /// </summary>
+        /// <param name="credentials"></param>
+        public SkroutzRequest(Credentials credentials)
+        {
+            if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
+            if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
+
+            Authorization.Authorization authorization = new Authorization.Authorization(credentials);
+            this.AuthResponse = authorization.AuthResponse;
+
+            this.SBuilder = new StringBuilder();
+        }
+    }
 }
