@@ -102,6 +102,7 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <param name="credentials">The Authorization Credentials</param>
         /// <param name="apiVersion">The API Version</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="credentials.ClientId" /> or <paramref name="credentials.ClientSecret" /> are null or empty.</exception>
         public SkroutzRequest(Credentials credentials, string apiVersion = null)
         {
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
