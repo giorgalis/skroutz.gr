@@ -13,10 +13,10 @@ namespace skroutz.gr.ServiceBroker
     public class Request : RateLimit
     {
         
-        internal Task<string> PostWebResultAsync(string path)
+        internal Task<string> PostWebResultAsync(SkroutzRequest skroutzRequest)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(SkroutzRequest.DomainEndPoint, path));
-            req.Method = "POST";
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(skroutzRequest.DomainEndPoint, skroutzRequest.Postdata));
+            req.Method = skroutzRequest.Method.ToString();
 
             return GetResponse(req);
         }
@@ -65,9 +65,9 @@ namespace skroutz.gr.ServiceBroker
                     switch (code)
                     {
                         case HttpStatusCode.BadRequest:
-                            BadRequest badrequest = JsonConvert.DeserializeObject<BadRequest>(content);
+                            BadRequest BadRequest = JsonConvert.DeserializeObject<BadRequest>(content);
                             skroutzError.Errors = new List<Error>();
-                            skroutzError.Errors.Add(new Error { Code = badrequest.Error, Messages = new List<string> { badrequest.ErrorDescription } });
+                            skroutzError.Errors.Add(new Error { Code = BadRequest.Error, Messages = new List<string> { BadRequest.ErrorDescription } });
                             break;
                         default:
                             skroutzError = JsonConvert.DeserializeObject<SkroutzError>(content);

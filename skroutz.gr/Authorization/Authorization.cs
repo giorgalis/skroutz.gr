@@ -38,14 +38,15 @@ namespace skroutz.gr.Authorization
         /// </summary>
         /// <param name="credentials">The credentials.</param>
         /// <exception cref="ArgumentNullException">Thrown when <see cref="Credentials.ClientId"/> or <see cref="Credentials.ClientSecret"/> are null or empty.</exception>
-        public Authorization(Credentials credentials)
+        public Authorization(SkroutzRequest skroutzRequest, Credentials credentials)
         {
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
             if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
 
-            string request = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
+            skroutzRequest.Postdata = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
+            skroutzRequest.Method = HttpMethod.POST;
 
-            this.AuthResponse = PostWebResultAsync(request).ContinueWith((t) =>
+            this.AuthResponse = PostWebResultAsync(skroutzRequest).ContinueWith((t) =>
                  JsonConvert.DeserializeObject<AuthResponse>(t.Result.ToString())).Result;
         }
     }

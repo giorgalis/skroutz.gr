@@ -48,7 +48,7 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// The Domain end point
         /// </summary>
-        public static readonly string DomainEndPoint = "https://www.skroutz.gr/";
+        public readonly string DomainEndPoint = "https://www.skroutz.gr/";
 
         /// <summary>
         /// The API end point
@@ -101,15 +101,21 @@ namespace skroutz.gr.ServiceBroker
         /// Initializes a new instance of the <see cref="SkroutzRequest" /> class
         /// </summary>
         /// <param name="credentials"></param>
-        public SkroutzRequest(Credentials credentials)
+        /// <param name="apiVersion"></param>
+        public SkroutzRequest(Credentials credentials, string apiVersion = null)
         {
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
             if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
 
-            Authorization.Authorization authorization = new Authorization.Authorization(credentials);
+            if (!string.IsNullOrEmpty(apiVersion)) this.ApiVersion = apiVersion;
+
+            Authorization.Authorization authorization = new Authorization.Authorization(this, credentials);
             this.AuthResponse = authorization.AuthResponse;
 
             this.SBuilder = new StringBuilder();
+
+            this.Method = HttpMethod.GET;
+            this.Postdata = "";
         }
     }
 }
