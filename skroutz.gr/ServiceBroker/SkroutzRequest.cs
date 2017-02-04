@@ -88,13 +88,13 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Gets or sets the method.
         /// </summary>
-        /// <value>The method.</value>
+        /// <value>The HttpMethod.</value>
         public HttpMethod Method { get; set; } = HttpMethod.GET;
 
         /// <summary>
         /// Gets or sets the postdata.
         /// </summary>
-        /// <value>The postdata.</value>
+        /// <value>The data to post.</value>
         public string PostData { get; set; }
 
         /// <summary>
