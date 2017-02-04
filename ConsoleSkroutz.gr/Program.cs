@@ -69,7 +69,7 @@ namespace ConsoleSkroutz.gr
                 //List SKU's, of Category with Id: 40 and order results by Popularity.
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.popularity).Result.skus.printReflected();
 
-                //List SKU's, of Category with Id: 40 and order results by Popularity Descending.
+                //List SKU's, of Category with Id: 40 and order results by Rating Descending.
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.rating, OrderDir.desc).Result.skus.printReflected();
 
                 //List SKU's, of Category with Id: 40 and keyword equal to iphone.
