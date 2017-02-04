@@ -7,7 +7,7 @@ namespace skroutz.gr.ServiceBroker
     /// Provides info about Rate Limits.
     /// </summary>
     /// <remarks>You can make up to a certain amount of requests for each OAuth token associated with your application.</remarks>
-    public class RateLimiting
+    public class RateLimit
     {
         /// <summary>
         /// The maximum number of requests that the consumer is permitted to make per minute.
@@ -34,7 +34,6 @@ namespace skroutz.gr.ServiceBroker
                 ResetInDateTime = value.UnixTimeToDateTime();
             }
         }
-
 
         /// <summary>
         /// Gets or sets the reset in UTC date time.

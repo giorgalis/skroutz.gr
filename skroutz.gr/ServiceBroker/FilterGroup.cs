@@ -3,7 +3,6 @@ using skroutz.gr.Entities;
 using skroutz.gr.Shared;
 using System;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace skroutz.gr.ServiceBroker

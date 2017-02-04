@@ -25,7 +25,7 @@ namespace skroutz.gr.Exceptions
         /// Gets the error.
         /// </summary>
         /// <value>The error.</value>
-        public Error Error { get; private set; } = null;
+        public SkroutzError SkroutzError { get; private set; } = null;
         /// <summary>
         /// Initializes a new instance of the <see cref="SkroutzException"/> class.
         /// </summary>
@@ -59,11 +59,11 @@ namespace skroutz.gr.Exceptions
         /// <param name="webException">The web exception.</param>
         /// <param name="statusCode">The status code.</param>
         /// <param name="message">The message that describes the error.</param>
-        public SkroutzException(WebException webException, HttpStatusCode statusCode, string message, Error error) : base(message)
+        public SkroutzException(WebException webException, HttpStatusCode statusCode, string message, SkroutzError error) : base(message, webException)
         {
             this.webException = webException;
             this.StatusCode = statusCode;
-            this.Error = error;
+            this.SkroutzError = error;
         }
     }
 }

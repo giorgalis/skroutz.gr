@@ -62,16 +62,18 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// The Domain end point
         /// </summary>
-        public string DomainEndPoint { get; set; } = "https://www.skroutz.gr/";
+        public static readonly string DomainEndPoint = "https://www.skroutz.gr/";
+
         /// <summary>
         /// The API end point
         /// </summary>
-        public string ApiEndPoint { get; set; } = "https://api.skroutz.gr/";
+        public readonly string ApiEndPoint = "https://api.skroutz.gr/";
+
         /// <summary>
         /// Gets or sets the API version.
         /// </summary>
         /// <value>The API version.</value>
-        public string ApiVersion { get; set; } = "3.0";
+        public string ApiVersion { get; set; } = "3.1";
 
         /// <summary>
         /// Gets or sets the StringBuilder.
@@ -84,12 +86,6 @@ namespace skroutz.gr.ServiceBroker
         /// </summary>
         /// <value>The authentication response.</value>
         public AuthResponse AuthResponse { get; set; }
-
-        /// <summary>
-        /// Gets or sets the RateLimiting
-        /// </summary>
-        /// <value>The RateLimiting.</value>
-        public RateLimiting RateLimiting { get; set; }
 
         private string _Path;
 

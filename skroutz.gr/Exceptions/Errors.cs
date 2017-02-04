@@ -1,7 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace skroutz.gr.Exceptions
 {
+    /// <summary>
+    /// Class RootError.
+    /// </summary>
+    public class SkroutzError
+    {
+        /// <summary>
+        /// Gets or sets the Errors.
+        /// </summary>
+        [JsonProperty("errors")]
+        public List<Error> Errors { get; set; }
+    }
 
     /// <summary>
     /// Class Error.
@@ -9,27 +21,15 @@ namespace skroutz.gr.Exceptions
     public class Error
     {
         /// <summary>
-        /// Gets or sets the code.
+        /// Gets or sets the Code.
         /// </summary>
-        /// <value>The code.</value>
-        public string error { get; set; }
+        [JsonProperty("code")]
+        public string Code { get; set; }
+
         /// <summary>
-        /// Gets or sets the messages.
+        /// Gets or sets the Messages.
         /// </summary>
-        /// <value>The messages.</value>
-        public string error_description { get; set; }
+        [JsonProperty("messages")]
+        public List<string> Messages { get; set; }
     }
-
-    /// <summary>
-    /// Class Errors.
-    /// </summary>
-    //public class Errors
-    //{
-    //    /// <summary>
-    //    /// Gets or sets the errors.
-    //    /// </summary>
-    //    /// <value>The errors.</value>
-    //    public List<Error> errors { get; set; }
-    //}
-
 }

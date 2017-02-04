@@ -46,7 +46,7 @@
     <Compile Include="ServiceBroker\SkroutzRequest.cs" />
     <Compile Include="Shared\ExtentionMethods.cs" />
     <Compile Include="Shared\NameReader.cs" />
-    <Compile Include="ServiceBroker\RateLimitng.cs" />
+    <Compile Include="ServiceBroker\RateLimit.cs" />
     <Compile Include="Shared\Enumerations.cs" />
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\Groups.cs" />

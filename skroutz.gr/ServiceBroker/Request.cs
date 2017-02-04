@@ -1,38 +1,33 @@
 ﻿using Newtonsoft.Json;
 using skroutz.gr.Exceptions;
+using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
 namespace skroutz.gr.ServiceBroker
 {
-
     /// <summary>
     /// Class Request.
     /// </summary>
-    public class Request //: RateLimiting
+    public class Request : RateLimit
     {
-        private const string Domain = "https://www.skroutz.gr/";
         
-        /// <summary>
-        /// Gets or sets the API version.
-        /// </summary>
-        /// <value>The API version.</value>
-        internal async Task<string> PostWebResultAsync(string value)
+        internal Task<string> PostWebResultAsync(string value)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(Domain, value));
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(SkroutzRequest.DomainEndPoint, value));
             req.Method = "POST";
-            return await GetResponse(req);
+            return GetResponse(req);
         }
 
-        internal async Task<string> GetWebResultAsync(SkroutzRequest skroutzRequest)
+        internal Task<string> GetWebResultAsync(SkroutzRequest skroutzRequest)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(skroutzRequest.ApiEndPoint, skroutzRequest.Path));
             req.Method = skroutzRequest.Method.ToString();
             req.Accept = $"application/vnd.skroutz+json; version={skroutzRequest.ApiVersion}";
             req.Headers["Authorization"] = $"{skroutzRequest.AuthResponse.TokenType} {skroutzRequest.AuthResponse.AccessToken}";
-           
-            return await GetResponse(req);
+
+            return GetResponse(req);
         }
 
         internal async Task<string> GetResponse(HttpWebRequest req)
@@ -44,13 +39,10 @@ namespace skroutz.gr.ServiceBroker
             {
                 using (HttpWebResponse response = (HttpWebResponse)await req.GetResponseAsync())
                 {
-                    if (req.Method == "GET")
-                    {
-                        int result = 0;
-                        //if (int.TryParse(response.Headers["X-RateLimit-Limit"], out result)) Limit = result;
-                        //if (int.TryParse(response.Headers["X-RateLimit-Remaining"], out result)) Remaining = result;
-                        //if (int.TryParse(response.Headers["X-RateLimit-Reset"], out result)) Reset = result;
-                    }
+                    int result = 0;
+                    if (int.TryParse(response.Headers["X-RateLimit-Limit"], out result)) base.Limit = result;
+                    if (int.TryParse(response.Headers["X-RateLimit-Remaining"], out result)) base.Remaining = result;
+                    if (int.TryParse(response.Headers["X-RateLimit-Reset"], out result)) base.Reset = result;
 
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                         content = await sr.ReadToEndAsync();
@@ -65,12 +57,11 @@ namespace skroutz.gr.ServiceBroker
                     using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                         content = sr.ReadToEnd();
 
-                  
                     code = response.StatusCode;
 
-                    Error error = null;
-                    if(!string.IsNullOrEmpty(content))
-                        error = JsonConvert.DeserializeObject<Error>(content);
+                    SkroutzError error = null;
+                    if (!string.IsNullOrEmpty(content))
+                        error = JsonConvert.DeserializeObject<SkroutzError>(content);
 
                     throw new SkroutzException(ex, code, content, error);
                 }
