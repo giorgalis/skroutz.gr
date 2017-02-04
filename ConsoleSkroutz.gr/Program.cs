@@ -17,6 +17,7 @@ namespace ConsoleSkroutz.gr
             try
             {
                 SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
+
                 dynamic result = null;
 
                 #region CATEGORY

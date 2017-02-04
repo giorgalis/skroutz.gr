@@ -100,8 +100,8 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Initializes a new instance of the <see cref="SkroutzRequest" /> class
         /// </summary>
-        /// <param name="credentials"></param>
-        /// <param name="apiVersion"></param>
+        /// <param name="credentials">The Authorization Credentials</param>
+        /// <param name="apiVersion">The API Version</param>
         public SkroutzRequest(Credentials credentials, string apiVersion = null)
         {
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
