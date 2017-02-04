@@ -15,7 +15,7 @@ namespace skroutz.gr.ServiceBroker
         
         internal Task<string> PostWebResultAsync(SkroutzRequest skroutzRequest)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(skroutzRequest.DomainEndPoint, skroutzRequest.Postdata));
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(Path.Combine(skroutzRequest.DomainEndPoint, skroutzRequest.PostData));
             req.Method = skroutzRequest.Method.ToString();
 
             return GetResponse(req);

@@ -95,7 +95,7 @@ namespace skroutz.gr.ServiceBroker
         /// Gets or sets the postdata.
         /// </summary>
         /// <value>The postdata.</value>
-        public string Postdata { get; set; }
+        public string PostData { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SkroutzRequest" /> class
@@ -113,9 +113,8 @@ namespace skroutz.gr.ServiceBroker
             this.AuthResponse = authorization.AuthResponse;
 
             this.SBuilder = new StringBuilder();
-
             this.Method = HttpMethod.GET;
-            this.Postdata = "";
+            this.PostData = "";
         }
     }
 }

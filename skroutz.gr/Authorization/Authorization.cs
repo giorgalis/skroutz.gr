@@ -43,9 +43,9 @@ namespace skroutz.gr.Authorization
             if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
             if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
 
-            skroutzRequest.Postdata = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
             skroutzRequest.Method = HttpMethod.POST;
-
+            skroutzRequest.PostData = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
+            
             this.AuthResponse = PostWebResultAsync(skroutzRequest).ContinueWith((t) =>
                  JsonConvert.DeserializeObject<AuthResponse>(t.Result.ToString())).Result;
         }
