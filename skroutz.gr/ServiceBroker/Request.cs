@@ -74,7 +74,7 @@ namespace skroutz.gr.ServiceBroker
                             break;
                     }
 
-                    throw new SkroutzException(ex, code, content, skroutzError);
+                    throw new SkroutzException(content, ex, code, skroutzError);
 
                 }
             }

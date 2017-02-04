@@ -61,7 +61,7 @@ namespace skroutz.gr.Exceptions
         /// <param name="statusCode">The status code.</param>
         /// <param name="message">The message that describes the error.</param>
         /// <param name="error">The SkroutzError</param>
-        public SkroutzException(WebException webException, HttpStatusCode statusCode, string message, SkroutzError error) : base(message, webException)
+        public SkroutzException(string message, WebException webException, HttpStatusCode statusCode, SkroutzError error) : base(message, webException)
         {
             this.WebException = webException;
             this.StatusCode = statusCode;
