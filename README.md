@@ -3,8 +3,9 @@
             try
             {
                 SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
-                dynamic result = null;
 
+                dynamic result = null;
+                
                 #region CATEGORY
 
                 Category category = new Category(skroutzRequest);
@@ -39,9 +40,9 @@
                 //List Category's Manufacturers, of Category with Id: 25 and order results by Popularity Asceding.
                 result = category.ListCategorysManufactures(25, OrderByNamePop.popularity, OrderDir.asc).Result.manufacturers.printReflected();
 
-                //List Category's Favorites. 
+                //List Category's Favorites, of Category with Id: 40. 
                 //[Important] User token is required or else exception is thrown.
-                result = category.ListCategorysFavorites(40).Result;
+                //result = category.ListCategorysFavorites(40).Result;
 
                 #endregion
 
@@ -55,7 +56,7 @@
                 //List SKU's, of Category with Id: 40 and order results by Popularity.
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.popularity).Result.skus.printReflected();
 
-                //List SKU's, of Category with Id: 40 and order results by Popularity Descending.
+                //List SKU's, of Category with Id: 40 and order results by Rating Descending.
                 result = sku.ListSKUsOfSpecificCategory(40, OrderByPrcPopRating.rating, OrderDir.desc).Result.skus.printReflected();
 
                 //List SKU's, of Category with Id: 40 and keyword equal to iphone.
@@ -86,7 +87,7 @@
                 Product product = new Product(skroutzRequest);
 
                 //Retrieve Product with ProductId: 12176638.
-                result = product.RetrieveSingleProduct(12176638).Result.Product;
+                result = product.RetrieveSingleProduct(12176638).Result.Product.printReflected();
 
                 //Search for Products with ShopId: 670 and ShopUniqueId : 220004386.
                 result = product.SearchForProducts(670, "220004386").Result.products.printReflected();
@@ -98,7 +99,13 @@
                 Shop shop = new Shop(skroutzRequest);
 
                 //Retrieve Shop with ShopId: 452.
-                result = shop.RetrieveSingleShop(452).Result;
+                var singleShop = shop.RetrieveSingleShop(452).Result.shop;
+
+                //Print additional info.
+                singleShop.printReflected();
+                singleShop.PaymentMethods.printReflected();
+                singleShop.Shipping.printReflected();
+                singleShop.ExtraInfo.printReflected();
 
                 //Retrieve Shop Reviews of ShopId: 452.
                 result = shop.RetrieveShopReview(452).Result.Reviews.printReflected();
@@ -107,7 +114,7 @@
                 result = shop.ListShopLocations(452).Result.Locations.printReflected();
 
                 //Retrieve Shop Location of ShopId: 452 and LocationId: 2500.
-                result = shop.RetrieveSingleShopLocation(452, 2500).Result;
+                result = shop.RetrieveSingleShopLocation(452, 2500).Result.Locations.printReflected();
 
                 #endregion
 
@@ -122,7 +129,7 @@
                 result = manufacturer.RetrieveSingleManufacturer(12907).Result.Manufacturer.printReflected();
 
                 //Retrieve Manufacturer Categories with ManufacturerId: 356. Retrieve the first 10 results.
-                result = manufacturer.RetrieveManufacturerCategories(356, page: 1, per: 10).Result.categories;
+                result = manufacturer.RetrieveManufacturerCategories(356, page: 1, per: 10).Result.categories.printReflected();
 
                 //Retrieve Manufacturer Categories with ManufacturerId: 356 and order results by Manufacturer name.
                 result = manufacturer.RetrieveManufacturerCategories(356, OrderByNamePop.name).Result.categories.printReflected();
@@ -146,11 +153,12 @@
                 Search search = new Search(skroutzRequest);
 
                 //Query with less than 2 characters
+                //[Important] Exception is thrown if query is less than 2 characters.
                 result = search.SearchQuery("a").Result;
 
                 //Query that doesn't match anything
-                result = search.SearchQuery("asdf").Result.Categories.printReflected();
-
+                result = search.SearchQuery("asdf").Result.Categories;
+           
                 //Query with more results when written in another language
                 result = search.SearchQuery("%CE%B9%CF%80%CE%B7%CE%BF%CE%BD%CE%B5").Result.Categories.printReflected();
 
@@ -203,6 +211,7 @@
                     if (skroutzException != null)
                     {
                         Console.WriteLine($"Status code: {skroutzException.StatusCode}");
+
                         foreach (Error error in skroutzException.SkroutzError.Errors)
                         {
                             Console.WriteLine($"Error code: {error.Code}");
@@ -212,6 +221,7 @@
 
                         }
                         return true;
+
                     }
                     return false;
                 });
