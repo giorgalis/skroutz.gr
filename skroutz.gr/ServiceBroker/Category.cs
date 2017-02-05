@@ -49,6 +49,8 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Append("categories?");
             _skroutzRequest.SBuilder.Append($"page={page}&per={per}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
@@ -70,7 +72,9 @@ namespace skroutz.gr.ServiceBroker
 
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
-        
+
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
@@ -93,6 +97,8 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
         }
@@ -106,6 +112,8 @@ namespace skroutz.gr.ServiceBroker
         {
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append("categories/root");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootCategory>(t.Result.ToString()));
@@ -134,6 +142,8 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
@@ -161,7 +171,7 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            _skroutzRequest.Path = _skroutzRequest.SBuilder.ToString();
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Specifications>(t.Result.ToString()));
@@ -191,7 +201,7 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            _skroutzRequest.Path = _skroutzRequest.SBuilder.ToString();
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Groups>(t.Result.ToString()));
@@ -229,7 +239,7 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            _skroutzRequest.Path = _skroutzRequest.SBuilder.ToString();
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
@@ -259,7 +269,7 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
-            _skroutzRequest.Path = _skroutzRequest.SBuilder.ToString();
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));

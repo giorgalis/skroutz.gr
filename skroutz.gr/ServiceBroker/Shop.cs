@@ -36,7 +36,7 @@ namespace skroutz.gr.ServiceBroker
         /// <returns>Task&lt;RootShop&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-single-shop" />
-        public Task<RootShop> RetrieveSingleShop(int shopId, params Expression<Func<RootShop, object>>[] sparseFields)
+        public Task<SingleShop> RetrieveSingleShop(int shopId, params Expression<Func<RootShop, object>>[] sparseFields)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
 
@@ -46,8 +46,10 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<RootShop>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<SingleShop>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -67,6 +69,8 @@ namespace skroutz.gr.ServiceBroker
 
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<ShopReviews>(t.Result.ToString()));
@@ -90,6 +94,8 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<ShopLocations>(t.Result.ToString()));
         }
@@ -104,7 +110,7 @@ namespace skroutz.gr.ServiceBroker
         /// <returns>Task&lt;Location&gt;.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="shopId" /> or <paramref name="locationId" /> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/shop/#retrieve-a-single-shop-location" />
-        public Task<Location> RetrieveSingleShopLocation(int shopId, int locationId, params Expression<Func<Location, object>>[] sparseFields)
+        public Task<ShopLocations> RetrieveSingleShopLocation(int shopId, int locationId, params Expression<Func<Location, object>>[] sparseFields)
         {
             if (shopId <= 0) throw new ArgumentOutOfRangeException(nameof(shopId));
             if (locationId <= 0) throw new ArgumentOutOfRangeException(nameof(locationId));
@@ -115,8 +121,10 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Location>(t.Result.ToString()));
+                    JsonConvert.DeserializeObject<ShopLocations>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -136,6 +144,8 @@ namespace skroutz.gr.ServiceBroker
 
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Shops>(t.Result.ToString()));

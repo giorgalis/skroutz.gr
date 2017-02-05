@@ -162,6 +162,7 @@ namespace skroutz.gr.Entities
         /// Gets or sets the categories.
         /// </summary>
         /// <value>The categories.</value>
+        [JsonProperty("categories")]
         public List<Search> Categories { get; set; }
 
         /// <summary>

@@ -43,6 +43,8 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Append("manufacturers?");
             _skroutzRequest.SBuilder.Append($"page={page}&per={per}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Manufacturers>(t.Result.ToString()));
         }
@@ -64,6 +66,8 @@ namespace skroutz.gr.ServiceBroker
 
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootManufacturer>(t.Result.ToString()));
@@ -102,6 +106,8 @@ namespace skroutz.gr.ServiceBroker
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Categories>(t.Result.ToString()));
         }
@@ -137,6 +143,8 @@ namespace skroutz.gr.ServiceBroker
 
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<SKUs>(t.Result.ToString()));

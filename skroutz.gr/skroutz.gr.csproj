@@ -46,6 +46,8 @@
     <Compile Include="Entities\SKUReviewFlag.cs" />
     <Compile Include="Entities\SKUReviewVote.cs" />
     <Compile Include="ServiceBroker\SkroutzRequest.cs" />
+    <Compile Include="ServiceBroker\UserFavorites.cs" />
+    <Compile Include="ServiceBroker\UserNotifications.cs" />
     <Compile Include="Shared\ExtentionMethods.cs" />
     <Compile Include="Shared\NameReader.cs" />
     <Compile Include="ServiceBroker\RateLimit.cs" />
@@ -79,7 +81,7 @@
     <Compile Include="ServiceBroker\Shop.cs" />
     <Compile Include="Exceptions\SkroutzException.cs" />
     <Compile Include="ServiceBroker\Sku.cs" />
-    <Compile Include="ServiceBroker\User.cs" />
+    <Compile Include="ServiceBroker\UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

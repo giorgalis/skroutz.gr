@@ -45,6 +45,8 @@ namespace skroutz.gr.ServiceBroker
             if(sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"fields[root]={NameReader.GetMemberNames(sparseFields)}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<RootProduct>(t.Result.ToString()));
         }
@@ -69,6 +71,8 @@ namespace skroutz.gr.ServiceBroker
 
             if (sparseFields.Length > 0)
                 _skroutzRequest.SBuilder.Append($"&fields[root]={NameReader.GetMemberNames(sparseFields)}");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Products>(t.Result.ToString()));

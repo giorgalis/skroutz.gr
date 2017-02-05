@@ -6,39 +6,20 @@ using System.Threading.Tasks;
 namespace skroutz.gr.ServiceBroker
 {
     /// <summary>
-    /// Provides methods for accessing Users profile, favorites, notifications and other.
+    /// Provides methods for accessing, editing and deleting Users favorites.
     /// </summary>
-    public class User : Request
+    public class UserFavorites : Request
     {
         private readonly SkroutzRequest _skroutzRequest;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="User" /> class
+        /// Initializes a new instance of the <see cref="UserFavorites" /> class
         /// </summary>
         /// <param name="skroutzRequest">Instance of the SkroutzRequest class</param>
-        public User(SkroutzRequest skroutzRequest)
+        public UserFavorites(SkroutzRequest skroutzRequest)
         {
             _skroutzRequest = skroutzRequest;
         }
-
-        #region "User Profile"
-
-        /// <summary>
-        /// Retrieve the profile of the authenticated user
-        /// </summary>
-        /// <see href="https://developer.skroutz.gr/api/v3/user/#retrieve-the-profile-of-the-authenticated-user"/>
-        public Task<Entities.User.User> RetrieveProfileOfAuthenticatedUser()
-        {
-            _skroutzRequest.SBuilder.Clear();
-            _skroutzRequest.SBuilder.Append("user");
-
-            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Entities.User.User>(t.Result.ToString()));
-        }
-
-        #endregion
-
-        #region "User Favorites"
 
         /// <summary>
         /// List favorite lists
@@ -49,6 +30,8 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append("favorite_lists");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<UserFavorites>(t.Result.ToString()));
         }
@@ -56,21 +39,37 @@ namespace skroutz.gr.ServiceBroker
         /// <summary>
         /// Create a favorite_list
         /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="favoriteListName" /> is null or empty.</exception>
         /// <see href="Https://developer.skroutz.gr/api/v3/favorites/#create-a-favoritelist" />
-        public void CreateFavoriteList()
+        public Task<UserFavorites> CreateFavoriteList(string favoriteListName)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(favoriteListName)) throw new ArgumentNullException(nameof(favoriteListName));
+
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"favorite_lists?favorite_list[name]={favoriteListName}");
+
+            _skroutzRequest.Method = HttpMethod.POST;
+
+            return PostWebResultAsync(_skroutzRequest).ContinueWith((t) =>
+                   JsonConvert.DeserializeObject<UserFavorites>(t.Result.ToString()));
         }
 
         /// <summary>
         /// Destroy a favorite_list
         /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="favoriteListId"/> is less than or equal to 0.</exception>
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favoritelist" />
-        public void DestroyFavoriteList()
+        public void DestroyFavoriteList(int favoriteListId)
         {
-            throw new NotImplementedException();
+            if (favoriteListId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteListId));
+
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"favorite_lists/{favoriteListId}");
+
+            _skroutzRequest.Method = HttpMethod.DELETE;
+
+            PostWebResultAsync(_skroutzRequest).ContinueWith((t) =>
+                   JsonConvert.DeserializeObject<UserFavorites>(t.Result.ToString()));
         }
 
         /// <summary>
@@ -81,6 +80,8 @@ namespace skroutz.gr.ServiceBroker
         {
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append("favorites");
+
+            _skroutzRequest.Method = HttpMethod.GET;
 
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
@@ -99,6 +100,8 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"favorite_lists/{listId}/favorites");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorites>(t.Result.ToString()));
         }
@@ -116,6 +119,8 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"favorites/{favoriteId}");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Favorite>(t.Result.ToString()));
         }
@@ -124,20 +129,36 @@ namespace skroutz.gr.ServiceBroker
         /// Create a new favorite
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#create-a-new-favorite" />
         /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
-        public void CreateNewFavorite()
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="skuID"/> is less than or equal to 0.</exception>
+        public Task<Favorite> CreateNewFavorite(int skuID)
         {
-            throw new NotImplementedException();
+            if (skuID <= 0) throw new ArgumentOutOfRangeException(nameof(skuID));
+
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"favorites?favorite[sku_id]={skuID}");
+
+            _skroutzRequest.Method = HttpMethod.POST;
+
+            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
+                    JsonConvert.DeserializeObject<Favorite>(t.Result.ToString()));
         }
 
         /// <summary>
         /// Destroy a favorite
         /// <see href="https://developer.skroutz.gr/api/v3/favorites/#destroy-a-favorite" />
         /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
-        public void DestroyFavorite()
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="favoriteId"/> is less than or equal to 0.</exception>
+        /// <remarks>The response status is 204 and with an empty response body when resource is destroyed. Status code is 404 when the resource does not exist.</remarks>
+        public void DestroyFavorite(int favoriteId)
         {
-            throw new NotImplementedException();
+            if (favoriteId <= 0) throw new ArgumentOutOfRangeException(nameof(favoriteId));
+
+            _skroutzRequest.SBuilder.Clear();
+            _skroutzRequest.SBuilder.Append($"favorites/{favoriteId}");
+
+            _skroutzRequest.Method = HttpMethod.DELETE;
+
+            PostWebResultAsync(_skroutzRequest);
         }
 
         /// <summary>
@@ -149,52 +170,5 @@ namespace skroutz.gr.ServiceBroker
         {
             throw new NotImplementedException();
         }
-
-        #endregion
-
-        #region "User Notification"
-
-        /// <summary>
-        /// List notifications
-        /// </summary>
-        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#list-notifications"/>
-        public Task<UserNotifications> ListNotifications()
-        {
-            _skroutzRequest.SBuilder.Clear();
-            _skroutzRequest.SBuilder.Append("notifications");
-
-            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<UserNotifications>(t.Result.ToString()));
-        }
-
-        /// <summary>
-        /// Retrieve a single notification
-        /// </summary>
-        /// <param name="notificationId"></param>
-        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#retrieve-a-single-notification"/>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="notificationId"/> is less than or equal to 0.</exception>
-        public Task<Notification> RetrieveSingleNotification(int notificationId)
-        {
-            if (notificationId <= 0) throw new ArgumentOutOfRangeException(nameof(notificationId));
-
-            _skroutzRequest.SBuilder.Clear();
-            _skroutzRequest.SBuilder.Append($"notifications/{notificationId}");
-
-            return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
-                    JsonConvert.DeserializeObject<Notification>(t.Result.ToString()));
-        }
-
-        /// <summary>
-        /// Mark notifications as viewed
-        /// <see href="https://developer.skroutz.gr/api/v3/notifications/#mark-notifications-as-viewed" />
-        /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
-        public void MarkNotificationsAsViewed()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
     }
 }

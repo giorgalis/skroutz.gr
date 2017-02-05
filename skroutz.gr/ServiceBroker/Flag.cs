@@ -32,6 +32,8 @@ namespace skroutz.gr.ServiceBroker
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"flags");
 
+            _skroutzRequest.Method = HttpMethod.GET;
+
             return GetWebResultAsync(_skroutzRequest).ContinueWith((t) =>
                     JsonConvert.DeserializeObject<Flags>(t.Result.ToString()));
         }

@@ -130,6 +130,18 @@ namespace skroutz.gr.Entities
         /// <value>The meta.</value>
         public Meta meta { get; set; }
     }
+
+    /// <summary>
+    /// Class Single Shop
+    /// </summary>
+    public class SingleShop
+    {
+        /// <summary>
+        /// Gets or sets the shops.
+        /// </summary>
+        /// <value>The shops.</value>
+        public RootShop shop { get; set; }
+    }
 }
 
 namespace skroutz.gr.Entities.Base

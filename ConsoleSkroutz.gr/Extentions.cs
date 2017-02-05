@@ -30,7 +30,7 @@ namespace ConsoleSkroutz.gr
         public static T printReflected<T>(this T item) where T : class
         {
             if (item == null) throw new NullReferenceException(nameof(item));
-
+            
             foreach (var prop in item.GetType().GetProperties())
                 Console.WriteLine(string.Format("{0,-20} {1}", prop.Name, prop.GetValue(item, null)));
 

@@ -1,4 +1,5 @@
 ﻿using skroutz.gr.Authorization;
+using skroutz.gr.Shared;
 using System;
 using System.Text;
 
@@ -114,8 +115,6 @@ namespace skroutz.gr.ServiceBroker
             this.AuthResponse = authorization.AuthResponse;
 
             this.SBuilder = new StringBuilder();
-            this.Method = HttpMethod.GET;
-            this.PostData = "";
         }
     }
 }
