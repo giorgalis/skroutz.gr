@@ -1,5 +1,5 @@
 # skroutz.gr
-Portable Class Library for accessing the [skroutz.gr V3.1 API](https://developer.skroutz.gr/).
+Portable Class Library for accessing the [skroutz.gr API](https://developer.skroutz.gr/).
 ## Documentation
 Available at [dotnet.media](http://dotnet.media/).
 ## Targets
@@ -252,4 +252,4 @@ try
             }
 ```
 ##License
-Skroutz.gr is available under the [MIT license](docs/CONTRIBUTING.md)
+Skroutz.gr is available under the [MIT license](LICENSE.TXT)
