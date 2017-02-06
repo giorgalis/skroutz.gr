@@ -11,11 +11,6 @@ Available at [dotnet.media](http://dotnet.media/).
 - Xamarin.iOS
 - Xamarin.iOS (Classic)
 
-##Author
-Papadimitriou George
-
-[gipap@outlook.com](mailto:gipap@outlook.com)
-
 ## Usage
 ```
 try
@@ -251,5 +246,10 @@ try
                 Console.WriteLine(ex.Message);
             }
 ```
+##Author
+Papadimitriou George
+
+[gipap@outlook.com](mailto:gipap@outlook.com)
+
 ##License
 The skroutz.gr portable class library is available under the [MIT license](LICENSE)
