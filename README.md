@@ -252,4 +252,4 @@ try
             }
 ```
 ##License
-Skroutz.gr is available under the [MIT license](LICENSE.TXT)
+Skroutz.gr is available under the [MIT license](LICENSE)
