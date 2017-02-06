@@ -2,7 +2,7 @@
 Portable Class Library for accessing the [skroutz.gr API](https://developer.skroutz.gr/).
 ## Documentation
 Available at [dotnet.media](http://dotnet.media/).
-## Targets
+## Targeting
 - .NET Framework 4.5
 - ASP.NET Core 1.0
 - Windows 8
