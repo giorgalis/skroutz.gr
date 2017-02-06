@@ -252,4 +252,4 @@ try
             }
 ```
 ##License
-Skroutz.gr is available under the [MIT license](LICENSE)
+The skroutz.gr portable class library is available under the [MIT license](LICENSE)
