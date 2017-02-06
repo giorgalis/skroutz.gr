@@ -22,7 +22,7 @@ try
 
             {
             
-                SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "", ClientSecret = "" });
+                SkroutzRequest skroutzRequest = new SkroutzRequest(new Credentials { ClientId = "YOUR_CLIENT_ID", ClientSecret = "YOUR_CLIENT_SECRET" });
                 
                 dynamic result = null;
                 
