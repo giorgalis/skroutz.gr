@@ -19,9 +19,8 @@ namespace skroutz.gr.Shared
         {
             List<string> memberNames = new List<string>();
             foreach (var expression in expressions)
-            {
                 memberNames.Add(GetMemberName(expression.Body).ToLower());
-            }
+            
             return string.Join(",", memberNames);
         }
 
@@ -34,7 +33,8 @@ namespace skroutz.gr.Shared
         /// <exception cref="System.ArgumentException">The expression is not valid.</exception>
         private static string GetMemberName(Expression expression)
         {
-            if (expression == null) throw new ArgumentNullException(nameof(expression));
+            if (expression == null) 
+                throw new ArgumentNullException(nameof(expression));
 
             if (expression is MemberExpression)
                 return ((MemberExpression)expression).Member.Name;
