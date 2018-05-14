@@ -106,10 +106,14 @@ namespace skroutz.gr.ServiceBroker
         /// <exception cref="ArgumentNullException">Thrown when <paramref name="credentials.ClientId" /> or <paramref name="credentials.ClientSecret" /> are null or empty.</exception>
         public SkroutzRequest(Credentials credentials, string apiVersion = null)
         {
-            if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
-            if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
+            if (string.IsNullOrEmpty(credentials.ClientId)) 
+                throw new ArgumentNullException(nameof(credentials.ClientId));
+            
+            if (string.IsNullOrEmpty(credentials.ClientSecret)) 
+                throw new ArgumentNullException(nameof(credentials.ClientSecret));
 
-            if (!string.IsNullOrEmpty(apiVersion)) this.ApiVersion = apiVersion;
+            if (!string.IsNullOrEmpty(apiVersion)) 
+                this.ApiVersion = apiVersion;
 
             Authorization.Authorization authorization = new Authorization.Authorization(this, credentials);
             this.AuthResponse = authorization.AuthResponse;
