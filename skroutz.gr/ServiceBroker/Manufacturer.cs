@@ -36,8 +36,11 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#list-manufacturers" />
         public Task<Manufacturers> ListManufacturers(int page = 1, int per = 25)
         {
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append("manufacturers?");
@@ -59,7 +62,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-single-manufacturer" />
         public Task<RootManufacturer> RetrieveSingleManufacturer(int manufacturerId, params Expression<Func<Entities.Base.Manufacturer, object>>[] sparseFields)
         {
-            if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
+            if (manufacturerId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(manufacturerId));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"manufacturers/{manufacturerId}?");
@@ -88,9 +92,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-categories" />
         public Task<Categories> RetrieveManufacturerCategories(int manufacturerId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc, int page = 1, int per = 25, params Expression<Func<Entities.Base.Category, object>>[] sparseFields)
         {
-            if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (manufacturerId <= 0) 
+            throw new ArgumentOutOfRangeException(nameof(manufacturerId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0)
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"manufacturers/{manufacturerId}/categories?");
@@ -126,9 +135,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/manufacturer/#retrieve-a-manufacturers-skus" />
         public Task<SKUs> RetrieveManufacturerSKUs(int manufacturerId, OrderByPrcPop? orderBy = OrderByPrcPop.popularity, OrderDir? orderDir = OrderDir.desc, int page = 1, int per = 25, params Expression<Func<Entities.Base.SKU, object>>[] sparseFields)
         {
-            if (manufacturerId <= 0) throw new ArgumentOutOfRangeException(nameof(manufacturerId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (manufacturerId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(manufacturerId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"manufacturers/{manufacturerId}/skus?");
