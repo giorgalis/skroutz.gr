@@ -41,8 +41,11 @@ namespace skroutz.gr.Authorization
         /// <exception cref="ArgumentNullException">Thrown when <see cref="Credentials.ClientId"/> or <see cref="Credentials.ClientSecret"/> are null or empty.</exception>
         public Authorization(SkroutzRequest skroutzRequest, Credentials credentials)
         {
-            if (string.IsNullOrEmpty(credentials.ClientId)) throw new ArgumentNullException(nameof(credentials.ClientId));
-            if (string.IsNullOrEmpty(credentials.ClientSecret)) throw new ArgumentNullException(nameof(credentials.ClientSecret));
+            if (string.IsNullOrEmpty(credentials.ClientId)) 
+                throw new ArgumentNullException(nameof(credentials.ClientId));
+                
+            if (string.IsNullOrEmpty(credentials.ClientSecret)) 
+                throw new ArgumentNullException(nameof(credentials.ClientSecret));
                         
             skroutzRequest.PostData = $"oauth2/token?client_id={credentials.ClientId}&client_secret={credentials.ClientSecret}&grant_type=client_credentials&scope=public";
             skroutzRequest.Method = HttpMethod.POST;
