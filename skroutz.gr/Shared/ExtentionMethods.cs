@@ -25,7 +25,8 @@ namespace skroutz.gr.Shared
         /// <returns>System.String.</returns>
         public static string ToTitleCase(this string s)
         {
-            if (string.IsNullOrEmpty(s)) return s;
+            if (string.IsNullOrEmpty(s)) 
+                return s;
 
             string[] textArray = s.Split(' ');
 
