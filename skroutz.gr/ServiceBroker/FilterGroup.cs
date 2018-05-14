@@ -59,9 +59,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/filter_groups/#list-filtergroups" />
         public Task<FilterGroups> ListFilterGroups(int categoryId, int page = 1, int per = 25, params Expression<Func<Entities.Base.FilterGroup, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (categoryId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/filter_groups?");
