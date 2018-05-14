@@ -42,8 +42,11 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-all-categories" />
         public Task<Categories> ListAllCategories(int page = 1, int per = 25)
         {
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+                
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append("categories?");
@@ -65,7 +68,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category" />
         public Task<RootCategory> RetrieveSingleCategory(int categoryId, params Expression<Func<Entities.Base.Category, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (categoryId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}?");
@@ -131,9 +135,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-the-children-categories-of-a-category" />
         public Task<Categories> ListChildrenCategoriesOfCategory(int categoryId, int page = 1, int per = 25, params Expression<Func<Entities.Base.Category, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (categoryId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/children?");
@@ -160,9 +169,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
         public Task<Specifications> ListCategorysSpecifications(int categoryId, int page = 1, int per = 25, params Expression<Func<Entities.Base.Specification, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (categoryId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/specifications?");
@@ -189,9 +203,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-specifications" />
         public Task<Groups> ListCategorysSpecificationsGroup(int categoryId, int page = 1, int per = 25, params Expression<Func<Entities.Base.Group, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (categoryId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/specifications?");
@@ -221,9 +240,14 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#list-a-categorys-manufacturers" />
         public Task<Manufacturers> ListCategorysManufactures(int categoryId, OrderByNamePop? orderBy = OrderByNamePop.popularity, OrderDir? orderDir = OrderDir.desc, int page = 1, int per = 25, params Expression<Func<Entities.Base.Manufacturer, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (categoryId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/manufacturers?");
@@ -258,9 +282,14 @@ namespace skroutz.gr.ServiceBroker
         /// <remarks>Requires user token with the 'favorites' permission.</remarks>
         public Task<Favorites> ListCategorysFavorites(int categoryId, int page = 1, int per = 25, params Expression<Func<Favorite, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
-            if (page <= 0) throw new ArgumentOutOfRangeException(nameof(page));
-            if (per <= 0) throw new ArgumentOutOfRangeException(nameof(per));
+            if (categoryId <= 0)
+            throw new ArgumentOutOfRangeException(nameof(categoryId));
+            
+            if (page <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(page));
+            
+            if (per <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(per));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/favorites?");
