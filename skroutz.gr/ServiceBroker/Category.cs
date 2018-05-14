@@ -93,7 +93,8 @@ namespace skroutz.gr.ServiceBroker
         /// <see href="https://developer.skroutz.gr/api/v3/category/#retrieve-a-single-category" />
         public Task<RootCategory> RetrieveTheParentOfCategory(int categoryId, params Expression<Func<Entities.Base.Category, object>>[] sparseFields)
         {
-            if (categoryId <= 0) throw new ArgumentOutOfRangeException(nameof(categoryId));
+            if (categoryId <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(categoryId));
 
             _skroutzRequest.SBuilder.Clear();
             _skroutzRequest.SBuilder.Append($"categories/{categoryId}/parent?");
